@@ -1,0 +1,38 @@
+{
+	"parent": "forge:item/default",
+	"forge_data": {
+		"layers": {
+			"0": {
+				"block_light": 15,
+				"sky_light": 15
+			}
+		}
+	},
+	"loader": "forge:item_layers",
+	"render_types": {},
+"textures": {
+    "layer0": "darkestsouls:item/weapon/dragonslayer_swordspear"
+    },
+"display": {
+    "thirdperson_righthand": {
+            "rotation": [ 0, -90, 45 ],
+    		"translation": [0, 5, 1.5],
+            "scale": [ 1.95, 1.95, 0.65 ]
+      		},
+    "firstperson_righthand": {
+    		"rotation": [ 0, -90, 45],
+      		"translation": [ 0.5, 2.0, 0.5 ],
+            "scale": [ 1.16, 1.16, 0.44 ]
+    		},
+   "thirdperson_lefthand": {
+    		"rotation": [ 0, 90, -45 ],
+    		"translation": [0, 5, 1.5],
+            "scale": [ 1.95, 1.95, 0.65 ]
+			},
+    "firstperson_lefthand": {
+    		"rotation": [ 0, 90, -45 ],
+      		"translation": [ 0.5, 2.0, 0.5 ],
+      		"scale": [ 1.16, 1.16, 0.44 ]
+    		}
+}
+}

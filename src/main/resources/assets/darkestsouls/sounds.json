@@ -1,0 +1,161 @@
+{
+        "entity.beast_patient_idle": {
+		"sounds": [
+			{"name":"darkestsouls:entity/beast/beast_patient/ambience1", "stream":false},
+			{"name":"darkestsouls:entity/beast/beast_patient/ambience2", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.beast_patient"
+	},
+	"entity.beast_patient_hurt": {
+		"sounds": [
+			{"name":"darkestsouls:entity/beast/beast_patient/hurt1", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.beast_patient"
+	},
+	"entity.beast_patient_attack": {
+		"sounds": [
+			{"name":"darkestsouls:entity/beast/beast_patient/attack1", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.beast_patient"
+	},
+	"entity.beast_patient_scream": {
+		"sounds": [
+			{"name":"darkestsouls:entity/beast/beast_patient/scream", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.beast_patient"
+	},
+	"entity.monstruosity_of_sin_idle": {
+		"sounds": [
+			{"name":"darkestsouls:entity/monstruosity_of_sin/breath", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/growl", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/growl1", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/growl2", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.monstruosity_of_sin"
+	},
+	"entity.monstruosity_of_sin_death": {
+		"sounds": [
+			{"name":"darkestsouls:entity/monstruosity_of_sin/growl1", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/growl2", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.monstruosity_of_sin"
+	},
+	"entity.monstruosity_of_sin_scream": {
+		"sounds": [
+			{"name":"darkestsouls:entity/monstruosity_of_sin/scream", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/scream1", "stream":false},
+			{"name":"darkestsouls:entity/monstruosity_of_sin/scream2", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.monstruosity_of_sin"
+	},
+	"entity.monstruosity_of_sin_hurt": {
+		"sounds": [
+			{"name":"darkestsouls:entity/monstruosity_of_sin/hurt", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.monstruosity_of_sin"
+	},
+	"entity.monstruosity_of_sin_boom": {
+		"sounds": [
+			{"name":"darkestsouls:entity/monstruosity_of_sin/boom", "stream":false}
+		],
+		"subtitle": "subtitles.darkestsouls.monstruosity_of_sin"
+	},
+	"entity.hollow_idle": {
+		"sounds": [
+			{"name":"darkestsouls:entity/hollow/moan", "stream":false},
+			{"name":"darkestsouls:entity/hollow/moan1", "stream":false},
+			{"name":"darkestsouls:entity/hollow/moan3", "stream":false},
+			{"name":"darkestsouls:entity/hollow/weep", "stream":false}
+
+		],
+		"subtitle": "subtitles.darkestsouls.hollow"
+	},
+	"entity.hollow_hurt": {
+		"sounds": [
+			{"name":"darkestsouls:entity/hollow/hurt", "stream":false},
+			{"name":"darkestsouls:entity/hollow/hurt1", "stream":false}
+
+		],
+		"subtitle": "subtitles.darkestsouls.hollow"
+	},
+	"entity.hollow_death": {
+		"sounds": [
+			{"name":"darkestsouls:entity/hollow/death", "stream":false},
+			{"name":"darkestsouls:entity/hollow/death1", "stream":false},
+			{"name":"darkestsouls:entity/hollow/weep", "stream":false}
+
+		],
+		"subtitle": "subtitles.darkestsouls.hollow"
+	},
+	"entity.hollow_attack": {
+		"sounds": [
+			{"name":"darkestsouls:entity/hollow/hurt", "stream":false},
+			{"name":"darkestsouls:entity/hollow/moan2", "stream":false}
+
+		],
+		"subtitle": "subtitles.darkestsouls.hollow"
+	},
+	"entity.sewer_centipede_idle": {
+		"sounds": [
+			"darkestsouls:entity/sewer_centipede/say1",
+			"darkestsouls:entity/sewer_centipede/say2",
+			"darkestsouls:entity/sewer_centipede/say3",
+			"darkestsouls:entity/sewer_centipede/say4",
+			"darkestsouls:entity/sewer_centipede/say5",
+			"darkestsouls:entity/sewer_centipede/say6"
+		],
+		"subtitle": "subtitles.darkestsouls.sewer_centipede"
+	},
+	"entity.sewer_centipede_death": {
+		"sounds": [
+			"darkestsouls:entity/sewer_centipede/death"
+		],
+		"subtitle": "subtitles.darkestsouls.sewer_centipede"
+	},
+	"entity.sewer_centipede_hurt": {
+		"sounds": [
+			"darkestsouls:entity/sewer_centipede/say1",
+			"darkestsouls:entity/sewer_centipede/say2",
+			"darkestsouls:entity/sewer_centipede/say3",
+			"darkestsouls:entity/sewer_centipede/say4",
+			"darkestsouls:entity/sewer_centipede/say5",
+			"darkestsouls:entity/sewer_centipede/say6"
+		],
+		"subtitle": "subtitles.darkestsouls.sewer_centipede"
+	},
+	"entity.sewer_centipede_step": {
+		"sounds": [
+			"darkestsouls:entity/sewer_centipede/step1",
+			"darkestsouls:entity/sewer_centipede/step2",
+			"darkestsouls:entity/sewer_centipede/step3",
+			"darkestsouls:entity/sewer_centipede/step4"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"entity.darkwraith_attack": {
+		"sounds": [
+			"darkestsouls:entity/darkwraith/darkwraith1",
+			"darkestsouls:entity/darkwraith/darkwraith3"
+		],
+		"subtitle": "subtitles.darkestsouls.darkwraith"
+	},
+	"entity.darkwraith_ambient": {
+		"sounds": [
+			"darkestsouls:entity/darkwraith/darkwraith4"
+		],
+		"subtitle": "subtitles.darkestsouls.darkwraith"
+	},
+	"entity.darkwraith_death": {
+		"sounds": [
+			"darkestsouls:entity/darkwraith/darkwraith2",
+			"darkestsouls:entity/darkwraith/darkwraith3"
+		],
+		"subtitle": "subtitles.darkestsouls.darkwraith"
+	},
+	"entity.darkwraith_hurt": {
+		"sounds": [
+			"darkestsouls:entity/darkwraith/darkwraith1"
+		],
+		"subtitle": "subtitles.darkestsouls.darkwraith"
+	}
+}

@@ -1,0 +1,28 @@
+{
+"parent": "minecraft:item/handheld",
+"textures": {
+    "layer0": "darkestsouls:item/weapon/uchigatana"
+    },
+"display": {
+    "thirdperson_righthand": {
+            "rotation": [ 0, -90, 55 ],
+    		"translation": [0, 8, 0],
+            "scale": [ 1.36, 1.36, 0.65 ]
+      		},
+    "firstperson_righthand": {
+    		"rotation": [ 0, -90, 52 ],
+      		"translation": [ 1.23, 5.85, -0.13 ],
+            "scale": [ 0.86, 0.86, 0.36]
+    		},
+   "thirdperson_lefthand": {
+    		"rotation": [ 0, 90, -55 ],
+    		"translation": [0, 8, 0],
+            "scale": [ 1.36, 1.36, 0.65 ]
+			},
+    "firstperson_lefthand": {
+    		"rotation": [ 0, 90, -52 ],
+      		"translation": [ 1.23, 5.85, -0.13 ],
+      		"scale": [ 0.86, 0.86, 0.36 ]
+    		}
+}
+}

@@ -11,6 +11,7 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
 }
 
 base {
@@ -161,4 +162,18 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+}
+repositories {
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+}
+dependencies {
+        implementation "software.bernie.geckolib:geckolib-neoforge-1.20.4:4.4.4"
+        implementation("com.eliotlash.mclib:mclib:20")
 }
