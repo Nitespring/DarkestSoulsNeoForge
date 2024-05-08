@@ -175,5 +175,4 @@ repositories {
 }
 dependencies {
         implementation "software.bernie.geckolib:geckolib-neoforge-1.20.4:4.4.4"
-        implementation("com.eliotlash.mclib:mclib:20")
 }

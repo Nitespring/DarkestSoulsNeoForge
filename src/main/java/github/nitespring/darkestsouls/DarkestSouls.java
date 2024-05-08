@@ -57,7 +57,7 @@ public class DarkestSouls
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-           
+
         }
     }
 }
