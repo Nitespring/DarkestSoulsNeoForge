@@ -130,7 +130,7 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
             this.doRemoval();
             Entity e = p_37259_.getEntity();
             e.hurt(e.level().damageSources().indirectMagic(this, this.getOwner()),this.damage);
-            this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.get(), this.getSoundSource(), 1.0f, 1.4f);
+            this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), this.getSoundSource(), 1.0f, 1.4f);
             for(int i=0; i<=2; i++){
                 RandomSource r = this.random;
                 Vec3 off = new Vec3(r.nextFloat() - 0.5, r.nextFloat() - 0.5, r.nextFloat() - 0.5).multiply(0.25f, 0.25f, 0.25f);
@@ -151,7 +151,7 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
                 level.sendParticles(ParticleTypes.ENCHANT, this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
             }
         }
-        this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.get(), this.getSoundSource(), 1.0f, 1.4f);
+        this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), this.getSoundSource(), 1.0f, 1.4f);
     }
 
     public int getLifeTicks() {

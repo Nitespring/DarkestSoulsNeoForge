@@ -4,9 +4,10 @@ package github.nitespring.darkestsouls.core.init;
 import github.nitespring.darkestsouls.DarkestSouls;
 import net.minecraft.client.KeyMapping;
 import net.neoforged.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)

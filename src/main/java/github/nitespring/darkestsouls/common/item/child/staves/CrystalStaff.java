@@ -133,7 +133,7 @@ public class CrystalStaff extends Staff {
 
         levelIn.addFreshEntity(e);
         playerIn.getCooldowns().addCooldown(this, 15);
-        playerIn.level().playSound((Player)null, playerIn, SoundEvents.RESPAWN_ANCHOR_DEPLETE.get(), SoundSource.PLAYERS, 0.6F, 1.0F);
+        playerIn.level().playSound((Player)null, playerIn, SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), SoundSource.PLAYERS, 0.6F, 1.0F);
     }
 
     public int getCastingDurationSpellB(){return 40;}

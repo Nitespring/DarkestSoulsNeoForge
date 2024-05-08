@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.core.util;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.config.CommonConfig;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
@@ -11,7 +12,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.internal.NeoForgeBiomeTagsProvider;
 
 public class SpawnRules{
     public static boolean checkChurchDoctorNormalSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
@@ -45,8 +47,8 @@ public class SpawnRules{
         return checkVanillaMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
     public static boolean checkMadHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DENSE))
+        return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
@@ -63,25 +65,25 @@ public class SpawnRules{
         return checkHollowSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_gravetender_hollow.get();
     }
     public static boolean checkHollowDarkSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && !levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
+        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
 
     public static boolean checkHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
+        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
 
     public static boolean checkSewerCentipedeSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return (isDeepEnoughForDeepMob(pos)||levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_SWAMP))
+        return (isDeepEnoughForDeepMob(pos)||levelAccessor.getBiome(pos).is(Tags.Biomes.IS_SWAMP))
                 &&checkVanillaAnyLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_sewer_centipede.get();
     }
     public static boolean checkLeechSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return (isDeepEnoughForDeepMob(pos)||(levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_SWAMP)||levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_WATER)))
+        return (isDeepEnoughForDeepMob(pos)||(levelAccessor.getBiome(pos).is(Tags.Biomes.IS_SWAMP)||levelAccessor.getBiome(pos).is(Tags.Biomes.IS_WATER)))
                 &&checkVanillaAnyLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_leech.get();
     }
     public static boolean checkSinSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
@@ -108,7 +110,7 @@ public class SpawnRules{
         return checkSkeletonSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_bonewheel.get();
     }
     public static boolean checkSkeletonSwordsmanSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return (pos.getY()<=24||levelAccessor.getBiome(pos).containsTag(Tags.Biomes.IS_DESERT))&&checkLowLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random);
+        return (pos.getY()<=24||levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT))&&checkLowLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
     public static boolean checkSkeletonSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return isDeepEnoughForSkeleton(pos)

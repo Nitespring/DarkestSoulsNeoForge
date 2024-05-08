@@ -30,7 +30,8 @@ public class DarkestSouls
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.common_config);
         //IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::setup);
+        //modEventBus.addListener(this::setup);
+        modEventBus.addListener(DarkestSoulsPacketHandler::onRegisterPayloadHandler);
         GeckoLib.initialize(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
@@ -45,12 +46,10 @@ public class DarkestSouls
         //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
+    /*private void setup(final FMLCommonSetupEvent event)
     {
-
         DarkestSoulsPacketHandler.register();
-
-    }
+    }*/
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents

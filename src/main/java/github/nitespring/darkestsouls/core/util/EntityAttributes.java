@@ -4,7 +4,7 @@ import github.nitespring.darkestsouls.core.init.ItemInit;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraftforge.common.ForgeMod;
+import net.neoforged.fml.common.Mod;
 
 public class EntityAttributes {
 
@@ -211,8 +211,8 @@ public class EntityAttributes {
 				.add(Attributes.ATTACK_SPEED, 1.2D)
 				.add(Attributes.ATTACK_KNOCKBACK, 0.8D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 1.2D)
-				.add(Attributes.FOLLOW_RANGE, 30)
-				.add(ForgeMod.SWIM_SPEED.get(),2.0f);
+				.add(Attributes.FOLLOW_RANGE, 30);
+				//.add(ForgeMod.SWIM_SPEED.get(),2.0f);
 	}
 	public static  AttributeSupplier.Builder setChurchDoctorAttributes(){
 		return Monster.createMonsterAttributes()
