@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import software.bernie.example.registry.EntityRegistry;
 import software.bernie.example.registry.SoundRegistry;
 
-@Mod.EventBusSubscriber(modid = DarkestSouls.MODID)
+//@Mod.EventBusSubscriber(modid = DarkestSouls.MODID)
 public class SoundInit {
 
 

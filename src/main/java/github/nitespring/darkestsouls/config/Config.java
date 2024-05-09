@@ -10,7 +10,7 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.File;
 
-@Mod.EventBusSubscriber
+//@Mod.EventBusSubscriber
 public class Config {
 
 	private static final ModConfigSpec.Builder common_builder = new ModConfigSpec.Builder();

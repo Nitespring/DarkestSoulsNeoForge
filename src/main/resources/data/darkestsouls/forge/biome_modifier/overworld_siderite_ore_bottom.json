@@ -1,5 +1,5 @@
 {
-  "type": "forge:add_features",
+  "type": "neoforge:add_features",
   "features": "darkestsouls:overworld_siderite_ore_bottom",
   "biomes": "#minecraft:is_overworld",
   "step": "underground_ores"

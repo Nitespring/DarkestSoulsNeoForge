@@ -15,7 +15,7 @@ import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
 public class ItemLeftClickAction implements CustomPacketPayload {
 
-	public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "hit");
+	public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "attack");
 
 	public static ItemLeftClickAction create(FriendlyByteBuf buf) {
 		return new ItemLeftClickAction();

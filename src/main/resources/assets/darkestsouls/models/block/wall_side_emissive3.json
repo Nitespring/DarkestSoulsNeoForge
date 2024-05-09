@@ -3,7 +3,7 @@
   "elements": [
     {   "from": [ 5, 0, 0 ],
       "to": [ 11, 14, 8 ],
-      "forge_data": {
+      "neoforge_data": {
         "block_light": 7,
         "sky_light": 7
       },
@@ -18,7 +18,7 @@
     },
     {   "from": [ 5, 0, 0 ],
       "to": [ 11, 14, 8 ],
-      "forge_data": {
+      "neoforge_data": {
         "block_light": 13,
         "sky_light": 13
       },

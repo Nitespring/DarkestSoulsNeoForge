@@ -31,6 +31,7 @@ public class DarkestSouls
         //IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         //modEventBus.addListener(this::setup);
+
         modEventBus.addListener(DarkestSoulsPacketHandler::onRegisterPayloadHandler);
         GeckoLib.initialize(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
@@ -40,7 +41,7 @@ public class DarkestSouls
         EffectInit.EFFECTS.register(modEventBus);
         CreativeTabInit.TABS.register(modEventBus);
         EnchantmentInit.ENCHANTMENTS.register(modEventBus);
-        NeoForge.EVENT_BUS.register(this);
+        //NeoForge.EVENT_BUS.register(this);
 
         
         //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -50,7 +51,7 @@ public class DarkestSouls
     {
         DarkestSoulsPacketHandler.register();
     }*/
-
+/*
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
@@ -59,5 +60,5 @@ public class DarkestSouls
         {
 
         }
-    }
+    }*/
 }

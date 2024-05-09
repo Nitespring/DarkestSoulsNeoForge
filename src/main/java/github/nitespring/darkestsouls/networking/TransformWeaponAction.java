@@ -16,7 +16,7 @@ import net.neoforged.neoforge.network.handling.PlayPayloadContext;
 
 public class TransformWeaponAction implements CustomPacketPayload{
 
-	public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "hit");
+	public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "transform");
 
 	public static TransformWeaponAction create(FriendlyByteBuf buf) {
 		return new TransformWeaponAction();
