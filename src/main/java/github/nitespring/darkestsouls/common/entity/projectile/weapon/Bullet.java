@@ -2,7 +2,7 @@ package github.nitespring.darkestsouls.common.entity.projectile.weapon;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.throwable.ThrowingKnifeEntity;
-import github.nitespring.darkestsouls.common.entity.util.CustomBlockTags;
+import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
@@ -82,11 +82,11 @@ public class Bullet extends AbstractHurtingProjectile {
     public void setSize(float size){entityData.set(SIZE,size);}
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(SIZE, 0.4f);
-        this.entityData.define(RICOCHET, 0);
-        this.entityData.define(PIERCE, 0);
-        this.entityData.define(FLYING_TIME, 100);
-        this.entityData.define(FIRE, false);
+        this.entityData.set(SIZE, 0.4f);
+        this.entityData.set(RICOCHET, 0);
+        this.entityData.set(PIERCE, 0);
+        this.entityData.set(FLYING_TIME, 100);
+        this.entityData.set(FIRE, false);
     }
     public int getRicochet() {return entityData.get(RICOCHET);}
     public void setRicochet(int ricochet) {entityData.set(RICOCHET,ricochet);}

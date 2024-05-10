@@ -20,8 +20,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -36,7 +36,7 @@ import net.neoforged.neoforge.common.ToolActions;
 import java.util.List;
 import java.util.UUID;
 
-public class Weapon extends Item implements Vanishable,ILeftClickItem {
+public class Weapon extends Item implements ILeftClickItem {
 
 
     private final float attackDamage;
@@ -111,7 +111,9 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
         }
         */
         if(stackIn.isEnchanted()) {
-            if(stackIn.getAllEnchantments().containsKey(Enchantments.SHARPNESS)) {
+            //if(stackIn.getAllEnchantments().containsKey(Enchantments.SHARPNESS)) {
+            if(stackIn.isEnchanted()) {
+
                 enchantmentsModifier = enchantmentsModifier + 0.5f * (1 + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stackIn));
             }
         }
@@ -159,6 +161,8 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_43274_) {
         return p_43274_ == EquipmentSlot.MAINHAND ? this.defaultModifiers : super.getDefaultAttributeModifiers(p_43274_);
     }
+
+
     @Override
     public int getEnchantmentValue() {
         return this.enchantability;
@@ -180,9 +184,11 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
     }
     @Override
     public boolean hurtEnemy(ItemStack stackIn, LivingEntity target, LivingEntity playerIn) {
-        stackIn.hurtAndBreak(1, playerIn, (p_43296_) -> {
+        /*stackIn.hurtAndBreak(1, playerIn, (p_43296_) -> {
             p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-        });
+        });*/
+        stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.MAINHAND);
+
         if (target instanceof DarkestSoulsAbstractEntity && playerIn instanceof Player){
             ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage((Player) playerIn, stackIn));
         }
@@ -191,13 +197,13 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
         }
 
         if(this.getBloodAttack(stackIn)>=1){
-            if(target.hasEffect(EffectInit.BLEED.get())){
-                int amount= target.getEffect(EffectInit.BLEED.get()).getAmplifier()+ this.getBloodAttack(stackIn);
-                target.removeEffect(EffectInit.BLEED.get());
-                target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 240, amount));
+            if(target.hasEffect(EffectInit.BLEED)){
+                int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ this.getBloodAttack(stackIn);
+                target.removeEffect(EffectInit.BLEED);
+                target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
             }else{
                 int amount = this.getBloodAttack(stackIn)-1;
-                target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 240, amount));
+                target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
             }
         }
 
@@ -205,18 +211,21 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
     }
 
     @Override
-    public boolean mineBlock(ItemStack p_43282_, Level p_43283_, BlockState p_43284_, BlockPos p_43285_, LivingEntity p_43286_) {
-        if (p_43284_.getDestroySpeed(p_43283_, p_43285_) != 0.0F) {
-            p_43282_.hurtAndBreak(2, p_43286_, (p_43276_) -> {
+    public boolean mineBlock(ItemStack stackIn, Level p_43283_, BlockState state, BlockPos pos, LivingEntity playerIn) {
+        if (state.getDestroySpeed(p_43283_, pos) != 0.0F) {
+            /*p_43282_.hurtAndBreak(2, p_43286_, (p_43276_) -> {
                 p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-            });
+            });*/
+            stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.MAINHAND);
         }
         return true;
     }
+
     @Override
-    public boolean isCorrectToolForDrops(BlockState p_43298_) {
+    public boolean isCorrectToolForDrops(ItemStack itemStack, BlockState p_43298_) {
         return p_43298_.is(Blocks.COBWEB);
     }
+
 
     @Override
     public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
@@ -254,6 +263,8 @@ public class Weapon extends Item implements Vanishable,ILeftClickItem {
         }
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
+
+    
     @Override
     public boolean isRepairable(ItemStack stack) {
 

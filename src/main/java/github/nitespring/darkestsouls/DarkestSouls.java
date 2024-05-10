@@ -8,6 +8,7 @@ import net.neoforged.api.distmarker.Dist;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 
 import net.neoforged.fml.config.ModConfig;
@@ -25,11 +26,11 @@ public class DarkestSouls
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DarkestSouls(IEventBus modEventBus )
+    public DarkestSouls(IEventBus modEventBus, ModContainer modContainer)
     {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.common_config);
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.common_config);
         //IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.common_config);
         //modEventBus.addListener(this::setup);
 
         modEventBus.addListener(DarkestSoulsPacketHandler::onRegisterPayloadHandler);

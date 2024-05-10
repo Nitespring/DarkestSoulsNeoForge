@@ -82,7 +82,7 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(CRYSTAL_TYPE, 0);
+        this.entityData.set(CRYSTAL_TYPE, 0);
 
     }
 

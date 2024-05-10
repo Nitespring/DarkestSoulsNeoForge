@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="darkestsouls"
-version="1.0.0.0"
+version="1.0.1.5"
 displayName="Darkest Souls"
 authors="Nitespring"
 
@@ -13,12 +13,12 @@ description='''Miyazaki's Dirty Socks'''
 [[dependencies.darkestsouls]]
     modId="neoforge"
     type="required"
-    versionRange="[20.4,)" #mandatory
+    versionRange="[20.5,)" #mandatory
     ordering="NONE"
     side="BOTH"
 [[dependencies.darkestsouls]]
     modId="minecraft"
     type="required"
-    versionRange="[1.20.4,1.21)"
+    versionRange="[1.20.6,1.21)"
     ordering="NONE"
     side="BOTH"

@@ -166,13 +166,13 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(ANIMATION_STATE, 0);
-		this.entityData.define(ANIMATION_TICK, 0);
-		this.entityData.define(SHOULD_RESET_ANIMATION, false);
-		this.entityData.define(COMBAT_STATE, 0);
-		this.entityData.define(ENTITY_PHASE, 0);
-		this.entityData.define(TEAM, getDSDefaultTeam());
-		this.entityData.define(POISE_HEALTH, getMaxPoise());
+		this.entityData.set(ANIMATION_STATE, 0);
+		this.entityData.set(ANIMATION_TICK, 0);
+		this.entityData.set(SHOULD_RESET_ANIMATION, false);
+		this.entityData.set(COMBAT_STATE, 0);
+		this.entityData.set(ENTITY_PHASE, 0);
+		this.entityData.set(TEAM, getDSDefaultTeam());
+		this.entityData.set(POISE_HEALTH, getMaxPoise());
 	}
 
 	protected abstract int getDSDefaultTeam();

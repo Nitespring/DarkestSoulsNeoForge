@@ -54,18 +54,15 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
     public ItemStack getLeftHandItem(){return this.entityData.get(LEFT_HAND);}
     public void setLeftHandItem(ItemStack stack){this.entityData.set(LEFT_HAND, stack);}
 
-    @Override
-    public MobType getMobType() {
-        return MobType.UNDEFINED;
-    }
+
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(ROBE_TYPE, this.getDefaultRobeType());
-        this.entityData.define(HAT_TYPE, this.getDefaultHatType());
-        this.entityData.define(RIGHT_HAND, ItemStack.EMPTY);
-        this.entityData.define(LEFT_HAND, ItemStack.EMPTY);
+        this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());
+        this.entityData.set(HAT_TYPE, this.getDefaultHatType());
+        this.entityData.set(RIGHT_HAND, ItemStack.EMPTY);
+        this.entityData.set(LEFT_HAND, ItemStack.EMPTY);
     }
 
     @Override

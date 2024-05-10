@@ -88,8 +88,8 @@ public class CrystalBallEntity extends AbstractHurtingProjectile {
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(CRYSTAL_TYPE, 0);
-        this.entityData.define(MAX_LIFETIME, 60);
+        this.entityData.set(CRYSTAL_TYPE, 0);
+        this.entityData.set(MAX_LIFETIME, 60);
 
     }
 

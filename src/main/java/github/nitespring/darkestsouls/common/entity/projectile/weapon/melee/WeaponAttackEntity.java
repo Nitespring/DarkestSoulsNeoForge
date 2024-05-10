@@ -120,7 +120,7 @@ public class WeaponAttackEntity extends Entity {
 
     @Override
     protected void defineSynchedData() {
-        this.entityData.define(ANIMATIONSTATE, 0);
+        this.entityData.set(ANIMATIONSTATE, 0);
 
     }
 

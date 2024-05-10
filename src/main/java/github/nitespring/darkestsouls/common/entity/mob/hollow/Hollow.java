@@ -49,9 +49,9 @@ public abstract class Hollow extends DarkestSoulsAbstractEntity {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(SKIN_TYPE, 0);
-        this.entityData.define(ROBE_TYPE, this.getDefaultRobeType());
-        this.entityData.define(HAT_TYPE, this.getDefaultHatType());
+        this.entityData.set(SKIN_TYPE, 0);
+        this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());
+        this.entityData.set(HAT_TYPE, this.getDefaultHatType());
     }
 
     @Override

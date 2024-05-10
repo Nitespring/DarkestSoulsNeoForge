@@ -1,4 +1,4 @@
-package github.nitespring.darkestsouls.common.entity.util;
+package github.nitespring.darkestsouls.core.util;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
