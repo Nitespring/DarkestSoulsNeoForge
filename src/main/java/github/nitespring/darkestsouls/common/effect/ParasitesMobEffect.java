@@ -23,7 +23,7 @@ public class ParasitesMobEffect extends MobEffect{
 		
 	}
 	@Override
-	public void applyEffectTick(LivingEntity entityIn, int id) {
+	public boolean applyEffectTick(LivingEntity entityIn, int id) {
 		ParticleOptions blood = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Items.NETHER_WART_BLOCK));
 
 
@@ -47,17 +47,18 @@ public class ParasitesMobEffect extends MobEffect{
 			}
 			}
 
-		if(entityIn.hasEffect(EffectInit.BLEED.get())){
-			int amount= entityIn.getEffect(EffectInit.BLEED.get()).getAmplifier()+ 1;
-			entityIn.removeEffect(EffectInit.BLEED.get());
-			entityIn.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 180, amount));
+		if(entityIn.hasEffect(EffectInit.BLEED)){
+			int amount= entityIn.getEffect(EffectInit.BLEED).getAmplifier()+ 1;
+			entityIn.removeEffect(EffectInit.BLEED);
+			entityIn.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
 		}else{
-			entityIn.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 180, 0));
+			entityIn.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, 0));
 		}
 	if(!(entityIn instanceof Player p && p.isCreative())) {
 		entityIn.hurt(entityIn.damageSources().dryOut(), 1);
 	}
 
+		return true;
 	}
 
 

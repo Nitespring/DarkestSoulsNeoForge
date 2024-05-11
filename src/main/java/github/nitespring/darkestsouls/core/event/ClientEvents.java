@@ -9,12 +9,13 @@ import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT)
 public class ClientEvents {
 	
 	private static boolean isAttackKeyDown =false;
@@ -22,7 +23,7 @@ public class ClientEvents {
 	private static boolean isTrickKeyDown =false;
 	
 	@SubscribeEvent
-	 public static void performItemLeftClickAction(TickEvent.ClientTickEvent event) {
+	 public static void performItemLeftClickAction(ClientTickEvent event) {
 	 Minecraft instance = Minecraft.getInstance();
 	if(instance.options.keyAttack.isDown()) {
 		 if(isAttackKeyDown==false) {
@@ -37,7 +38,7 @@ public class ClientEvents {
 	 }
 
 	@SubscribeEvent
-	public static void trickKeybind(TickEvent.ClientTickEvent event) {
+	public static void trickKeybind(ClientTickEvent event) {
 		if(KeybindInit.trickKeybind.isDown()) {
 			if(isTrickKeyDown==false) {
 				DarkestSoulsPacketHandler.sendToServer(new TransformWeaponAction());

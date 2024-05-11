@@ -44,10 +44,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
     this.xpReward=12;
 }
 
-    @Override
-    public MobType getMobType() {
-        return MobType.UNDEAD;
-    }
+ 
 
     @Override
     public boolean isBoss() {return false;}

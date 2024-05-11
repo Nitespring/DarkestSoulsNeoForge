@@ -273,13 +273,13 @@ public class WeaponAttackEntity extends Entity {
                 }
 
                 if(this.bleed>=1){
-                    if(target.hasEffect(EffectInit.BLEED.get())){
-                        int amount= target.getEffect(EffectInit.BLEED.get()).getAmplifier()+ this.bleed;
-                        target.removeEffect(EffectInit.BLEED.get());
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 180, amount));
+                    if(target.hasEffect(EffectInit.BLEED)){
+                        int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ this.bleed;
+                        target.removeEffect(EffectInit.BLEED);
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
                     }else{
                         int amount = this.bleed-1;
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 180, amount));
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
                     }
                 }
                 if(this.rot>=1){

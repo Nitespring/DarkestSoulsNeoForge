@@ -39,7 +39,7 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
     protected int screamCooldownTick = 0;
-    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(1.0f, 1.0f, false);
+    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(1.0f, 1.0f, 0.8f, EntityAttachments.createDefault(1.0f, 1.0f),false);
 
     protected Vec3 aimVec;
     public AshenBloodBeastPatient(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
@@ -177,7 +177,7 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
         this.playSound(SoundInit.BEAST_PATIENT_ATTACK.get(),0.2f,1.4f);
     }
     @Override
-    public EntityDimensions getDimensions(Pose p_21047_) {
+    public EntityDimensions getDefaultDimensions(Pose p_21047_) {
 
         if(this.getAnimationState()==1||this.isInWater()) {
             return CRAWLING_BB;

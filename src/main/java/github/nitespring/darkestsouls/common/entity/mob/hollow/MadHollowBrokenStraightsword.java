@@ -32,7 +32,7 @@ public class MadHollowBrokenStraightsword extends Hollow implements GeoEntity {
 
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
-    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, false);
+    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
 
     public MadHollowBrokenStraightsword(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
@@ -174,7 +174,7 @@ public class MadHollowBrokenStraightsword extends Hollow implements GeoEntity {
 
 
     @Override
-    public EntityDimensions getDimensions(Pose p_21047_) {
+    public EntityDimensions getDefaultDimensions(Pose p_21047_) {
 
          if((this.isInWater()&&this.getAnimationState()==0)||this.getAnimationState()==1) {
              return CRAWLING_BB;

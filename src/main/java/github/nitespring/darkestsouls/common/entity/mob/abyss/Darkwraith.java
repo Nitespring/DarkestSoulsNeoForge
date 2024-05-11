@@ -811,11 +811,11 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
     }
 
     @Override
-    protected Vector3f getPassengerAttachmentPoint(Entity e, EntityDimensions dim, float f) {
+    protected Vec3 getPassengerAttachmentPoint(Entity e, EntityDimensions dim, float f) {
         if(this.aimVec!=null) {
-            return new Vector3f((float) (-aimVec.normalize().x()*0.6f), dim.height*0.5f, (float) (-aimVec.normalize().z()*0.6f));
+            return new Vec3((float) (-aimVec.normalize().x()*0.6f), dim.height()*0.5f, (float) (-aimVec.normalize().z()*0.6f));
         }else {
-            return new Vector3f((float) (-this.getLookAngle().normalize().x()*0.6f), dim.height*0.5f, (float) (-this.getLookAngle().normalize().z()*0.6f));
+            return new Vec3((float) (-this.getLookAngle().normalize().x()*0.6f), dim.height()*0.5f, (float) (-this.getLookAngle().normalize().z()*0.6f));
         }
     }
 

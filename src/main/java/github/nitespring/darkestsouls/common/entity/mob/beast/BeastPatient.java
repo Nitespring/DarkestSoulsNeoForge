@@ -36,7 +36,7 @@ import java.util.EnumSet;
 public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuffableBeast{
 
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
-    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, false);
+    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
 
     protected Vec3 aimVec;
     public BeastPatient(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
@@ -141,7 +141,7 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
     public int getBloodResistance() {return 8;}
 
     @Override
-    public EntityDimensions getDimensions(Pose p_21047_) {
+    public EntityDimensions getDefaultDimensions(Pose p_21047_) {
 
         if(this.getAnimationState()==1||this.isInWater()) {
             return CRAWLING_BB;

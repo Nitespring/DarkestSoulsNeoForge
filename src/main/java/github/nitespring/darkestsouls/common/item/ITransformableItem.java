@@ -21,7 +21,7 @@ public interface ITransformableItem {
 
         ItemStack itemstack = playerIn.getItemInHand(InteractionHand.MAIN_HAND);
         Component name = itemstack.getDisplayName();
-        CompoundTag compound = itemstack.getTag();
+        CompoundTag compound = itemstack.getComponents();
 
         Vec3 pos = playerIn.position();
 

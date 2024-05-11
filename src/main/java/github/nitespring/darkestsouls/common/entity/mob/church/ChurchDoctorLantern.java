@@ -32,7 +32,7 @@ import java.util.Random;
 
 public class ChurchDoctorLantern extends ChurchDoctor implements GeoEntity {
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
-    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, false);
+    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
     public ChurchDoctorLantern(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
         this.xpReward=10;
@@ -178,7 +178,7 @@ public class ChurchDoctorLantern extends ChurchDoctor implements GeoEntity {
     }
 
     @Override
-    public EntityDimensions getDimensions(Pose p_21047_) {
+    public EntityDimensions getDefaultDimensions(Pose p_21047_) {
 
         if((this.isInWater()&&this.getAnimationState()==0)) {
             return CRAWLING_BB;

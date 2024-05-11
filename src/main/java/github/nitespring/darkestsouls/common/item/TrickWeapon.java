@@ -33,7 +33,7 @@ public abstract class TrickWeapon extends Weapon implements ITransformableItem{
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag p_41424_) {
 
 
         String colour = "\u00A78\u00A7o";
@@ -42,7 +42,7 @@ public abstract class TrickWeapon extends Weapon implements ITransformableItem{
 
 
 
-        super.appendHoverText(stack, p_41422_, tooltip, p_41424_);
+        super.appendHoverText(stack, context, tooltip, p_41424_);
     }
 
 }

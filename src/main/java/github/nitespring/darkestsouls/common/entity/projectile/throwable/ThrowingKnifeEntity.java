@@ -144,12 +144,12 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
                     target.addEffect(new MobEffectInstance(MobEffects.POISON, 60, this.poisonDamage - 1));
                 }
                 if (this.getBloodDamage() >= 1) {
-                    if (target.hasEffect(EffectInit.BLEED.get())) {
-                        int amount = target.getEffect(EffectInit.BLEED.get()).getAmplifier();
-                        target.removeEffect(EffectInit.BLEED.get());
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 120, this.bloodDamage + amount));
+                    if (target.hasEffect(EffectInit.BLEED)) {
+                        int amount = target.getEffect(EffectInit.BLEED).getAmplifier();
+                        target.removeEffect(EffectInit.BLEED);
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 120, this.bloodDamage + amount));
                     } else {
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 120, this.bloodDamage - 1));
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 120, this.bloodDamage - 1));
                     }
                 }
                 int r = this.level().getRandom().nextInt(1000);

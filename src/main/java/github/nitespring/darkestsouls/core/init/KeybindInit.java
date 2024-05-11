@@ -6,11 +6,12 @@ import net.minecraft.client.KeyMapping;
 import net.neoforged.api.distmarker.Dist;
 
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import org.lwjgl.glfw.GLFW;
 
-@Mod.EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class KeybindInit {
 	public static KeyMapping trickKeybind;
 	public static KeyMapping parryKeyBind;

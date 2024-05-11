@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -88,14 +89,10 @@ public class Flamesprayer extends AlchemyTool {
                     if ((useTick-startingTick) % 7 == 0) {
                         this.shoot(player, level, stack);
                         if(player.getItemInHand(InteractionHand.MAIN_HAND)==stack) {
-                            stack.hurtAndBreak(1, player, (p_43276_) -> {
-                                p_43276_.broadcastBreakEvent(InteractionHand.MAIN_HAND);
-                            });
+                            stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
                         }
                         if(player.getItemInHand(InteractionHand.OFF_HAND)==stack) {
-                            stack.hurtAndBreak(1, player, (p_43276_) -> {
-                                p_43276_.broadcastBreakEvent(InteractionHand.OFF_HAND);
-                            });
+                            stack.hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
                         }
                     }
                     if ((useTick-startingTick) % 18 == 0) {
@@ -159,10 +156,10 @@ public class Flamesprayer extends AlchemyTool {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
 
         tooltip.add(Component.literal("+").append(Component.literal(""+this.getAttackDamage(null,stack))).append(Component.translatable("translation.darkestsouls.fire_damage")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
 
-        super.appendHoverText(stack, level, tooltip, flag);
+        super.appendHoverText(stack, context, tooltip, flag);
     }
 }

@@ -29,16 +29,16 @@ public class BleedMobEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity living, int amount) {
+    public boolean applyEffectTick(LivingEntity living, int amount) {
         super.applyEffectTick(living, amount);
 
 
 
 
         if(living instanceof Skeleton || living instanceof Bonewheel){
-            living.removeEffect(EffectInit.BLEED.get());
+            living.removeEffect(EffectInit.BLEED);
         }
-        //int amount = living.getEffect(EffectInit.BLEED.get()).getAmplifier();
+        //int amount = living.getEffect(EffectInit.BLEED).getAmplifier();
         if(living instanceof DarkestSoulsAbstractEntity){
             int res = ((DarkestSoulsAbstractEntity) living).getBloodResistance()-1;
             if(amount>=res){
@@ -89,7 +89,7 @@ public class BleedMobEffect extends MobEffect {
         }
 
 
-
+        return true;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class BleedMobEffect extends MobEffect {
         if(!(living instanceof Player p && p.isCreative())) {
             living.hurt(living.level().damageSources().genericKill(), dmg);
         }
-        living.removeEffect(EffectInit.BLEED.get());
+        living.removeEffect(EffectInit.BLEED);
 
         ParticleOptions blood = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(Items.NETHER_WART_BLOCK));
         float width = living.getBbWidth() * 0.5f;

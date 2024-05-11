@@ -4,9 +4,11 @@ import github.nitespring.darkestsouls.common.entity.projectile.throwable.Firebom
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -60,9 +62,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
             int ammoAmount = this.getAmmoAmount();
             if (this.hasAmmo(player, ammoAmount) || player.isCreative()) {
                 this.shoot(player, level, stackIn);
-                stackIn.hurtAndBreak(1, player, (p_43276_) -> {
-                    p_43276_.broadcastBreakEvent(InteractionHand.OFF_HAND);
-                });
+                stackIn.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stackIn));
                 if (!player.isCreative()) {
                     this.consumeAmmoApplyLuck(player, ammoAmount, this.getLuck(player, stackIn));
                 }
@@ -81,8 +81,8 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         int flatEnchantModifier=0;
         int percentEnchantModifier=0;
         if(stackIn.isEnchanted()){
-            flatEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
-            percentEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
+            flatEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
+            percentEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
 
         }
         return (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
@@ -91,7 +91,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getUseCooldown(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
+            enchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
         }
         return (int) (useCooldown*(1-0.1*enchantModifier));
     }
@@ -101,7 +101,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getFlyingTime(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return (int) (flyingTime*(1+0.1* enchantModifier));
 
@@ -112,63 +112,63 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public float flyingPower(Player playerIn, ItemStack stackIn){
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return flyingPower+0.025f* enchantModifier;
     }
     public int getRicochet(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
         }
         return ricochet+enchantModifier;
     }
     public int getPierce(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.PIERCING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.PIERCING_SHOT.get(), stackIn);
         }
         return pierce+enchantModifier;
     }
     public int getPoison(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.OPHIDIAN_BITE.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.OPHIDIAN_BITE.get(), stackIn);
         }
         return enchantModifier;
     }
     public int getBlood(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.EXPANDING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.EXPANDING_SHOT.get(), stackIn);
         }
         return enchantModifier;
     }
     public float getLuck(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
         }
         return 0.1f*enchantModifier;
     }
     public boolean isFire(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.FLAMING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FLAMING_SHOT.get(), stackIn);
         }
         return enchantModifier>0;
     }
     public boolean isLightning(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.CHILD_OF_THUNDER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.CHILD_OF_THUNDER.get(), stackIn);
         }
         return enchantModifier>0;
     }
     public int getExplosion(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.EXPLODING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.EXPLODING_SHOT.get(), stackIn);
         }
         return enchantModifier;
     }
@@ -241,7 +241,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return enchantment.category == EnchantmentInit.GUN || enchantment.category == EnchantmentInit.AMMO_CONSUMER || enchantment.category == EnchantmentCategory.BREAKABLE || enchantment.category == EnchantmentCategory.VANISHABLE;
+        return enchantment.getSupportedItems() == CustomItemTags.GUN_ENCHANTABLE || enchantment.getSupportedItems() == CustomItemTags.AMMO_CONSUMER || enchantment.getSupportedItems() == ItemTags.DURABILITY_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.VANISHING_ENCHANTABLE;
     }
 
     @Override
@@ -250,7 +250,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
 
 
 
@@ -282,6 +282,6 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         }else{
             tooltip.add(Component.translatable("translation.darkestsouls.require").append(Component.literal(" " + this.getAmmoAmount())).append(Component.translatable("translation.darkestsouls.bullets")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
         }
-        super.appendHoverText(stack, level, tooltip, flag);
+        super.appendHoverText(stack, context, tooltip, flag);
     }
 }

@@ -252,11 +252,11 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	@SuppressWarnings("deprecation")
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_, @Nullable CompoundTag p_21438_) {
-		if (!this.serializeNBT().contains("DSTeam")) {
+		if (!this.getTags().contains("DSTeam")) {
 			this.setDSTeam(this.getDSDefaultTeam());
 		}
 		if (this.owner != null) {
-			if (this.owner.serializeNBT().contains("DSTeam")) {
+			if (this.owner.getTags().contains("DSTeam")) {
 				this.setDSTeam(this.owner.serializeNBT().getInt("DSTeam"));
 			} else if (this.owner instanceof Player) {
 				this.setDSTeam(4);

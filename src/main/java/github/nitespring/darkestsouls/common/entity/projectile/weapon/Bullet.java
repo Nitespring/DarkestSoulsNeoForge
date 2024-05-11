@@ -81,7 +81,7 @@ public class Bullet extends AbstractHurtingProjectile {
     public float getSize() {return entityData.get(SIZE);}
     public void setSize(float size){entityData.set(SIZE,size);}
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         this.entityData.set(SIZE, 0.4f);
         this.entityData.set(RICOCHET, 0);
         this.entityData.set(PIERCE, 0);
@@ -108,17 +108,19 @@ public class Bullet extends AbstractHurtingProjectile {
                     mob.addEffect(new MobEffectInstance(MobEffects.POISON, 60, this.getPoison() - 1));
                 }
                 if (this.getBlood() >= 1) {
-                    if (mob.hasEffect(EffectInit.BLEED.get())) {
-                        int amount = mob.getEffect(EffectInit.BLEED.get()).getAmplifier();
-                        mob.removeEffect(EffectInit.BLEED.get());
-                        mob.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 120, this.getBlood() + amount));
+                    if (mob.hasEffect(EffectInit.BLEED)) {
+                        int amount = mob.getEffect(EffectInit.BLEED).getAmplifier();
+                        mob.removeEffect(EffectInit.BLEED);
+                        mob.addEffect(new MobEffectInstance(EffectInit.BLEED, 120, this.getBlood() + amount));
                     } else {
-                        mob.addEffect(new MobEffectInstance(EffectInit.BLEED.get(), 120, this.getBlood() - 1));
+                        mob.addEffect(new MobEffectInstance(EffectInit.BLEED, 120, this.getBlood() - 1));
                     }
                 }
             }
             if(isFire()){
-                e.setSecondsOnFire(3);
+                if(e.getRemainingFireTicks()<60) {
+                    e.setRemainingFireTicks(60);
+                }
             }
             if(isThunder()){
                this.spawnThunder();
