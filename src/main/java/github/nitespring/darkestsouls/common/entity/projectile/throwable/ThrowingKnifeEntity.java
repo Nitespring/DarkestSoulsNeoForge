@@ -76,7 +76,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
     public void setGravPower(float f) {this.gravPower=f;}
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         this.entityData.set(ITEM, ItemInit.THROWING_KNIFE.get().getDefaultInstance());
         this.entityData.set(SIZE, 0.4f);
         this.entityData.set(SHOULD_ROTATE, false);

@@ -2,9 +2,11 @@ package github.nitespring.darkestsouls.common.item;
 
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -12,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,8 +42,8 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
         int flatEnchantModifier=0;
         int percentEnchantModifier=0;
         if(stackIn.isEnchanted()){
-            flatEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
-            percentEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
+            flatEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
+            percentEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
         }
         return (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
 
@@ -50,7 +51,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     public int getUseCooldown(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
+            //enchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
         }
         return (int) (useCooldown*(1-0.1*enchantModifier));
     }
@@ -60,7 +61,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     public float getLuck(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
         }
         return 0.1f*enchantModifier;
     }
@@ -114,7 +115,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return enchantment.category == EnchantmentInit.AMMO_CONSUMER || enchantment.category == EnchantmentCategory.BREAKABLE || enchantment.category == EnchantmentCategory.VANISHABLE;
+        return enchantment.getSupportedItems() == CustomItemTags.AMMO_CONSUMER || enchantment.getSupportedItems() == ItemTags.DURABILITY_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.VANISHING_ENCHANTABLE;
     }
 
     @Override

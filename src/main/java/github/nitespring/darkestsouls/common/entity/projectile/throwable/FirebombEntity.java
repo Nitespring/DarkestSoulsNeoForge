@@ -50,7 +50,7 @@ public class FirebombEntity extends AbstractHurtingProjectile{
     public void setHorizontalSpread(double f) {this.horizontalSpread=f;}
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         this.entityData.set(BOMB_TYPE, 0);
     }
     @Override

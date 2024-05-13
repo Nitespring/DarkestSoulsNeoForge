@@ -12,16 +12,20 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.*;
+
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -119,7 +123,7 @@ public class WeaponAttackEntity extends Entity {
 
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         this.entityData.set(ANIMATIONSTATE, 0);
 
     }
@@ -244,12 +248,12 @@ public class WeaponAttackEntity extends Entity {
         if (target.isAlive() && !target.isInvulnerable() && target != livingentity) {
             if(this.maxTargets<=0||this.hitEntities<=maxTargets) {
                 float mobTypeBonus = 0;
-                if(this.baneOfArthropods>=1&&target.getMobType()== MobType.ARTHROPOD){
+                if(this.baneOfArthropods>=1&& target.getType().is(EntityTypeTags.SENSITIVE_TO_BANE_OF_ARTHROPODS)){
                     mobTypeBonus=mobTypeBonus+this.baneOfArthropods;
                     target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int) (10+this.baneOfArthropods*8),2), this.getOwner());
                 }
 
-                if(this.smite>=1&&target.getMobType()== MobType.UNDEAD){
+                if(this.smite>=1&&target.getType().is(EntityTypeTags.SENSITIVE_TO_SMITE)){
                     mobTypeBonus=mobTypeBonus+this.smite;
                 }
 
@@ -265,7 +269,9 @@ public class WeaponAttackEntity extends Entity {
                 }
 
                 if(this.fire>=1){
-                    target.setSecondsOnFire(40*fire);
+                    if(target.getRemainingFireTicks()<=40*fire) {
+                        target.setRemainingFireTicks(40 * fire);
+                    }
                 }
 
                 if(this.poison>=1){
@@ -283,7 +289,7 @@ public class WeaponAttackEntity extends Entity {
                     }
                 }
                 if(this.rot>=1){
-                    target.addEffect(new MobEffectInstance(EffectInit.ROT.get(),40+this.rot*40,this.poison-1), this.getOwner());
+                    target.addEffect(new MobEffectInstance(EffectInit.ROT,40+this.rot*40,this.poison-1), this.getOwner());
                 }
 
                 if (target instanceof DarkestSoulsAbstractEntity /*&& this.itemStack!=null && this.getOwner()!=null*/){
@@ -304,11 +310,7 @@ public class WeaponAttackEntity extends Entity {
     }
     public void damageWeapon(){
         if(this.getItemStack()!=null&&this.getOwner()!=null) {
-            this.getItemStack().hurtAndBreak(1, this.getOwner(), (p_43296_) -> {
-                if(getItemStack().getEquipmentSlot()!=null) {
-                    p_43296_.broadcastBreakEvent(getItemStack().getEquipmentSlot());
-                }
-            });
+                getItemStack().hurtAndBreak(1, this.getOwner(), getItemStack().getEquipmentSlot());
         }
     }
     public int getMaxTargets() {

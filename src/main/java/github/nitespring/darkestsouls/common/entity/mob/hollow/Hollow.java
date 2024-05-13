@@ -47,7 +47,7 @@ public abstract class Hollow extends DarkestSoulsAbstractEntity {
     public void setHatType(int i){this.entityData.set(HAT_TYPE, i);}
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData();
         this.entityData.set(SKIN_TYPE, 0);
         this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());

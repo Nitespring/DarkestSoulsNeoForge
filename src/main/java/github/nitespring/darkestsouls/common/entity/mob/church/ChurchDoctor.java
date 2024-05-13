@@ -57,7 +57,7 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
 
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData();
         this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());
         this.entityData.set(HAT_TYPE, this.getDefaultHatType());

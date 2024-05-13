@@ -2,9 +2,12 @@ package github.nitespring.darkestsouls.core.enums;
 
 
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
@@ -41,6 +44,11 @@ public enum Tiers implements Tier {
       return this.damage;
    }
 
+   @Override
+   public TagKey<Block> getIncorrectBlocksForDrops() {
+      return null;
+   }
+
    public int getLevel() {
       return this.level;
    }
@@ -53,5 +61,10 @@ public enum Tiers implements Tier {
       return this.repairIngredient.get();
    }
 
-   
+   @Override
+   public Tool createToolProperties(TagKey<Block> pBlock) {
+      return Tier.super.createToolProperties(pBlock);
+   }
+
+
 }

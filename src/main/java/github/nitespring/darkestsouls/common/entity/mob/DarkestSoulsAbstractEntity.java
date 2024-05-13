@@ -164,7 +164,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 
 
 	@Override
-	protected void defineSynchedData() {
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData();
 		this.entityData.set(ANIMATION_STATE, 0);
 		this.entityData.set(ANIMATION_TICK, 0);

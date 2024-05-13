@@ -40,7 +40,7 @@ public class Flamesprayer extends AlchemyTool {
     public int getFlyingTime(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier= EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            //enchantModifier= EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return (int) (flyingTime*(1+0.1* enchantModifier));
     }
@@ -50,14 +50,14 @@ public class Flamesprayer extends AlchemyTool {
     public float flyingPower(Player playerIn, ItemStack stackIn){
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            //enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return flyingPower+0.025f* enchantModifier;
     }
     public int getRicochet(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
+            //enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
         }
         return ricochet+enchantModifier;
     }

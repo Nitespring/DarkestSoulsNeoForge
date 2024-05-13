@@ -199,9 +199,9 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         int ammoAmount = this.getAmmoAmount();
         if (!player.getCooldowns().isOnCooldown(this)&&(this.hasAmmo(player, ammoAmount) || player.isCreative())) {
             this.shoot(player, player.level(), stackIn);
-            stackIn.hurtAndBreak(1, player, (p_43276_) -> {
-                p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-            });
+            if(player.getItemInHand(InteractionHand.MAIN_HAND)==stackIn) {
+                stackIn.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+            }
             if (!player.isCreative()) {
                 this.consumeAmmoApplyLuck(player, ammoAmount, this.getLuck(player, stackIn));
             }
@@ -272,7 +272,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
             tooltip.add(Component.literal("+").append(Component.literal(""+(int)(this.getLuck(null,stack)*100))).append(Component.literal("%")).append(Component.translatable("translation.darkestsouls.luck")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
         }
         if(stack.isEnchanted()){
-            int i=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stack);
+            int i=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stack);
             if(i>=1) {
                 tooltip.add(Component.literal("+").append(Component.literal("" + i * 10)).append(Component.literal("%")).append(Component.translatable("translation.darkestsouls.cooldown")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
             }
