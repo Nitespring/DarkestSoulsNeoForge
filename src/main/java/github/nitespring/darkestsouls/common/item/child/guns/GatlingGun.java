@@ -19,11 +19,11 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
@@ -96,16 +96,9 @@ public class GatlingGun extends Gun implements GeoItem {
                 if(useTick>=startingTick) {
                     if ((useTick-startingTick) % 3 == 0) {
                         this.shoot(player, level, stack);
-                        if(player.getItemInHand(InteractionHand.MAIN_HAND)==stack) {
-                            stack.hurtAndBreak(1, player, (p_43276_) -> {
-                                p_43276_.broadcastBreakEvent(InteractionHand.MAIN_HAND);
-                            });
-                        }
-                        if(player.getItemInHand(InteractionHand.OFF_HAND)==stack) {
-                            stack.hurtAndBreak(1, player, (p_43276_) -> {
-                                p_43276_.broadcastBreakEvent(InteractionHand.OFF_HAND);
-                            });
-                        }
+
+                            stack.hurtAndBreak(1, player,stack.getEquipmentSlot());
+
                     }
                     if ((useTick-startingTick) % 12 == 0) {
                         if (!player.isCreative()) {
@@ -153,7 +146,7 @@ public class GatlingGun extends Gun implements GeoItem {
 
 
 
-        player.level().playSound((Player) null, player, SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 1.0F, 1.0f);
+        player.level().playSound((Player) null, player, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.0F, 1.0f);
     }
 
     @Override

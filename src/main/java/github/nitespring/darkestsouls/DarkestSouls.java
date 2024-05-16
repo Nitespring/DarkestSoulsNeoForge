@@ -34,7 +34,7 @@ public class DarkestSouls
         //modEventBus.addListener(this::setup);
 
         modEventBus.addListener(DarkestSoulsPacketHandler::onRegisterPayloadHandler);
-        GeckoLib.initialize(modEventBus);
+        //GeckoLib.initialize(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);

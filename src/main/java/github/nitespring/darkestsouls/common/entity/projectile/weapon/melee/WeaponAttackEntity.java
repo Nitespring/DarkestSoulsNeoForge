@@ -118,13 +118,13 @@ public class WeaponAttackEntity extends Entity {
     }
 
     public void setAnimationState(int anim) {
-        this.entityData.set(ANIMATIONSTATE, anim);
+        this.getEntityData().set(ANIMATIONSTATE, anim);
     }
 
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        this.entityData.set(ANIMATIONSTATE, 0);
+        builder.define(ANIMATIONSTATE, 0);
 
     }
 
@@ -269,9 +269,9 @@ public class WeaponAttackEntity extends Entity {
                 }
 
                 if(this.fire>=1){
-                    if(target.getRemainingFireTicks()<=40*fire) {
-                        target.setRemainingFireTicks(40 * fire);
-                    }
+
+                        target.igniteForTicks(40 * fire);
+
                 }
 
                 if(this.poison>=1){

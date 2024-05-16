@@ -9,8 +9,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import software.bernie.example.registry.EntityRegistry;
-import software.bernie.example.registry.SoundRegistry;
+
 
 //@Mod.EventBusSubscriber(modid = DarkestSouls.MODID)
 public class SoundInit {

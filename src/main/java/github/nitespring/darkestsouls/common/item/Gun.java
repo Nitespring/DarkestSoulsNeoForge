@@ -16,7 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentCategory;
+
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -62,7 +62,8 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
             int ammoAmount = this.getAmmoAmount();
             if (this.hasAmmo(player, ammoAmount) || player.isCreative()) {
                 this.shoot(player, level, stackIn);
-                stackIn.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stackIn));
+                if(hand == InteractionHand.MAIN_HAND) {stackIn.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);}
+                if(hand == InteractionHand.OFF_HAND) {stackIn.hurtAndBreak(1, player, EquipmentSlot.OFFHAND);}
                 if (!player.isCreative()) {
                     this.consumeAmmoApplyLuck(player, ammoAmount, this.getLuck(player, stackIn));
                 }

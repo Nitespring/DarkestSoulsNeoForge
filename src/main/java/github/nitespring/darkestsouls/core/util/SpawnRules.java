@@ -48,7 +48,7 @@ public class SpawnRules{
     }
     public static boolean checkMadHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE))
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE_VEGETATION))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
@@ -66,14 +66,14 @@ public class SpawnRules{
     }
     public static boolean checkHollowDarkSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE_VEGETATION)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
 
     public static boolean checkHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
-                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
+                && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE_VEGETATION)&&isDarkEnoughToSpawnLowLight(levelAccessor, pos, random))
                 || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
@@ -83,7 +83,7 @@ public class SpawnRules{
                 &&checkVanillaAnyLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_sewer_centipede.get();
     }
     public static boolean checkLeechSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return (isDeepEnoughForDeepMob(pos)||(levelAccessor.getBiome(pos).is(Tags.Biomes.IS_SWAMP)||levelAccessor.getBiome(pos).is(Tags.Biomes.IS_WATER)))
+        return (isDeepEnoughForDeepMob(pos)||(levelAccessor.getBiome(pos).is(Tags.Biomes.IS_SWAMP)||levelAccessor.getBiome(pos).is(Tags.Biomes.IS_WET)))
                 &&checkVanillaAnyLightMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_leech.get();
     }
     public static boolean checkSinSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {

@@ -76,7 +76,7 @@ public class Shotgun extends Gun{
 
         player.getCooldowns().addCooldown(stackIn.getItem(), this.getUseCooldown(player, stackIn));
 
-        player.level().playSound((Player) null, player, SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 1.0F, 1.0f);
+        player.level().playSound((Player) null, player, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.0F, 1.0f);
     }
 
 

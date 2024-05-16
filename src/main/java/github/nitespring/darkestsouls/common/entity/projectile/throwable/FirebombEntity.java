@@ -51,7 +51,7 @@ public class FirebombEntity extends AbstractHurtingProjectile{
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        this.entityData.set(BOMB_TYPE, 0);
+        builder.define(BOMB_TYPE, 0);
     }
     @Override
     public boolean isOnFire() {
@@ -116,7 +116,7 @@ public class FirebombEntity extends AbstractHurtingProjectile{
         this.playExplosionSound();
         for(LivingEntity livingentity : level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(this.horizontalSpread+0.5, this.verticalSpread+0.25, this.horizontalSpread+0.5))) {
             if(((livingentity instanceof Player||livingentity!=this.getOwner())&&!(this.getOwner().isAlliedTo(livingentity)))) {
-                livingentity.setSecondsOnFire(3);
+                livingentity.igniteForTicks(60);
                 if(livingentity.hurtTime<=0) {
                     if (livingentity instanceof DarkestSoulsAbstractEntity) {
                         ((DarkestSoulsAbstractEntity) livingentity).damagePoiseHealth(this.poiseDamage);

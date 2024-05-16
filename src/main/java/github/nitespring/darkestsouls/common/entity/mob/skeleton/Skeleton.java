@@ -49,9 +49,9 @@ public abstract class Skeleton extends DarkestSoulsAbstractEntity {
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData();
-        this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());
-        this.entityData.set(HAT_TYPE, this.getDefaultHatType());
+         super.defineSynchedData(builder);
+        builder.define(ROBE_TYPE, this.getDefaultRobeType());
+        builder.define(HAT_TYPE, this.getDefaultHatType());
     }
 
     @Override

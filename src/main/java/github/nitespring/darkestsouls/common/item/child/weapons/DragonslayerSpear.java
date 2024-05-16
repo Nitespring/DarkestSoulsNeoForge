@@ -98,9 +98,8 @@ public class DragonslayerSpear extends Weapon {
             e.xPower = 0.35 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);
             e.yPower = 0.35 * aim.y;
             e.zPower = 0.35 * aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);
-            stackIn.hurtAndBreak(1, playerIn, (p_43276_) -> {
-                p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-            });
+            if(stackIn == playerIn.getItemInHand(InteractionHand.MAIN_HAND)) {stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.MAINHAND);}
+            if(stackIn == playerIn.getItemInHand(InteractionHand.OFF_HAND)) {stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.OFFHAND);}
             levelIn.addFreshEntity(e);
             playerIn.getCooldowns().addCooldown(this, 5);
 

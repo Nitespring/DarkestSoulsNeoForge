@@ -169,10 +169,10 @@ repositories {
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
         content {
             includeGroupByRegex("software\\.bernie.*")
-            includeGroup("com.eliotlash.mclib")
+            //includeGroup("com.eliotlash.mclib")
         }
     }
 }
 dependencies {
-        implementation "software.bernie.geckolib:geckolib-neoforge-1.20.4:4.4.4"
+        implementation "software.bernie.geckolib:geckolib-neoforge-1.20.6:4.5.1"
 }

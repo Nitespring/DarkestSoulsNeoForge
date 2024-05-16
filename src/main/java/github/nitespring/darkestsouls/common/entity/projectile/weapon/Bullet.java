@@ -82,11 +82,11 @@ public class Bullet extends AbstractHurtingProjectile {
     public void setSize(float size){entityData.set(SIZE,size);}
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        this.entityData.set(SIZE, 0.4f);
-        this.entityData.set(RICOCHET, 0);
-        this.entityData.set(PIERCE, 0);
-        this.entityData.set(FLYING_TIME, 100);
-        this.entityData.set(FIRE, false);
+        builder.define(SIZE, 0.4f);
+        builder.define(RICOCHET, 0);
+        builder.define(PIERCE, 0);
+        builder.define(FLYING_TIME, 100);
+        builder.define(FIRE, false);
     }
     public int getRicochet() {return entityData.get(RICOCHET);}
     public void setRicochet(int ricochet) {entityData.set(RICOCHET,ricochet);}
@@ -118,9 +118,9 @@ public class Bullet extends AbstractHurtingProjectile {
                 }
             }
             if(isFire()){
-                if(e.getRemainingFireTicks()<60) {
-                    e.setRemainingFireTicks(60);
-                }
+
+                    e.igniteForTicks(60);
+
             }
             if(isThunder()){
                this.spawnThunder();

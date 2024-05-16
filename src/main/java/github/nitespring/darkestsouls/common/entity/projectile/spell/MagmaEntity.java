@@ -13,13 +13,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
@@ -164,14 +164,14 @@ public class MagmaEntity extends Entity implements GeoEntity{
         if (p_36945_.isAlive() && !p_36945_.isInvulnerable() && p_36945_ != livingentity) {
             if (livingentity == null) {
                 p_36945_.hurt(this.level().damageSources().inFire(), 6.0F);
-                p_36945_.setSecondsOnFire(2);
+                p_36945_.igniteForTicks(40);
             } else {
                 if (livingentity.isAlliedTo(p_36945_)) {
                     return;
                 }
 
                 p_36945_.hurt(this.level().damageSources().inFire(), damage);
-                p_36945_.setSecondsOnFire(2);
+                p_36945_.igniteForTicks(40);
             }
 
         }

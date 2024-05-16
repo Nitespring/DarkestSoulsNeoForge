@@ -11,12 +11,12 @@
 				},
 				"bone": {
 					"position": {
-						"vector": ["Math.sin(query.anim_time*90)", "-Math.cos(query.anim_time*180)", "Math.cos(query.anim_time*90)"]
+						"vector": ["Math.sin(query.anim_time*90)", "-1*Math.cos(query.anim_time*180)", "Math.cos(query.anim_time*90)"]
 					}
 				},
 				"bone2": {
 					"position": {
-						"vector": ["Math.sin(query.anim_time*90)", "-Math.sin(query.anim_time*180)", "1.5*Math.sin(query.anim_time*90)"]
+						"vector": ["Math.sin(query.anim_time*90)", "-1*Math.sin(query.anim_time*180)", "1.5*Math.sin(query.anim_time*90)"]
 					}
 				},
 				"bone3": {
@@ -31,7 +31,7 @@
 				},
 				"bone5": {
 					"position": {
-						"vector": ["Math.sin(query.anim_time*90)", "1.5*Math.sin(query.anim_time*180)", "-Math.sin(query.anim_time*90)"]
+						"vector": ["Math.sin(query.anim_time*90)", "1.5*Math.sin(query.anim_time*180)", "-1*Math.sin(query.anim_time*90)"]
 					}
 				},
 				"bone6": {

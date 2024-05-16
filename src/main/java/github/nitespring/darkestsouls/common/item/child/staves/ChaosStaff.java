@@ -189,8 +189,8 @@ public class ChaosStaff extends Staff {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
-        super.appendHoverText(stack, p_41422_, tooltip, p_41424_);
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag p_41424_) {
+        super.appendHoverText(stack,  context, tooltip, p_41424_);
         String spellA = "\u00A76Magma Burst (1)";
         //tooltip.add(Component.literal(spellA));
 

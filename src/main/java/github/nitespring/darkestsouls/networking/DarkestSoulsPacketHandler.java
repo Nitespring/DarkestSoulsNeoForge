@@ -20,12 +20,12 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
 import java.util.function.Consumer;
 
-@EventBusSubscriber(modid = DarkestSouls.MODID)
+//@EventBusSubscriber(modid = DarkestSouls.MODID)
 public class DarkestSoulsPacketHandler {
 
-	@SubscribeEvent
-	public static void onRegisterPayloadHandler(final RegisterPayloadHandlersEvent event) {
-		final PayloadRegistrar registrar = event.registrar(DarkestSouls.MODID)
+	//@SubscribeEvent
+	public static void onRegisterPayloadHandler(RegisterPayloadHandlersEvent event) {
+		PayloadRegistrar registrar = event.registrar(DarkestSouls.MODID)
 				.versioned("1.0")
 				.optional();
 		registrar.playToServer(

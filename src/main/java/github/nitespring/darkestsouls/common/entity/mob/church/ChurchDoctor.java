@@ -58,11 +58,11 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData();
-        this.entityData.set(ROBE_TYPE, this.getDefaultRobeType());
-        this.entityData.set(HAT_TYPE, this.getDefaultHatType());
-        this.entityData.set(RIGHT_HAND, ItemStack.EMPTY);
-        this.entityData.set(LEFT_HAND, ItemStack.EMPTY);
+         super.defineSynchedData(builder);
+        builder.define(ROBE_TYPE, this.getDefaultRobeType());
+        builder.define(HAT_TYPE, this.getDefaultHatType());
+        builder.define(RIGHT_HAND, ItemStack.EMPTY);
+        builder.define(LEFT_HAND, ItemStack.EMPTY);
     }
 
     @Override
@@ -113,9 +113,9 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_, @Nullable CompoundTag p_21438_) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_) {
         this.populateClothing();
-        return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_, p_21438_);
+        return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_);
     }
 
     protected SoundEvent getAttackSound() {

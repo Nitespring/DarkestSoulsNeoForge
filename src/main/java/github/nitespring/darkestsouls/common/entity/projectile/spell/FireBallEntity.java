@@ -87,7 +87,7 @@ public class FireBallEntity extends AbstractHurtingProjectile {
         super.onHitBlock(p_37258_);
 
         this.doExplosion();
-        this.level().playSound((Player) null, this, SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 2.0F, 1.0f);
+        this.level().playSound((Player) null, this, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 2.0F, 1.0f);
     }
 
     @Override
@@ -97,7 +97,7 @@ public class FireBallEntity extends AbstractHurtingProjectile {
        //e.hurt(e.level().damageSources().explosion(this, this.getOwner()),this.damage);
         if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
             this.doExplosion();
-            this.level().playSound((Player) null, this, SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 2.0F, 1.0f);
+            this.level().playSound((Player) null, this, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 2.0F, 1.0f);
         }
     }
 
@@ -105,11 +105,11 @@ public class FireBallEntity extends AbstractHurtingProjectile {
         for (LivingEntity e : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(1.5D, 1.5D, 1.5D))) {
             if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
                 e.hurt(e.level().damageSources().explosion(this, this.getOwner()), this.damage);
-                e.setRemainingFireTicks(80);
+                e.igniteForTicks(80);
             }
         }
         this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.FIRE_EXTINGUISH, this.getSoundSource(), 1.0F, this.random.nextFloat() * 0.2F + 0.85F, false);
-        this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.GENERIC_EXPLODE, this.getSoundSource(), 1.0F, this.random.nextFloat() * 0.2F + 0.85F, false);
+        this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.GENERIC_EXPLODE.value(), this.getSoundSource(), 1.0F, this.random.nextFloat() * 0.2F + 0.85F, false);
         for(int i=0; i<=1+50*this.getDimensionScale(); i++){
             RandomSource r = this.random;
             Vec3 off = new Vec3(r.nextFloat()-0.5, r.nextFloat()-0.5,r.nextFloat()-0.5).multiply(0.75f,0.75f,0.75f);

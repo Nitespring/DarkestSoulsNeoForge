@@ -7,6 +7,7 @@ import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -37,9 +38,8 @@ public class StormCurvedSword extends Weapon {
                 e.xPower = 0.2 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);
                 e.yPower = 0.2 * aim.y;
                 e.zPower = 0.2 * aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);
-                stackIn.hurtAndBreak(1, playerIn, (p_43276_) -> {
-                    p_43276_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
-                });
+                if(stackIn == playerIn.getItemInHand(InteractionHand.MAIN_HAND)) {stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.MAINHAND);}
+                if(stackIn == playerIn.getItemInHand(InteractionHand.OFF_HAND)) {stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.OFFHAND);}
 
                 levelIn.addFreshEntity(e);
                 playerIn.level().playSound((Player) null, playerIn, SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 0.6F, 0.8F);

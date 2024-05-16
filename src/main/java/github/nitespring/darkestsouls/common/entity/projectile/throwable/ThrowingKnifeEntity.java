@@ -77,10 +77,10 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        this.entityData.set(ITEM, ItemInit.THROWING_KNIFE.get().getDefaultInstance());
-        this.entityData.set(SIZE, 0.4f);
-        this.entityData.set(SHOULD_ROTATE, false);
-        this.entityData.set(ZTILT, 0);
+        builder.define(ITEM, ItemInit.THROWING_KNIFE.get().getDefaultInstance());
+        builder.define(SIZE, 0.4f);
+        builder.define(SHOULD_ROTATE, false);
+        builder.define(ZTILT, 0);
 
     }
 

@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
@@ -75,9 +76,8 @@ public class FrayedBlade extends Weapon {
             int j = l/2;
             this.createSpellEntity(playerIn, playerIn.getX() + (double)Mth.cos(f) * d2, playerIn.getZ() + (double)Mth.sin(f) * d2, d0, d1, f, j,stackIn);
         }
-        stackIn.hurtAndBreak(5, playerIn, (p_43296_) -> {
-            p_43296_.broadcastBreakEvent(stackIn.getEquipmentSlot());
-        });
+        if(stackIn == playerIn.getItemInHand(InteractionHand.MAIN_HAND)) {stackIn.hurtAndBreak(5, playerIn, EquipmentSlot.MAINHAND);}
+        if(stackIn == playerIn.getItemInHand(InteractionHand.OFF_HAND)) {stackIn.hurtAndBreak(5, playerIn, EquipmentSlot.OFFHAND);}
 
     }
 

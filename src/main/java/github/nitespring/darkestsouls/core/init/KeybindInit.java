@@ -1,20 +1,21 @@
 package github.nitespring.darkestsouls.core.init;
 
 
+
 import github.nitespring.darkestsouls.DarkestSouls;
 import net.minecraft.client.KeyMapping;
 import net.neoforged.api.distmarker.Dist;
 
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.common.util.Lazy;
 import org.lwjgl.glfw.GLFW;
 
 @EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class KeybindInit {
-	public static KeyMapping trickKeybind;
-	public static KeyMapping parryKeyBind;
+	//public static KeyMapping trickKeybind;
+	//public static KeyMapping parryKeyBind;
 	
 	    /*public static void register()
 	    {
@@ -25,14 +26,14 @@ public class KeybindInit {
     	//.registerKeyBinding(reloadKeybind);
 	       
 	    }*/
-	    
+		public static final Lazy<KeyMapping> TRICK_KEYBIND = Lazy.of(()->new KeyMapping("key.transform", GLFW.GLFW_KEY_LEFT_ALT, "key.categories.misc"));
 	    
 	    @SubscribeEvent
 	    public static void registerKeyBinds(RegisterKeyMappingsEvent event) {
 	    	
-	    	event.register(trickKeybind = new KeyMapping("key.transform", GLFW.GLFW_KEY_LEFT_ALT, "key.categories.misc"));
+	    	event.register(TRICK_KEYBIND.get());
 	       
-	    	event.register(parryKeyBind = new KeyMapping("key.parry", GLFW.GLFW_KEY_R, "key.categories.misc"));
+	    	//event.register(parryKeyBind = new KeyMapping("key.parry", GLFW.GLFW_KEY_R, "key.categories.misc"));
 	    	
 	    }
 	

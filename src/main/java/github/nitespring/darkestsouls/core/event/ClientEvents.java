@@ -23,7 +23,7 @@ public class ClientEvents {
 	private static boolean isTrickKeyDown =false;
 	
 	@SubscribeEvent
-	 public static void performItemLeftClickAction(ClientTickEvent event) {
+	 public static void performItemLeftClickAction(ClientTickEvent.Pre event) {
 	 Minecraft instance = Minecraft.getInstance();
 	if(instance.options.keyAttack.isDown()) {
 		 if(isAttackKeyDown==false) {
@@ -38,8 +38,8 @@ public class ClientEvents {
 	 }
 
 	@SubscribeEvent
-	public static void trickKeybind(ClientTickEvent event) {
-		if(KeybindInit.trickKeybind.isDown()) {
+	public static void trickKeybind(ClientTickEvent.Pre event) {
+		if(KeybindInit.TRICK_KEYBIND.get().isDown()) {
 			if(isTrickKeyDown==false) {
 				DarkestSoulsPacketHandler.sendToServer(new TransformWeaponAction());
 				isTrickKeyDown=true;

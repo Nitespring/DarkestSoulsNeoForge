@@ -62,9 +62,9 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
     public void setSize(float size){entityData.set(SIZE,size);}
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        this.entityData.set(SIZE, 0.4f);
-        this.entityData.set(RICOCHET, 0);
-        this.entityData.set(FLYING_TIME, 60);
+        builder.define(SIZE, 0.4f);
+        builder.define(RICOCHET, 0);
+        builder.define(FLYING_TIME, 60);
     }
     public int getRicochet() {return entityData.get(RICOCHET);}
     public void setRicochet(int ricochet) {entityData.set(RICOCHET,ricochet);}
@@ -83,7 +83,7 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
                     }
                 }
             }
-                e.setRemainingFireTicks(100);
+                e.igniteForTicks(100);
 
             }
         }

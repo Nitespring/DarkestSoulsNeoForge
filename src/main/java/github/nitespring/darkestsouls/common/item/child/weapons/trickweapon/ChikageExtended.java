@@ -34,10 +34,10 @@ public class ChikageExtended extends TrickWeapon {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean b) {
 
-        if (entity instanceof LivingEntity living && !living.hasEffect(EffectInit.CHIKAGE.get())) {
+        if (entity instanceof LivingEntity living && !living.hasEffect(EffectInit.CHIKAGE)) {
             if(stack==living.getItemInHand(InteractionHand.MAIN_HAND)||stack==living.getItemInHand(InteractionHand.OFF_HAND))
                 if(!level.isClientSide()) {
-                    living.addEffect(new MobEffectInstance(EffectInit.CHIKAGE.get(), 40));
+                    living.addEffect(new MobEffectInstance(EffectInit.CHIKAGE, 40));
             }
 
         }
