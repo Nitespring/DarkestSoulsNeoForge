@@ -29,8 +29,8 @@ public class MoonlightSlash extends AbstractHurtingProjectile {
     public int maxLifeTime=20;
     public int lifeTicks=0;
 
-    protected static final EntityDataAccessor<Integer> INITIAL_X_ROT = SynchedEntityData.defineId(MoonlightSlash.class, EntityDataSerializers.INT);
-    protected static final EntityDataAccessor<Integer> INITIAL_Y_ROT = SynchedEntityData.defineId(MoonlightSlash.class, EntityDataSerializers.INT);
+    //protected static final EntityDataAccessor<Integer> INITIAL_X_ROT = SynchedEntityData.defineId(MoonlightSlash.class, EntityDataSerializers.INT);
+    //protected static final EntityDataAccessor<Integer> INITIAL_Y_ROT = SynchedEntityData.defineId(MoonlightSlash.class, EntityDataSerializers.INT);
 
     public MoonlightSlash(EntityType<? extends AbstractHurtingProjectile> e, Level level) {
         super(e, level);

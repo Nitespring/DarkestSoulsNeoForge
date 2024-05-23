@@ -83,17 +83,17 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		this.groundNavigation = new GroundPathNavigation(this, p_21684_);
 	}
 
-	public int getAnimationState() {return this.entityData.get(ANIMATION_STATE);}
+	public int getAnimationState() {return this.getEntityData().get(ANIMATION_STATE);}
 
 	public void setAnimationState(int anim) {
 		this.getEntityData().set(ANIMATION_STATE, anim);
 	}
-	public int getAnimationTick() {return this.entityData.get(ANIMATION_TICK);}
+	public int getAnimationTick() {return this.getEntityData().get(ANIMATION_TICK);}
 	public void setAnimationTick(int anim) {
 		this.getEntityData().set(ANIMATION_TICK, anim);
 	}
 
-	public boolean shouldResetAnimation() {return this.entityData.get(SHOULD_RESET_ANIMATION);}
+	public boolean shouldResetAnimation() {return this.getEntityData().get(SHOULD_RESET_ANIMATION);}
 	public void setResetAnimation(boolean anim) {
 		this.getEntityData().set(SHOULD_RESET_ANIMATION, anim);
 	}
@@ -103,7 +103,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	}
 
 	public int getCombatState() {
-		return this.entityData.get(COMBAT_STATE);
+		return this.getEntityData().get(COMBAT_STATE);
 	}
 
 	public void setCombatState(int anim) {
@@ -111,7 +111,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	}
 
 	public int getEntityState() {
-		return this.entityData.get(ENTITY_PHASE);
+		return this.getEntityData().get(ENTITY_PHASE);
 	}
 
 	public void setEntityState(int anim) {
@@ -119,7 +119,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	}
 
 	public int getDSTeam() {
-		return this.entityData.get(TEAM);
+		return this.getEntityData().get(TEAM);
 	}
 
 	public void setDSTeam(int anim) {
@@ -135,7 +135,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	}
 
 	public int getPoiseHealth() {
-		return this.entityData.get(POISE_HEALTH);
+		return this.getEntityData().get(POISE_HEALTH);
 	}
 
 	public void setPoiseHealth(int i) {
@@ -242,7 +242,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 			hitStunTicks--;
 		}
 
-		if (this.entityData.get(POISE_HEALTH) <= -1) {
+		if (this.getEntityData().get(POISE_HEALTH) <= -1) {
 			this.setStunAnimation();
 
 			//System.out.println("should Stun");

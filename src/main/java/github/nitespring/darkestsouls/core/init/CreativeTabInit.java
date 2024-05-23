@@ -44,7 +44,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.FLAMBERGE.get());
                         output.accept(ItemInit.ZWEIHANDER.get());
                         output.accept(ItemInit.CARTHUS_CURVED_GREATSWORD.get());
-                        output.accept(ItemInit.SPEAR.get());
+                        //output.accept(ItemInit.SPEAR.get());
                         output.accept(ItemInit.CRESCENT_MOON_GREATAXE.get());
                         output.accept(ItemInit.EXECUTIONER_GREATAXE.get());
                         output.accept(ItemInit.SPEAR.get());

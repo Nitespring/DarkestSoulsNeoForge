@@ -45,14 +45,14 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
     public int getDefaultRobeType(){return 0;}
     public int getDefaultHatType(){return 0;}
 
-    public int getRobeType(){return this.entityData.get(ROBE_TYPE);}
-    public void setRobeType(int i){this.entityData.set(ROBE_TYPE, i);}
-    public int getHatType(){return this.entityData.get(HAT_TYPE);}
-    public void setHatType(int i){this.entityData.set(HAT_TYPE, i);}
-    public ItemStack getRightHandItem(){return this.entityData.get(RIGHT_HAND);}
-    public void setRightHandItem(ItemStack stack){this.entityData.set(RIGHT_HAND, stack);}
-    public ItemStack getLeftHandItem(){return this.entityData.get(LEFT_HAND);}
-    public void setLeftHandItem(ItemStack stack){this.entityData.set(LEFT_HAND, stack);}
+    public int getRobeType(){return this.getEntityData().get(ROBE_TYPE);}
+    public void setRobeType(int i){this.getEntityData().set(ROBE_TYPE, i);}
+    public int getHatType(){return this.getEntityData().get(HAT_TYPE);}
+    public void setHatType(int i){this.getEntityData().set(HAT_TYPE, i);}
+    public ItemStack getRightHandItem(){return this.getEntityData().get(RIGHT_HAND);}
+    public void setRightHandItem(ItemStack stack){this.getEntityData().set(RIGHT_HAND, stack);}
+    public ItemStack getLeftHandItem(){return this.getEntityData().get(LEFT_HAND);}
+    public void setLeftHandItem(ItemStack stack){this.getEntityData().set(LEFT_HAND, stack);}
 
 
 

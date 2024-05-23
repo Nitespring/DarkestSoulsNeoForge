@@ -31,8 +31,8 @@ public class WindSlash extends AbstractHurtingProjectile {
     public int maxLifeTime=20;
     public int lifeTicks=0;
 
-    protected static final EntityDataAccessor<Integer> INITIAL_X_ROT = SynchedEntityData.defineId(WindSlash.class, EntityDataSerializers.INT);
-    protected static final EntityDataAccessor<Integer> INITIAL_Y_ROT = SynchedEntityData.defineId(WindSlash.class, EntityDataSerializers.INT);
+    //protected static final EntityDataAccessor<Integer> INITIAL_X_ROT = SynchedEntityData.defineId(WindSlash.class, EntityDataSerializers.INT);
+    //protected static final EntityDataAccessor<Integer> INITIAL_Y_ROT = SynchedEntityData.defineId(WindSlash.class, EntityDataSerializers.INT);
 
     public WindSlash(EntityType<? extends AbstractHurtingProjectile> e, Level level) {
         super(e, level);
@@ -148,6 +148,4 @@ public class WindSlash extends AbstractHurtingProjectile {
         }
         super.discard();
     }
-
-
 }

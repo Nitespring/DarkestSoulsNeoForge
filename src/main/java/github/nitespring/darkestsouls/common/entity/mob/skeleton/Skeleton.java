@@ -41,10 +41,10 @@ public abstract class Skeleton extends DarkestSoulsAbstractEntity {
     public int getDefaultRobeType(){return 0;}
     public int getDefaultHatType(){return 0;}
 
-    public int getRobeType(){return this.entityData.get(ROBE_TYPE);}
-    public void setRobeType(int i){this.entityData.set(ROBE_TYPE, i);}
-    public int getHatType(){return this.entityData.get(HAT_TYPE);}
-    public void setHatType(int i){this.entityData.set(HAT_TYPE, i);}
+    public int getRobeType(){return this.getEntityData().get(ROBE_TYPE);}
+    public void setRobeType(int i){this.getEntityData().set(ROBE_TYPE, i);}
+    public int getHatType(){return this.getEntityData().get(HAT_TYPE);}
+    public void setHatType(int i){this.getEntityData().set(HAT_TYPE, i);}
 
 
     @Override

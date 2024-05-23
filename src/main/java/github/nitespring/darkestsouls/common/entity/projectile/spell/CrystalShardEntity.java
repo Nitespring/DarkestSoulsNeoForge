@@ -86,6 +86,7 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
 
     }
 
+
     @Override
     public void onAddedToWorld() {
         super.onAddedToWorld();

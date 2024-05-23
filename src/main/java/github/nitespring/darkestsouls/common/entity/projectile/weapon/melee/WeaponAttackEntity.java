@@ -114,7 +114,7 @@ public class WeaponAttackEntity extends Entity {
 
 
     public int getAnimationState() {
-        return this.entityData.get(ANIMATIONSTATE);
+        return this.getEntityData().get(ANIMATIONSTATE);
     }
 
     public void setAnimationState(int anim) {
