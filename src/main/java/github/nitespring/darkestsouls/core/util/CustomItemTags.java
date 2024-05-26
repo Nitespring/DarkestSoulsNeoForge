@@ -9,10 +9,9 @@ import software.bernie.geckolib.event.GeoRenderEvent;
 
 public final class CustomItemTags {
 
-    public static final TagKey<Item> GUN_ENCHANTABLE = create("darkestsouls:gun_enchantable");
-    public static final TagKey<Item> STAFF_ENCHANTABLE = create("darkestsouls:staff_enchantable");
-    public static final TagKey<Item> ALCHEMY_ENCHANTABLE = create("darkestsouls:alchemy_enchantable");
-    public static final TagKey<Item> AMMO_CONSUMER = create("darkestsouls:ammo_consumer");
+    public static final TagKey<Item> GUN_ENCHANTABLE = create("darkestsouls:enchantable/gun");
+    public static final TagKey<Item> AMMO_CONSUMING = create("darkestsouls:enchantable/ammo_consuming");
+    public static final TagKey<Item> MAGIC_ENCHANTABLE = create("darkestsouls:enchantable/magic");
 
     private CustomItemTags() {
     }
