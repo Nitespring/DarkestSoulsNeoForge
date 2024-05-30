@@ -111,17 +111,17 @@ public class Flamesprayer extends AlchemyTool {
         Vec3 pos = player.position();
         Vec3 aim = player.getLookAngle();
         double a=  5*Math.PI/18;
-
+        if(!level.isClientSide()) {
 
         for(int i = 0; i<=4; i++) {
 
             Random r = new Random();
-            float rF = 2*(r.nextFloat()-0.5f);
-            float b = (float) (a*rF);
-            Vec3 aim1 = new Vec3((aim.x*Math.cos(b)-aim.z*Math.sin(b)),aim.y,(aim.z*Math.cos(b)+aim.x*Math.sin(b)));
-            float x = (float) (pos.x + 0.4 * aim.x+ 0.4 * aim1.x);
+            float rF = 2 * (r.nextFloat() - 0.5f);
+            float b = (float) (a * rF);
+            Vec3 aim1 = new Vec3((aim.x * Math.cos(b) - aim.z * Math.sin(b)), aim.y, (aim.z * Math.cos(b) + aim.x * Math.sin(b)));
+            float x = (float) (pos.x + 0.4 * aim.x + 0.4 * aim1.x);
             float y = (float) (pos.y + 0.8 + 0.6 * aim1.y);
-            float z = (float) (pos.z + 0.4 * aim.z+ 0.4 * aim1.z);
+            float z = (float) (pos.z + 0.4 * aim.z + 0.4 * aim1.z);
             Flame entity = new Flame(EntityInit.FLAME.get(), level);
             entity.setPos(x, y, z);
             float flyingPower = this.flyingPower(player, stackIn);
@@ -141,6 +141,7 @@ public class Flamesprayer extends AlchemyTool {
             //entity.setRicochet(1);
             entity.setRicochet(this.getRicochet(player, stackIn));
             level.addFreshEntity(entity);
+        }
         }
 
 

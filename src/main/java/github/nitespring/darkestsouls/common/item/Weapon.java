@@ -256,6 +256,7 @@ public class Weapon extends Item implements ILeftClickItem {
     public boolean isEnchantable(ItemStack p_41456_) {
         return true;
     }
+    /*
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         return true;
@@ -268,7 +269,7 @@ public class Weapon extends Item implements ILeftClickItem {
         }
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
-
+*/
     
     @Override
     public boolean isRepairable(ItemStack stack) {

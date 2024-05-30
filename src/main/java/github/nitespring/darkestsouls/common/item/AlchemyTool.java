@@ -112,8 +112,11 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     public int getEnchantmentValue(ItemStack stack) {
         return this.enchantability;
     }
-
     @Override
+    public boolean isEnchantable(ItemStack p_41456_) {
+        return true;
+    }
+    /*@Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
         return enchantment.getSupportedItems() == CustomItemTags.AMMO_CONSUMING ||enchantment.getSupportedItems() == CustomItemTags.MAGIC_ENCHANTABLE|| enchantment.getSupportedItems() == ItemTags.DURABILITY_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.VANISHING_ENCHANTABLE;
     }
@@ -121,7 +124,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         return super.isBookEnchantable(stack, book);
-    }
+    }*/
     @Override
     public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
         return true;

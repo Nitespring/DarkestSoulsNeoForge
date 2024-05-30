@@ -85,8 +85,12 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
     public int getEnchantmentValue(ItemStack stack) {
         return 15;
     }
-
     @Override
+    public boolean isEnchantable(ItemStack p_41456_) {
+        return true;
+    }
+
+    /*@Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
         return enchantment.getSupportedItems() == CustomItemTags.AMMO_CONSUMING ||enchantment.getSupportedItems() == CustomItemTags.MAGIC_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.DURABILITY_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.VANISHING_ENCHANTABLE;
     }
@@ -94,7 +98,7 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         return super.isBookEnchantable(stack, book);
-    }
+    }*/
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level levelIn, Player playerIn, InteractionHand handIn) {

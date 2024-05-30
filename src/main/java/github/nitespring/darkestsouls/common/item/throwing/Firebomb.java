@@ -32,28 +32,30 @@ public class Firebomb extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level levelIn, Player playerIn, InteractionHand handIn) {
-        ItemStack stackIn = playerIn.getItemInHand(handIn);
-        Vec3 pos = playerIn.position();
-        Vec3 aim = playerIn.getLookAngle();
+
+            ItemStack stackIn = playerIn.getItemInHand(handIn);
+        if(!levelIn.isClientSide()) {
+            Vec3 pos = playerIn.position();
+            Vec3 aim = playerIn.getLookAngle();
 
 
-        float x = (float) (pos.x + 0.6 * aim.x);
-        float y = (float) (pos.y + 1.4 + 0.6 * aim.y);
-        float z = (float) (pos.z + 0.6 * aim.z);
-        FirebombEntity entity = new FirebombEntity(EntityInit.FIREBOMB.get(), levelIn);
-        entity.setPos(x,y,z);
-        float flyingPower = 0.25f;
-        entity.xPower=flyingPower*aim.x;
-        entity.yPower=flyingPower*aim.y;
-        entity.zPower=flyingPower*aim.z;
-        entity.setOwner(playerIn);
-        entity.setAttackDamage(this.attackDamage);
-        entity.setPoiseDamage(this.poiseDamage);
-        entity.setGravPower(0.0012f);
-        entity.setHorizontalSpread(1.25);
-        entity.setVerticalSpread(1.25);
-        levelIn.addFreshEntity(entity);
-
+            float x = (float) (pos.x + 0.6 * aim.x);
+            float y = (float) (pos.y + 1.4 + 0.6 * aim.y);
+            float z = (float) (pos.z + 0.6 * aim.z);
+            FirebombEntity entity = new FirebombEntity(EntityInit.FIREBOMB.get(), levelIn);
+            entity.setPos(x, y, z);
+            float flyingPower = 0.25f;
+            entity.xPower = flyingPower * aim.x;
+            entity.yPower = flyingPower * aim.y;
+            entity.zPower = flyingPower * aim.z;
+            entity.setOwner(playerIn);
+            entity.setAttackDamage(this.attackDamage);
+            entity.setPoiseDamage(this.poiseDamage);
+            entity.setGravPower(0.0012f);
+            entity.setHorizontalSpread(1.25);
+            entity.setVerticalSpread(1.25);
+            levelIn.addFreshEntity(entity);
+        }
         playerIn.getCooldowns().addCooldown(stackIn.getItem(), useCooldown);
         if(!playerIn.isCreative()){
             stackIn.shrink(1);

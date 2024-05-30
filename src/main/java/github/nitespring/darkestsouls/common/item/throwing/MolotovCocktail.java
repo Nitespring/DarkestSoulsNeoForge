@@ -31,27 +31,28 @@ public class MolotovCocktail extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level levelIn, Player playerIn, InteractionHand handIn) {
         ItemStack stackIn = playerIn.getItemInHand(handIn);
-        Vec3 pos = playerIn.position();
-        Vec3 aim = playerIn.getLookAngle();
+        if(!levelIn.isClientSide()) {
+            Vec3 pos = playerIn.position();
+            Vec3 aim = playerIn.getLookAngle();
 
 
-        float x = (float) (pos.x + 0.6 * aim.x);
-        float y = (float) (pos.y + 1.4 + 0.6 * aim.y);
-        float z = (float) (pos.z + 0.6 * aim.z);
-        MolotovCocktailEntity entity = new MolotovCocktailEntity(EntityInit.MOLOTOV.get(), levelIn);
-        entity.setPos(x,y,z);
-        float flyingPower = 0.30f;
-        entity.xPower=flyingPower*aim.x;
-        entity.yPower=flyingPower*aim.y;
-        entity.zPower=flyingPower*aim.z;
-        entity.setOwner(playerIn);
-        entity.setAttackDamage(this.attackDamage);
-        entity.setPoiseDamage(this.poiseDamage);
-        entity.setGravPower(0.001f);
-        entity.setHorizontalSpread(4.0);
-        entity.setVerticalSpread(3.5);
-        levelIn.addFreshEntity(entity);
-
+            float x = (float) (pos.x + 0.6 * aim.x);
+            float y = (float) (pos.y + 1.4 + 0.6 * aim.y);
+            float z = (float) (pos.z + 0.6 * aim.z);
+            MolotovCocktailEntity entity = new MolotovCocktailEntity(EntityInit.MOLOTOV.get(), levelIn);
+            entity.setPos(x, y, z);
+            float flyingPower = 0.30f;
+            entity.xPower = flyingPower * aim.x;
+            entity.yPower = flyingPower * aim.y;
+            entity.zPower = flyingPower * aim.z;
+            entity.setOwner(playerIn);
+            entity.setAttackDamage(this.attackDamage);
+            entity.setPoiseDamage(this.poiseDamage);
+            entity.setGravPower(0.001f);
+            entity.setHorizontalSpread(4.0);
+            entity.setVerticalSpread(3.5);
+            levelIn.addFreshEntity(entity);
+        }
         playerIn.getCooldowns().addCooldown(stackIn.getItem(), useCooldown);
         if(!playerIn.isCreative()){
             stackIn.shrink(1);

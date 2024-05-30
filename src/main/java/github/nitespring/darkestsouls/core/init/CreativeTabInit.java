@@ -1,11 +1,27 @@
 package github.nitespring.darkestsouls.core.init;
 
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.core.util.CustomItemTags;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.component.PatchedDataComponentMap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Set;
+import java.util.stream.IntStream;
 
 public class CreativeTabInit {
 
@@ -76,6 +92,22 @@ public class CreativeTabInit {
                         output.accept(ItemInit.CRYSTAL_STAFF_PURPLE.get());
                         output.accept(ItemInit.CRYSTAL_STAFF_BLUE.get());
                         output.accept(ItemInit.CHAOS_STAFF.get());
+                        Set<TagKey<Item>> set = Set.of(
+                                CustomItemTags.GUN_ENCHANTABLE,
+                                CustomItemTags.AMMO_CONSUMING
+                        );
+                        displayParams.holders()
+                                .lookup(Registries.ENCHANTMENT)
+                                .ifPresent(
+                                        p_337912_ -> {
+                                            generateEnchantmentBookTypesOnlyMaxLevel(
+                                                    output, p_337912_, set, CreativeModeTab.TabVisibility.PARENT_TAB_ONLY, displayParams.enabledFeatures()
+                                            );
+                                            generateEnchantmentBookTypesAllLevels(
+                                                    output, p_337912_, set, CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY, displayParams.enabledFeatures()
+                                            );
+                                        }
+                                );
                     })
                     .build());
 
@@ -232,6 +264,47 @@ public class CreativeTabInit {
 
 
 
+    private static void generatePotionEffectTypes(
+            CreativeModeTab.Output pOutput, HolderLookup<Potion> pPotions, Item pItem, CreativeModeTab.TabVisibility pTabVisibility, FeatureFlagSet pRequiredFeatures
+    ) {
+        pPotions.listElements()
+                .filter(p_337926_ -> p_337926_.value().isEnabled(pRequiredFeatures))
+                .map(p_330083_ -> PotionContents.createItemStack(pItem, p_330083_))
+                .forEach(p_270000_ -> pOutput.accept(p_270000_, pTabVisibility));
+    }
+
+    private static void generateEnchantmentBookTypesOnlyMaxLevel(
+            CreativeModeTab.Output pOutput,
+            HolderLookup<Enchantment> pEnchantments,
+            Set<TagKey<Item>> pItems,
+            CreativeModeTab.TabVisibility pTabVisibility,
+            FeatureFlagSet pRequiredFeatures
+    ) {
+        pEnchantments.listElements()
+                .map(Holder::value)
+                .filter(p_337914_ -> p_337914_.isEnabled(pRequiredFeatures))
+                .filter(p_270008_ -> p_270008_.allowedInCreativeTab(Items.ENCHANTED_BOOK, pItems))
+                .map(p_270038_ -> EnchantedBookItem.createForEnchantment(new EnchantmentInstance(p_270038_, p_270038_.getMaxLevel())))
+                .forEach(p_269989_ -> pOutput.accept(p_269989_, pTabVisibility));
+    }
+
+    private static void generateEnchantmentBookTypesAllLevels(
+            CreativeModeTab.Output p_270961_,
+            HolderLookup<Enchantment> pEnchantments,
+            Set<TagKey<Item>> pItems,
+            CreativeModeTab.TabVisibility pTabVisibility,
+            FeatureFlagSet pRequiredFeatures
+    ) {
+        pEnchantments.listElements()
+                .map(Holder::value)
+                .filter(p_337930_ -> p_337930_.isEnabled(pRequiredFeatures))
+                .filter(p_269991_ -> p_269991_.allowedInCreativeTab(Items.ENCHANTED_BOOK, pItems))
+                .flatMap(
+                        p_270024_ -> IntStream.rangeClosed(p_270024_.getMinLevel(), p_270024_.getMaxLevel())
+                                .mapToObj(p_270006_ -> EnchantedBookItem.createForEnchantment(new EnchantmentInstance(p_270024_, p_270006_)))
+                )
+                .forEach(p_270017_ -> p_270961_.accept(p_270017_, pTabVisibility));
+    }
 
 
 }

@@ -239,8 +239,11 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getEnchantmentValue(ItemStack stack) {
         return this.enchantability;
     }
-
     @Override
+    public boolean isEnchantable(ItemStack p_41456_) {
+        return true;
+    }
+    /*@Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
         return enchantment.getSupportedItems() == CustomItemTags.GUN_ENCHANTABLE || enchantment.getSupportedItems() == CustomItemTags.AMMO_CONSUMING || enchantment.getSupportedItems() == ItemTags.DURABILITY_ENCHANTABLE || enchantment.getSupportedItems() == ItemTags.VANISHING_ENCHANTABLE;
     }
@@ -249,7 +252,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
         return super.isBookEnchantable(stack, book);
     }
-
+    */
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
 

@@ -98,7 +98,7 @@ public class EnchantmentInit {
                             1, HAND_SLOTS)));
     public static final DeferredHolder<Enchantment,MiserSoulEnchantment> MISER_SOUL = ENCHANTMENTS.register("miser_soul",
             () -> new MiserSoulEnchantment(
-                    Enchantment.definition(CustomItemTags.GUN_ENCHANTABLE,
+                    Enchantment.definition(CustomItemTags.AMMO_CONSUMING,
                             6, 6,
                             Enchantment.dynamicCost(10,10),
                             Enchantment.dynamicCost(20,10),
