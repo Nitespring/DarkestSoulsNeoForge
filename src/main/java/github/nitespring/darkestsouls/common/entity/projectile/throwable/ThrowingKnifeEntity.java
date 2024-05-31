@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.common.entity.projectile.throwable;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -18,6 +19,8 @@ import github.nitespring.darkestsouls.core.interfaces.CustomItemSupplier;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -116,13 +119,19 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
     }
 
     @Override
-    protected void onHitBlock(BlockHitResult p_37258_) {
-        this.setDeltaMovement(0,0,0);
-        this.setToRotate(false);
-        this.rotationTick=0;
-        int r = this.level().getRandom().nextInt(1000);
-        if(r >= 600){
-            //this.discard();
+    protected void onHitBlock(BlockHitResult result) {
+        BlockState block = this.level().getBlockState(result.getBlockPos());
+        if(block.is(CustomBlockTags.BOMB_BREAKABLE)){
+            this.level().destroyBlock(result.getBlockPos(), true, this.getOwner());
+            level().gameEvent(this, GameEvent.BLOCK_DESTROY, result.getBlockPos());
+        }else {
+            this.setDeltaMovement(0, 0, 0);
+            this.setToRotate(false);
+            this.rotationTick = 0;
+            int r = this.level().getRandom().nextInt(1000);
+            if (r >= 600) {
+                //this.discard();
+            }
         }
     }
 

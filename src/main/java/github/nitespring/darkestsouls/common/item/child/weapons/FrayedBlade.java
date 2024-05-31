@@ -23,8 +23,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class FrayedBlade extends Weapon {
 
 
-    public FrayedBlade(Tier tier, float attack, float speed, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
-        super(tier, attack, speed, knockback, poise, blood, poison, frost, rot, death, fire, holy, durability, enchantability, movementSpeed, maxTargets, properties);
+    public FrayedBlade(Tier tier, float attack, float speed, float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
+        super(tier, attack, speed, reach, knockback, poise, blood, poison, frost, rot, death, fire, holy, durability, enchantability, movementSpeed, maxTargets, properties);
     }
 
     @Override
@@ -66,15 +66,16 @@ public class FrayedBlade extends Weapon {
     public void doRightClickAction(Player playerIn, ItemStack stackIn) {
 
 
-
-        Vec3 posTarget = playerIn.position().add(playerIn.getLookAngle().scale(15.0));
-        double d0 = Math.min(posTarget.y, playerIn.getY());
-        double d1 = Math.max(posTarget.y, playerIn.getY()) + 1.0D;
-        float f = (float)Mth.atan2(posTarget.z - playerIn.getZ(), posTarget.x - playerIn.getX());
-        for(int l = 0; l < 18; ++l) {
-            double d2 = 0.5D * (double)(l + 1);
-            int j = l/2;
-            this.createSpellEntity(playerIn, playerIn.getX() + (double)Mth.cos(f) * d2, playerIn.getZ() + (double)Mth.sin(f) * d2, d0, d1, f, j,stackIn);
+        if(!playerIn.level().isClientSide()) {
+            Vec3 posTarget = playerIn.position().add(playerIn.getLookAngle().scale(15.0));
+            double d0 = Math.min(posTarget.y, playerIn.getY());
+            double d1 = Math.max(posTarget.y, playerIn.getY()) + 1.0D;
+            float f = (float) Mth.atan2(posTarget.z - playerIn.getZ(), posTarget.x - playerIn.getX());
+            for (int l = 0; l < 18; ++l) {
+                double d2 = 0.5D * (double) (l + 1);
+                int j = l / 2;
+                this.createSpellEntity(playerIn, playerIn.getX() + (double) Mth.cos(f) * d2, playerIn.getZ() + (double) Mth.sin(f) * d2, d0, d1, f, j, stackIn);
+            }
         }
         if(stackIn == playerIn.getItemInHand(InteractionHand.MAIN_HAND)) {stackIn.hurtAndBreak(5, playerIn, EquipmentSlot.MAINHAND);}
         if(stackIn == playerIn.getItemInHand(InteractionHand.OFF_HAND)) {stackIn.hurtAndBreak(5, playerIn, EquipmentSlot.OFFHAND);}

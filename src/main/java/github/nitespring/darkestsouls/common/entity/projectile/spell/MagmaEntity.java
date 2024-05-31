@@ -1,6 +1,8 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
 import github.nitespring.darkestsouls.core.init.EntityInit;
+import github.nitespring.darkestsouls.core.util.CustomBlockTags;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -12,6 +14,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -155,6 +159,36 @@ public class MagmaEntity extends Entity implements GeoEntity{
         if (--this.lifeTicks < 0) {
             this.discard();
             this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.LAVA_EXTINGUISH, this.getSoundSource(), 0.1F, this.random.nextFloat() * 0.4F + 0.25F, false);
+        }
+
+        Vec3 pos = this.position();
+        Level world = this.level();
+        int xSpread = Math.toIntExact((long) (this.getBoundingBox().getXsize() * 1.0));
+        int zSpread = Math.toIntExact((long) (this.getBoundingBox().getZsize() * 1.0));
+        int ySpread = Math.toIntExact((long) (this.getBoundingBox().getYsize() * 1.0));
+        int x0 = this.blockPosition().getX();
+        int y0 = this.blockPosition().getY();
+        int z0 = this.blockPosition().getZ();
+        for(int i = 0; i<=24; i++) {
+            for (int j = 0; j <= zSpread; j++) {
+                for (int k = -ySpread; k <= ySpread; k++) {
+                    double a = Math.PI / 12;
+                    double d = j;
+                    int xVar = (int) (d * Math.sin(i * a));
+                    int yVar = k;
+                    int zVar = (int) (d * Math.cos(i * a));
+                    ;
+                    int x = x0 + xVar;
+                    int z = z0 + zVar;
+                    int y = y0 + yVar;
+
+                    BlockPos blockPos = new BlockPos(x, y, z);
+                    if (level().getBlockState(blockPos).is(CustomBlockTags.FLAME_BREAKABLE)) {
+                        level().destroyBlock(blockPos, true, this.getOwner());
+                        level().gameEvent(this, GameEvent.BLOCK_DESTROY, blockPos);
+                    }
+                }
+            }
         }
 
     }

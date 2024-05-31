@@ -2,6 +2,8 @@ package github.nitespring.darkestsouls.common.entity.projectile.weapon.melee;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
+import github.nitespring.darkestsouls.core.util.CustomBlockTags;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -26,6 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.entity.EntityTypeTest;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -237,7 +240,35 @@ public class WeaponAttackEntity extends Entity {
             double d5 = (this.random.nextDouble() * 2.0D - 1.0D) * 0.75D;
             this.level().addParticle(ParticleTypes.AMBIENT_ENTITY_EFFECT, d0, d1 + 1.0D, d2, d3, d4, d5);
         }*/
+        Vec3 pos = this.position();
+        Level world = this.level();
+        int xSpread = Math.toIntExact((long) (this.getBoundingBox().getXsize() * 1.0));
+        int zSpread = Math.toIntExact((long) (this.getBoundingBox().getZsize() * 1.0));
+        int ySpread = Math.toIntExact((long) (this.getBoundingBox().getYsize() * 1.0));
+        int x0 = this.blockPosition().getX();
+        int y0 = this.blockPosition().getY();
+        int z0 = this.blockPosition().getZ();
+        for(int i = 0; i<=24; i++) {
+            for (int j = 0; j <= zSpread; j++) {
+                for (int k = -ySpread; k <= ySpread; k++) {
+                    double a = Math.PI / 12;
+                    double d = j;
+                    int xVar = (int) (d * Math.sin(i * a));
+                    int yVar = k;
+                    int zVar = (int) (d * Math.cos(i * a));
+                    ;
+                    int x = x0 + xVar;
+                    int z = z0 + zVar;
+                    int y = y0 + yVar;
 
+                    BlockPos blockPos = new BlockPos(x, y, z);
+                    if (level().getBlockState(blockPos).is(CustomBlockTags.FLAME_BREAKABLE)) {
+                        level().destroyBlock(blockPos, true, this.getOwner());
+                        level().gameEvent(this, GameEvent.BLOCK_DESTROY, blockPos);
+                    }
+                }
+            }
+        }
 
     }
 

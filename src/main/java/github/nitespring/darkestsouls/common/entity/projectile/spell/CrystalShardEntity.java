@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -19,6 +20,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -143,7 +146,12 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
     }
 
     @Override
-    protected void onHitBlock(BlockHitResult p_37258_) {
+    protected void onHitBlock(BlockHitResult result) {
+        BlockState block = this.level().getBlockState(result.getBlockPos());
+        if(block.is(CustomBlockTags.BOMB_BREAKABLE)){
+            this.level().destroyBlock(result.getBlockPos(), true, this.getOwner());
+            level().gameEvent(this, GameEvent.BLOCK_DESTROY, result.getBlockPos());
+        }
         this.discard();
         for(int i=0; i<=2; i++){
             RandomSource r = this.random;

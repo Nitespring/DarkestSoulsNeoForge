@@ -18,7 +18,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -40,8 +39,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class Weapon extends Item implements ILeftClickItem {
-
-
     private final float attackDamage;
     private final float attackSpeed;
     private final float attackKnockback;
@@ -59,13 +56,15 @@ public class Weapon extends Item implements ILeftClickItem {
     private float holy=0;
     private final int enchantability;
     private final Tier tier;
-    private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-
+    //private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     protected static final UUID BASE_ATTACK_KNOCKBACK_UUID=UUID.randomUUID();
     protected static final UUID BASE_MOVEMENT_SPEED_UUID=UUID.randomUUID();
+    protected static final UUID BASE_ATTACK_REACH_UUID=UUID.randomUUID();
 
-    public Weapon(Tier tier, float attack, float speed, float knockback, int poise, int durability, int enchantability, float movementSpeed, Properties properties) {
-        super(properties);
+    /*public Weapon(Tier tier, float attack, float speed, float reach, float knockback, int poise, int durability, int enchantability, float movementSpeed, Properties properties) {
+        super(properties.attributes(
+                Weapon.createAttributes(
+                        attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
         this.tier=tier;
         this.attackDamage=attack-1.0f;
         this.attackSpeed=speed-4.0f;
@@ -75,19 +74,24 @@ public class Weapon extends Item implements ILeftClickItem {
         this.movementSpeed=movementSpeed-0.1f;
         this.enchantability=enchantability;
 
-        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        builder.put(Attributes.ATTACK_DAMAGE.value(), new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", this.attackDamage, AttributeModifier.Operation.ADD_VALUE));
-        builder.put(Attributes.ATTACK_SPEED.value(), new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", this.attackSpeed, AttributeModifier.Operation.ADD_VALUE));
-        builder.put(Attributes.ATTACK_KNOCKBACK.value(), new AttributeModifier(BASE_ATTACK_KNOCKBACK_UUID, "Weapon modifier", this.attackKnockback, AttributeModifier.Operation.ADD_VALUE));
-        builder.put(Attributes.MOVEMENT_SPEED.value(), new AttributeModifier(BASE_MOVEMENT_SPEED_UUID, "Weapon modifier", this.movementSpeed, AttributeModifier.Operation.ADD_VALUE));
-        this.defaultModifiers = builder.build();
-    }
-    public Weapon(Tier tier, float attack, float speed, float knockback, int poise, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
-        this(tier, attack, speed, knockback, poise, durability, enchantability, movementSpeed, properties);
+    }*/
+    /*public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
+        this(tier, attack, speed, reach, knockback, poise, durability, enchantability, movementSpeed, properties);
         this.maxTargets=maxTargets;
-    }
-    public Weapon(Tier tier, float attack, float speed, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
-        this(tier, attack, speed, knockback, poise,durability,enchantability, movementSpeed,maxTargets, properties);
+    }*/
+    public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
+        super(properties.attributes(
+                Weapon.createAttributes(
+                        attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
+        this.tier=tier;
+        this.attackDamage=attack-1.0f;
+        this.attackSpeed=speed-4.0f;
+        this.attackKnockback=knockback;
+        this.poisedmg=poise;
+        this.durability=durability;
+        this.movementSpeed=movementSpeed-0.1f;
+        this.enchantability=enchantability;
+        this.maxTargets=maxTargets;
         this.bloodAttack=blood;
         this.poisonAttack=poison;
         this.frostAttack=frost;
@@ -97,37 +101,69 @@ public class Weapon extends Item implements ILeftClickItem {
         this.holy=holy;
     }
 
+    public static ItemAttributeModifiers createAttributes(double attackDamage, double reach, double attackSpeed, double attackKnockback, double movementSpeed) {
+        return ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ATTACK_DAMAGE,
+                        new AttributeModifier(
+                                BASE_ATTACK_DAMAGE_UUID,
+                                "Weapon modifier",
+                                attackDamage,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                ).add(
+                        Attributes.ATTACK_SPEED,
+                        new AttributeModifier(
+                                BASE_ATTACK_SPEED_UUID,
+                                "Weapon modifier",
+                                attackSpeed,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                ).add(
+                        Attributes.ENTITY_INTERACTION_RANGE,
+                        new AttributeModifier(
+                                BASE_ATTACK_REACH_UUID,
+                                "Weapon modifier",
+                                reach,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                ).add(Attributes.ATTACK_KNOCKBACK,
+                        new AttributeModifier(BASE_ATTACK_KNOCKBACK_UUID,
+                                "Weapon modifier",
+                                attackKnockback,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(BASE_MOVEMENT_SPEED_UUID,
+                                "Weapon modifier",
+                                movementSpeed,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ), EquipmentSlotGroup.MAINHAND
+                ).build();
+    }
+
     public float getAttackDamage() {return this.attackDamage;}
     public float getAttackDamage(Player playerIn, ItemStack stackIn) {
 
         float enchantmentsModifier = 0;
-
         //playerIn.getAttackStrengthScale();
-
         double strengthModifier = playerIn.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
         /*
-        if(playerIn.hasEffect(MobEffects.DAMAGE_BOOST)){
-            effectModifier = effectModifier + (1 + playerIn.getEffect(MobEffects.DAMAGE_BOOST).getAmplifier())*0.2f;
-        }
-        if(playerIn.hasEffect(MobEffects.WEAKNESS)){
-            effectModifier = effectModifier - (1 + playerIn.getEffect(MobEffects.WEAKNESS).getAmplifier())*0.2f;
-        }
+        if(playerIn.hasEffect(MobEffects.DAMAGE_BOOST)){effectModifier = effectModifier + (1 + playerIn.getEffect(MobEffects.DAMAGE_BOOST).getAmplifier())*0.2f;}
+        if(playerIn.hasEffect(MobEffects.WEAKNESS)){effectModifier = effectModifier - (1 + playerIn.getEffect(MobEffects.WEAKNESS).getAmplifier())*0.2f;}
         */
         if(stackIn.isEnchanted()) {
             //if(stackIn.getAllEnchantments().containsKey(Enchantments.SHARPNESS)) {
             if(stackIn.isEnchanted()) {
-
                 enchantmentsModifier = enchantmentsModifier + 0.5f * (1 + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stackIn));
             }
         }
-
         float f = (float) (strengthModifier + enchantmentsModifier);
-
         //System.out.println(strengthModifier);
         //return f+this.getAttackDamage();
         //System.out.println(f);
         return f;
-
     }
     public float getAttackSpeed() {return this.attackSpeed;}
     public float getAttackKnockback() {return this.attackKnockback;}
@@ -160,13 +196,7 @@ public class Weapon extends Item implements ILeftClickItem {
     public float getBaneOfArthropodsAttack(ItemStack item){return 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, item);}
 
 
-    public static ItemAttributeModifiers createAttributes(Tier pTier, int pAttackDamage, float pAttackSpeed) {
-        return ItemAttributeModifiers.builder()
-                .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier",
-                                (double)((float)pAttackDamage + pTier.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
-                .add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier",
-                                (double)pAttackSpeed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build();
-    }
+
 
     @Override
     public int getEnchantmentValue() {
