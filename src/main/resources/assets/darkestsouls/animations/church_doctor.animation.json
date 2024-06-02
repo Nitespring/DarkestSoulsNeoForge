@@ -26,7 +26,7 @@
 						"0.125": [0, 0, 0],
 						"0.2083": [-10, 0, 0],
 						"0.4167": [47.5, 0, 0],
-						"0.5": ["47.5 - 0.5*Math.cos(query.anim_time*270)", 0, 0]
+						"0.5": ["47.5 - 0.5*math.cos(query.anim_time*270)", 0, 0]
 					},
 					"position": {
 						"0.2083": [0, 0, 0],
@@ -39,7 +39,7 @@
 						"0.125": [-7.5, 0, 0],
 						"0.2083": [-12.5, 0, 0],
 						"0.4167": [10, 0, 0],
-						"0.5": ["10- 0.5*Math.cos(query.anim_time*270-15)", 0, 0]
+						"0.5": ["10- 0.5*math.cos(query.anim_time*270-15)", 0, 0]
 					}
 				},
 				"bell": {
@@ -48,7 +48,7 @@
 						"0.125": [-42.5, 0, 0],
 						"0.2083": [-42.5, 0, 0],
 						"0.4167": [-55, 0, 0],
-						"0.5": ["-57.5 + (10/(query.anim_time+1))*Math.sin(query.anim_time*270)", 0, 0]
+						"0.5": ["-57.5 + (10/(query.anim_time+1))*math.sin(query.anim_time*270)", 0, 0]
 					}
 				},
 				"head": {
@@ -83,7 +83,7 @@
 						"0.125": [-49.85088, 60.40865, 16.24983],
 						"0.2083": [-10.19843, 71.12467, 59.22419],
 						"0.4167": [-57.34449, 0.71452, 4.44356],
-						"0.5": ["-57.3445+ 1*Math.cos(query.anim_time*270-15)", 0.71452, 4.44356]
+						"0.5": ["-57.3445+ 1*math.cos(query.anim_time*270-15)", 0.71452, 4.44356]
 					}
 				},
 				"armRightLow": {
@@ -101,7 +101,7 @@
 						"0.125": [-3.7811, -26.08329, -46.01469],
 						"0.2083": [0.12621, -47.26657, -73.10187],
 						"0.4167": [-57.5, 0, 0],
-						"0.5": ["-57.4018+ 1*Math.cos(query.anim_time*270-15)", -4.23873, -2.65444]
+						"0.5": ["-57.4018+ 1*math.cos(query.anim_time*270-15)", -4.23873, -2.65444]
 					}
 				},
 				"armLeftLow": {
@@ -411,7 +411,7 @@
 					"rotation": ["-27.5+12.5*Math.sin(query.anim_time*360)", 0, 0]
 				},
 				"armRightHigh": {
-					"rotation": ["-50-45*Math.cos(query.anim_time*180)", "12.5-12.5*0.5*(Math.sin(query.anim_time*180)+1*Math.abs(Math.sin(query.anim_time*180)))", 0],
+					"rotation": ["-50-45*Math.cos(query.anim_time*180)", "12.5-12.5*0.5*(Math.sin(query.anim_time*180)+Math.abs(Math.sin(query.anim_time*180)))", 0],
 					"position": [0, "0.5*Math.cos(query.anim_time*180)", "0.5-0.5*Math.sin(query.anim_time*180)"]
 				},
 				"armRightLow": {
@@ -423,7 +423,7 @@
 				"armLeftHigh": {
 					"rotation": [
 						"-50-45*Math.cos(query.anim_time*180-120)",
-						"-12.5+12.5*0.5*(Math.sin(query.anim_time*180-135)+1*Math.abs(Math.sin(query.anim_time*180-120)))",
+						"-12.5+12.5*0.5*(Math.sin(query.anim_time*180-135)+Math.abs(Math.sin(query.anim_time*180-120)))",
 						0
 					],
 					"position": [0, "0.5*Math.cos(query.anim_time*180-120)", "0.5-0.5*Math.sin(query.anim_time*180-120)"]

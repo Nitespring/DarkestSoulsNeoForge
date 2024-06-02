@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.common.entity.projectile.weapon.melee;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
+import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -308,15 +309,16 @@ public class WeaponAttackEntity extends Entity {
                 if(this.poison>=1){
                     target.addEffect(new MobEffectInstance(MobEffects.POISON,40+this.poison*40,this.poison-1), this.getOwner());
                 }
-
-                if(this.bleed>=1){
-                    if(target.hasEffect(EffectInit.BLEED)){
-                        int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ this.bleed;
-                        target.removeEffect(EffectInit.BLEED);
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
-                    }else{
-                        int amount = this.bleed-1;
-                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
+                if(!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
+                    if (this.bleed >= 1) {
+                        if (target.hasEffect(EffectInit.BLEED)) {
+                            int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + this.bleed;
+                            target.removeEffect(EffectInit.BLEED);
+                            target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
+                        } else {
+                            int amount = this.bleed - 1;
+                            target.addEffect(new MobEffectInstance(EffectInit.BLEED, 180, amount));
+                        }
                     }
                 }
                 if(this.rot>=1){

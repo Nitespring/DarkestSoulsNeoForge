@@ -93,6 +93,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.CRYSTAL_STAFF_BLUE.get());
                         output.accept(ItemInit.CHAOS_STAFF.get());
                         Set<TagKey<Item>> set = Set.of(
+                                CustomItemTags.WEAPON_ENCHANTABLE,
                                 CustomItemTags.GUN_ENCHANTABLE,
                                 CustomItemTags.AMMO_CONSUMING
                         );

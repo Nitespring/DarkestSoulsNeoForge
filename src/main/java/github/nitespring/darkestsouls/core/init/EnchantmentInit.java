@@ -26,6 +26,13 @@ public class EnchantmentInit {
             DarkestSouls.MODID);
     public static final EquipmentSlot[] HAND_SLOTS = new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND};
 
+    public static final DeferredHolder<Enchantment,BloodBladeEnchantment> BLOODBLADE = ENCHANTMENTS.register("bloodblade",
+            () -> new BloodBladeEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            8, 3,
+                            Enchantment.dynamicCost(2,10),
+                            Enchantment.dynamicCost(24,12),
+                            1, EquipmentSlot.MAINHAND)));
     public static final DeferredHolder<Enchantment,FirepowerEnchantment> FIREPOWER = ENCHANTMENTS.register("firepower",
             () -> new FirepowerEnchantment(
                     Enchantment.definition(CustomItemTags.GUN_ENCHANTABLE,

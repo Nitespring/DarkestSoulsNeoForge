@@ -13,6 +13,7 @@ import software.bernie.geckolib.event.GeoRenderEvent;
 public final class CustomItemTags {
 
     public static final TagKey<Item> GUN_ENCHANTABLE = create("enchantable/gun");
+    public static final TagKey<Item> WEAPON_ENCHANTABLE = create("enchantable/weapon_extended");
     public static final TagKey<Item> AMMO_CONSUMING = create("enchantable/ammo_consuming");
     public static final TagKey<Item> MAGIC_ENCHANTABLE = create("enchantable/magic");
     public static final TagKey<Item> MELEE_ENCHANTABLE = create("enchantable/melee");

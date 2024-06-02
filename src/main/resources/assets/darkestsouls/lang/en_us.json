@@ -16,7 +16,7 @@
   "item.darkestsouls.scimitar" : "Scimitar",
   "item.darkestsouls.falchion" : "Falchion",
   "item.darkestsouls.bandit_curved_sword" : "Bandit's Curved Sword",
-  "item.darkestsouls.uchigatana" : "uchigatana",
+  "item.darkestsouls.uchigatana" : "Uchigatana",
   "item.darkestsouls.claymore" : "Claymore",
   "item.darkestsouls.flamberge" : "Flamberge",
   "item.darkestsouls.zweihander" : "Zweihander",
@@ -229,6 +229,7 @@
   "effect.darkestsouls.frost" : "Frostbite",
   "effect.darkestsouls.rot" : "Scarlet Rot",
 
+  "enchantment.darkestsouls.bloodblade" : "Blood Blade",
   "enchantment.darkestsouls.ricochet_shot" : "Ricochet Shot",
   "enchantment.darkestsouls.piercing_shot" : "Piercing Shot",
   "enchantment.darkestsouls.firepower" : "Firepower",

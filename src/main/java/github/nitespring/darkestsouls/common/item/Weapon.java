@@ -4,10 +4,14 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
+import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.KeybindInit;
+import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -186,7 +190,15 @@ public class Weapon extends Item implements ILeftClickItem {
         }
     }
     public int getDurability() {return this.durability;}
-    public int getBloodAttack(ItemStack item){return bloodAttack;}
+    public int getBloodAttack(ItemStack item){
+        if(item.isEnchanted()&&item.getEnchantmentLevel(EnchantmentInit.BLOODBLADE.get())>=1) {
+            //if(item.getComponents().has(DataComponents.ENCHANTMENTS))
+                return bloodAttack + 1 + 2 * EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BLOODBLADE.get(), item);
+
+        }else{
+            return bloodAttack;
+        }
+    }
     public int getPoisonAttack(ItemStack item){return poisonAttack;}
     public int getFrostAttack(ItemStack item){return frostAttack;}
     public int getRotAttack(ItemStack item){return rotAttack;}
@@ -230,15 +242,16 @@ public class Weapon extends Item implements ILeftClickItem {
         if(this.getPoisonAttack(stackIn)>=1){
             target.addEffect(new MobEffectInstance(MobEffects.POISON,90+this.getPoisonAttack(stackIn)*45,this.getPoisonAttack(stackIn)-1), playerIn);
         }
-
-        if(this.getBloodAttack(stackIn)>=1){
-            if(target.hasEffect(EffectInit.BLEED)){
-                int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ this.getBloodAttack(stackIn);
-                target.removeEffect(EffectInit.BLEED);
-                target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
-            }else{
-                int amount = this.getBloodAttack(stackIn)-1;
-                target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+        if(!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
+            if (this.getBloodAttack(stackIn) >= 1) {
+                if (target.hasEffect(EffectInit.BLEED)) {
+                    int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + this.getBloodAttack(stackIn);
+                    target.removeEffect(EffectInit.BLEED);
+                    target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                } else {
+                    int amount = this.getBloodAttack(stackIn) - 1;
+                    target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                }
             }
         }
 
@@ -318,7 +331,7 @@ public class Weapon extends Item implements ILeftClickItem {
 
         }
 
-        if(this.bloodAttack>=1) {
+        if(this.getBloodAttack(stack)>=1) {
             String info = "§4§o+ " + this.bloodAttack + "§4§o Blood Loss";
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getBloodAttack(stack))).append(Component.translatable("translation.darkestsouls.blood")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_RED));
         }
