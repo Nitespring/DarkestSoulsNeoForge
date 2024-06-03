@@ -5,6 +5,7 @@ import github.nitespring.darkestsouls.common.enchantment.*;
 import github.nitespring.darkestsouls.common.entity.mob.beast.AshenBloodBeastPatient;
 import github.nitespring.darkestsouls.common.item.Gun;
 import github.nitespring.darkestsouls.common.item.IAmmoConsumingItem;
+import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
@@ -14,11 +15,14 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Optional;
 
 
 public class EnchantmentInit {
@@ -33,6 +37,25 @@ public class EnchantmentInit {
                             Enchantment.dynamicCost(2,10),
                             Enchantment.dynamicCost(24,12),
                             1, EquipmentSlot.MAINHAND)));
+
+    public static final DeferredHolder<Enchantment,PercentageDamageEnchantment> SERRATED = ENCHANTMENTS.register("serrated",
+            () -> new PercentageDamageEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            8, 2,
+                            Enchantment.dynamicCost(2,10),
+                            Enchantment.dynamicCost(24,12),
+                            1, EquipmentSlot.MAINHAND),
+                    CustomEntityTags.BEAST));
+    public static final DeferredHolder<Enchantment, DamageEnchantment> BEAST_HUNTER = ENCHANTMENTS.register("beast_hunter",
+            () -> new DamageEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            8, 5,
+                            Enchantment.dynamicCost(2,10),
+                            Enchantment.dynamicCost(24,12),
+                            1, EquipmentSlot.MAINHAND),
+                    Optional.of(CustomEntityTags.BEAST)));
+
+
     public static final DeferredHolder<Enchantment,FirepowerEnchantment> FIREPOWER = ENCHANTMENTS.register("firepower",
             () -> new FirepowerEnchantment(
                     Enchantment.definition(CustomItemTags.GUN_ENCHANTABLE,

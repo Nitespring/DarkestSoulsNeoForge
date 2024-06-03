@@ -230,6 +230,8 @@
   "effect.darkestsouls.rot" : "Scarlet Rot",
 
   "enchantment.darkestsouls.bloodblade" : "Blood Blade",
+  "enchantment.darkestsouls.beast_hunter" : "Beast Hunter",
+  "enchantment.darkestsouls.serrated" : "Serration",
   "enchantment.darkestsouls.ricochet_shot" : "Ricochet Shot",
   "enchantment.darkestsouls.piercing_shot" : "Piercing Shot",
   "enchantment.darkestsouls.firepower" : "Firepower",
@@ -255,6 +257,7 @@
   "itemGroup.darkestsouls.mobs" : "DS Mobs",
   "itemGroup.darkestsouls.blocks" : "DS Blocks",
 
+  "translation.darkestsouls.serrated" : " Serrated Damage",
   "translation.darkestsouls.trick1" : "Press ",
   "translation.darkestsouls.trick2" : " to Transform Weapon",
   "translation.darkestsouls.targets" : " Max Targets",

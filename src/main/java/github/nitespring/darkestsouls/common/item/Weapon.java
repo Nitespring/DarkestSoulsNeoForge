@@ -59,31 +59,14 @@ public class Weapon extends Item implements ILeftClickItem {
     private int fire=0;
     private float holy=0;
     private final int enchantability;
+    private int serrated = 0;
     private final Tier tier;
     //private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     protected static final UUID BASE_ATTACK_KNOCKBACK_UUID=UUID.randomUUID();
     protected static final UUID BASE_MOVEMENT_SPEED_UUID=UUID.randomUUID();
     protected static final UUID BASE_ATTACK_REACH_UUID=UUID.randomUUID();
 
-    /*public Weapon(Tier tier, float attack, float speed, float reach, float knockback, int poise, int durability, int enchantability, float movementSpeed, Properties properties) {
-        super(properties.attributes(
-                Weapon.createAttributes(
-                        attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
-        this.tier=tier;
-        this.attackDamage=attack-1.0f;
-        this.attackSpeed=speed-4.0f;
-        this.attackKnockback=knockback;
-        this.poisedmg=poise;
-        this.durability=durability;
-        this.movementSpeed=movementSpeed-0.1f;
-        this.enchantability=enchantability;
-
-    }*/
-    /*public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
-        this(tier, attack, speed, reach, knockback, poise, durability, enchantability, movementSpeed, properties);
-        this.maxTargets=maxTargets;
-    }*/
-    public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
+    public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy,int serrated, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
         super(properties.attributes(
                 Weapon.createAttributes(
                         attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
@@ -103,6 +86,7 @@ public class Weapon extends Item implements ILeftClickItem {
         this.deathAttack=death;
         this.fire=fire;
         this.holy=holy;
+        this.serrated=serrated;
     }
 
     public static ItemAttributeModifiers createAttributes(double attackDamage, double reach, double attackSpeed, double attackKnockback, double movementSpeed) {
@@ -207,7 +191,13 @@ public class Weapon extends Item implements ILeftClickItem {
     public float getSmiteAttack(ItemStack item){return holy + 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SMITE, item);}
     public float getBaneOfArthropodsAttack(ItemStack item){return 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, item);}
 
+    public int getSerratedLevel(ItemStack item){
+        if(item.isEnchanted()&&item.getEnchantmentLevel(EnchantmentInit.SERRATED.get())>=1) {
 
+            return serrated + EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SERRATED.get(), item);
+
+        }else{
+            return serrated;}}
 
 
     @Override
@@ -330,9 +320,10 @@ public class Weapon extends Item implements ILeftClickItem {
             tooltip.add(Component.literal("+").append(Component.literal(info)).append(Component.translatable("translation.darkestsouls.targets")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
 
         }
-
+        if(this.getSerratedLevel(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getSerratedLevel(stack))).append(Component.translatable("translation.darkestsouls.serrated")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        }
         if(this.getBloodAttack(stack)>=1) {
-            String info = "§4§o+ " + this.bloodAttack + "§4§o Blood Loss";
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getBloodAttack(stack))).append(Component.translatable("translation.darkestsouls.blood")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_RED));
         }
 
