@@ -14,7 +14,12 @@ public final class CustomEntityTags {
     public static final TagKey<EntityType<?>> CHURCH = create("church");
     public static final TagKey<EntityType<?>> ABYSSAL = create("abyssal");
     public static final TagKey<EntityType<?>> BEAST = create("beast");
+    public static final TagKey<EntityType<?>> BEASTLY = create("beastly");
     public static final TagKey<EntityType<?>> BLEED_IMMUNE = create("bleed_immune");
+    public static final TagKey<EntityType<?>> POISON_IMMUNE = create("poison_immune");
+    public static final TagKey<EntityType<?>> ROT_IMMUNE = create("rot_immune");
+    public static final TagKey<EntityType<?>> FROST_IMMUNE = create("frost_immune");
+    public static final TagKey<EntityType<?>> WITHER_IMMUNE = create("wither_immune");
 
     private CustomEntityTags() {
     }

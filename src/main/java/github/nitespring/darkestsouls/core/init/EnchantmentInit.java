@@ -10,6 +10,7 @@ import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
@@ -33,25 +34,64 @@ public class EnchantmentInit {
     public static final DeferredHolder<Enchantment,BloodBladeEnchantment> BLOODBLADE = ENCHANTMENTS.register("bloodblade",
             () -> new BloodBladeEnchantment(
                     Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
-                            8, 3,
-                            Enchantment.dynamicCost(2,10),
+                            4, 3,
+                            Enchantment.dynamicCost(4,8),
                             Enchantment.dynamicCost(24,12),
-                            1, EquipmentSlot.MAINHAND)));
-
+                            2, EquipmentSlot.MAINHAND)));
+    public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> FROST_BLADE = ENCHANTMENTS.register("frost_blade",
+            () -> new MobEffectInflictEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            2, 2,
+                            Enchantment.dynamicCost(4,14),
+                            Enchantment.dynamicCost(24,16),
+                            2, EquipmentSlot.MAINHAND),
+                    EffectInit.FROST));
+    public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> POISONED_BLADE = ENCHANTMENTS.register("poisoned_blade",
+            () -> new MobEffectInflictEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            4, 2,
+                            Enchantment.dynamicCost(4,10),
+                            Enchantment.dynamicCost(24,12),
+                            2, EquipmentSlot.MAINHAND),
+                    MobEffects.POISON));
+    public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> TOXIC_BLADE = ENCHANTMENTS.register("toxic_blade",
+            () -> new MobEffectInflictEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            1, 1,
+                            Enchantment.constantCost(16),
+                            Enchantment.constantCost(56),
+                            4, EquipmentSlot.MAINHAND),
+                    EffectInit.TOXIC));
+    public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> ROTTEN_BLADE = ENCHANTMENTS.register("rotten_blade",
+            () -> new MobEffectInflictEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            1, 2,
+                            Enchantment.dynamicCost(6,14),
+                            Enchantment.dynamicCost(28,16),
+                            3, EquipmentSlot.MAINHAND),
+                    EffectInit.ROT));
+    public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> WITHERED_BLADE = ENCHANTMENTS.register("withered_blade",
+            () -> new MobEffectInflictEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            1, 2,
+                            Enchantment.dynamicCost(5,12),
+                            Enchantment.dynamicCost(25,14),
+                            4, EquipmentSlot.MAINHAND),
+                    MobEffects.WITHER));
     public static final DeferredHolder<Enchantment,PercentageDamageEnchantment> SERRATED = ENCHANTMENTS.register("serrated",
             () -> new PercentageDamageEnchantment(
                     Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
-                            8, 2,
-                            Enchantment.dynamicCost(2,10),
-                            Enchantment.dynamicCost(24,12),
-                            1, EquipmentSlot.MAINHAND),
+                            3, 2,
+                            Enchantment.dynamicCost(5,10),
+                            Enchantment.dynamicCost(25,12),
+                            2, EquipmentSlot.MAINHAND),
                     CustomEntityTags.BEAST));
     public static final DeferredHolder<Enchantment, DamageEnchantment> BEAST_HUNTER = ENCHANTMENTS.register("beast_hunter",
             () -> new DamageEnchantment(
                     Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
-                            8, 5,
-                            Enchantment.dynamicCost(2,10),
-                            Enchantment.dynamicCost(24,12),
+                            2, 5,
+                            Enchantment.dynamicCost(5,8),
+                            Enchantment.dynamicCost(25,8),
                             1, EquipmentSlot.MAINHAND),
                     Optional.of(CustomEntityTags.BEAST)));
 

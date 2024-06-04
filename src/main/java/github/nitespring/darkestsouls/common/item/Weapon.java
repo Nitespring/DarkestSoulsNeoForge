@@ -183,9 +183,11 @@ public class Weapon extends Item implements ILeftClickItem {
             return bloodAttack;
         }
     }
-    public int getPoisonAttack(ItemStack item){return poisonAttack;}
-    public int getFrostAttack(ItemStack item){return frostAttack;}
-    public int getRotAttack(ItemStack item){return rotAttack;}
+    public int getPoisonAttack(ItemStack item){return poisonAttack+item.getEnchantmentLevel(EnchantmentInit.POISONED_BLADE.get());}
+    public int getFrostAttack(ItemStack item){return frostAttack+item.getEnchantmentLevel(EnchantmentInit.FROST_BLADE.get());}
+    public int getRotAttack(ItemStack item){return rotAttack+item.getEnchantmentLevel(EnchantmentInit.ROTTEN_BLADE.get());}
+    public int getToxicAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.TOXIC_BLADE.get());}
+    public int getWitherAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.WITHERED_BLADE.get());}
     public int getDeathAttack(ItemStack item){return deathAttack;}
     public int getFireAttack(ItemStack item){return fire + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, item);}
     public float getSmiteAttack(ItemStack item){return holy + 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SMITE, item);}
@@ -229,8 +231,33 @@ public class Weapon extends Item implements ILeftClickItem {
         if (target instanceof DarkestSoulsAbstractEntity && playerIn instanceof Player){
             ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage((Player) playerIn, stackIn));
         }
-        if(this.getPoisonAttack(stackIn)>=1){
-            target.addEffect(new MobEffectInstance(MobEffects.POISON,90+this.getPoisonAttack(stackIn)*45,this.getPoisonAttack(stackIn)-1), playerIn);
+        if(!target.fireImmune()) {
+            if (this.getFireAttack(stackIn) >= 1) {
+                target.igniteForTicks(40*this.getFireAttack(stackIn));
+            }
+        }
+        if(!target.getType().is(CustomEntityTags.POISON_IMMUNE)) {
+            if (this.getPoisonAttack(stackIn) >= 1) {
+                target.addEffect(new MobEffectInstance(MobEffects.POISON, 90 + this.getPoisonAttack(stackIn) * 45, this.getPoisonAttack(stackIn) - 1), playerIn);
+            }
+            if (this.getToxicAttack(stackIn) >= 1) {
+                target.addEffect(new MobEffectInstance(EffectInit.TOXIC, 90 + this.getToxicAttack(stackIn) * 45, this.getToxicAttack(stackIn) - 1), playerIn);
+            }
+        }
+        if(!target.getType().is(CustomEntityTags.ROT_IMMUNE)) {
+            if (this.getToxicAttack(stackIn) >= 1) {
+                target.addEffect(new MobEffectInstance(EffectInit.ROT, 90 + this.getRotAttack(stackIn) * 45, this.getRotAttack(stackIn) - 1), playerIn);
+            }
+        }
+        if(!target.getType().is(CustomEntityTags.FROST_IMMUNE)) {
+            if (this.getToxicAttack(stackIn) >= 1) {
+                target.addEffect(new MobEffectInstance(EffectInit.FROST, 90 + this.getFrostAttack(stackIn) * 45, this.getFrostAttack(stackIn) - 1), playerIn);
+            }
+        }
+        if(!target.getType().is(CustomEntityTags.WITHER_IMMUNE)) {
+            if (this.getPoisonAttack(stackIn) >= 1) {
+                target.addEffect(new MobEffectInstance(MobEffects.WITHER, 90 + this.getWitherAttack(stackIn) * 45, this.getWitherAttack(stackIn) - 1), playerIn);
+            }
         }
         if(!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
             if (this.getBloodAttack(stackIn) >= 1) {
@@ -318,15 +345,31 @@ public class Weapon extends Item implements ILeftClickItem {
             String info = "" + this.getMaxTargets(stack);
             //tooltip.add(Component.literal(info));
             tooltip.add(Component.literal("+").append(Component.literal(info)).append(Component.translatable("translation.darkestsouls.targets")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
-
         }
         if(this.getSerratedLevel(stack)>=1) {
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getSerratedLevel(stack))).append(Component.translatable("translation.darkestsouls.serrated")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         }
+        if(this.getFireAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getFireAttack(stack))).append(Component.translatable("translation.darkestsouls.fire")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+        }
         if(this.getBloodAttack(stack)>=1) {
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getBloodAttack(stack))).append(Component.translatable("translation.darkestsouls.blood")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_RED));
         }
-
+        if(this.getPoisonAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getPoisonAttack(stack))).append(Component.translatable("translation.darkestsouls.poison")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GREEN));
+        }
+        if(this.getToxicAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getToxicAttack(stack))).append(Component.translatable("translation.darkestsouls.toxic")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_PURPLE));
+        }
+        if(this.getFrostAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getFrostAttack(stack))).append(Component.translatable("translation.darkestsouls.frost")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.AQUA));
+        }
+        if(this.getRotAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getRotAttack(stack))).append(Component.translatable("translation.darkestsouls.rot")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
+        }
+        if(this.getWitherAttack(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getWitherAttack(stack))).append(Component.translatable("translation.darkestsouls.wither")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.BLACK));
+        }
 
         super.appendHoverText(stack, pContext, tooltip, p_41424_);
     }

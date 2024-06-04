@@ -4,6 +4,7 @@ import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
@@ -27,6 +28,14 @@ public class DamageEvents {
         //System.out.println(event.getAmount());
         //System.out.println(event.getEntity().getType());
         //System.out.println(event.getEntity().getType().getTags().count());
+
+        if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)){
+            if(source.is(DamageTypeTags.IS_FIRE)) {
+                event.setAmount(event.getAmount()*2.5f);
+            }else if (event.getEntity().isOnFire()){
+                event.setAmount(event.getAmount()*1.2f);
+            }
+        }
         if(source.is(DamageTypes.PLAYER_ATTACK)&&source.getEntity()!=null&&source.getEntity() instanceof Player attacker){
 
             if(attacker.hasItemInSlot(EquipmentSlot.MAINHAND)){
@@ -37,6 +46,10 @@ public class DamageEvents {
                         event.setAmount((float) (event.getAmount()*(1+0.1*weapon.getSerratedLevel(itemStack))));
                         //System.out.println(event.getAmount());
                     }
+                    if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)) {
+                        event.setAmount((float) (event.getAmount()*(1+0.05*weapon.getSerratedLevel(itemStack))));
+                        //System.out.println(event.getAmount());
+                    }
                 } else {
                     if(itemStack.isEnchanted()) {
                         if(itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())>=1){
@@ -44,6 +57,10 @@ public class DamageEvents {
                                 event.setAmount((float) (event.getAmount() * (1 + (0.1 * itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())))));
                                 System.out.println(event.getAmount());
                             }
+                        }
+                        if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)) {
+                            event.setAmount((float) (event.getAmount() * (1 + (0.05 * itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())))));
+                            System.out.println(event.getAmount());
                         }
                     }
                 }

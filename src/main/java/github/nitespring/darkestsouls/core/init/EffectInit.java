@@ -2,10 +2,10 @@ package github.nitespring.darkestsouls.core.init;
 
 import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.effect.*;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.alchemy.Potion;
@@ -24,7 +24,7 @@ public class EffectInit {
             () -> new BleedMobEffect(MobEffectCategory.HARMFUL,7673883));
 
     public static final DeferredHolder<MobEffect,MobEffect> FROST =   EFFECTS.register("frost",
-            () -> new SimpleMobEffect(MobEffectCategory.HARMFUL,15072511)
+            () -> new FrostMobEffect(MobEffectCategory.HARMFUL,15072511)
                     .addAttributeModifier(Attributes.ARMOR,"648d7064-6A60-4F59-8ABE-C2C23A6DD7A9",
                             -2.0, AttributeModifier.Operation.ADD_VALUE)
                     .addAttributeModifier(Attributes.ARMOR_TOUGHNESS,"648d7064-6A60-4F59-8ABE-C2C23A6DD7A9",
@@ -37,7 +37,8 @@ public class EffectInit {
 
     public static final DeferredHolder<MobEffect,RotMobEffect> ROT =   EFFECTS.register("rot",
             () -> new RotMobEffect(MobEffectCategory.HARMFUL,7673883));
-
+    public static final DeferredHolder<MobEffect,ToxicMobEffect> TOXIC = EFFECTS.register("toxic",
+            () -> new ToxicMobEffect(MobEffectCategory.HARMFUL, 5377115));
     public static final DeferredHolder<MobEffect,ParasitesMobEffect> PARASITES =   EFFECTS.register("parasites",
             () -> new ParasitesMobEffect(MobEffectCategory.HARMFUL,7673883));
     public static final DeferredHolder<MobEffect,ChikageMobEffect> CHIKAGE=EFFECTS.register("chikage",
