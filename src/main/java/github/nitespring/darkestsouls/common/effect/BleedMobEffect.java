@@ -49,7 +49,7 @@ public class BleedMobEffect extends MobEffect {
                     living.playSound(SoundEvents.PLAYER_SPLASH_HIGH_SPEED,1.0f,3.6f);
                 }
             }else if(living instanceof Player p){
-                if(amount>=8){
+                if(amount>=16){
                     living.invulnerableTime = 0;
                     applyDamage(living, 2.0f+living.getMaxHealth()*0.3f);
                     p.level().playSound((Player) p, p.getX(), p.getY(), p.getZ(), SoundEvents.PLAYER_SPLASH_HIGH_SPEED, p.getSoundSource(), 1.0f, 1.0f);
@@ -70,7 +70,7 @@ public class BleedMobEffect extends MobEffect {
                     }
                 }
             }else{
-                if(amount>=5) {
+                if(amount>=12) {
                     living.invulnerableTime = 0;
                     applyDamage(living, 12.0f + living.getMaxHealth() * 0.05f);
                     living.playSound(SoundEvents.PLAYER_SPLASH_HIGH_SPEED, 1.0f, 3.6f);

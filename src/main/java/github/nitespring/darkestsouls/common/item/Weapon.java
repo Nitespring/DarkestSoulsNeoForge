@@ -1,20 +1,13 @@
 package github.nitespring.darkestsouls.common.item;
 
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
-import github.nitespring.darkestsouls.core.init.KeybindInit;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
-import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,7 +20,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -54,10 +46,10 @@ public class Weapon extends Item implements ILeftClickItem {
     private int bloodAttack=0;
     private int poisonAttack=0;
     private int rotAttack=0;
-    private int deathAttack=0;
+    private int darkAttack =0;
     private int frostAttack=0;
     private int fire=0;
-    private float holy=0;
+    private int holy=0;
     private final int enchantability;
     private int serrated = 0;
     private final Tier tier;
@@ -83,7 +75,7 @@ public class Weapon extends Item implements ILeftClickItem {
         this.poisonAttack=poison;
         this.frostAttack=frost;
         this.rotAttack=rot;
-        this.deathAttack=death;
+        this.darkAttack =death;
         this.fire=fire;
         this.holy=holy;
         this.serrated=serrated;
@@ -188,15 +180,17 @@ public class Weapon extends Item implements ILeftClickItem {
     public int getRotAttack(ItemStack item){return rotAttack+item.getEnchantmentLevel(EnchantmentInit.ROTTEN_BLADE.get());}
     public int getToxicAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.TOXIC_BLADE.get());}
     public int getWitherAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.WITHERED_BLADE.get());}
-    public int getDeathAttack(ItemStack item){return deathAttack;}
+    public int getDarkAttack(ItemStack item){return darkAttack;}
     public int getFireAttack(ItemStack item){return fire + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, item);}
     public float getSmiteAttack(ItemStack item){return holy + 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SMITE, item);}
     public float getBaneOfArthropodsAttack(ItemStack item){return 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, item);}
+    public float getBeastHunterAttack(ItemStack item){return 2.5f*item.getEnchantmentLevel(EnchantmentInit.BEAST_HUNTER.get());}
+    public int getHolyLevel(ItemStack item){return holy + item.getEnchantmentLevel(EnchantmentInit.ABYSS_CLEANSER.get());}
 
     public int getSerratedLevel(ItemStack item){
         if(item.isEnchanted()&&item.getEnchantmentLevel(EnchantmentInit.SERRATED.get())>=1) {
 
-            return serrated + EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SERRATED.get(), item);
+            return serrated + item.getEnchantmentLevel(EnchantmentInit.SERRATED.get());
 
         }else{
             return serrated;}}
@@ -348,6 +342,9 @@ public class Weapon extends Item implements ILeftClickItem {
         }
         if(this.getSerratedLevel(stack)>=1) {
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getSerratedLevel(stack))).append(Component.translatable("translation.darkestsouls.serrated")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        }
+        if(this.getHolyLevel(stack)>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+this.getHolyLevel(stack))).append(Component.translatable("translation.darkestsouls.holy")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
         }
         if(this.getFireAttack(stack)>=1) {
             tooltip.add(Component.literal("+").append(Component.literal(""+this.getFireAttack(stack))).append(Component.translatable("translation.darkestsouls.fire")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));

@@ -44,7 +44,9 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
         this.tier=tier;
     }
     public float getAttackDamage(@Nullable Player playerIn, ItemStack stackIn) {
-        return attackDamage;
+        return attackDamage
+                * (1 + 0.2f * stackIn.getEnchantmentLevel(EnchantmentInit.MOON_BLESSING.get()))
+                + 2.0f * stackIn.getEnchantmentLevel(EnchantmentInit.STARPOWER.get());
     }
 
     public float getAttackDamage( ItemStack stackIn) {

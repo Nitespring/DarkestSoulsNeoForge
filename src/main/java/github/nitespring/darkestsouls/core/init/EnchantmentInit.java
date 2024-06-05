@@ -35,8 +35,8 @@ public class EnchantmentInit {
             () -> new BloodBladeEnchantment(
                     Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
                             4, 3,
-                            Enchantment.dynamicCost(4,8),
-                            Enchantment.dynamicCost(24,12),
+                            Enchantment.dynamicCost(4,20),
+                            Enchantment.dynamicCost(30,24),
                             2, EquipmentSlot.MAINHAND)));
     public static final DeferredHolder<Enchantment,MobEffectInflictEnchantment> FROST_BLADE = ENCHANTMENTS.register("frost_blade",
             () -> new MobEffectInflictEnchantment(
@@ -86,6 +86,14 @@ public class EnchantmentInit {
                             Enchantment.dynamicCost(25,12),
                             2, EquipmentSlot.MAINHAND),
                     CustomEntityTags.BEAST));
+    public static final DeferredHolder<Enchantment,PercentageDamageEnchantment> ABYSS_CLEANSER = ENCHANTMENTS.register("abyss_cleanser",
+            () -> new PercentageDamageEnchantment(
+                    Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
+                            2, 2,
+                            Enchantment.dynamicCost(5,10),
+                            Enchantment.dynamicCost(25,12),
+                            2, EquipmentSlot.MAINHAND),
+                    CustomEntityTags.ABYSSAL));
     public static final DeferredHolder<Enchantment, DamageEnchantment> BEAST_HUNTER = ENCHANTMENTS.register("beast_hunter",
             () -> new DamageEnchantment(
                     Enchantment.definition(CustomItemTags.WEAPON_ENCHANTABLE,
@@ -106,6 +114,20 @@ public class EnchantmentInit {
     public static final DeferredHolder<Enchantment,GreaterFirepowerEnchantment> GREATER_FIREPOWER = ENCHANTMENTS.register("greater_firepower",
             () -> new GreaterFirepowerEnchantment(
                     Enchantment.definition(CustomItemTags.GUN_ENCHANTABLE,
+                            2, 5,
+                            Enchantment.dynamicCost(6,10),
+                            Enchantment.dynamicCost(36,12),
+                            1, HAND_SLOTS)));
+    public static final DeferredHolder<Enchantment,StarpowerEnchantment> STARPOWER = ENCHANTMENTS.register("starpower",
+            () -> new StarpowerEnchantment(
+                    Enchantment.definition(CustomItemTags.MAGIC_ENCHANTABLE,
+                            10, 5,
+                            Enchantment.dynamicCost(1,8),
+                            Enchantment.dynamicCost(24,10),
+                            1, HAND_SLOTS)));
+    public static final DeferredHolder<Enchantment,LunarPowerEnchantment> MOON_BLESSING = ENCHANTMENTS.register("moon_blessing",
+            () -> new LunarPowerEnchantment(
+                    Enchantment.definition(CustomItemTags.MAGIC_ENCHANTABLE,
                             2, 5,
                             Enchantment.dynamicCost(6,10),
                             Enchantment.dynamicCost(36,12),

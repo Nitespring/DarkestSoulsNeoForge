@@ -12,7 +12,9 @@ public final class CustomEntityTags {
     public static final TagKey<EntityType<?>> HOLLOW = create("hollow");
     public static final TagKey<EntityType<?>> SKELETON = create("skeleton");
     public static final TagKey<EntityType<?>> CHURCH = create("church");
+    public static final TagKey<EntityType<?>> HOLY = create("holy");
     public static final TagKey<EntityType<?>> ABYSSAL = create("abyssal");
+    public static final TagKey<EntityType<?>> CURSED = create("cursed");
     public static final TagKey<EntityType<?>> BEAST = create("beast");
     public static final TagKey<EntityType<?>> BEASTLY = create("beastly");
     public static final TagKey<EntityType<?>> BLEED_IMMUNE = create("bleed_immune");

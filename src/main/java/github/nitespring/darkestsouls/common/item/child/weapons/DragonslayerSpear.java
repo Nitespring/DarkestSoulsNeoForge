@@ -48,11 +48,13 @@ public class DragonslayerSpear extends Weapon {
                         this.getFireAttack(stackIn),
                         this.getSmiteAttack(stackIn),
                         this.getBaneOfArthropodsAttack(stackIn),
+                        this.getBeastHunterAttack(stackIn),
                         this.getBloodAttack(stackIn),
                         this.getPoisonAttack(stackIn),
+                        this.getToxicAttack(stackIn),
                         this.getRotAttack(stackIn),
                         this.getFrostAttack(stackIn),
-                        this.getDeathAttack(stackIn));
+                        this.getWitherAttack(stackIn));
                 entity.setHitboxModifications(1.2f, 0f, 0.4f, 2.0f);
                 entity.configureTicks(4, 10, 1, 2);
                 levelIn.addFreshEntity(entity);
@@ -75,11 +77,13 @@ public class DragonslayerSpear extends Weapon {
                     this.getFireAttack(stackIn),
                     this.getSmiteAttack(stackIn),
                     this.getBaneOfArthropodsAttack(stackIn),
+                    this.getBeastHunterAttack(stackIn),
                     this.getBloodAttack(stackIn),
                     this.getPoisonAttack(stackIn),
+                    this.getToxicAttack(stackIn),
                     this.getRotAttack(stackIn),
                     this.getFrostAttack(stackIn),
-                    this.getDeathAttack(stackIn));
+                    this.getWitherAttack(stackIn));
             entity.setHitboxModifications(1.2f, 0f, 0.4f, 2.1f);
             entity.configureTicks(4, 10, 1, 2);
             //levelIn.addFreshEntity(entity);
@@ -125,11 +129,13 @@ public class DragonslayerSpear extends Weapon {
                 this.getFireAttack(stackIn),
                 this.getSmiteAttack(stackIn),
                 this.getBaneOfArthropodsAttack(stackIn),
+                this.getBeastHunterAttack(stackIn),
                 this.getBloodAttack(stackIn),
                 this.getPoisonAttack(stackIn),
+                this.getToxicAttack(stackIn),
                 this.getRotAttack(stackIn),
                 this.getFrostAttack(stackIn),
-                this.getDeathAttack(stackIn));
+                this.getWitherAttack(stackIn));
         entity.setHitboxModifications(1.2f, 0f, 0.4f, 2.0f);
         entity.configureTicks(4, 10, 1, 2);
         levelIn.addFreshEntity(entity);

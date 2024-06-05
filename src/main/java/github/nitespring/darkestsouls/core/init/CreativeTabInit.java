@@ -95,6 +95,7 @@ public class CreativeTabInit {
                         Set<TagKey<Item>> set = Set.of(
                                 CustomItemTags.WEAPON_ENCHANTABLE,
                                 CustomItemTags.GUN_ENCHANTABLE,
+                                CustomItemTags.MAGIC_ENCHANTABLE,
                                 CustomItemTags.AMMO_CONSUMING
                         );
                         displayParams.holders()

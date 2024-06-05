@@ -35,11 +35,13 @@ public class Zweihander extends Weapon {
                         this.getFireAttack(stackIn),
                         this.getSmiteAttack(stackIn),
                         this.getBaneOfArthropodsAttack(stackIn),
+                        this.getBeastHunterAttack(stackIn),
                         this.getBloodAttack(stackIn),
                         this.getPoisonAttack(stackIn),
+                        this.getToxicAttack(stackIn),
                         this.getRotAttack(stackIn),
                         this.getFrostAttack(stackIn),
-                        this.getDeathAttack(stackIn));
+                        this.getWitherAttack(stackIn));
                 entity.setHitboxModifications(1.2f, 0f, 0.4f, 1.9f);
                 entity.configureTicks(8, 15, 3, 3);
                 levelIn.addFreshEntity(entity);

@@ -35,11 +35,13 @@ public class ChurchScythe extends Weapon {
                         this.getFireAttack(stackIn),
                         this.getSmiteAttack(stackIn),
                         this.getBaneOfArthropodsAttack(stackIn),
+                        this.getBeastHunterAttack(stackIn),
                         this.getBloodAttack(stackIn),
                         this.getPoisonAttack(stackIn),
+                        this.getToxicAttack(stackIn),
                         this.getRotAttack(stackIn),
                         this.getFrostAttack(stackIn),
-                        this.getDeathAttack(stackIn));
+                        this.getWitherAttack(stackIn));
                 entity.setHitboxModifications(1.2f, 0f, 0.4f, 1.75f);
                 entity.configureTicks(6, 12, 2, 3);
                 levelIn.addFreshEntity(entity);

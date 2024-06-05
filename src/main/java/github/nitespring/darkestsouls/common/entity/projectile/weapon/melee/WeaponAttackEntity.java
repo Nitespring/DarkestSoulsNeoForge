@@ -51,12 +51,13 @@ public class WeaponAttackEntity extends Entity {
     public int bleed=0;
     public int poison=0;
     public int rot=0;
+    public int toxic=0;
     public int frost=0;
-    public int death=0;
+    public int wither=0;
     public  int fire=0;
     public float baneOfArthropods=0;
     public float smite=0;
-    public int beastHunter=0;
+    public float beastHunter=0;
     public int demonSlayer=0;
     public int kinHunter=0;
     public int abyssCleanser=0;
@@ -284,9 +285,11 @@ public class WeaponAttackEntity extends Entity {
                     mobTypeBonus=mobTypeBonus+this.baneOfArthropods;
                     target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int) (10+this.baneOfArthropods*8),2), this.getOwner());
                 }
-
                 if(this.smite>=1&&target.getType().is(EntityTypeTags.SENSITIVE_TO_SMITE)){
                     mobTypeBonus=mobTypeBonus+this.smite;
+                }
+                if(this.beastHunter>=1&&target.getType().is(CustomEntityTags.BEAST)){
+                    mobTypeBonus=mobTypeBonus+this.beastHunter;
                 }
 
                 if (livingentity == null) {
@@ -309,6 +312,9 @@ public class WeaponAttackEntity extends Entity {
                 if(this.poison>=1){
                     target.addEffect(new MobEffectInstance(MobEffects.POISON,40+this.poison*40,this.poison-1), this.getOwner());
                 }
+                if(this.wither>=1){
+                    target.addEffect(new MobEffectInstance(MobEffects.WITHER,40+this.wither*40,this.wither-1), this.getOwner());
+                }
                 if(!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
                     if (this.bleed >= 1) {
                         if (target.hasEffect(EffectInit.BLEED)) {
@@ -322,7 +328,13 @@ public class WeaponAttackEntity extends Entity {
                     }
                 }
                 if(this.rot>=1){
-                    target.addEffect(new MobEffectInstance(EffectInit.ROT,40+this.rot*40,this.poison-1), this.getOwner());
+                    target.addEffect(new MobEffectInstance(EffectInit.ROT,40+this.rot*40,this.rot-1), this.getOwner());
+                }
+                if(this.toxic>=1){
+                    target.addEffect(new MobEffectInstance(EffectInit.TOXIC,40+this.toxic*40,this.toxic-1), this.getOwner());
+                }
+                if(this.frost>=1){
+                    target.addEffect(new MobEffectInstance(EffectInit.FROST,40+this.frost*40,this.frost-1), this.getOwner());
                 }
 
                 if (target instanceof DarkestSoulsAbstractEntity /*&& this.itemStack!=null && this.getOwner()!=null*/){
@@ -368,17 +380,19 @@ public class WeaponAttackEntity extends Entity {
         this.playerDistance=distance;
     }
 
-    public void setDamage(float dmg, int poisedmg, int fire, float smite, float bane,int bleed, int poison, int rot, int frost, int death){
+    public void setDamage(float dmg, int poisedmg, int fire, float smite, float bane, float beastHunter, int bleed, int poison, int toxic, int rot, int frost, int wither){
         this.damage=dmg;
         //System.out.println(dmg);
         this.poiseDmg=poisedmg;
         this.fire=fire;
         this.smite=smite;
         this.baneOfArthropods=bane;
+        this.beastHunter=beastHunter;
         this.bleed=bleed;
         this.poison=poison;
+        this.toxic = toxic;
         this.rot=rot;
         this.frost=frost;
-        this.death=death;
+        this.wither=wither;
     }
 }

@@ -39,13 +39,8 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
         this.enchantability=enchantability;
     }
     public float getAttackDamage(@Nullable Player playerIn, ItemStack stackIn) {
-        int flatEnchantModifier=0;
-        int percentEnchantModifier=0;
-        if(stackIn.isEnchanted()){
-            flatEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
-            percentEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
-        }
-        return (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
+        return attackDamage* (1 + 0.2f * stackIn.getEnchantmentLevel(EnchantmentInit.MOON_BLESSING.get()))
+                + 2.0f * stackIn.getEnchantmentLevel(EnchantmentInit.STARPOWER.get());
 
     }
     public int getUseCooldown(@Nullable Player playerIn, ItemStack stackIn) {
