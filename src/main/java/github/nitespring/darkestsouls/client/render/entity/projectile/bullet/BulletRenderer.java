@@ -15,8 +15,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public class BulletRenderer <T extends Bullet> extends EntityRenderer<T> {
 
-    public static final ResourceLocation MAIN = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/bullet.png");
-    public static final ResourceLocation FLAME = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/bullet_flaming.png");
+    public static final ResourceLocation MAIN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/bullet.png");
+    public static final ResourceLocation FLAME = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/bullet_flaming.png");
     private final BulletModel<T> model;
 
     public BulletRenderer(EntityRendererProvider.Context context) {

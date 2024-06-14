@@ -140,9 +140,9 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
         if(this.getOwner()==null||this.getOwner() instanceof Player || (hit.getEntity() != this.getOwner()&&!hit.getEntity().isAlliedTo(this.getOwner()))) {
             if (hit.getEntity() instanceof LivingEntity target && this.getDeltaMovement().length() > 0.1) {
                 this.setDeltaMovement(this.getDeltaMovement().multiply(-0.25, -1, -0.25));
-                this.xPower = -0.05 * this.xPower;
+                /*this.xPower = -0.05 * this.xPower;
                 this.yPower = -0.25;
-                this.zPower = -0.05 * this.zPower;
+                this.zPower = -0.05 * this.zPower;*/
                 this.setToRotate(false);
                 this.rotationTick = 0;
                 target.hurt(target.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), this.attackPower);

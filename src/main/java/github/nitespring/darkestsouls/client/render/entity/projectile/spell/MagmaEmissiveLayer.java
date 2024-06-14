@@ -15,7 +15,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class MagmaEmissiveLayer<T extends MagmaEntity> extends GeoRenderLayer<T> {
 
-	private static final ResourceLocation MAGMA = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/magma.png");
+	private static final ResourceLocation MAGMA = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/magma.png");
 
 
 	public MagmaEmissiveLayer(GeoRenderer<T> entityRendererIn) {

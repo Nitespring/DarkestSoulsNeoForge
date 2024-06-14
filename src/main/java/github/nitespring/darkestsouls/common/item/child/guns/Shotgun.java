@@ -56,9 +56,12 @@ public class Shotgun extends Gun{
                     Bullet entity = new Bullet(EntityInit.BULLET.get(), level);
                     entity.setPos(x, y, z);
                     float flyingPower = this.flyingPower(player, stackIn);
-                    entity.xPower = flyingPower * (0.4f * aim.x + aim1.x);
+                    Vec3 aim2 = aim.scale(0.4f).add(aim1);
+                    entity.setDeltaMovement(aim2);
+                    entity.accelerationPower=flyingPower;
+                    /*entity.xPower = flyingPower * (0.4f * aim.x + aim1.x);
                     entity.yPower = flyingPower * (0.4f * aim.y + aim1.y);
-                    entity.zPower = flyingPower * (0.4f * aim.z + aim1.z);
+                    entity.zPower = flyingPower * (0.4f * aim.z + aim1.z);*/
                     entity.setOwner(player);
                     entity.setAttackDamage(this.getAttackDamage(player, stackIn));
                     entity.setPoiseDamage(this.getPoiseDamage(player, stackIn));

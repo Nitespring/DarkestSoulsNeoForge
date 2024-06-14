@@ -6,7 +6,9 @@ import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -32,31 +34,30 @@ import net.neoforged.neoforge.common.ToolActions;
 
 
 import java.util.List;
-import java.util.UUID;
 
 public class Weapon extends Item implements ILeftClickItem {
-    private final float attackDamage;
-    private final float attackSpeed;
-    private final float attackKnockback;
-    private final float movementSpeed;
-    private final int durability;
-    private int maxTargets=-1;
+    private float attackDamage;
+    private float attackSpeed;
+    private float attackKnockback;
+    private float movementSpeed;
+    private int durability;
+    private int maxTargets;
 
-    public final int poisedmg;
-    private int bloodAttack=0;
-    private int poisonAttack=0;
-    private int rotAttack=0;
-    private int darkAttack =0;
-    private int frostAttack=0;
-    private int fire=0;
-    private int holy=0;
+    public int poisedmg;
+    private int bloodAttack;
+    private int poisonAttack;
+    private int rotAttack;
+    private int darkAttack;
+    private int frostAttack;
+    private int fire;
+    private int holy;
     private final int enchantability;
-    private int serrated = 0;
+    private int serrated;
     private final Tier tier;
     //private final Multimap<Attribute, AttributeModifier> defaultModifiers;
-    protected static final UUID BASE_ATTACK_KNOCKBACK_UUID=UUID.randomUUID();
-    protected static final UUID BASE_MOVEMENT_SPEED_UUID=UUID.randomUUID();
-    protected static final UUID BASE_ATTACK_REACH_UUID=UUID.randomUUID();
+    protected static final ResourceLocation BASE_ATTACK_KNOCKBACK_ID = ResourceLocation.withDefaultNamespace("base_attack_knockback");
+    protected static final ResourceLocation BASE_MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("base_attack_speed");
+    protected static final ResourceLocation BASE_ATTACK_REACH_ID = ResourceLocation.withDefaultNamespace("base_attack_reach");
 
     public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy,int serrated, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
         super(properties.attributes(
@@ -86,37 +87,32 @@ public class Weapon extends Item implements ILeftClickItem {
                 .add(
                         Attributes.ATTACK_DAMAGE,
                         new AttributeModifier(
-                                BASE_ATTACK_DAMAGE_UUID,
-                                "Weapon modifier",
+                                BASE_ATTACK_DAMAGE_ID,
                                 attackDamage,
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.MAINHAND
                 ).add(
                         Attributes.ATTACK_SPEED,
                         new AttributeModifier(
-                                BASE_ATTACK_SPEED_UUID,
-                                "Weapon modifier",
+                                BASE_ATTACK_SPEED_ID,
                                 attackSpeed,
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.MAINHAND
                 ).add(
                         Attributes.ENTITY_INTERACTION_RANGE,
                         new AttributeModifier(
-                                BASE_ATTACK_REACH_UUID,
-                                "Weapon modifier",
+                                BASE_ATTACK_REACH_ID,
                                 reach,
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.MAINHAND
                 ).add(Attributes.ATTACK_KNOCKBACK,
-                        new AttributeModifier(BASE_ATTACK_KNOCKBACK_UUID,
-                                "Weapon modifier",
+                        new AttributeModifier(BASE_ATTACK_KNOCKBACK_ID,
                                 attackKnockback,
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.MAINHAND
                 ).add(
                         Attributes.MOVEMENT_SPEED,
-                        new AttributeModifier(BASE_MOVEMENT_SPEED_UUID,
-                                "Weapon modifier",
+                        new AttributeModifier(BASE_MOVEMENT_SPEED_ID,
                                 movementSpeed,
                                 AttributeModifier.Operation.ADD_VALUE
                         ), EquipmentSlotGroup.MAINHAND
@@ -136,7 +132,7 @@ public class Weapon extends Item implements ILeftClickItem {
         if(stackIn.isEnchanted()) {
             //if(stackIn.getAllEnchantments().containsKey(Enchantments.SHARPNESS)) {
             if(stackIn.isEnchanted()) {
-                enchantmentsModifier = enchantmentsModifier + 0.5f * (1 + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SHARPNESS, stackIn));
+                enchantmentsModifier = enchantmentsModifier + 0.5f * (1 + stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(Enchantments.SHARPNESS).get()));
             }
         }
         float f = (float) (strengthModifier + enchantmentsModifier);
@@ -149,9 +145,9 @@ public class Weapon extends Item implements ILeftClickItem {
     public float getAttackKnockback() {return this.attackKnockback;}
     public float getMovementSpeed() {return this.movementSpeed;}
     public int getMaxTargets() {return this.maxTargets;}
-    public int getMaxTargets(ItemStack item) {
+    public int getMaxTargets(Player playerIn, ItemStack item ) {
         if(this.getMaxTargets()>=1&&item.isEnchanted()){
-            int i = this.getMaxTargets() + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SWEEPING_EDGE, item);
+            int i = this.getMaxTargets() + item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(Enchantments.SWEEPING_EDGE).get());
             return i;
         }else{
             return this.getMaxTargets();
@@ -166,31 +162,31 @@ public class Weapon extends Item implements ILeftClickItem {
         }
     }
     public int getDurability() {return this.durability;}
-    public int getBloodAttack(ItemStack item){
-        if(item.isEnchanted()&&item.getEnchantmentLevel(EnchantmentInit.BLOODBLADE.get())>=1) {
+    public int getBloodAttack(Player playerIn, ItemStack item){
+        if(item.isEnchanted()&&item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.BLOODBLADE).get())>=1) {
             //if(item.getComponents().has(DataComponents.ENCHANTMENTS))
-                return bloodAttack + 1 + 2 * EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.BLOODBLADE.get(), item);
-
+                return bloodAttack + 1 + 2 * item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.BLOODBLADE).get());
         }else{
+
             return bloodAttack;
         }
     }
-    public int getPoisonAttack(ItemStack item){return poisonAttack+item.getEnchantmentLevel(EnchantmentInit.POISONED_BLADE.get());}
-    public int getFrostAttack(ItemStack item){return frostAttack+item.getEnchantmentLevel(EnchantmentInit.FROST_BLADE.get());}
-    public int getRotAttack(ItemStack item){return rotAttack+item.getEnchantmentLevel(EnchantmentInit.ROTTEN_BLADE.get());}
-    public int getToxicAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.TOXIC_BLADE.get());}
-    public int getWitherAttack(ItemStack item){return item.getEnchantmentLevel(EnchantmentInit.WITHERED_BLADE.get());}
-    public int getDarkAttack(ItemStack item){return darkAttack;}
-    public int getFireAttack(ItemStack item){return fire + EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, item);}
-    public float getSmiteAttack(ItemStack item){return holy + 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SMITE, item);}
-    public float getBaneOfArthropodsAttack(ItemStack item){return 2.5f*EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, item);}
-    public float getBeastHunterAttack(ItemStack item){return 2.5f*item.getEnchantmentLevel(EnchantmentInit.BEAST_HUNTER.get());}
-    public int getHolyLevel(ItemStack item){return holy + item.getEnchantmentLevel(EnchantmentInit.ABYSS_CLEANSER.get());}
+    public int getPoisonAttack(Player playerIn,ItemStack item){return poisonAttack+item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.POISONED_BLADE).get());}
+    public int getFrostAttack(Player playerIn,ItemStack item){return frostAttack+item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.FROST_BLADE).get());}
+    public int getRotAttack(Player playerIn,ItemStack item){return rotAttack+item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.ROTTEN_BLADE).get());}
+    public int getToxicAttack(Player playerIn,ItemStack item){return item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.TOXIC_BLADE).get());}
+    public int getWitherAttack(Player playerIn,ItemStack item){return item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.WITHERED_BLADE).get());}
+    public int getDarkAttack(Player playerIn,ItemStack item){return darkAttack;}
+    public int getFireAttack(Player playerIn,ItemStack item){return fire + item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(Enchantments.FIRE_ASPECT).get());}
+    public int getSmiteAttack(Player playerIn,ItemStack item){return holy + item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(Enchantments.SMITE).get());}
+    public int getBaneOfArthropodsAttack(Player playerIn,ItemStack item){return item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(Enchantments.BANE_OF_ARTHROPODS).get());}
+    public int getBeastHunterAttack(Player playerIn,ItemStack item){return item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.BEAST_HUNTER).get());}
+    public int getHolyLevel(Player playerIn,ItemStack item){return holy + item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.ABYSS_CLEANSER).get());}
 
-    public int getSerratedLevel(ItemStack item){
-        if(item.isEnchanted()&&item.getEnchantmentLevel(EnchantmentInit.SERRATED.get())>=1) {
+    public int getSerratedLevel(Player playerIn,ItemStack item){
+        if(item.isEnchanted()&&item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get())>=1) {
 
-            return serrated + item.getEnchantmentLevel(EnchantmentInit.SERRATED.get());
+            return serrated + item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get());
 
         }else{
             return serrated;}}
@@ -216,56 +212,56 @@ public class Weapon extends Item implements ILeftClickItem {
         }
     }
     @Override
-    public boolean hurtEnemy(ItemStack stackIn, LivingEntity target, LivingEntity playerIn) {
+    public boolean hurtEnemy(ItemStack stackIn, LivingEntity target, LivingEntity entityIn) {
         /*stackIn.hurtAndBreak(1, playerIn, (p_43296_) -> {
             p_43296_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
         });*/
-        stackIn.hurtAndBreak(1, playerIn, EquipmentSlot.MAINHAND);
-
-        if (target instanceof DarkestSoulsAbstractEntity && playerIn instanceof Player){
-            ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage((Player) playerIn, stackIn));
-        }
-        if(!target.fireImmune()) {
-            if (this.getFireAttack(stackIn) >= 1) {
-                target.igniteForTicks(40*this.getFireAttack(stackIn));
+        stackIn.hurtAndBreak(1, entityIn, EquipmentSlot.MAINHAND);
+        if(entityIn instanceof Player playerIn) {
+            if (target instanceof DarkestSoulsAbstractEntity) {
+                ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage(playerIn, stackIn));
             }
-        }
-        if(!target.getType().is(CustomEntityTags.POISON_IMMUNE)) {
-            if (this.getPoisonAttack(stackIn) >= 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.POISON, 90 + this.getPoisonAttack(stackIn) * 45, this.getPoisonAttack(stackIn) - 1), playerIn);
+            if (!target.fireImmune()) {
+                if (this.getFireAttack(playerIn, stackIn) >= 1) {
+                    target.igniteForTicks(40 * this.getFireAttack(playerIn,stackIn));
+                }
             }
-            if (this.getToxicAttack(stackIn) >= 1) {
-                target.addEffect(new MobEffectInstance(EffectInit.TOXIC, 90 + this.getToxicAttack(stackIn) * 45, this.getToxicAttack(stackIn) - 1), playerIn);
+            if (!target.getType().is(CustomEntityTags.POISON_IMMUNE)) {
+                if (this.getPoisonAttack(playerIn,stackIn) >= 1) {
+                    target.addEffect(new MobEffectInstance(MobEffects.POISON, 90 + this.getPoisonAttack(playerIn,stackIn) * 45, this.getPoisonAttack(playerIn,stackIn) - 1), playerIn);
+                }
+                if (this.getToxicAttack(playerIn,stackIn) >= 1) {
+                    target.addEffect(new MobEffectInstance(EffectInit.TOXIC, 90 + this.getToxicAttack(playerIn,stackIn) * 45, this.getToxicAttack(playerIn,stackIn) - 1), playerIn);
+                }
             }
-        }
-        if(!target.getType().is(CustomEntityTags.ROT_IMMUNE)) {
-            if (this.getToxicAttack(stackIn) >= 1) {
-                target.addEffect(new MobEffectInstance(EffectInit.ROT, 90 + this.getRotAttack(stackIn) * 45, this.getRotAttack(stackIn) - 1), playerIn);
+            if (!target.getType().is(CustomEntityTags.ROT_IMMUNE)) {
+                if (this.getToxicAttack(playerIn,stackIn) >= 1) {
+                    target.addEffect(new MobEffectInstance(EffectInit.ROT, 90 + this.getRotAttack(playerIn,stackIn) * 45, this.getRotAttack(playerIn,stackIn) - 1), playerIn);
+                }
             }
-        }
-        if(!target.getType().is(CustomEntityTags.FROST_IMMUNE)) {
-            if (this.getToxicAttack(stackIn) >= 1) {
-                target.addEffect(new MobEffectInstance(EffectInit.FROST, 90 + this.getFrostAttack(stackIn) * 45, this.getFrostAttack(stackIn) - 1), playerIn);
+            if (!target.getType().is(CustomEntityTags.FROST_IMMUNE)) {
+                if (this.getToxicAttack(playerIn,stackIn) >= 1) {
+                    target.addEffect(new MobEffectInstance(EffectInit.FROST, 90 + this.getFrostAttack(playerIn,stackIn) * 45, this.getFrostAttack(playerIn,stackIn) - 1), playerIn);
+                }
             }
-        }
-        if(!target.getType().is(CustomEntityTags.WITHER_IMMUNE)) {
-            if (this.getPoisonAttack(stackIn) >= 1) {
-                target.addEffect(new MobEffectInstance(MobEffects.WITHER, 90 + this.getWitherAttack(stackIn) * 45, this.getWitherAttack(stackIn) - 1), playerIn);
+            if (!target.getType().is(CustomEntityTags.WITHER_IMMUNE)) {
+                if (this.getPoisonAttack(playerIn,stackIn) >= 1) {
+                    target.addEffect(new MobEffectInstance(MobEffects.WITHER, 90 + this.getWitherAttack(playerIn,stackIn) * 45, this.getWitherAttack(playerIn,stackIn) - 1), playerIn);
+                }
             }
-        }
-        if(!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
-            if (this.getBloodAttack(stackIn) >= 1) {
-                if (target.hasEffect(EffectInit.BLEED)) {
-                    int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + this.getBloodAttack(stackIn);
-                    target.removeEffect(EffectInit.BLEED);
-                    target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
-                } else {
-                    int amount = this.getBloodAttack(stackIn) - 1;
-                    target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+            if (!target.getType().is(CustomEntityTags.BLEED_IMMUNE)) {
+                if (this.getBloodAttack(playerIn,stackIn) >= 1) {
+                    if (target.hasEffect(EffectInit.BLEED)) {
+                        int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + this.getBloodAttack(playerIn,stackIn);
+                        target.removeEffect(EffectInit.BLEED);
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                    } else {
+                        int amount = this.getBloodAttack(playerIn,stackIn) - 1;
+                        target.addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                    }
                 }
             }
         }
-
         return true;
     }
 
@@ -334,38 +330,47 @@ public class Weapon extends Item implements ILeftClickItem {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, TooltipContext pContext, List<Component> tooltip, TooltipFlag p_41424_) {
+        int maxTargets = getMaxTargets() + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.SWEEPING_EDGE));
+        int fire = this.fire + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FIRE_ASPECT));
+        int holy = this.holy + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.ABYSS_CLEANSER));
+        int serrated = this.serrated + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.SERRATED));
+        int blood = this.bloodAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.BLOODBLADE));
+        int poison = poisonAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.POISONED_BLADE));
+        int toxic = stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.TOXIC_BLADE));
+        int frost = frostAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.FROST_BLADE));
+        int rot = rotAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.ROTTEN_BLADE));
+        int wither = stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.WITHERED_BLADE));
 
-        if(this.getMaxTargets()>=1) {
-            String info = "" + this.getMaxTargets(stack);
-            //tooltip.add(Component.literal(info));
+        if(maxTargets>=1) {
+            String info = "" + maxTargets;
             tooltip.add(Component.literal("+").append(Component.literal(info)).append(Component.translatable("translation.darkestsouls.targets")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
         }
-        if(this.getSerratedLevel(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getSerratedLevel(stack))).append(Component.translatable("translation.darkestsouls.serrated")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
+        if(serrated>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+serrated)).append(Component.translatable("translation.darkestsouls.serrated")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.GRAY));
         }
-        if(this.getHolyLevel(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getHolyLevel(stack))).append(Component.translatable("translation.darkestsouls.holy")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
+        if(holy>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+holy)).append(Component.translatable("translation.darkestsouls.holy")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
         }
-        if(this.getFireAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getFireAttack(stack))).append(Component.translatable("translation.darkestsouls.fire")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+        if(fire>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+fire)).append(Component.translatable("translation.darkestsouls.fire")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
         }
-        if(this.getBloodAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getBloodAttack(stack))).append(Component.translatable("translation.darkestsouls.blood")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_RED));
+        if(blood>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+blood)).append(Component.translatable("translation.darkestsouls.blood")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_RED));
         }
-        if(this.getPoisonAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getPoisonAttack(stack))).append(Component.translatable("translation.darkestsouls.poison")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GREEN));
+        if(poison>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+poison)).append(Component.translatable("translation.darkestsouls.poison")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GREEN));
         }
-        if(this.getToxicAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getToxicAttack(stack))).append(Component.translatable("translation.darkestsouls.toxic")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_PURPLE));
+        if(toxic>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+toxic)).append(Component.translatable("translation.darkestsouls.toxic")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_PURPLE));
         }
-        if(this.getFrostAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getFrostAttack(stack))).append(Component.translatable("translation.darkestsouls.frost")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.AQUA));
+        if(frost>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+frost)).append(Component.translatable("translation.darkestsouls.frost")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.AQUA));
         }
-        if(this.getRotAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getRotAttack(stack))).append(Component.translatable("translation.darkestsouls.rot")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
+        if(rot>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+rot)).append(Component.translatable("translation.darkestsouls.rot")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.YELLOW));
         }
-        if(this.getWitherAttack(stack)>=1) {
-            tooltip.add(Component.literal("+").append(Component.literal(""+this.getWitherAttack(stack))).append(Component.translatable("translation.darkestsouls.wither")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.BLACK));
+        if(wither>=1) {
+            tooltip.add(Component.literal("+").append(Component.literal(""+wither)).append(Component.translatable("translation.darkestsouls.wither")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.BLACK));
         }
 
         super.appendHoverText(stack, pContext, tooltip, p_41424_);

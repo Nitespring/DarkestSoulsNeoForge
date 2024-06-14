@@ -4,34 +4,10 @@ import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-public class RicochetEnchantment extends Enchantment {
-    public RicochetEnchantment(EnchantmentDefinition pDefinition) {
-        super(pDefinition);
+public class RicochetEnchantment   {
+    public RicochetEnchantment( ){
     }
 
-    @Override
-    public boolean isTradeable() {
-        return true;
-    }
-
-    @Override
-    public boolean isAllowedOnBooks() {
-        return true;
-    }
-
-    @Override
-    public boolean isCurse() {
-        return false;
-    }
-
-    @Override
-    public boolean isTreasureOnly() {
-        return false;
-    }
-
-    @Override
-    public boolean isDiscoverable() {
-        return true;
-    }
+     
 
 }

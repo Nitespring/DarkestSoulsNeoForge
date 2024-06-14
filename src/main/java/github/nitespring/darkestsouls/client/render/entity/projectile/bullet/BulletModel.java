@@ -13,7 +13,7 @@ import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 
 public class BulletModel<T extends AbstractHurtingProjectile> extends EntityModel<T> {
 
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(DarkestSouls.MODID, "bullet"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "bullet"), "main");
 
     private final ModelPart main;
 

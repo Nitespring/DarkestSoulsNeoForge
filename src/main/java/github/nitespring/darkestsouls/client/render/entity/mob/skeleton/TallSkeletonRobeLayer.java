@@ -15,7 +15,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class TallSkeletonRobeLayer<T extends Skeleton & GeoEntity> extends GeoRenderLayer<T>{
 
-	private static final ResourceLocation CLOAK_BLUE = new ResourceLocation(DarkestSouls.MODID, "textures/entity/skeleton/tall_skeleton_cloak_blue.png");
+	private static final ResourceLocation CLOAK_BLUE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/skeleton/tall_skeleton_cloak_blue.png");
 
 	public TallSkeletonRobeLayer(GeoRenderer<T> entityRendererIn) {
 		super(entityRendererIn);

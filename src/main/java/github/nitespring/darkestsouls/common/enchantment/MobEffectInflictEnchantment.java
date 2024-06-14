@@ -13,38 +13,14 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.Enchantment;
 
-public class MobEffectInflictEnchantment extends Enchantment {
+public class MobEffectInflictEnchantment   {
     private final Holder<MobEffect> effect;
-    public MobEffectInflictEnchantment(EnchantmentDefinition pDefinition, Holder<MobEffect> pEffect) {
-        super(pDefinition);
-        this.effect=pEffect;
+    public MobEffectInflictEnchantment() {
+        effect=null;
     }
-    @Override
-    public boolean isTradeable() {
-        return true;
-    }
+     
 
-    @Override
-    public boolean isAllowedOnBooks() {
-        return true;
-    }
 
-    @Override
-    public boolean isCurse() {
-        return false;
-    }
-
-    @Override
-    public boolean isTreasureOnly() {
-        return false;
-    }
-
-    @Override
-    public boolean isDiscoverable() {
-        return true;
-    }
-
-    @Override
     public void doPostAttack(LivingEntity attacker, Entity pTarget, int level) {
         if(!(attacker.getMainHandItem().getItem() instanceof Weapon)) {
             if(pTarget instanceof LivingEntity target) {

@@ -14,11 +14,11 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class FireBallEmissiveLayer<T extends FireBallEntity & GeoEntity> extends GeoRenderLayer<T> {
 
-	private static final ResourceLocation CLASSIC = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/fireball.png");
-	private static final ResourceLocation CHAOS = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/chaos_fireball.png");
-	private static final ResourceLocation BLACK = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/black_fireball.png");
+	private static final ResourceLocation CLASSIC = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/fireball.png");
+	private static final ResourceLocation CHAOS = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/chaos_fireball.png");
+	private static final ResourceLocation BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/black_fireball.png");
 
-	private static final ResourceLocation SOUL = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/soul_fireball.png");
+	private static final ResourceLocation SOUL = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/soul_fireball.png");
 
 	public FireBallEmissiveLayer(GeoRenderer<T> entityRendererIn) {
 		super(entityRendererIn);

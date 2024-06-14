@@ -33,9 +33,12 @@ public class Pistol extends Gun{
             entity.setPos(x, y, z);
             float flyingPower = this.flyingPower(player, stackIn);
             //float flyingPower = 0.5f;
-            entity.xPower = flyingPower * aim.x;
+
+            entity.setDeltaMovement(aim);
+            entity.accelerationPower=flyingPower;
+            /*entity.xPower = flyingPower * aim.x;
             entity.yPower = flyingPower * aim.y;
-            entity.zPower = flyingPower * aim.z;
+            entity.zPower = flyingPower * aim.z;*/
             entity.setOwner(player);
             entity.setAttackDamage(this.getAttackDamage(player, stackIn));
             entity.setPoiseDamage(this.getPoiseDamage(player, stackIn));

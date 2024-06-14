@@ -17,9 +17,9 @@ import net.minecraft.resources.ResourceLocation;
 
 public class CrystalShardRenderer<T extends CrystalShardEntity> extends EntityRenderer<T>{
 
-	public static final ResourceLocation LIGHT_BLUE = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard_blue.png");
-	public static final ResourceLocation DARK_BLUE = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard_dark_blue.png");
-	public static final ResourceLocation PURPLE = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard.png");
+	public static final ResourceLocation LIGHT_BLUE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard_blue.png");
+	public static final ResourceLocation DARK_BLUE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard_dark_blue.png");
+	public static final ResourceLocation PURPLE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/crystal_shard.png");
 	private final SquareTextureEntityModel<T> model;
 
 	//EvokerFangsRenderer

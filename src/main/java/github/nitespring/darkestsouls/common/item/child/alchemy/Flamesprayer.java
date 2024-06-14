@@ -40,7 +40,7 @@ public class Flamesprayer extends AlchemyTool {
     public int getFlyingTime(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier= EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            //enchantModifier= EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return (int) (flyingTime*(1+0.1* enchantModifier));
     }
@@ -50,14 +50,14 @@ public class Flamesprayer extends AlchemyTool {
     public float flyingPower(Player playerIn, ItemStack stackIn){
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            //enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return flyingPower+0.025f* enchantModifier;
     }
     public int getRicochet(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            //enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
+            //enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
         }
         return ricochet+enchantModifier;
     }
@@ -126,9 +126,11 @@ public class Flamesprayer extends AlchemyTool {
             entity.setPos(x, y, z);
             float flyingPower = this.flyingPower(player, stackIn);
             //float flyingPower = 0.1f;
-            entity.xPower = flyingPower * aim1.x;
+            entity.setDeltaMovement(aim1);
+            entity.accelerationPower=flyingPower;
+            /*entity.xPower = flyingPower * aim1.x;
             entity.yPower = flyingPower * aim1.y;
-            entity.zPower = flyingPower * aim1.z;
+            entity.zPower = flyingPower * aim1.z;*/
             entity.setOwner(player);
             entity.setAttackDamage(this.getAttackDamage(player, stackIn));
             entity.setPoiseDamage(this.getPoiseDamage(player, stackIn));

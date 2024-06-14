@@ -17,8 +17,8 @@ import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 
 public class FirebombRenderer<T extends FirebombEntity> extends EntityRenderer<T> {
 
-    public static final ResourceLocation MAIN = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/firebomb.png");
-    public static final ResourceLocation BLACK = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/black_firebomb.png");
+    public static final ResourceLocation MAIN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/firebomb.png");
+    public static final ResourceLocation BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/black_firebomb.png");
     private final BulletModel<T> model;
 
     public FirebombRenderer(EntityRendererProvider.Context context) {

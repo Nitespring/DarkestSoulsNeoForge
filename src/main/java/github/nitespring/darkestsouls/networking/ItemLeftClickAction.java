@@ -19,8 +19,8 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 public record  ItemLeftClickAction() implements CustomPacketPayload {
 
-	//public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "attack");
-	public static final CustomPacketPayload.Type<ItemLeftClickAction> TYPE = new CustomPacketPayload.Type<>(new ResourceLocation(DarkestSouls.MODID, "attack"));
+	//public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "attack");
+	public static final CustomPacketPayload.Type<ItemLeftClickAction> TYPE = new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "attack"));
 	public static final ItemLeftClickAction INSTANCE = new ItemLeftClickAction();
 
 	public static final StreamCodec<ByteBuf,ItemLeftClickAction> STREAM_CODEC = StreamCodec.unit(INSTANCE);

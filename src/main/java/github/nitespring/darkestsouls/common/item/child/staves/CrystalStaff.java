@@ -147,7 +147,7 @@ public class CrystalStaff extends Staff {
     }
 
     @Override
-    public int getUseDuration(ItemStack p_41454_) {
+       public int getUseDuration(ItemStack stackIn, LivingEntity entityIn) {
         return 72000;
     }
 

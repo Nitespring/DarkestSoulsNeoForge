@@ -82,8 +82,8 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         int flatEnchantModifier=0;
         int percentEnchantModifier=0;
         if(stackIn.isEnchanted()){
-            flatEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
-            percentEnchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
+            flatEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.FIREPOWER.get(), stackIn);
+            percentEnchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GREATER_FIREPOWER.get(), stackIn);
 
         }
         return (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
@@ -92,7 +92,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getUseCooldown(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier = EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
+            enchantModifier = EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stackIn);
         }
         return (int) (useCooldown*(1-0.1*enchantModifier));
     }
@@ -102,7 +102,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getFlyingTime(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return (int) (flyingTime*(1+0.1* enchantModifier));
 
@@ -113,63 +113,63 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public float flyingPower(Player playerIn, ItemStack stackIn){
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.SHARPSHOOTER.get(), stackIn);
         }
         return flyingPower+0.025f* enchantModifier;
     }
     public int getRicochet(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.RICOCHET_SHOT.get(), stackIn);
         }
         return ricochet+enchantModifier;
     }
     public int getPierce(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.PIERCING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.PIERCING_SHOT.get(), stackIn);
         }
         return pierce+enchantModifier;
     }
     public int getPoison(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.OPHIDIAN_BITE.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.OPHIDIAN_BITE.get(), stackIn);
         }
         return enchantModifier;
     }
     public int getBlood(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.EXPANDING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.EXPANDING_SHOT.get(), stackIn);
         }
         return enchantModifier;
     }
     public float getLuck(@Nullable Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.MISER_SOUL.get(), stackIn);
         }
         return 0.1f*enchantModifier;
     }
     public boolean isFire(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.FLAMING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.FLAMING_SHOT.get(), stackIn);
         }
         return enchantModifier>0;
     }
     public boolean isLightning(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.CHILD_OF_THUNDER.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.CHILD_OF_THUNDER.get(), stackIn);
         }
         return enchantModifier>0;
     }
     public int getExplosion(ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){
-            enchantModifier=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.EXPLODING_SHOT.get(), stackIn);
+            enchantModifier=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.EXPLODING_SHOT.get(), stackIn);
         }
         return enchantModifier;
     }
@@ -220,7 +220,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     }
 
     @Override
-    public int getUseDuration(ItemStack p_41454_) {
+       public int getUseDuration(ItemStack stackIn, LivingEntity entityIn) {
         return 40000;
     }
 
@@ -276,7 +276,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
             tooltip.add(Component.literal("+").append(Component.literal(""+(int)(this.getLuck(null,stack)*100))).append(Component.literal("%")).append(Component.translatable("translation.darkestsouls.luck")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
         }
         if(stack.isEnchanted()){
-            int i=EnchantmentHelper.getItemEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stack);
+            int i=EnchantmentHelper.getTagEnchantmentLevel(EnchantmentInit.GUNSLINGER.get(), stack);
             if(i>=1) {
                 tooltip.add(Component.literal("+").append(Component.literal("" + i * 10)).append(Component.literal("%")).append(Component.translatable("translation.darkestsouls.cooldown")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.DARK_GRAY));
             }

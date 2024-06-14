@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MolotovCocktailRenderer<T extends FirebombEntity> extends EntityRenderer<T> {
 
-    public static final ResourceLocation MAIN = new ResourceLocation(DarkestSouls.MODID, "textures/entity/projectiles/molotov.png");
+    public static final ResourceLocation MAIN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/projectiles/molotov.png");
     private final MolotovCocktailModel<T> model;
 
     public MolotovCocktailRenderer(EntityRendererProvider.Context context) {

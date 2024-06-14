@@ -16,15 +16,15 @@ import net.minecraft.resources.ResourceLocation;
 
 public class DragonslayerSwordspearRenderer<T extends WeaponAttackEntity> extends EntityRenderer<T>{
 
-	public static final ResourceLocation TEXTURE_LOCATION_0 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/frayed_blade/frayed_blade0.png");
-	public static final ResourceLocation TEXTURE_LOCATION_1 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_0.png");
-	public static final ResourceLocation TEXTURE_LOCATION_2 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_1.png");
-	public static final ResourceLocation TEXTURE_LOCATION_3 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_2.png");
-	public static final ResourceLocation TEXTURE_LOCATION_4 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_3.png");
-	public static final ResourceLocation TEXTURE_LOCATION_5 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_4.png");
-	public static final ResourceLocation TEXTURE_LOCATION_6 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_5.png");
-	public static final ResourceLocation TEXTURE_LOCATION_7 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_6.png");
-	public static final ResourceLocation TEXTURE_LOCATION_8 = new ResourceLocation(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_7.png");
+	public static final ResourceLocation TEXTURE_LOCATION_0 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/frayed_blade/frayed_blade0.png");
+	public static final ResourceLocation TEXTURE_LOCATION_1 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_0.png");
+	public static final ResourceLocation TEXTURE_LOCATION_2 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_1.png");
+	public static final ResourceLocation TEXTURE_LOCATION_3 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_2.png");
+	public static final ResourceLocation TEXTURE_LOCATION_4 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_3.png");
+	public static final ResourceLocation TEXTURE_LOCATION_5 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_4.png");
+	public static final ResourceLocation TEXTURE_LOCATION_6 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_5.png");
+	public static final ResourceLocation TEXTURE_LOCATION_7 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_6.png");
+	public static final ResourceLocation TEXTURE_LOCATION_8 = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/dragonslayer_swordspear/dragonslayer_swordspear_7.png");
 
 	 private final SquareTextureEntityModel<T> model;
 

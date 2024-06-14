@@ -31,9 +31,11 @@ public class LanternNormal extends Item {
     }
 
     @Override
-    public int getUseDuration(ItemStack p_41454_) {
+    public int getUseDuration(ItemStack stackIn, LivingEntity entityIn) {
         return 40000;
     }
+    
+    
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

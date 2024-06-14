@@ -19,8 +19,8 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 public record TransformWeaponAction() implements CustomPacketPayload{
 
-	//public static final ResourceLocation ID = new ResourceLocation(DarkestSouls.MODID, "attack");
-	public static final CustomPacketPayload.Type<TransformWeaponAction> TYPE = new CustomPacketPayload.Type<>(new ResourceLocation(DarkestSouls.MODID, "transform"));
+	//public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "attack");
+	public static final CustomPacketPayload.Type<TransformWeaponAction> TYPE = new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "transform"));
 	public static final TransformWeaponAction INSTANCE = new TransformWeaponAction();
 
 	public static final StreamCodec<ByteBuf,TransformWeaponAction> STREAM_CODEC = StreamCodec.unit(INSTANCE);

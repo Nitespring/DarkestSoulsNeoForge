@@ -9,28 +9,28 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.enchantment.DamageEnchantment;
+
 import net.minecraft.world.item.enchantment.Enchantment;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
 
-public class PercentageDamageEnchantment extends Enchantment {
+public class PercentageDamageEnchantment   {
 
     private final TagKey<EntityType<?>> targets;
 
-    public PercentageDamageEnchantment(Enchantment.EnchantmentDefinition pDefinition, TagKey<EntityType<?>> pTargets) {
-        super(pDefinition);
+    public PercentageDamageEnchantment(TagKey<EntityType<?>> pTargets) {
+
         this.targets = pTargets;
     }
     /*@Override
     public float getDamageBonus(int pLevel, EntityType<?> pCreatureType, ItemStack stackIn) {
             return pCreatureType != null && pCreatureType.is(this.targets.get()) ? (float)pLevel * 2.5F : 0.0F;
     }*/
-    @Override
+
     public boolean checkCompatibility(Enchantment pEnch) {
-        return !(pEnch instanceof PercentageDamageEnchantment);
+        return false;
     }
     /*@Override
     public void doPostAttack(LivingEntity pUser, Entity pTarget, int pLevel) {

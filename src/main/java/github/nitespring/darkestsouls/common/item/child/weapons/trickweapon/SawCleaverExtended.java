@@ -37,16 +37,16 @@ public class SawCleaverExtended extends TrickWeapon {
             entity.setDamage(
                     this.getAttackDamage(playerIn, stackIn),
                     this.getPoiseDamage(playerIn, stackIn),
-                        this.getFireAttack(stackIn),
-                        this.getSmiteAttack(stackIn),
-                        this.getBaneOfArthropodsAttack(stackIn),
-                        this.getBeastHunterAttack(stackIn),
-                        this.getBloodAttack(stackIn),
-                        this.getPoisonAttack(stackIn),
-                        this.getToxicAttack(stackIn),
-                        this.getRotAttack(stackIn),
-                        this.getFrostAttack(stackIn),
-                        this.getWitherAttack(stackIn));
+                        this.getFireAttack(playerIn,stackIn),
+                        this.getSmiteAttack(playerIn,stackIn),
+                        this.getBaneOfArthropodsAttack(playerIn,stackIn),
+                        this.getBeastHunterAttack(playerIn,stackIn),
+                        this.getBloodAttack(playerIn,stackIn),
+                        this.getPoisonAttack(playerIn,stackIn),
+                        this.getToxicAttack(playerIn,stackIn),
+                        this.getRotAttack(playerIn,stackIn),
+                        this.getFrostAttack(playerIn,stackIn),
+                        this.getWitherAttack(playerIn,stackIn));
             entity.setHitboxModifications(1.2f, 0f, 0.4f, 1.5f);
             entity.configureTicks(6, 12, 2, 3);
             levelIn.addFreshEntity(entity);
