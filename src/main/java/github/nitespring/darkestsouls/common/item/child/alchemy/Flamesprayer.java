@@ -5,6 +5,7 @@ import github.nitespring.darkestsouls.common.item.AlchemyTool;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -160,8 +161,9 @@ public class Flamesprayer extends AlchemyTool {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-
-        tooltip.add(Component.literal("+").append(Component.literal(""+this.getAttackDamage(null,stack))).append(Component.translatable("translation.darkestsouls.fire_damage")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+float attackDamage=this.getBaseAttackDamage()* (1 + 0.2f * stack.getEnchantmentLevel(context.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.MOON_BLESSING)))
+        + 2.0f * stack.getEnchantmentLevel(context.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.STARPOWER));
+        tooltip.add(Component.literal("+").append(Component.literal(""+attackDamage)).append(Component.translatable("translation.darkestsouls.fire_damage")).withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
 
         super.appendHoverText(stack, context, tooltip, flag);
     }

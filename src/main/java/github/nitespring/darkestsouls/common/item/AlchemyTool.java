@@ -42,6 +42,9 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
         this.durability=durability;
         this.enchantability=enchantability;
     }
+    public float getBaseAttackDamage(){
+        return attackDamage;
+    }
     public float getAttackDamage(Player playerIn, ItemStack stackIn) {
         return attackDamage* (1 + 0.2f * stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.MOON_BLESSING).get()))
                 + 2.0f * stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.STARPOWER).get());

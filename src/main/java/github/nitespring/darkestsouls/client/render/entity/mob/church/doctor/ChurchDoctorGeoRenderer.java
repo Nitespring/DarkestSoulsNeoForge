@@ -48,7 +48,6 @@ public class ChurchDoctorGeoRenderer<T extends ChurchDoctor & GeoEntity> extends
 		 poseStack.scale(scaleFactor, scaleFactor, scaleFactor);
 
 		 poseStack.translate(0, 0, 0);
-
 		 super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
 		 poseStack.popPose();
 	}

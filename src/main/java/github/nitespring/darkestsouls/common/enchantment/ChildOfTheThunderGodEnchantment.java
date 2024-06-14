@@ -8,13 +8,4 @@ import net.minecraft.world.item.enchantment.Enchantment;
 public class ChildOfTheThunderGodEnchantment{
     public ChildOfTheThunderGodEnchantment() {
     }
-
- 
-    protected boolean checkCompatibility(Enchantment ench) {
-        if(ench instanceof ExplosingShotEnchantment){
-            return false;
-        }else {
-            return true;
-        }
-    }
 }

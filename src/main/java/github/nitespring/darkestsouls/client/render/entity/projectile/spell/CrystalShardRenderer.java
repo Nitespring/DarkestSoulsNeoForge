@@ -69,7 +69,7 @@ public class CrystalShardRenderer<T extends CrystalShardEntity> extends EntityRe
 		vertexconsumer = p_114532_.getBuffer(RenderType.entityCutoutNoCull(getTextureLocation(entity)));
 
 	         
-		this.model.renderToBuffer(stack, vertexconsumer, p_114533_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+		this.model.renderToBuffer(stack, vertexconsumer, p_114533_, OverlayTexture.NO_OVERLAY, 1);
 		stack.popPose();
 		super.render(entity, p_114529_, p_114530_, stack, p_114532_, p_114533_);
 	      

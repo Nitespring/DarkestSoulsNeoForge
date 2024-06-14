@@ -65,7 +65,7 @@ public class BulletRenderer <T extends Bullet> extends EntityRenderer<T> {
         //stack.mulPose(Axis.XP.rotationDegrees(180));
         //stack.translate(0, -1.8f, 0);
 
-            this.model.renderToBuffer(stack, vertexconsumer, i, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+            this.model.renderToBuffer(stack, vertexconsumer, i, OverlayTexture.NO_OVERLAY, 1);
             super.render(e, f1, f2, stack, buf, i);
         stack.popPose();
     }

@@ -5,6 +5,7 @@ import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -47,32 +48,35 @@ public class DamageEvents {
 
                 if (itemStack.getItem() instanceof Weapon weapon) {
                     if(event.getEntity().getType().is(CustomEntityTags.BEAST)) {
-                        event.setAmount((float) (event.getAmount()*(1+0.1*weapon.getSerratedLevel(itemStack))));
+                        event.setAmount((float) (event.getAmount()*(1+0.1*weapon.getSerratedLevel(attacker,itemStack))));
                         //System.out.println(event.getAmount());
                     }
                     if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)) {
-                        event.setAmount((float) (event.getAmount()*(1+0.05*weapon.getSerratedLevel(itemStack))));
+                        event.setAmount((float) (event.getAmount()*(1+0.05*weapon.getSerratedLevel(attacker,itemStack))));
                         //System.out.println(event.getAmount());
                     }
                     if(event.getEntity().getType().is(CustomEntityTags.ABYSSAL)) {
-                        event.setAmount((float) (event.getAmount()*(1+0.1*weapon.getHolyLevel(itemStack))));
+                        event.setAmount((float) (event.getAmount()*(1+0.1*weapon.getHolyLevel(attacker,itemStack))));
                         //System.out.println(event.getAmount());
                     }
                 } else {
                     if(itemStack.isEnchanted()) {
-                        if(itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())>=1){
+                        int serratedLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get());
+                        int holyLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get());
+
+                        if(serratedLevel>=1){
                             if(event.getEntity().getType().is(CustomEntityTags.BEAST)) {
-                                event.setAmount((float) (event.getAmount() * (1 + (0.1 * itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())))));
+                                event.setAmount((float) (event.getAmount() * (1 + (0.1 * serratedLevel))));
                                 //System.out.println(event.getAmount());
                             }
                             if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)) {
-                                event.setAmount((float) (event.getAmount() * (1 + (0.05 * itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())))));
+                                event.setAmount((float) (event.getAmount() * (1 + (0.05 * serratedLevel))));
                                 //System.out.println(event.getAmount());
                             }
                         }
-                        if(itemStack.getEnchantmentLevel(EnchantmentInit.ABYSS_CLEANSER.get())>=1){
+                        if(holyLevel>=1){
                             if(event.getEntity().getType().is(CustomEntityTags.ABYSSAL)) {
-                                event.setAmount((float) (event.getAmount() * (1 + (0.1 * itemStack.getEnchantmentLevel(EnchantmentInit.SERRATED.get())))));
+                                event.setAmount((float) (event.getAmount() * (1 + (0.1 * holyLevel))));
                                 //System.out.println(event.getAmount());
                             }
                         }

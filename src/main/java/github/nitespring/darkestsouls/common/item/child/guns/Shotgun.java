@@ -65,11 +65,11 @@ public class Shotgun extends Gun{
                     entity.setOwner(player);
                     entity.setAttackDamage(this.getAttackDamage(player, stackIn));
                     entity.setPoiseDamage(this.getPoiseDamage(player, stackIn));
-                    entity.setFlyingTime(this.getFlyingTime(stackIn));
+                    entity.setFlyingTime(this.getFlyingTime(player,stackIn));
                     entity.setBlood(this.getBlood(player, stackIn));
                     entity.setPoison(this.getPoison(player, stackIn));
                     entity.setFire(this.isFire(player, stackIn));
-                    entity.setExplosion(this.getExplosion(stackIn));
+                    entity.setExplosion(this.getExplosion(player,stackIn));
                     entity.setThunder(this.isLightning(player, stackIn));
                     entity.setSize((float) (this.getBaseSize() * (1 + 0.8 * rD)));
                     entity.setPierce(this.getPierce(player, stackIn));

@@ -98,7 +98,7 @@ public class CreativeTabInit {
                                 CustomItemTags.MAGIC_ENCHANTABLE,
                                 CustomItemTags.AMMO_CONSUMING
                         );
-                        displayParams.holders()
+                        /*displayParams.holders()
                                 .lookup(Registries.ENCHANTMENT)
                                 .ifPresent(
                                         p_337912_ -> {
@@ -109,7 +109,7 @@ public class CreativeTabInit {
                                                     output, p_337912_, set, CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY, displayParams.enabledFeatures()
                                             );
                                         }
-                                );
+                                );*/
                     })
                     .build());
 
@@ -275,7 +275,7 @@ public class CreativeTabInit {
                 .forEach(p_270000_ -> pOutput.accept(p_270000_, pTabVisibility));
     }
 
-    private static void generateEnchantmentBookTypesOnlyMaxLevel(
+    /*private static void generateEnchantmentBookTypesOnlyMaxLevel(
             CreativeModeTab.Output pOutput,
             HolderLookup<Enchantment> pEnchantments,
             Set<TagKey<Item>> pItems,
@@ -306,7 +306,7 @@ public class CreativeTabInit {
                                 .mapToObj(p_270006_ -> EnchantedBookItem.createForEnchantment(new EnchantmentInstance(p_270024_, p_270006_)))
                 )
                 .forEach(p_270017_ -> p_270961_.accept(p_270017_, pTabVisibility));
-    }
+    }*/
 
 
 }

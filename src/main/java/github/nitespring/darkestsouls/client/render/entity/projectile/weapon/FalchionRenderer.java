@@ -62,7 +62,7 @@ public class FalchionRenderer<T extends WeaponAttackEntity> extends EntityRender
 	      vertexconsumer = p_114532_.getBuffer(RenderType.entityCutoutNoCull(getTextureLocation(entity)));
 
 
-				 this.model.renderToBuffer(stack, vertexconsumer, p_114533_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+				 this.model.renderToBuffer(stack, vertexconsumer, p_114533_, OverlayTexture.NO_OVERLAY, 1 );
 				 stack.popPose();
 
 

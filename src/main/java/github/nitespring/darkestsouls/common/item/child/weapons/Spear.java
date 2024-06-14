@@ -31,7 +31,7 @@ public class Spear extends Weapon {
                 WeaponAttackEntity entity = new WeaponAttackEntity(EntityInit.SPEAR.get(), levelIn, pos, (float) Mth.atan2(pos.z - playerIn.getZ(), pos.x - playerIn.getX()));
                 entity.setOwner(playerIn);
                 entity.setItemStack(stackIn);
-                entity.setMaxTargets(this.getMaxTargets(stackIn));
+                entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
                         (this.getAttackDamage(playerIn, stackIn)) - 2.0f,
                         this.getPoiseDamage(playerIn, stackIn),

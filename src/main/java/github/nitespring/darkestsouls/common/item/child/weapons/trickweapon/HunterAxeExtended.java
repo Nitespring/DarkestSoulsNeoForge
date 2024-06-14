@@ -32,7 +32,7 @@ public class HunterAxeExtended extends TrickWeapon {
             WeaponAttackEntity entity = new WeaponAttackEntity(EntityInit.HUNTER_AXE_EXTENDED.get(), levelIn, pos, (float) Mth.atan2(pos.z - playerIn.getZ(), pos.x - playerIn.getX()));
             entity.setOwner(playerIn);
             entity.setItemStack(stackIn);
-            entity.setMaxTargets(this.getMaxTargets(stackIn));
+            entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
             entity.setDamage(
                     this.getAttackDamage(playerIn, stackIn),
                     this.getPoiseDamage(playerIn, stackIn),
