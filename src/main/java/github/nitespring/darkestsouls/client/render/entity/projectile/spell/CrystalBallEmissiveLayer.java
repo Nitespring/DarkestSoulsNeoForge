@@ -50,7 +50,7 @@ public class CrystalBallEmissiveLayer<T extends CrystalBallEntity & GeoEntity> e
 
 
 
-		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, 1);
+		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);
 		poseStack.popPose();
 
 	}

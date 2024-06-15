@@ -37,7 +37,7 @@ public class MagmaEmissiveLayer<T extends MagmaEntity> extends GeoRenderLayer<T>
 
 
 
-		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, 1);
+		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);
 
 
 	}

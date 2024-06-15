@@ -59,7 +59,7 @@ public class HollowRobeLayer<T extends Hollow & GeoEntity> extends GeoRenderLaye
 					cameo = RenderType.entityCutoutNoCull(ASSASSIN);
 					break;
 			}
-			this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, 1);
+			this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);
 		}
 	}
 	

@@ -28,7 +28,7 @@ public class MonstruosityOfSinEmissiveLayer<T extends MonstruosityOfSin> extends
 		
 		RenderType cameo = RenderType.entityTranslucentEmissive(EYES);
 
-		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, 1);
+		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);
 		
 
 		

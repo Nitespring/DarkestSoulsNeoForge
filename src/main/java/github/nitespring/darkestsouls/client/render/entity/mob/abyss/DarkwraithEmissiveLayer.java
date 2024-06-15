@@ -30,7 +30,7 @@ public class DarkwraithEmissiveLayer<T extends Darkwraith& GeoEntity> extends Ge
 		
 		RenderType cameo = RenderType.eyes(EYES);
 
-		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, 1);
+		this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);
 		
 
 		

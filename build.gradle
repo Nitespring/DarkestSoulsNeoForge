@@ -174,5 +174,5 @@ repositories {
     }
 }
 dependencies {
-        implementation "software.bernie.geckolib:geckolib-neoforge-1.21:4.5.5"
+        implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 }
