@@ -40,7 +40,7 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
 
 
     public Staff(float attackDamage, int durability, int tier, Properties properties) {
-        super(properties);
+        super(properties.stacksTo(1).durability(durability));
         this.attackDamage=attackDamage;
         this.durability=durability;
         this.tier=tier;

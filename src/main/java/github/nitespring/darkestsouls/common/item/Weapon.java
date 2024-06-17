@@ -60,7 +60,7 @@ public class Weapon extends Item implements ILeftClickItem {
     protected static final ResourceLocation BASE_ATTACK_REACH_ID = ResourceLocation.withDefaultNamespace("base_attack_reach");
 
     public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy,int serrated, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
-        super(properties.attributes(
+        super(properties.stacksTo(1).durability(durability).attributes(
                 Weapon.createAttributes(
                         attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
         this.tier=tier;
