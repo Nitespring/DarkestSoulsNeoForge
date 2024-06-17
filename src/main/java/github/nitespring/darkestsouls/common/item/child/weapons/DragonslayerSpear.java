@@ -93,7 +93,7 @@ public class DragonslayerSpear extends Weapon {
             e.setDimensionScale(1.25f);
             e.setMaxLifeTime(16);
             e.setPos(pos.add(0, 0.75, 0).add(aim.normalize().multiply(0.75f, 0.75f, 0.75f)));
-            e.setDeltaMovement(aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05),(aim.y),aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05));
+            e.setDeltaMovement(0.35f*aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05),0.35f*(aim.y),0.35f*aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05));
             e.accelerationPower = 0.35f;
             /*e.xPower = 0.35 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);
             e.yPower = 0.35 * aim.y;

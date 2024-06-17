@@ -53,7 +53,7 @@ public class ChaosStaff extends Staff {
             e.setDamage(this.getAttackDamage(playerIn, stackIn));
             e.setLifeTicks(36);
             e.setPos(pos.add(0, 1.25, 0).add(aim.normalize().multiply(1.5f, 1.5f, 1.5f)));
-            Vec3 aim2 = new Vec3(aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.4)),aim.y + 0.08f,aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.4)));
+            Vec3 aim2 = new Vec3(0.05*aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.4)),0.05*aim.y + 0.08f,0.05*aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.4)));
             e.setDeltaMovement(aim2);
             e.accelerationPower=0.05;
             /*e.xPower = 0.05 * aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.4));
@@ -91,7 +91,7 @@ public class ChaosStaff extends Staff {
             e.setMaxLifeTime(100);
             e.setDimensionScale(1.5f);
             e.setOwner(playerIn);
-            Vec3 aim2 = new Vec3(1.2f*aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)),aim.y + 0.035f,1.2f*aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)));
+            Vec3 aim2 = new Vec3(0.045 *aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)),0.03*aim.y + 0.035f,0.045 *aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)));
             e.setDeltaMovement(aim2);
             e.accelerationPower=0.035;
             /*e.xPower = 0.045 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1);
@@ -105,7 +105,7 @@ public class ChaosStaff extends Staff {
             e.setMaxLifeTime(80);
             e.setDimensionScale(1.25f);
             e.setOwner(playerIn);
-            Vec3 aim2 = new Vec3(1.2f*aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)),aim.y + 0.035f,1.2f*aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)));
+            Vec3 aim2 = new Vec3(0.045f*aim.x * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)),0.035*aim.y + 0.035f,0.045f*aim.z * (1 + ((playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1)));
             e.setDeltaMovement(aim2);
             e.accelerationPower=0.035;
             /*e.xPower = 0.045 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.025) * (1 + 0.1);

@@ -58,7 +58,7 @@ public class CrystalStaff extends Staff {
                 Vec3 aim1 = aim.add(rx* 1.5,ry* 0.75,rz* 1.5);
                 e.setPos(pos.add(rx*0.5, ry*0.5+1.5, rz*0.5).add(aim.multiply(0.5f, 0.5f, 0.5f).add(aim1.multiply(0.5f, 0.5f, 0.5f))));
                 e.accelerationPower=0.1f;
-                e.setDeltaMovement(aim.scale(0.5f).add(aim1));
+                e.setDeltaMovement(aim.scale(0.5f).add(aim1).scale(0.1f));
                 /*e.xPower = 0.1 * (0.5f*aim.x+aim1.x);
                 e.yPower = 0.1 * (0.5f*aim.y+aim1.y);
                 e.zPower = 0.1 * (0.5f*aim.z+aim1.z);*/
@@ -84,7 +84,7 @@ public class CrystalStaff extends Staff {
                 Vec3 aim1 = aim.add(rx* 0.75,ry* 0.75,rz* 0.75);
                 e.setPos(pos.add(rx*0.5, ry*0.5+1.5, rz*0.5).add(aim.multiply(1.0f, 1.0f, 1.0f).add(aim1.multiply(0.5f, 0.5f, 0.5f))));
                 e.accelerationPower=0.05f;
-                e.setDeltaMovement(aim.scale(0.5f).add(aim1));
+                e.setDeltaMovement(aim.scale(0.5f).add(aim1).scale(0.05f));
                 /*e.xPower = 0.05 * (0.5f*aim.x+aim1.x);
                 e.yPower = 0.05 * (0.5f*aim.y+aim1.y);
                 e.zPower = 0.05 * (0.5f*aim.z+aim1.z);*/
@@ -126,7 +126,7 @@ public class CrystalStaff extends Staff {
         e.setStopLifeTime(40);
         e.setMaxLifeTime(100);
         e.accelerationPower=0.1f;
-        e.setDeltaMovement(new Vec3(aim.x,0.1 * Math.max(aim.y, 0),aim.z));
+        e.setDeltaMovement(new Vec3(0.1 * aim.x,0.1f+0.1 * Math.max(aim.y, 0),0.1 * aim.z));
         /*e.xPower = 0.1 * aim.x;
         e.yPower = 0.1+0.1 * Math.max(aim.y, 0);
         e.zPower = 0.1 * aim.z;*/

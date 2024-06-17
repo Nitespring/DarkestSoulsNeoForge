@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -62,7 +63,13 @@ public class DamageEvents {
                 } else {
                     if(itemStack.isEnchanted()) {
                         int serratedLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get());
-                        int holyLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.SERRATED).get());
+                        int holyLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.ABYSS_CLEANSER).get());
+                        int bloodLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.BLOODBLADE).get());
+                        int poisonLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.POISONED_BLADE).get());
+                        int toxicLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.TOXIC_BLADE).get());
+                        int frostLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.FROST_BLADE).get());
+                        int rotLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.ROTTEN_BLADE).get());
+                        int witherLevel = itemStack.getEnchantmentLevel(attacker.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.WITHERED_BLADE).get());
 
                         if(serratedLevel>=1){
                             if(event.getEntity().getType().is(CustomEntityTags.BEAST)) {
@@ -78,6 +85,45 @@ public class DamageEvents {
                             if(event.getEntity().getType().is(CustomEntityTags.ABYSSAL)) {
                                 event.setAmount((float) (event.getAmount() * (1 + (0.1 * holyLevel))));
                                 //System.out.println(event.getAmount());
+                            }
+                        }
+                        if (!event.getEntity().getType().is(CustomEntityTags.POISON_IMMUNE)) {
+                            if (poisonLevel >= 1) {
+                                event.getEntity().addEffect(new MobEffectInstance(MobEffects.POISON, 90 + poisonLevel * 45, poisonLevel-1), source.getEntity());
+                            }
+                            if (toxicLevel >= 1) {
+                                event.getEntity().addEffect(new MobEffectInstance(EffectInit.TOXIC, 90 +toxicLevel * 45, toxicLevel-1), source.getEntity());
+                            }
+                        }
+                        if (!event.getEntity().getType().is(CustomEntityTags.ROT_IMMUNE)) {
+                            if (rotLevel >= 1) {
+                                event.getEntity().addEffect(new MobEffectInstance(EffectInit.ROT, 90 + rotLevel * 45, rotLevel - 1), source.getEntity());
+                            }
+                        }
+                        if (!event.getEntity().getType().is(CustomEntityTags.FROST_IMMUNE)) {
+                            if (frostLevel >= 1) {
+                                event.getEntity().addEffect(new MobEffectInstance(EffectInit.FROST, 90 + frostLevel * 45, frostLevel - 1), source.getEntity());
+                            }
+                        }
+                        if (!event.getEntity().getType().is(CustomEntityTags.WITHER_IMMUNE)) {
+                            if (witherLevel >= 1) {
+                                event.getEntity().addEffect(new MobEffectInstance(MobEffects.WITHER, 90 + witherLevel * 45, witherLevel - 1), source.getEntity());
+                            }
+                        }
+                        if (!event.getEntity().getType().is(CustomEntityTags.BLEED_IMMUNE)) {
+                            if (bloodLevel >= 1) {
+                                int bloodLevelFinalized=1+bloodLevel*2;
+                                if (event.getEntity().hasEffect(EffectInit.BLEED)) {
+                                    int amount = event.getEntity().getEffect(EffectInit.BLEED).getAmplifier() + bloodLevelFinalized;
+                                    event.getEntity().removeEffect(EffectInit.BLEED);
+                                    event.getEntity().addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                                    System.out.println(amount);
+                                } else {
+                                    int amount = bloodLevelFinalized - 1;
+                                    event.getEntity().addEffect(new MobEffectInstance(EffectInit.BLEED, 240, amount));
+                                    System.out.println(amount);
+                                }
+                                System.out.println(bloodLevelFinalized);
                             }
                         }
                     }

@@ -42,7 +42,7 @@ public class MolotovCocktail extends Item {
             MolotovCocktailEntity entity = new MolotovCocktailEntity(EntityInit.MOLOTOV.get(), levelIn);
             entity.setPos(x, y, z);
             float flyingPower = 0.30f;
-            entity.setDeltaMovement(aim);
+            entity.setDeltaMovement(aim.scale(flyingPower));
             entity.accelerationPower=flyingPower;
             /*entity.xPower = flyingPower * aim.x;
             entity.yPower = flyingPower * aim.y;

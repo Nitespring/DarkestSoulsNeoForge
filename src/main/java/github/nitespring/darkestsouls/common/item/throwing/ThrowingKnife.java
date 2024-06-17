@@ -64,7 +64,7 @@ public class ThrowingKnife extends Item {
             entity.setYRot(roty);
             //entity.shootFromRotation(playerIn, (float) (0.25f*aim.x), (float) (0.25f*aim.y), (float) (0.25f*aim.z), rotx, roty);
             entity.accelerationPower=flyingPower;
-            entity.setDeltaMovement(aim);
+            entity.setDeltaMovement(aim.scale(flyingPower));
             /*entity.xPower = flyingPower * aim.x;
             entity.yPower = flyingPower * aim.y;
             entity.zPower = flyingPower * aim.z;*/

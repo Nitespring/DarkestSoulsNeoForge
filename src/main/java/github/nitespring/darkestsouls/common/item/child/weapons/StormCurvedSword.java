@@ -34,7 +34,7 @@ public class StormCurvedSword extends Weapon {
                 e.setPos(pos.add(0, 0.75f, 0).add(aim.scale(0.75f)));
                 e.setOwner(playerIn);
                 e.setDamage(this.getAttackDamage(playerIn, stackIn));
-                e.setDeltaMovement(aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05),aim.y,aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05));
+                e.setDeltaMovement(0.2 *aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05),0.2 *aim.y,0.2 *aim.z * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05));
                 e.setMaxLifeTime(16);
                 e.accelerationPower=0.2f;
                 /*e.xPower = 0.2 * aim.x * (1 + (playerIn.getRandom().nextFloat() - 0.5) * 0.05);

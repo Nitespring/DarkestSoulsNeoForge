@@ -57,7 +57,7 @@ public class Shotgun extends Gun{
                     entity.setPos(x, y, z);
                     float flyingPower = this.flyingPower(player, stackIn);
                     Vec3 aim2 = aim.scale(0.4f).add(aim1);
-                    entity.setDeltaMovement(aim2);
+                    entity.setDeltaMovement(aim2.scale(flyingPower));
                     entity.accelerationPower=flyingPower;
                     /*entity.xPower = flyingPower * (0.4f * aim.x + aim1.x);
                     entity.yPower = flyingPower * (0.4f * aim.y + aim1.y);

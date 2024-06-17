@@ -127,7 +127,7 @@ public class Flamesprayer extends AlchemyTool {
             entity.setPos(x, y, z);
             float flyingPower = this.flyingPower(player, stackIn);
             //float flyingPower = 0.1f;
-            entity.setDeltaMovement(aim1);
+            entity.setDeltaMovement(aim1.scale(flyingPower));
             entity.accelerationPower=flyingPower;
             /*entity.xPower = flyingPower * aim1.x;
             entity.yPower = flyingPower * aim1.y;

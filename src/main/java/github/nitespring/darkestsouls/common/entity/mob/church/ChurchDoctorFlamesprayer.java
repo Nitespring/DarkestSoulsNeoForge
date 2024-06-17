@@ -273,7 +273,7 @@ public class ChurchDoctorFlamesprayer extends ChurchDoctor implements GeoEntity 
                             Flame entity = new Flame(EntityInit.FLAME.get(), this.level());
                             entity.setPos(x, y, z);
                             float flyingPower = 0.08f;
-                            entity.setDeltaMovement(aim1);
+                            entity.setDeltaMovement(aim1.scale(flyingPower));
                             entity.accelerationPower=flyingPower;
                             /*entity.xPower = flyingPower * aim1.x;
                             entity.yPower = flyingPower * aim1.y;

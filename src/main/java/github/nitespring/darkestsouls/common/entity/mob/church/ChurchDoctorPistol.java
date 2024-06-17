@@ -244,7 +244,7 @@ public class ChurchDoctorPistol extends ChurchDoctor implements GeoEntity {
                     Bullet entity = new Bullet(EntityInit.BULLET.get(), levelIn);
                     entity.setPos(x,y,z);
                     float flyingPower = 0.25f;
-                    entity.setDeltaMovement(aimVec);
+                    entity.setDeltaMovement(aimVec.scale(flyingPower));
                     entity.accelerationPower=flyingPower;
                     /*entity.xPower=flyingPower*aimVec.x;
                     entity.yPower=flyingPower*aimVec.y;

@@ -127,7 +127,7 @@ public class GatlingGun extends Gun implements GeoItem {
             entity.setPos(x, y, z);
             float flyingPower = this.flyingPower(player, stackIn);
             //float flyingPower = 0.5f;
-            entity.setDeltaMovement(aim);
+            entity.setDeltaMovement(aim.scale(flyingPower));
             entity.accelerationPower=flyingPower;
             /*entity.xPower = flyingPower * aim.x;
             entity.yPower = flyingPower * aim.y;

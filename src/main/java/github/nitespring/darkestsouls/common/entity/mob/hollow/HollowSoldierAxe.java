@@ -410,7 +410,7 @@ public class HollowSoldierAxe extends Hollow implements GeoEntity {
                     FirebombEntity entity = new FirebombEntity(EntityInit.FIREBOMB.get(), levelIn);
                     entity.setPos(x,y,z);
                     float flyingPower = 0.25f;
-                    entity.setDeltaMovement(aimVec);
+                    entity.setDeltaMovement(aimVec.scale(flyingPower));
                     entity.accelerationPower=flyingPower;
                     /*entity.xPower=flyingPower*aimVec.x;
                     entity.yPower=flyingPower*aimVec.y+0.01;

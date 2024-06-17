@@ -45,7 +45,7 @@ public class Firebomb extends Item {
             FirebombEntity entity = new FirebombEntity(EntityInit.FIREBOMB.get(), levelIn);
             entity.setPos(x, y, z);
             float flyingPower = 0.25f;
-            entity.setDeltaMovement(aim);
+            entity.setDeltaMovement(aim.scale(flyingPower));
             entity.accelerationPower=flyingPower;
             /*entity.xPower = flyingPower * aim.x;
             entity.yPower = flyingPower * aim.y;

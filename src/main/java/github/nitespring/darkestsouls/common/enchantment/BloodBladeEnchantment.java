@@ -21,7 +21,6 @@ public class BloodBladeEnchantment{
     public BloodBladeEnchantment() {
 
     }
-
     public void doPostAttack(LivingEntity attacker, Entity pTarget, int level) {
         if(!(attacker.getMainHandItem().getItem() instanceof Weapon)) {
             if(pTarget instanceof LivingEntity target) {

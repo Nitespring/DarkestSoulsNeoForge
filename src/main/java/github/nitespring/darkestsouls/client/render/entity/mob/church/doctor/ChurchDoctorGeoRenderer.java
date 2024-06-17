@@ -41,7 +41,7 @@ public class ChurchDoctorGeoRenderer<T extends ChurchDoctor & GeoEntity> extends
 		 return RenderType.entityCutoutNoCull(texture);
 	}
 	 
-	 @Override
+	@Override
 	public void render(@NotNull T entity, float entityYaw, float partialTick, PoseStack poseStack,
 					   @NotNull MultiBufferSource bufferSource, int packedLight) {
 		 float scaleFactor = 1.1f;
@@ -52,12 +52,5 @@ public class ChurchDoctorGeoRenderer<T extends ChurchDoctor & GeoEntity> extends
 		 super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
 		 poseStack.popPose();
 	}
-
-
-
-
-
-
-
 
 }
