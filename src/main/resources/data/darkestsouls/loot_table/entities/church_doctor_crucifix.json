@@ -105,7 +105,8 @@
               "add": false
             },
             {
-              "function": "minecraft:looting_enchant",
+                "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 0,
@@ -130,7 +131,8 @@
               "add": false
             },
             {
-              "function": "minecraft:looting_enchant",
+                "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 0,
@@ -155,7 +157,8 @@
               "add": false
             },
             {
-              "function": "minecraft:looting_enchant",
+                "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 0,
@@ -180,7 +183,8 @@
               "add": false
             },
             {
-              "function": "minecraft:looting_enchant",
+                "enchantment": "minecraft:looting",
+              "function": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 0,
