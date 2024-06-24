@@ -23,13 +23,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.living.LivingBreatheEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
 @EventBusSubscriber(modid = DarkestSouls.MODID)
 public class DamageEvents {
     @SubscribeEvent
-    public static void applyDamageEvent(final LivingHurtEvent event){
+    public static void applyDamageEvent(final LivingIncomingDamageEvent event){
         DamageSource source = event.getSource();
         //System.out.println(event.getAmount());
         //System.out.println(event.getEntity().getType());
