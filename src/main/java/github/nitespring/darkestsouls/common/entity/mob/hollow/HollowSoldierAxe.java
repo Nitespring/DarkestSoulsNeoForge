@@ -419,8 +419,8 @@ public class HollowSoldierAxe extends Hollow implements GeoEntity {
                     entity.setAttackDamage((float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.8f);
                     entity.setPoiseDamage(4);
                     entity.setGravPower(0.0015f);
-                    entity.setHorizontalSpread(1.0);
-                    entity.setVerticalSpread(1.0);
+                    entity.setHorizontalSpread(1.0f);
+                    entity.setVerticalSpread(1.0f);
                     levelIn.addFreshEntity(entity);
 
                 }

@@ -29,8 +29,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.common.ToolAction;
-import net.neoforged.neoforge.common.ToolActions;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 
 
 import java.util.List;
@@ -282,10 +282,13 @@ public class Weapon extends Item implements ILeftClickItem {
     }
 
 
+
+
     @Override
-    public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
-        return ToolActions.SWORD_DIG==toolAction;
+    public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
+        return ItemAbilities.SWORD_DIG==itemAbility;
     }
+
     @Override
     public boolean isDamageable(ItemStack stack) {
 

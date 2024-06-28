@@ -51,8 +51,8 @@ public class MolotovCocktail extends Item {
             entity.setAttackDamage(this.attackDamage);
             entity.setPoiseDamage(this.poiseDamage);
             entity.setGravPower(0.001f);
-            entity.setHorizontalSpread(4.0);
-            entity.setVerticalSpread(3.5);
+            entity.setHorizontalSpread(4.0f);
+            entity.setVerticalSpread(3.5f);
             levelIn.addFreshEntity(entity);
         }
         playerIn.getCooldowns().addCooldown(stackIn.getItem(), useCooldown);
