@@ -78,6 +78,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.FRAYED_BLADE.get());
                         output.accept(ItemInit.HUNTER_PISTOL.get());
                         output.accept(ItemInit.BLUNDERBUSS.get());
+                        output.accept(ItemInit.MUSKET.get());
                         output.accept(ItemInit.REPEATING_PISTOL.get());
                         output.accept(ItemInit.EVELYN.get());
                         output.accept(ItemInit.GATLING_GUN.get());
@@ -92,6 +93,10 @@ public class CreativeTabInit {
                         output.accept(ItemInit.CRYSTAL_STAFF_PURPLE.get());
                         output.accept(ItemInit.CRYSTAL_STAFF_BLUE.get());
                         output.accept(ItemInit.CHAOS_STAFF.get());
+                        output.accept(ItemInit.HUNTER_HAT.get());
+                        output.accept(ItemInit.HUNTER_COAT.get());
+                        output.accept(ItemInit.HUNTER_TROUSERS.get());
+                        output.accept(ItemInit.HUNTER_BOOTS.get());
                         Set<TagKey<Item>> set = Set.of(
                                 CustomItemTags.WEAPON_ENCHANTABLE,
                                 CustomItemTags.GUN_ENCHANTABLE,

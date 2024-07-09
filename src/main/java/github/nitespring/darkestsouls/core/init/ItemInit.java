@@ -4,6 +4,7 @@ import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.common.item.child.alchemy.Flamesprayer;
 import github.nitespring.darkestsouls.common.item.child.alchemy.LanternNormal;
+import github.nitespring.darkestsouls.common.item.child.armour.HunterTricornArmour;
 import github.nitespring.darkestsouls.common.item.child.guns.GatlingGun;
 import github.nitespring.darkestsouls.common.item.child.guns.Pistol;
 import github.nitespring.darkestsouls.common.item.child.guns.Shotgun;
@@ -17,12 +18,8 @@ import github.nitespring.darkestsouls.common.item.throwing.MolotovCocktail;
 import github.nitespring.darkestsouls.common.item.throwing.ThrowingKnife;
 import github.nitespring.darkestsouls.core.enums.Tiers;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 
-import net.minecraft.world.item.Rarity;
-
-import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -147,7 +144,8 @@ public class ItemInit {
 			() -> new Pistol(16.0f, 28,6,0.5f,0.5f, 12, 0,0,2, 511, 8, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,GatlingGun> GATLING_GUN = ITEMS.register("gatling_gun",
 			() -> new GatlingGun(2.0f, 60,0,0.2f,0.5f, 12, 0,0,1, 511, 5, new Item.Properties().rarity(Rarity.RARE)));
-
+	public static final DeferredHolder<Item,Pistol> MUSKET = ITEMS.register("musket",
+			() -> new Pistol(8.0f, 24,2,0.4f,0.5f, 16, 0,0,1, 511, 8, new Item.Properties().rarity(Rarity.UNCOMMON)));
 	//Alchemy
 	public static final DeferredHolder<Item,Weapon> HUNTER_TORCH= ITEMS.register("hunter_torch",
 			() -> new Weapon(Tiers.TITANITE, 1.0f, 1.9f, 2.5f,-0.2f, 4, 0,0,0,0,0,2,0,0,225,8,0.10f, 2,new Item.Properties()));
@@ -173,6 +171,17 @@ public class ItemInit {
 			() -> new Firebomb(10.0f, 24, 8, 1, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(12)));
 	public static final DeferredHolder<Item,MolotovCocktail> MOLOTOV = ITEMS.register("molotov",
 			() -> new MolotovCocktail(6.0f, 28, 4, new Item.Properties().stacksTo(16)));
+
+	//Armour
+	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_HAT = ITEMS.register("hunter_hat",
+			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_COAT = ITEMS.register("hunter_coat",
+			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_TROUSERS = ITEMS.register("hunter_trousers",
+			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_BOOTS = ITEMS.register("hunter_boots",
+			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+
 	//Eggs
 	public static final DeferredHolder<Item,Item> SIN = ITEMS.register("sin_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SIN.get(), 1318437, 16449279, new Item.Properties()));

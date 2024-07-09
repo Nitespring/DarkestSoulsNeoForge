@@ -22,6 +22,7 @@ import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.*;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeFlameModel;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeFlameRenderer;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeRenderer;
+import github.nitespring.darkestsouls.client.render.equipment.armour.HunterTricornModel;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -43,6 +44,8 @@ public class ClientListener {
 	public static final ModelLayerLocation BULLET = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "bullet"), "main");
 	public static final ModelLayerLocation MOLOTOV = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "molotov"), "main");
 
+	public static final ModelLayerLocation HUNTER_TRICORN_OUTER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "hunter_tricorn"), "outer");
+	public static final ModelLayerLocation HUNTER_TRICORN_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "hunter_tricorn"), "inner");
 
 	@SubscribeEvent
 	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
@@ -51,6 +54,8 @@ public class ClientListener {
 		event.registerLayerDefinition(FRAYED_BLADE_FLAME, FrayedBladeFlameModel::createBodyLayer);
 		event.registerLayerDefinition(BULLET, BulletModel::createBodyLayer);
 		event.registerLayerDefinition(MOLOTOV, MolotovCocktailModel::createBodyLayer);
+		event.registerLayerDefinition(HUNTER_TRICORN_INNER, HunterTricornModel::createInnerLayer);
+		event.registerLayerDefinition(HUNTER_TRICORN_OUTER, HunterTricornModel::createOuterLayer);
 
 	}
 
