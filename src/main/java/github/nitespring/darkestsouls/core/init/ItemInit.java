@@ -4,7 +4,7 @@ import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.common.item.child.alchemy.Flamesprayer;
 import github.nitespring.darkestsouls.common.item.child.alchemy.LanternNormal;
-import github.nitespring.darkestsouls.common.item.child.armour.HunterTricornArmour;
+import github.nitespring.darkestsouls.common.item.child.armour.HunterTricornArmourItem;
 import github.nitespring.darkestsouls.common.item.child.guns.GatlingGun;
 import github.nitespring.darkestsouls.common.item.child.guns.Pistol;
 import github.nitespring.darkestsouls.common.item.child.guns.Shotgun;
@@ -173,14 +173,14 @@ public class ItemInit {
 			() -> new MolotovCocktail(6.0f, 28, 4, new Item.Properties().stacksTo(16)));
 
 	//Armour
-	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_HAT = ITEMS.register("hunter_hat",
-			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
-	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_COAT = ITEMS.register("hunter_coat",
-			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
-	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_TROUSERS = ITEMS.register("hunter_trousers",
-			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
-	public static final DeferredHolder<Item, HunterTricornArmour> HUNTER_BOOTS = ITEMS.register("hunter_boots",
-			() -> new HunterTricornArmour(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmourItem> HUNTER_HAT = ITEMS.register("hunter_hat",
+			() -> new HunterTricornArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmourItem> HUNTER_COAT = ITEMS.register("hunter_coat",
+			() -> new HunterTricornArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmourItem> HUNTER_TROUSERS = ITEMS.register("hunter_trousers",
+			() -> new HunterTricornArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+	public static final DeferredHolder<Item, HunterTricornArmourItem> HUNTER_BOOTS = ITEMS.register("hunter_boots",
+			() -> new HunterTricornArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 
 	//Eggs
 	public static final DeferredHolder<Item,Item> SIN = ITEMS.register("sin_spawn_egg",

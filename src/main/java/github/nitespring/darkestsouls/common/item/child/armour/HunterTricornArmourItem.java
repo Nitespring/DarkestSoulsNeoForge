@@ -6,28 +6,24 @@ import github.nitespring.darkestsouls.core.event.ClientListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.core.Holder;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Consumer;
 
-public class HunterTricornArmour extends ArmorItem {
+public class HunterTricornArmourItem extends ArmorItem {
 
 
 
-    public HunterTricornArmour(Holder<ArmorMaterial> p_40386_, Type p_40387_, Properties p_40388_) {
+    public HunterTricornArmourItem(Holder<ArmorMaterial> p_40386_, Type p_40387_, Properties p_40388_) {
         super(p_40386_, p_40387_, p_40388_);
     }
 
