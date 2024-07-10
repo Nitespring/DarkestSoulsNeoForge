@@ -24,8 +24,8 @@ public class SpecialistArmourModel<T extends LivingEntity> extends HumanoidArmor
         PartDefinition right_leg = partdefinition.getChild("right_leg");
         PartDefinition left_leg = partdefinition.getChild("left_leg");
 
-        PartDefinition hat_part = head.addOrReplaceChild("hat_part", CubeListBuilder.create().texOffs(61, 15).addBox(-8.0F, 0.75F, -11.0F, 18.0F, 1.0F, 18.0F, new CubeDeformation(0.0F))
-                .texOffs(96, 0).addBox(-3.0F, -3.5F, -6.25F, 8.0F, 4.0F, 8.0F, new CubeDeformation(0.25F)), PartPose.offset(-1.0F, -5.75F, 1.75F));
+        PartDefinition hat_part = head.addOrReplaceChild("hat_part", CubeListBuilder.create().texOffs(61, 15).addBox(-8.0F, 0.25F, -11.0F, 18.0F, 1.0F, 18.0F, new CubeDeformation(0.0F))
+                .texOffs(96, 0).addBox(-3.0F, -3.5F, -5.75F, 8.0F, 4.0F, 8.0F, new CubeDeformation(0.25F)), PartPose.offset(-1.0F, -5.75F, 1.75F));
 
         PartDefinition mask = head.addOrReplaceChild("mask", CubeListBuilder.create().texOffs(96, 64).addBox(-4.0F, -32.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.8F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
@@ -67,7 +67,7 @@ public class SpecialistArmourModel<T extends LivingEntity> extends HumanoidArmor
 
         PartDefinition cloak_left = left_arm.addOrReplaceChild("cloak_left", CubeListBuilder.create().texOffs(24, 69).addBox(-1.0F, -2.8F, -3.0F, 5.0F, 7.0F, 6.0F, new CubeDeformation(0.21F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition cloak_right = right_arm.addOrReplaceChild("cloak_right", CubeListBuilder.create().texOffs(46, 69).mirror().addBox(-1.0F, -2.8F, -3.0F, 5.0F, 7.0F, 6.0F, new CubeDeformation(0.21F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition cloak_right = right_arm.addOrReplaceChild("cloak_right", CubeListBuilder.create().texOffs(46, 69).mirror().addBox(-4.0F, -2.8F, -3.0F, 5.0F, 7.0F, 6.0F, new CubeDeformation(0.21F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 128, 128);
     }

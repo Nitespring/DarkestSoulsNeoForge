@@ -145,7 +145,7 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Pistol> REPEATING_PISTOL = ITEMS.register("repeating_pistol",
 			() -> new Pistol(16.0f, 28,6,0.5f,0.5f, 12, 0,0,2, 511, 8, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,GatlingGun> GATLING_GUN = ITEMS.register("gatling_gun",
-			() -> new GatlingGun(2.0f, 60,0,0.2f,0.5f, 12, 0,0,1, 511, 5, new Item.Properties().rarity(Rarity.RARE)));
+			() -> new GatlingGun(2.0f, 60,0,0.5f,0.5f, 12, 0,0,1, 511, 5, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,Pistol> MUSKET = ITEMS.register("musket",
 			() -> new Pistol(8.0f, 24,2,0.4f,0.5f, 16, 0,0,1, 511, 8, new Item.Properties().rarity(Rarity.UNCOMMON)));
 	//Alchemy
