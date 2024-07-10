@@ -23,6 +23,7 @@ public class HunterTricornModel<T extends LivingEntity> extends HumanoidArmorMod
         PartDefinition partdefinition = meshdefinition.getRoot();
 
         PartDefinition head = partdefinition.getChild("head");
+        PartDefinition hat = partdefinition.getChild("hat");
         PartDefinition body = partdefinition.getChild("body");
         PartDefinition right_arm = partdefinition.getChild("right_arm");
         PartDefinition left_arm = partdefinition.getChild("left_arm");
@@ -38,8 +39,6 @@ public class HunterTricornModel<T extends LivingEntity> extends HumanoidArmorMod
         PartDefinition hat_part_r2 = hat_part.addOrReplaceChild("hat_part_r2", CubeListBuilder.create().texOffs(64, 2).addBox(-8.0F, -8.0F, -14.0F, 0.0F, 8.0F, 32.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, 0.0F, 0.0F, 0.2392F, -0.4274F, -0.0989F));
 
         PartDefinition hat_part_r3 = hat_part.addOrReplaceChild("hat_part_r3", CubeListBuilder.create().texOffs(44, 1).addBox(-10.0F, 0.0F, -10.0F, 28.0F, 0.0F, 28.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, 0.0F, -2.0F, 0.3038F, -0.762F, -0.2132F));
-
-        PartDefinition hat = partdefinition.addOrReplaceChild("hat", CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -31.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(1.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
         PartDefinition body_part = body.addOrReplaceChild("body_part", CubeListBuilder.create().texOffs(0, 64).addBox(-4.0F, -24.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.8F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
