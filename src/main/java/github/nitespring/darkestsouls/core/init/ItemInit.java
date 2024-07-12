@@ -4,9 +4,7 @@ import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.common.item.child.alchemy.Flamesprayer;
 import github.nitespring.darkestsouls.common.item.child.alchemy.LanternNormal;
-import github.nitespring.darkestsouls.common.item.child.armour.AlchemistArmourItem;
-import github.nitespring.darkestsouls.common.item.child.armour.HunterArmourItem;
-import github.nitespring.darkestsouls.common.item.child.armour.SpecialistArmourItem;
+import github.nitespring.darkestsouls.common.item.child.armour.*;
 import github.nitespring.darkestsouls.common.item.child.guns.GatlingGun;
 import github.nitespring.darkestsouls.common.item.child.guns.Pistol;
 import github.nitespring.darkestsouls.common.item.child.guns.Shotgun;
@@ -199,7 +197,18 @@ public class ItemInit {
 			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, SpecialistArmourItem> SPECIALIST_BOOTS = ITEMS.register("specialist_boots",
 			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
-
+	public static final DeferredHolder<Item, TatteredWizardRobeItem> TATTERED_WIZARD_HAT = ITEMS.register("tattered_wizard_hat",
+			() -> new TatteredWizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+	public static final DeferredHolder<Item, TatteredWizardRobeItem> TATTERED_WIZARD_ROBE = ITEMS.register("tattered_wizard_robe",
+			() -> new TatteredWizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_HAT = ITEMS.register("wizard_hat",
+			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_ROBE = ITEMS.register("wizard_robe",
+			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_PANTS = ITEMS.register("wizard_trousers",
+			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_BOOTS = ITEMS.register("wizard_boots",
+			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 	//Eggs
 	public static final DeferredHolder<Item,Item> SIN = ITEMS.register("sin_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SIN.get(), 1318437, 16449279, new Item.Properties()));

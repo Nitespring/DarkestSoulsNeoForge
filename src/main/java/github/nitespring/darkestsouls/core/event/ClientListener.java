@@ -22,9 +22,7 @@ import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.*;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeFlameModel;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeFlameRenderer;
 import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.frayedblade.FrayedBladeRenderer;
-import github.nitespring.darkestsouls.client.render.equipment.armour.AlchemistTopHatModel;
-import github.nitespring.darkestsouls.client.render.equipment.armour.HunterTricornModel;
-import github.nitespring.darkestsouls.client.render.equipment.armour.SpecialistArmourModel;
+import github.nitespring.darkestsouls.client.render.equipment.armour.*;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -48,12 +46,13 @@ public class ClientListener {
 
 	public static final ModelLayerLocation TRICORN_OUTER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "hunter_tricorn"), "outer");
 	public static final ModelLayerLocation TRICORN_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "hunter_tricorn"), "inner");
-
 	public static final ModelLayerLocation TOP_HAT_OUTER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "alchemist_top_hat"), "outer");
 	public static final ModelLayerLocation TOP_HAT_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "alchemist_top_hat"), "inner");
-	public static final ModelLayerLocation SPECIALIST_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "specialist_armour"), "outer");
-	public static final ModelLayerLocation SPECIALIST_OUTER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "specialist_armour"), "inner");
-
+	public static final ModelLayerLocation SPECIALIST_OUTER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "specialist_armour"), "outer");
+	public static final ModelLayerLocation SPECIALIST_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "specialist_armour"), "inner");
+	public static final ModelLayerLocation TATTERED_WIZARD_ROBE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "tattered_wizard_robe"), "main");
+	public static final ModelLayerLocation WIZARD_ROBE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "wizard_robe"), "outer");
+	public static final ModelLayerLocation WIZARD_ROBE_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "wizard_robe"), "inner");
 	@SubscribeEvent
 	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
 
@@ -67,6 +66,9 @@ public class ClientListener {
 		event.registerLayerDefinition(TOP_HAT_OUTER, AlchemistTopHatModel::createOuterLayer);
 		event.registerLayerDefinition(SPECIALIST_INNER, SpecialistArmourModel::createInnerLayer);
 		event.registerLayerDefinition(SPECIALIST_OUTER, SpecialistArmourModel::createOuterLayer);
+		event.registerLayerDefinition(TATTERED_WIZARD_ROBE, TatteredWizardRobeModel::createBodyLayer);
+		event.registerLayerDefinition(WIZARD_ROBE, WizardRobeModel::createOuterLayer);
+		event.registerLayerDefinition(WIZARD_ROBE_INNER, WizardRobeModel::createInnerLayer);
 
 	}
 

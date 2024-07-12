@@ -105,6 +105,12 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SPECIALIST_COAT.get());
                         output.accept(ItemInit.SPECIALIST_TROUSERS.get());
                         output.accept(ItemInit.SPECIALIST_BOOTS.get());
+                        output.accept(ItemInit.TATTERED_WIZARD_HAT.get());
+                        output.accept(ItemInit.TATTERED_WIZARD_ROBE.get());
+                        output.accept(ItemInit.WIZARD_HAT.get());
+                        output.accept(ItemInit.WIZARD_ROBE.get());
+                        output.accept(ItemInit.WIZARD_PANTS.get());
+                        output.accept(ItemInit.WIZARD_BOOTS.get());
                         Set<TagKey<Item>> set = Set.of(
                                 CustomItemTags.WEAPON_ENCHANTABLE,
                                 CustomItemTags.GUN_ENCHANTABLE,
