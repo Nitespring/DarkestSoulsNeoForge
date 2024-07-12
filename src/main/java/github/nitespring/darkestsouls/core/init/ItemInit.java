@@ -209,6 +209,14 @@ public class ItemInit {
 			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_BOOTS = ITEMS.register("wizard_boots",
 			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_HELM = ITEMS.register("knight_helm",
+			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.HELMET,new Item.Properties()));
+	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_CHESTPLATE = ITEMS.register("knight_chestplate",
+			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_PANTS = ITEMS.register("knight_pants",
+			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_BOOTS = ITEMS.register("knight_boots",
+			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS,new Item.Properties()));
 	//Eggs
 	public static final DeferredHolder<Item,Item> SIN = ITEMS.register("sin_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SIN.get(), 1318437, 16449279, new Item.Properties()));

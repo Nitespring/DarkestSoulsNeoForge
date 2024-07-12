@@ -53,6 +53,7 @@ public class ClientListener {
 	public static final ModelLayerLocation TATTERED_WIZARD_ROBE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "tattered_wizard_robe"), "main");
 	public static final ModelLayerLocation WIZARD_ROBE = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "wizard_robe"), "outer");
 	public static final ModelLayerLocation WIZARD_ROBE_INNER = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "wizard_robe"), "inner");
+	public static final ModelLayerLocation ELITE_KNIGHT = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "elite_knight"), "main");
 	@SubscribeEvent
 	public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
 
@@ -69,6 +70,7 @@ public class ClientListener {
 		event.registerLayerDefinition(TATTERED_WIZARD_ROBE, TatteredWizardRobeModel::createBodyLayer);
 		event.registerLayerDefinition(WIZARD_ROBE, WizardRobeModel::createOuterLayer);
 		event.registerLayerDefinition(WIZARD_ROBE_INNER, WizardRobeModel::createInnerLayer);
+		event.registerLayerDefinition(ELITE_KNIGHT, EliteKnightArmourModel::createBodyLayer);
 
 	}
 
