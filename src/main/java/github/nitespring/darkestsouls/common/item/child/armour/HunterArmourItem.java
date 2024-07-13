@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.common.item.child.armour;
 
 import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.client.render.equipment.armour.HunterTricornModel;
+import github.nitespring.darkestsouls.common.item.CustomArmourItem;
 import github.nitespring.darkestsouls.core.event.ClientListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
@@ -19,15 +20,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-public class HunterArmourItem extends ArmorItem {
+public class HunterArmourItem extends CustomArmourItem {
 
 
-
-    public HunterArmourItem(Holder<ArmorMaterial> p_40386_, Type p_40387_, Properties p_40388_) {
-        super(p_40386_, p_40387_, p_40388_);
+    public HunterArmourItem(float defence, float toughness, float knockbackResistance, float speedModifier, float jumpModifier, int magicDefence, int fireDefence, int bloodResistance, int durability, int enchantability, Holder<ArmorMaterial> materialType, Type type, Properties properties) {
+        super(defence, toughness, knockbackResistance, speedModifier, jumpModifier, magicDefence, fireDefence, bloodResistance, durability, enchantability, materialType, type, properties);
     }
-
-
 
     @Override
     public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
