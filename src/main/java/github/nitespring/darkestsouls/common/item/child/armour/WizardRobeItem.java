@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.common.item.child.armour;
 import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.client.render.equipment.armour.SpecialistArmourModel;
 import github.nitespring.darkestsouls.client.render.equipment.armour.WizardRobeModel;
+import github.nitespring.darkestsouls.common.item.CustomArmourItem;
 import github.nitespring.darkestsouls.core.event.ClientListener;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
@@ -22,16 +23,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-public class WizardRobeItem extends ArmorItem {
-
-
-
-    public WizardRobeItem(Holder<ArmorMaterial> p_40386_, Type p_40387_, Properties p_40388_) {
-        super(p_40386_, p_40387_, p_40388_);
+public class WizardRobeItem extends CustomArmourItem {
+    public WizardRobeItem(int armourClass, int tier, int defaultArmourModel, float defence, float toughness, float knockbackResistance, float knockbackBonus, float attackSpeedBonus, float meleeBonus, int magicBonus, int alchemyBonus, int gunBonus, int luckBonus, float speedModifier, float jumpModifier, int magicDefence, int fireDefence, int bloodResistance, int durability, int enchantability, Holder<ArmorMaterial> materialType, Type type, Properties properties) {
+        super(armourClass, tier, defaultArmourModel, defence, toughness, knockbackResistance, knockbackBonus, attackSpeedBonus, meleeBonus, magicBonus, alchemyBonus, gunBonus, luckBonus, speedModifier, jumpModifier, magicDefence, fireDefence, bloodResistance, durability, enchantability, materialType, type, properties);
     }
 
-
-
+    /*
     @Override
     public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 
@@ -59,6 +56,6 @@ public class WizardRobeItem extends ArmorItem {
 
 
     }
-
+    */
 
 }

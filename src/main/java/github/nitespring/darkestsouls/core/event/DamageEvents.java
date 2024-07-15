@@ -4,6 +4,7 @@ import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
+import github.nitespring.darkestsouls.core.util.ArmourUtils;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
@@ -34,8 +35,15 @@ public class DamageEvents {
         //System.out.println(event.getAmount());
         //System.out.println(event.getEntity().getType());
         //System.out.println(event.getEntity().getType().getTags().count());
-
-        if(event.getEntity().getType().is(CustomEntityTags.BEASTLY)){
+        if(event.getEntity() instanceof Player player){
+            if(source.is(DamageTypeTags.IS_FIRE)) {
+                event.setAmount((float) (event.getAmount()*(1-0.01*ArmourUtils.getFireResistance(player))));
+            }
+            if(source.is(DamageTypeTags.BYPASSES_RESISTANCE)){
+                event.setAmount((float) (event.getAmount()*(1-0.01*ArmourUtils.getMagicDefence(player))));
+            }
+        }
+        if(event.getEntity().getType().is(CustomEntityTags.BEAST)){
             if(source.is(DamageTypeTags.IS_FIRE)) {
                 event.setAmount(event.getAmount()*2.5f);
             }else if (event.getEntity().isOnFire()){

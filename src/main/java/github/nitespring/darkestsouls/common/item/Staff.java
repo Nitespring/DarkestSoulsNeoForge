@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.common.item;
 
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import github.nitespring.darkestsouls.core.util.ArmourUtils;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import github.nitespring.darkestsouls.core.util.MathUtils;
 import net.minecraft.ChatFormatting;
@@ -57,7 +58,8 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
         if(stackIn.isEnchanted()){
             enchantModifier = stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.MISER_SOUL).get());
         }
-        return 0.1f*enchantModifier;
+        float armourModifier = (float) ArmourUtils.getLuckBonus(playerIn) /100;
+        return 0.1f*enchantModifier + armourModifier;
     }
     @Override
     public int getMaxStackSize(ItemStack stack) {

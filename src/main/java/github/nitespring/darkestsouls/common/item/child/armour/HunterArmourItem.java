@@ -21,12 +21,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Consumer;
 
 public class HunterArmourItem extends CustomArmourItem {
-
-
-    public HunterArmourItem(float defence, float toughness, float knockbackResistance, float speedModifier, float jumpModifier, int magicDefence, int fireDefence, int bloodResistance, int durability, int enchantability, Holder<ArmorMaterial> materialType, Type type, Properties properties) {
-        super(defence, toughness, knockbackResistance, speedModifier, jumpModifier, magicDefence, fireDefence, bloodResistance, durability, enchantability, materialType, type, properties);
+    public HunterArmourItem(int armourClass, int tier, int defaultArmourModel, float defence, float toughness, float knockbackResistance, float knockbackBonus, float attackSpeedBonus, float meleeBonus, int magicBonus, int alchemyBonus, int gunBonus, int luckBonus, float speedModifier, float jumpModifier, int magicDefence, int fireDefence, int bloodResistance, int durability, int enchantability, Holder<ArmorMaterial> materialType, Type type, Properties properties) {
+        super(armourClass, tier, defaultArmourModel, defence, toughness, knockbackResistance, knockbackBonus, attackSpeedBonus, meleeBonus, magicBonus, alchemyBonus, gunBonus, luckBonus, speedModifier, jumpModifier, magicDefence, fireDefence, bloodResistance, durability, enchantability, materialType, type, properties);
     }
 
+
+
+
+/*
     @Override
     public @Nullable ResourceLocation getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
 
@@ -54,6 +56,6 @@ public class HunterArmourItem extends CustomArmourItem {
 
 
     }
-
+*/
 
 }

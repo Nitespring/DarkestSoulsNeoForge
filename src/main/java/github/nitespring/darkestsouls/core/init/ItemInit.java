@@ -174,49 +174,49 @@ public class ItemInit {
 
 	//Armour
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_HAT = ITEMS.register("hunter_hat",
-			() -> new HunterArmourItem(3,1,0,0.005f,0.01f,0,0,2,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new HunterArmourItem(1,1,50,3,1,0,0,0.1f,0.3f, 0,0,0,0,50.005f,0.01f,0,0,2,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_COAT = ITEMS.register("hunter_coat",
-			() -> new HunterArmourItem(5,1,0,0.01f,0.02f,0,2,3,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new HunterArmourItem(1,1,50,5,1,0,0,0.1f,0.3f,0,0,0,0,0.01f,0.02f,0,2,3,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_TROUSERS = ITEMS.register("hunter_trousers",
-			() -> new HunterArmourItem(4,0,0,0.02f,0.04f, 0,1,2,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+			() -> new HunterArmourItem(1,1,50,4,0,0,0,0.1f,0.2f,0,0,0,0,0.02f,0.04f, 0,1,2,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_BOOTS = ITEMS.register("hunter_boots",
-			() -> new HunterArmourItem(2,0,0, 0.015f,0.03f,0,0,1, 1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+			() -> new HunterArmourItem(1,1,50,2,0,0, 0,0.1f,0.2f,0,0,0,0,0.015f,0.03f,0,0,1, 1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 	public static final DeferredHolder<Item, AlchemistArmourItem> ALCHEMIST_HAT = ITEMS.register("alchemist_hat",
-			() -> new AlchemistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new AlchemistArmourItem(3,1,80,2,0,0,0,0,0,0,10,0,5,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, AlchemistArmourItem> ALCHEMIST_COAT = ITEMS.register("alchemist_coat",
-			() -> new AlchemistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new AlchemistArmourItem(3,1,80,4,1,0,0,0,0,0,10,0,5,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, AlchemistArmourItem> ALCHEMIST_TROUSERS = ITEMS.register("alchemist_trousers",
-			() -> new AlchemistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+			() -> new AlchemistArmourItem(3,1,80,2,0,0,0,0,0,0,5,0,0,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, AlchemistArmourItem> ALCHEMIST_BOOTS = ITEMS.register("alchemist_boots",
-			() -> new AlchemistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+			() -> new AlchemistArmourItem(3,1,80,1,0,0,0,0,0,0,5,0,0,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 	public static final DeferredHolder<Item, SpecialistArmourItem> SPECIALIST_HAT = ITEMS.register("specialist_hat",
-			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new SpecialistArmourItem(4,1,70,2,1,0,0,0,0,0,0,10,7,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, SpecialistArmourItem> SPECIALIST_COAT = ITEMS.register("specialist_coat",
-			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new SpecialistArmourItem(4,1,70,4,1,0,0,0,0,0,0,10,0,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, SpecialistArmourItem> SPECIALIST_TROUSERS = ITEMS.register("specialist_trousers",
-			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+			() -> new SpecialistArmourItem(4,1,70,3,1,0,0,0,0,0,0,5,0,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, SpecialistArmourItem> SPECIALIST_BOOTS = ITEMS.register("specialist_boots",
-			() -> new SpecialistArmourItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+			() -> new SpecialistArmourItem(4,1,70,2,1,0,0,0,0,0,0,5,0,0,0,0,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 	public static final DeferredHolder<Item, TatteredWizardRobeItem> TATTERED_WIZARD_HAT = ITEMS.register("tattered_wizard_hat",
-			() -> new TatteredWizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new TatteredWizardRobeItem(2,0,10,1,0,0,0,0,0,5,0,0,5,0,0,2,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, TatteredWizardRobeItem> TATTERED_WIZARD_ROBE = ITEMS.register("tattered_wizard_robe",
-			() -> new TatteredWizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new TatteredWizardRobeItem(2,0,10,2,0,0,0,0,0,5,0,0,5,0,0,3,0,0,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_HAT = ITEMS.register("wizard_hat",
-			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new WizardRobeItem(2,1,11,2,0,0,0,0,0,10,0,0,10,0,0,5,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_ROBE = ITEMS.register("wizard_robe",
-			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new WizardRobeItem(2,1,11,3,0,0,0,0,0,10,0,0,10,0,0,5,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_PANTS = ITEMS.register("wizard_trousers",
-			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+			() -> new WizardRobeItem(2,1,11,2,0,0,0,0,0,5,0,0,5,0,0,2,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_BOOTS = ITEMS.register("wizard_boots",
-			() -> new WizardRobeItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
+			() -> new WizardRobeItem(2,1,11,1,0,0,0,0,0,5,0,0,5,0,0,3,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
 	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_HELM = ITEMS.register("knight_helm",
-			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.HELMET,new Item.Properties()));
+			() -> new KnightArmourItem(0,1,20,4,3,0.1f,0.05f,0,0.5f,0,0,0,0,-0.005f,0,0,2,3,1024,12,ArmorMaterials.IRON, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_CHESTPLATE = ITEMS.register("knight_chestplate",
-			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+			() -> new KnightArmourItem(0,1,20,7,3,0.2f,0.1f,-0.1f,0.5f,0,0,0,0,-0.01f,0,0,3,4,1024,12,ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
 	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_PANTS = ITEMS.register("knight_pants",
-			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+			() -> new KnightArmourItem(0,1,20,5,2,0.05f,0,0,0.5f,0,0,0,0,-0.002f,0,0,2,2,1024,12,ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, KnightArmourItem> KNIGHT_BOOTS = ITEMS.register("knight_boots",
-			() -> new KnightArmourItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS,new Item.Properties()));
+			() -> new KnightArmourItem(0,1,20,3,1,0.05f,0.05f,0,0.5f,0,0,0,0,-0.001f,0,0,1,3,1024,12,ArmorMaterials.IRON, ArmorItem.Type.BOOTS,new Item.Properties()));
 	//Eggs
 	public static final DeferredHolder<Item,Item> SIN = ITEMS.register("sin_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SIN.get(), 1318437, 16449279, new Item.Properties()));

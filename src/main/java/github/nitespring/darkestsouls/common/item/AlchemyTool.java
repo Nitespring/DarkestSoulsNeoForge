@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.common.item;
 
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import github.nitespring.darkestsouls.core.util.ArmourUtils;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
   
 import net.minecraft.ChatFormatting;
@@ -65,7 +66,8 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
         if(stackIn.isEnchanted()){
             enchantModifier= stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.MISER_SOUL).get());
         }
-        return 0.1f*enchantModifier;
+        float armourModifier = (float) ArmourUtils.getLuckBonus(playerIn) /100;
+        return 0.1f*enchantModifier+armourModifier;
     }
 
     public int getAmmoAmount() {

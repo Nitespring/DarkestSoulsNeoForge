@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.common.effect;
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.Bonewheel;
 import github.nitespring.darkestsouls.core.init.EffectInit;
+import github.nitespring.darkestsouls.core.util.ArmourUtils;
 import github.nitespring.darkestsouls.core.util.CustomEntityTags;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -49,7 +50,7 @@ public class BleedMobEffect extends MobEffect {
                     living.playSound(SoundEvents.PLAYER_SPLASH_HIGH_SPEED,1.0f,3.6f);
                 }
             }else if(living instanceof Player p){
-                if(amount>=16){
+                if(amount>=10 + ArmourUtils.getBleedResistance(p)){
                     living.invulnerableTime = 0;
                     applyDamage(living, 2.0f+living.getMaxHealth()*0.3f);
                     p.level().playSound((Player) p, p.getX(), p.getY(), p.getZ(), SoundEvents.PLAYER_SPLASH_HIGH_SPEED, p.getSoundSource(), 1.0f, 1.0f);
