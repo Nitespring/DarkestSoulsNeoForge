@@ -123,8 +123,8 @@ public class MagmaEntity extends Entity implements GeoEntity{
 
 
     @Override
-    public void onAddedToWorld() {
-        super.onAddedToWorld();
+    public void onAddedToLevel() {
+        super.onAddedToLevel();
 
         //this.setYRot(new Random().nextInt(360)+1);
 

@@ -92,10 +92,12 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
 
 
     @Override
-    public void onAddedToWorld() {
-        super.onAddedToWorld();
+    public void onAddedToLevel() {
+        super.onAddedToLevel();
         this.zRot = 2*(this.random.nextFloat()-0.5f);
     }
+
+
 
     @Override
     public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity e) {

@@ -50,7 +50,7 @@ public class Config {
 		DarkestSouls.LOGGER.info("Built config" + path);
 		file.load();
 		DarkestSouls.LOGGER.info("Loaded config" + path);
-		config.setConfig(file);
+		config.correct(file);
 		
 	}
 	

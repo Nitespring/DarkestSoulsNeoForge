@@ -87,9 +87,9 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         if(stackIn.isEnchanted()){
             flatEnchantModifier = stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.FIREPOWER).get());
             percentEnchantModifier = stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.GREATER_FIREPOWER).get());
-
         }
-        return (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
+        float armourModifier = 1 + (float) ArmourUtils.getGunBonus(playerIn) /100;
+        return armourModifier * (attackDamage+2*flatEnchantModifier)*(1+0.2f*percentEnchantModifier);
 
     }
     public int getUseCooldown(Player playerIn, ItemStack stackIn) {

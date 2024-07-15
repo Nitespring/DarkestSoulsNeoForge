@@ -75,4 +75,55 @@ public class ArmourUtils {
         }
         return i;
     }
+    public static final int getMagicBonus(Player player){
+
+        int i = 0;
+        if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CustomArmourItem head){
+            i=i+head.getMagicBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof CustomArmourItem chest){
+            i=i+chest.getMagicBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof CustomArmourItem legs){
+            i=i+legs.getMagicBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.FEET).getItem() instanceof CustomArmourItem feet){
+            i=i+feet.getMagicBonus();
+        }
+        return i;
+    }
+    public static final int getAlchemyBonus(Player player){
+
+        int i = 0;
+        if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CustomArmourItem head){
+            i=i+head.getAlchemyBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof CustomArmourItem chest){
+            i=i+chest.getAlchemyBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof CustomArmourItem legs){
+            i=i+legs.getAlchemyBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.FEET).getItem() instanceof CustomArmourItem feet){
+            i=i+feet.getAlchemyBonus();
+        }
+        return i;
+    }
+    public static final int getGunBonus(Player player){
+
+        int i = 0;
+        if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof CustomArmourItem head){
+            i=i+head.getGunBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof CustomArmourItem chest){
+            i=i+chest.getGunBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof CustomArmourItem legs){
+            i=i+legs.getGunBonus();
+        }
+        if(player.getItemBySlot(EquipmentSlot.FEET).getItem() instanceof CustomArmourItem feet){
+            i=i+feet.getGunBonus();
+        }
+        return i;
+    }
 }

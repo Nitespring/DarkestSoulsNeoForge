@@ -47,9 +47,10 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
         this.tier=tier;
     }
     public float getAttackDamage(Player playerIn, ItemStack stackIn) {
-        return attackDamage
+        float armourModifier = 1+(float) ArmourUtils.getMagicBonus(playerIn) /100;
+        return armourModifier*(attackDamage
                 * (1 + 0.2f * stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.MOON_BLESSING).get())
-                + 2.0f * stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.STARPOWER).get()));
+                + 2.0f * stackIn.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.STARPOWER).get())));
     }
 
     public int getCatalystTier() {return tier;}
