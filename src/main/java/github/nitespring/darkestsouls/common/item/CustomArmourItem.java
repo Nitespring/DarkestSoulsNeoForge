@@ -167,10 +167,10 @@ public class CustomArmourItem extends ArmorItem {
                 classInfo = Component.translatable("translation.darkestsouls.sorcerer_class").withStyle(ChatFormatting.AQUA);
                 break;
             case 3:
-                classInfo = Component.translatable("translation.darkestsouls.specialist_class").withStyle(ChatFormatting.DARK_GRAY);
+                classInfo = Component.translatable("translation.darkestsouls.alchemist_class").withStyle(ChatFormatting.DARK_AQUA);
                 break;
             case 4:
-                classInfo = Component.translatable("translation.darkestsouls.alchemist_class").withStyle(ChatFormatting.DARK_AQUA);
+                classInfo = Component.translatable("translation.darkestsouls.specialist_class").withStyle(ChatFormatting.DARK_GRAY);
                 break;
         }
         tooltip.add(classInfo);

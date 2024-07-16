@@ -205,7 +205,7 @@ public class ItemInit {
 			() -> new WizardRobeItem(2,1,11,2,0,0,0,0,0,10,0,0,10,0,0,5,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_ROBE = ITEMS.register("wizard_robe",
 			() -> new WizardRobeItem(2,1,11,3,0,0,0,0,0,10,0,0,10,0,0,5,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
-	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_PANTS = ITEMS.register("wizard_trousers",
+	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_PANTS = ITEMS.register("wizard_pants",
 			() -> new WizardRobeItem(2,1,11,2,0,0,0,0,0,5,0,0,5,0,0,2,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS,new Item.Properties()));
 	public static final DeferredHolder<Item, WizardRobeItem> WIZARD_BOOTS = ITEMS.register("wizard_boots",
 			() -> new WizardRobeItem(2,1,11,1,0,0,0,0,0,5,0,0,5,0,0,3,0,1,1024,12,ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS,new Item.Properties()));
