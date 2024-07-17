@@ -21,6 +21,19 @@ public class EntityAttributes {
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
+	public static  AttributeSupplier.Builder setHollowSoldierCrosswordAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 26.0D)
+				.add(Attributes.ARMOR, 3.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 1.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.18D)
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
+				.add(Attributes.FOLLOW_RANGE, 35)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
 	public static  AttributeSupplier.Builder setHollowSoldierAxeAttributes(){
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 36.0D)

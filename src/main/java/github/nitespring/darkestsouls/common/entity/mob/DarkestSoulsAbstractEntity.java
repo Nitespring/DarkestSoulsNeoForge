@@ -20,9 +20,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -39,10 +37,8 @@ import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
-import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -69,6 +65,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	private static final EntityDataAccessor<Integer> ENTITY_PHASE = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> TEAM = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> POISE_HEALTH = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
+	private static final EntityDataAccessor<Integer> PROJECTILE_LOADED = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS));
 
 
@@ -84,7 +81,6 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	}
 
 	public int getAnimationState() {return this.getEntityData().get(ANIMATION_STATE);}
-
 	public void setAnimationState(int anim) {
 		this.getEntityData().set(ANIMATION_STATE, anim);
 	}
@@ -92,7 +88,45 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	public void setAnimationTick(int anim) {
 		this.getEntityData().set(ANIMATION_TICK, anim);
 	}
-
+	public int getAmmoLoaded() {return this.getEntityData().get(PROJECTILE_LOADED);}
+	public int getAmmoCapacity(){return 1;}
+	public void setAmmoLoaded(int i) {
+		this.getEntityData().set(PROJECTILE_LOADED, i);
+	}
+	public void loadAmmo(int i) {
+		int j = this.getAmmoLoaded();
+		if(j+i<=getAmmoCapacity()) {
+			this.setAmmoLoaded(j + i);
+		}else{
+			this.setAmmoLoaded(getAmmoCapacity());
+		}
+	}
+	public void unloadAmmo(int i) {
+		int j = this.getAmmoLoaded();
+		if(j-i>=0) {
+			this.setAmmoLoaded(j - i);
+		}else{
+			this.setAmmoLoaded(0);
+		}
+	}
+	public boolean isAmmoFull(){
+		return getAmmoLoaded()>=getAmmoCapacity();
+	}
+	public boolean isAmmoEmpty(){
+		return getAmmoLoaded()<=0;
+	}
+	public void fillAmmo(){
+		setAmmoLoaded(getAmmoCapacity());
+	}
+	public void emptyAmmo(){
+		setAmmoLoaded(0);
+	}
+	public void loadAmmo() {
+		this.loadAmmo(1);
+	}
+	public void unloadAmmo() {
+		this.unloadAmmo(1);
+	}
 	public boolean shouldResetAnimation() {return this.getEntityData().get(SHOULD_RESET_ANIMATION);}
 	public void setResetAnimation(boolean anim) {
 		this.getEntityData().set(SHOULD_RESET_ANIMATION, anim);
@@ -163,7 +197,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	public void setStunAnimation() {
 		this.setAnimationState(this.getStunAnimation());
 	}
-
+	public boolean shouldResetCombatStateWhenIdle(){return true;}
 
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
@@ -175,6 +209,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		builder.define(ENTITY_PHASE, 0);
 		builder.define(TEAM, getDSDefaultTeam());
 		builder.define(POISE_HEALTH, getMaxPoise());
+		builder.define(PROJECTILE_LOADED, 0);
 	}
 
 	protected abstract int getDSDefaultTeam();
@@ -472,7 +507,12 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		}
 
 		public void start() {
+
 			this.mob.getNavigation().moveTo(this.wantedX, this.wantedY, this.wantedZ, this.speedModifier);
+			if(mob.shouldResetCombatStateWhenIdle()){
+				mob.setCombatState(0);
+			}
+
 		}
 
 		public void stop() {

@@ -91,6 +91,10 @@ public class EntityInit {
 			() -> EntityType.Builder.<GravetenderHollowBrokenStraightsword>of(GravetenderHollowBrokenStraightsword::new, MobCategory.MONSTER)
 					.sized(0.6f, 1.8f)
 					.build("gravetender_hollow_broken_straightsword"));
+	public static final DeferredHolder<EntityType<?>,EntityType<HollowSoldierCrossbow>> HOLLOW_CROSSBOW = ENTITIES.register("hollow_crossbow",
+			() -> EntityType.Builder.<HollowSoldierCrossbow>of(HollowSoldierCrossbow::new, MobCategory.MONSTER)
+					.sized(0.6f, 1.8f)
+					.build("hollow_crossbow"));
 	public static final DeferredHolder<EntityType<?>,EntityType<BeastPatient>> BEAST_PATIENT = ENTITIES.register("beast_patient",
 			() -> EntityType.Builder.<BeastPatient>of(BeastPatient::new, MobCategory.MONSTER)
 					.sized(0.6f, 1.8f)

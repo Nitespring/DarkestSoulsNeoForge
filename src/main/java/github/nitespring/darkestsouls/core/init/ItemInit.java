@@ -234,6 +234,8 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.TALL_SKELETON_TWIN_SHOTELS.get(), 13684684, 2239044, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_LONGSWORD = ITEMS.register("hollow_longsword_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HOLLOW_LONGSWORD.get(), 13945528, 5202790, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> HOLLOW_CROSSBOW = ITEMS.register("hollow_crossbow_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HOLLOW_CROSSBOW.get(), 13945528, 5202790, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_AXE = ITEMS.register("hollow_axe_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HOLLOW_AXE.get(), 13945528, 6448753, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_BROKEN_STRAIGHTSWORD = ITEMS.register("hollow_broken_straightsword_spawn_egg",

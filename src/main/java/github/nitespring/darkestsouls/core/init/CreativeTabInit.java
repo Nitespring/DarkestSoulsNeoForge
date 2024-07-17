@@ -242,6 +242,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.GRAVETENDER_HOLLOW_LONGSWORD.get());
                         output.accept(ItemInit.HOLLOW_LONGSWORD.get());
                         output.accept(ItemInit.HOLLOW_AXE.get());
+                        output.accept(ItemInit.HOLLOW_CROSSBOW.get());
                         output.accept(ItemInit.HOLLOW_ASSASSIN.get());
                         output.accept(ItemInit.CHURCH_DOCTOR.get());
                         output.accept(ItemInit.CHURCH_DOCTOR_LANTERN.get());
