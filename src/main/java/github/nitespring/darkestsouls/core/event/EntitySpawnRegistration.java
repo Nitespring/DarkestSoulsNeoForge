@@ -50,6 +50,11 @@ public class EntitySpawnRegistration {
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkGravetenderHollowSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.GRAVETENDER_HOLLOW_CROSSBOW.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGravetenderHollowSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EntityInit.HOLLOW_LONGSWORD.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Types.MOTION_BLOCKING_NO_LEAVES,
@@ -64,6 +69,11 @@ public class EntitySpawnRegistration {
                 SpawnPlacementTypes.ON_GROUND,
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkHollowAssassinSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HOLLOW_CROSSBOW.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHollowCrossbowSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EntityInit.SKELETON_FALCHION.get(),
                 SpawnPlacementTypes.ON_GROUND,

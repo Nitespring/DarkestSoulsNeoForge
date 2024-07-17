@@ -27,7 +27,8 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.HOLLOW_LONGSWORD.get(), EntityAttributes.setHollowSoldierLongswordAttributes().build());
 		event.put(EntityInit.HOLLOW_AXE.get(), EntityAttributes.setHollowSoldierAxeAttributes().build());
 		event.put(EntityInit.HOLLOW_ASSASSIN.get(), EntityAttributes.setHollowAssassinAttributes().build());
-		event.put(EntityInit.HOLLOW_CROSSBOW.get(), EntityAttributes.setHollowSoldierLongswordAttributes().build());
+		event.put(EntityInit.GRAVETENDER_HOLLOW_CROSSBOW.get(), EntityAttributes.setGravetenderHollowCrossbowAttributes().build());
+		event.put(EntityInit.HOLLOW_CROSSBOW.get(), EntityAttributes.setHollowSoldierCrossbowAttributes().build());
 		event.put(EntityInit.HOLLOW_BROKEN_STRAIGHTSWORD.get(), EntityAttributes.setMadHollowBrokenStraightswordAttributes().build());
 		event.put(EntityInit.GRAVETENDER_HOLLOW_LONGSWORD.get(), EntityAttributes.setGravetenderHollowLongswordAttributes().build());
 		event.put(EntityInit.GRAVETENDER_HOLLOW_BROKEN_STRAIGHTSWORD.get(), EntityAttributes.setGravetenderHollowBrokenStraightswordAttributes().build());

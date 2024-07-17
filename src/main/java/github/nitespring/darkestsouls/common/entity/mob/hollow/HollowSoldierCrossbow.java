@@ -407,8 +407,14 @@ public class HollowSoldierCrossbow extends Hollow implements GeoEntity {
                 }
                 break;
             case 41:
+                if (getAnimationTick() == 12) {
+                    this.playSound(SoundEvents.CROSSBOW_LOADING_MIDDLE.value());
+                }
                 if (getAnimationTick() == 20) {
                     loadAmmo();
+                }
+                if (getAnimationTick() == 25) {
+                    this.playSound(SoundEvents.CROSSBOW_LOADING_END.value());
                 }
                 if (getAnimationTick() >= 30) {
                     setAnimationTick(0);
@@ -416,8 +422,14 @@ public class HollowSoldierCrossbow extends Hollow implements GeoEntity {
                 }
                 break;
             case 42:
+                if (getAnimationTick() == 12) {
+                    this.playSound(SoundEvents.CROSSBOW_LOADING_MIDDLE.value());
+                }
                 if (getAnimationTick() == 20) {
                     loadAmmo();
+                }
+                if (getAnimationTick() == 25) {
+                    this.playSound(SoundEvents.CROSSBOW_LOADING_END.value());
                 }
                 if (getAnimationTick() >= 30) {
                     int r = this.getRandom().nextInt(2000);

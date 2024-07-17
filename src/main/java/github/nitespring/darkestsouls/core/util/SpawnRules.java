@@ -58,6 +58,9 @@ public class SpawnRules{
     public static boolean checkHollowAxeSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return checkHollowSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_hollow_axe.get();
     }
+    public static boolean checkHollowCrossbowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return checkHollowSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_hollow_crossbow.get();
+    }
     public static boolean checkHollowAssassinSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return checkHollowDarkSpawnRules(mob, levelAccessor, spawnType, pos, random) && CommonConfig.spawn_hollow_assassin.get();
     }

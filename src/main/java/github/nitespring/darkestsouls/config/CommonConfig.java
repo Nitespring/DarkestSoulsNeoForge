@@ -12,6 +12,7 @@ public class CommonConfig {
 		public static ModConfigSpec.BooleanValue spawn_mad_hollow;
 		public static ModConfigSpec.BooleanValue spawn_gravetender_hollow;
 		public static ModConfigSpec.BooleanValue spawn_hollow_longsword;
+		public static ModConfigSpec.BooleanValue spawn_hollow_crossbow;
 		public static ModConfigSpec.BooleanValue spawn_hollow_axe;
 		public static ModConfigSpec.BooleanValue spawn_hollow_assassin;
 		public static ModConfigSpec.BooleanValue spawn_skeleton_falchion;
@@ -56,6 +57,9 @@ public class CommonConfig {
 		spawn_hollow_longsword = server
 				.comment("Set to false to disable Hollow Soldier (Longsword)")
 				.define("spawnconfig.spawn_hollow_longsword", true);
+		spawn_hollow_crossbow = server
+				.comment("Set to false to disable Hollow Soldier (Crossbow)")
+				.define("spawnconfig.spawn_hollow_crossbow", true);
 		spawn_hollow_axe = server
 				.comment("Set to false to disable Hollow Soldier (Axe)")
 				.define("spawnconfig.spawn_hollow_axe", true);

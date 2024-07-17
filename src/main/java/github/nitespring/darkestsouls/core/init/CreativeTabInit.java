@@ -240,6 +240,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.HOLLOW_BROKEN_STRAIGHTSWORD.get());
                         output.accept(ItemInit.GRAVETENDER_HOLLOW_BROKEN_STRAIGHTSWORD.get());
                         output.accept(ItemInit.GRAVETENDER_HOLLOW_LONGSWORD.get());
+                        output.accept(ItemInit.GRAVETENDER_HOLLOW_CROSSBOW.get());
                         output.accept(ItemInit.HOLLOW_LONGSWORD.get());
                         output.accept(ItemInit.HOLLOW_AXE.get());
                         output.accept(ItemInit.HOLLOW_CROSSBOW.get());
