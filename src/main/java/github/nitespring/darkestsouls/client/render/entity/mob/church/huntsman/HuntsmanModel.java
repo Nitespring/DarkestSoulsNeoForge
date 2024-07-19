@@ -13,13 +13,13 @@ import software.bernie.geckolib.model.data.EntityModelData;
 
 public class HuntsmanModel<T extends Huntsman & GeoEntity> extends GeoModel<T> {
 
-    public static final ResourceLocation WHITE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_white.png");
-    public static final ResourceLocation BLUE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_blue.png");
-    public static final ResourceLocation SILVER = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_silver.png");
-    public static final ResourceLocation LIGHT_GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_light_gray.png");
-    public static final ResourceLocation GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_gray.png");
-    public static final ResourceLocation DARK_GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_dark_gray.png");
-    public static final ResourceLocation BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/church_doctor_black.png");
+    public static final ResourceLocation GREEN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_green.png");
+    public static final ResourceLocation ORANGE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_orange.png");
+    public static final ResourceLocation BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_brown.png");
+    public static final ResourceLocation RED = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_red.png");
+    public static final ResourceLocation YELLOW = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_yellow.png");
+    public static final ResourceLocation WHITE_SHIRT = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/base/huntsman_shirt.png");
+
     @Override
     public ResourceLocation getAnimationResource(T animatable) {
 
@@ -36,19 +36,17 @@ public class HuntsmanModel<T extends Huntsman & GeoEntity> extends GeoModel<T> {
     public ResourceLocation getTextureResource(T object) {
         switch(object.getRobeType()) {
             case 1:
-                return WHITE;
+                return GREEN;
             case 2:
-                return BLUE;
+                return ORANGE;
             case 3:
-                return SILVER;
+                return BROWN;
             case 4:
-                return GRAY;
+                return RED;
             case 5:
-                return DARK_GRAY;
-            case 6:
-                return BLACK;
+                return YELLOW;
             default:
-                return LIGHT_GRAY;
+                return WHITE_SHIRT;
         }
     }
 
