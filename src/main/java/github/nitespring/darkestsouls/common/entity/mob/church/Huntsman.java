@@ -45,6 +45,11 @@ public abstract class Huntsman extends DarkestSoulsAbstractEntity {
     public int getDefaultRobeType(){return 0;}
     public int getDefaultHatType(){return 0;}
 
+    @Override
+    public int getDSTeam() {
+        return 1;
+    }
+
     public int getRobeType(){return this.getEntityData().get(ROBE_TYPE);}
     public void setRobeType(int i){this.getEntityData().set(ROBE_TYPE, i);}
     public int getHatType(){return this.getEntityData().get(HAT_TYPE);}

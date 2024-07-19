@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.mob.church;
 
+import github.nitespring.darkestsouls.common.entity.projectile.throwable.FirebombEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
@@ -28,6 +29,7 @@ import java.util.Random;
 
 public class HuntsmanAxe extends Huntsman implements GeoEntity {
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
+    public Vec3 aimVec;
     private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
     public HuntsmanAxe(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
@@ -40,10 +42,10 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
         data.add(new AnimationController<>(this, "main_controller", 4, this::predicate));
-        data.add(new AnimationController<>(this, "cape_controller", 0, this::capePredicate));
+        data.add(new AnimationController<>(this, "cape_controller", 0, this::clothPredicate));
         data.add(new AnimationController<>(this, "stun_controller", 0, this::hitStunPredicate));
     }
-    private <E extends GeoAnimatable> PlayState capePredicate(AnimationState<E> event) {
+    private <E extends GeoAnimatable> PlayState clothPredicate(AnimationState<E> event) {
 
         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.cloth"));
 
@@ -102,7 +104,11 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.fall"));
 
                     }else if(!(event.getLimbSwingAmount() > -0.06 && event.getLimbSwingAmount() < 0.06f)){
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.walk"));
+                        if(getCombatState()==1) {
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.run"));
+                        }else{
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.walk"));
+                        }
                     }else {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.idle"));
                     }
@@ -199,7 +205,7 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
         this.increaseAnimationTick(1);
         Level levelIn = this.level();
         Vec3 pos = this.position();
-        boolean flag = this.getTarget() != null && this.distanceTo(this.getTarget()) <= 2;
+        boolean flag = this.getTarget() != null && this.distanceTo(this.getTarget()) <= 5;
         switch (this.getAnimationState()) {
             case 1:
                 this.getNavigation().stop();
@@ -212,15 +218,15 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                 break;
             //Attack
             case 21:
-                if(getAnimationTick()<=22){
-                    this.moveToTarget(1.5f);
+                if(getAnimationTick()<=10){
+                    this.moveToTarget(2.0f);
                 }else{
                     this.getNavigation().stop();
                 }
-                if(getAnimationTick()==22) {
+                if(getAnimationTick()==12) {
                     this.playSound(this.getAttackSound(), 0.2f,0.4f);
                 }
-                if(getAnimationTick()==26) {
+                if(getAnimationTick()==15) {
                     this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
                     DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
                             this.position().add((1.0f)*this.getLookAngle().x,
@@ -230,12 +236,204 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                     h.setOwner(this);
                     h.setTarget(this.getTarget());
                     this.level().addFreshEntity(h);
+
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=720) {
+                        setCombatState(0);
+                    }
                 }
-                if(getAnimationTick()>=36&&flag) {
+                /*if(getAnimationTick()>=26&&flag) {
+                    setAnimationTick(0);
+                    setAnimationState(23);
+                }*/
+                if(getAnimationTick()>=30) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 22:
+                if(getAnimationTick()<=2){
+                    this.moveToTarget(1.0f);
+                }else{
+                    this.getNavigation().stop();
+                }
+                if(getAnimationTick()==5) {
+                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
+                }
+                if(getAnimationTick()==9) {
+                    this.playSound(SoundEvents.FIRE_EXTINGUISH);
+                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                            this.position().add((1.0f)*this.getLookAngle().x,
+                                    0.25,
+                                    (1.0f)*this.getLookAngle().z),
+                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.4f, 5);
+                    h.setHitboxType(6);
+                    h.setOwner(this);
+                    h.setTarget(this.getTarget());
+                    this.level().addFreshEntity(h);
+
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=240) {
+                        setCombatState(0);
+                    }
+                }
+                if(getAnimationTick()>=12&&flag) {
+                    int r = this.getRandom().nextInt(2048);
                     setAnimationTick(0);
                     setAnimationState(23);
                 }
-                if(getAnimationTick()>=42) {
+                if(getAnimationTick()>=16) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 23:
+                if(getAnimationTick()<=2){
+                    this.moveToTarget(1.4f);
+                }else{
+                    this.getNavigation().stop();
+                }
+                if(getAnimationTick()==3) {
+                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
+                }
+                if(getAnimationTick()==6) {
+                    this.playSound(SoundEvents.FIRE_EXTINGUISH);
+                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                            this.position().add((1.0f)*this.getLookAngle().x,
+                                    0.25,
+                                    (1.0f)*this.getLookAngle().z),
+                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.4f, 5);
+                    h.setHitboxType(6);
+                    h.setOwner(this);
+                    h.setTarget(this.getTarget());
+                    this.level().addFreshEntity(h);
+
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=360) {
+                        setCombatState(0);
+                    }
+                }
+                if(getAnimationTick()>=16) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 24:
+                if(getAnimationTick()<=4){
+                    this.moveToTarget(1.3f);
+                }else{
+                    this.getNavigation().stop();
+                }
+                if(getAnimationTick()==6) {
+                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
+                }
+                if(getAnimationTick()==8) {
+                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
+                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                            this.position().add((1.0f)*this.getLookAngle().x,
+                                    0.25,
+                                    (1.0f)*this.getLookAngle().z),
+                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
+                    h.setOwner(this);
+                    h.setTarget(this.getTarget());
+                    this.level().addFreshEntity(h);
+
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=120) {
+                        setCombatState(0);
+                    }
+                }
+                if(getAnimationTick()>=12&&flag) {
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=240) {
+                        setAnimationTick(0);
+                        setAnimationState(22);
+                    }else if(r<=900) {
+                        setAnimationTick(0);
+                        setAnimationState(25);
+                    }
+                }
+                if(getAnimationTick()>=16) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 25:
+                if(getAnimationTick()<=2){
+                    this.moveToTarget(1.2f);
+                }else{
+                    this.getNavigation().stop();
+                }
+                if(getAnimationTick()==4) {
+                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
+                }
+                if(getAnimationTick()==6) {
+                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
+                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                            this.position().add((1.0f)*this.getLookAngle().x,
+                                    0.25,
+                                    (1.0f)*this.getLookAngle().z),
+                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
+                    h.setOwner(this);
+                    h.setTarget(this.getTarget());
+                    this.level().addFreshEntity(h);
+
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=240) {
+                        setCombatState(0);
+                    }
+                }
+                if(getAnimationTick()>=10&&flag) {
+                    int r = this.getRandom().nextInt(2048);
+                    if(r<=240) {
+                        setAnimationTick(0);
+                        setAnimationState(24);
+                    }else if(r<=520) {
+                        setAnimationTick(0);
+                        setAnimationState(21);
+                    }else if(r<=600) {
+                        setAnimationTick(0);
+                        setAnimationState(22);
+                    }
+                }
+                if(getAnimationTick()>=18) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 31:
+                if(getAnimationTick()==18) {
+                    if(this.getTarget()==null) {
+                        aimVec = this.getLookAngle().normalize();
+                    }else{
+                        aimVec = this.getTarget().position().add(pos.scale(-1)).normalize();
+                    }
+                }
+                if(getAnimationTick()==20) {
+                    if(aimVec==null){
+                        aimVec = this.getLookAngle().normalize();
+                    }
+                    aimVec.add(0,1.2f,0);
+                    //this.playSound(this.getAttackSound(), 0.2f,1.0f);
+                    this.playSound(SoundEvents.EGG_THROW);
+                    float x = (float) (pos.x + 0.6 * aimVec.x);
+                    float y = (float) (pos.y + 1.4 + 0.6 * aimVec.y);
+                    float z = (float) (pos.z + 0.6 * aimVec.z);
+                    FirebombEntity entity = new FirebombEntity(EntityInit.MOLOTOV.get(), levelIn);
+                    entity.setPos(x,y,z);
+                    float flyingPower = 0.25f;
+                    entity.setDeltaMovement(aimVec.scale(flyingPower));
+                    entity.accelerationPower=flyingPower;
+                    entity.setOwner(this);
+                    entity.setAttackDamage((float) this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+                    entity.setPoiseDamage(6);
+                    entity.setGravPower(0.0015f);
+                    entity.setHorizontalSpread(2.5f);
+                    entity.setVerticalSpread(1.0f);
+                    levelIn.addFreshEntity(entity);
+
+                }
+                if(getAnimationTick()>=26) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
@@ -254,7 +452,8 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
     public class AttackGoal extends Goal {
 
 
-        private final double speedModifier = 1.1f;
+        private final double walkingSpeedModifier = 1.1f;
+        private final double runningSpeedModifier = 1.8f;
         private final boolean followingTargetEvenIfNotSeen = true;
         protected final Huntsman mob;
         private Path path;
@@ -263,11 +462,12 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
         private double pathedTargetZ;
         private int ticksUntilNextPathRecalculation;
         private int ticksUntilNextAttack;
+        private int ticksUntilNextRangedAttack;
         private long lastCanUseCheck;
         private int failedPathFindingPenalty = 0;
         private boolean canPenalize = false;
 
-
+        private int lastCanUpdateStateCheck;
 
 
         public AttackGoal(Huntsman entityIn) {
@@ -333,12 +533,26 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
         }
         @Override
         public void start() {
-            this.mob.getNavigation().moveTo(this.path, this.speedModifier);
+            this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 8;
-
+            this.ticksUntilNextRangedAttack = 120;
+            this.lastCanUpdateStateCheck = getStateUpdateInitialTimer();
             this.mob.setAnimationState(0);
+            if(mob.getCombatState()==1){
+                int r = this.mob.getRandom().nextInt(2048);
+                if(r<=240) {
+                    this.mob.setCombatState(0);
+                    this.stop();
+                }
+            }else{
+                int r = this.mob.getRandom().nextInt(2048);
+                if(r<=840) {
+                    this.mob.setCombatState(1);
+                    this.stop();
+                }
+            }
         }
         @Override
         public void stop() {
@@ -350,19 +564,54 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
             this.mob.getNavigation().stop();
         }
 
-
+        public double getSpeedModifier() {
+            if(mob.getCombatState()==1){
+                return runningSpeedModifier;
+            }else{
+                return walkingSpeedModifier;
+            }
+        }
+        public int getStateUpdateInitialTimer(){
+            if(mob.getCombatState()==1){
+                return 800;
+            }else{
+                return 600;
+            }
+        }
 
 
         @Override
         public void tick() {
             LivingEntity target = this.mob.getTarget();
-            double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
-            double reach = this.getAttackReachSqr(target);
-
-            this.doMovement(target, reach);
+            double distanceSQR = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
+            double reachSQR = this.getAttackReachSqr(target);
+            double distance = this.mob.distanceTo(target);
+            double reach = this.getAttackReach(target);
+            this.doMovement(target, reachSQR);
             this.checkForAttack(distance, reach);
             //this.checkForPreciseAttack();
-
+            this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
+            if(this.lastCanUpdateStateCheck<=0){
+                if(mob.getCombatState()==1) {
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 350) {
+                        this.mob.setCombatState(0);
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                    this.stop();
+                }else{
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 450) {
+                        this.mob.setCombatState(1);
+                        this.stop();
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                }
+            }
+            this.ticksUntilNextRangedAttack = Math.max(this.ticksUntilNextRangedAttack - 1, 0);
+            if(this.ticksUntilNextRangedAttack<=0 && this.ticksUntilNextAttack <= 0){
+                this.ticksUntilNextRangedAttack=10;
+            }
 
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
 
@@ -372,8 +621,10 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
         @SuppressWarnings("unused")
         private void checkForPreciseAttack() {
             LivingEntity target = this.mob.getTarget();
-            double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
-            double reach = this.getAttackReachSqr(target);
+            //double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
+            //double reach = this.getAttackReachSqr(target);
+            double distance = this.mob.distanceTo(target);
+            double reach = this.getAttackReach(target);
             if (this.ticksUntilNextAttack <= 0 && distance <= reach) {
 
                 this.mob.setAnimationState(23);
@@ -409,7 +660,7 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                     this.ticksUntilNextPathRecalculation += 5;
                 }
 
-                if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier)) {
+                if (!this.mob.getNavigation().moveTo(livingentity, this.getSpeedModifier())) {
                     this.ticksUntilNextPathRecalculation += 15;
                 }
             }
@@ -427,10 +678,17 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                 int r = this.mob.getRandom().nextInt(2048);
                 if(r<=400)      {this.mob.setAnimationState(21);}
                 else if(r<=800) {this.mob.setAnimationState(22);}
-                else if(r<=1600){this.mob.setAnimationState(23);}
+                else if(r<=1600){this.mob.setAnimationState(24);}
             }
 
+            if (this.ticksUntilNextRangedAttack <= 2 && this.ticksUntilNextAttack <= 2) {
+                int r = this.mob.getRandom().nextInt(2048);
+                if(r<=360) {
 
+                    this.mob.setAnimationState(31);
+
+                }
+            }
         }
 
 
@@ -440,8 +698,11 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
         }
 
 
-        protected double getAttackReachSqr(LivingEntity p_179512_1_) {
-            return (double)(this.mob.getBbWidth() * 8.0F * this.mob.getBbWidth());
+        protected double getAttackReachSqr(LivingEntity target) {
+            return getAttackReach(target)*getAttackReach(target);
+        }
+        protected double getAttackReach (LivingEntity target){
+            return this.mob.getBbWidth() + target.getBbWidth() + 2.0f;
         }
 
     }

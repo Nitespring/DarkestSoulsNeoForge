@@ -343,7 +343,7 @@ public class HollowSoldierCrossbow extends Hollow implements GeoEntity {
                     Arrow entity = new Arrow(EntityType.ARROW, levelIn);
                     entity.setPos(x, y, z);
                     float flyingPower = 2.5f;
-                    entity.setDeltaMovement(aimVec.multiply(1,1.25f,1).scale(flyingPower));
+                    entity.setDeltaMovement(aimVec.scale(flyingPower).add(0,0.2f,0));
                     //entity.shootFromRotation(this, (float) aimVec.x(), (float) aimVec.y(), (float) aimVec.z(),flyingPower,0.1f);
                     /*entity.xPower=flyingPower*aimVec.x;
                     entity.yPower=flyingPower*aimVec.y;
@@ -384,8 +384,8 @@ public class HollowSoldierCrossbow extends Hollow implements GeoEntity {
                     float z = (float) (pos.z + 0.6 * aimVec.z);
                     Arrow entity = new Arrow(EntityType.ARROW, levelIn);
                     entity.setPos(x, y, z);
-                    float flyingPower = 2.5f;
-                    entity.setDeltaMovement(aimVec.multiply(1,1.4f,1).scale(flyingPower));
+                    float flyingPower = 3.0f;
+                    entity.setDeltaMovement(aimVec.scale(flyingPower).add(0,0.2f,0));
                     //entity.shootFromRotation(this, (float) aimVec.x(), (float) aimVec.y(), (float) aimVec.z(),flyingPower,0.1f);
                     /*entity.xPower=flyingPower*aimVec.x;
                     entity.yPower=flyingPower*aimVec.y;

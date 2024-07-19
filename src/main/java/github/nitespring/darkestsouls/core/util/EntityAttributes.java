@@ -7,7 +7,19 @@ import net.minecraft.world.entity.monster.Monster;
 import net.neoforged.fml.common.Mod;
 
 public class EntityAttributes {
-
+	public static  AttributeSupplier.Builder setHuntsmanAxeAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 40.0D)
+				.add(Attributes.ARMOR, 2.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 1.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.18D)
+				.add(Attributes.ATTACK_DAMAGE, 6.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.5D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
 	public static  AttributeSupplier.Builder setHollowSoldierLongswordAttributes(){
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 32.0D)
