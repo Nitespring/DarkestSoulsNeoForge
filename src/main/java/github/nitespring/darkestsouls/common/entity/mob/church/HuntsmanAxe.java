@@ -3,7 +3,6 @@ package github.nitespring.darkestsouls.common.entity.mob.church;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
@@ -17,25 +16,22 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.AnimationState;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 import java.util.Random;
 
-public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
+public class HuntsmanAxe extends Huntsman implements GeoEntity {
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
-    public ChurchDoctorScythe(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
+    public HuntsmanAxe(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
-        this.xpReward=15;
+        this.xpReward=10;
     }
 
     @Override
@@ -44,7 +40,14 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
         data.add(new AnimationController<>(this, "main_controller", 4, this::predicate));
+        data.add(new AnimationController<>(this, "cape_controller", 0, this::capePredicate));
         data.add(new AnimationController<>(this, "stun_controller", 0, this::hitStunPredicate));
+    }
+    private <E extends GeoAnimatable> PlayState capePredicate(AnimationState<E> event) {
+
+        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.cloth"));
+
+        return PlayState.CONTINUE;
     }
 
 
@@ -53,9 +56,9 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
         }*/
 
         if(hitStunTicks>0) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.hit"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.hit"));
         }else {
-            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.new"));
+            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.new"));
         }
         return PlayState.CONTINUE;
     }
@@ -66,43 +69,42 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
         int animState = this.getAnimationState();
         int combatState = this.getCombatState();
         if(this.isDeadOrDying()) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.death"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.death"));
         }else {
             switch(animState) {
                 case 1:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.stun"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.stun"));
                     break;
                 case 21:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.attack"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk1"));
                     break;
                 case 22:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.attack1"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk2"));
                     break;
                 case 23:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.attack2"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk3"));
                     break;
                 case 24:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.attack3"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk4"));
                     break;
                 case 25:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.scythe.attack4"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk5"));
+                    break;
+                case 31:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.throw"));
                     break;
                 default:
                     if(this.isInWater()) {
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.swim"));
+                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.swim"));
                     }else if(this.onClimbable()) {
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.climb"));
+                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.climb"));
                     }else if(!this.onGround()) {
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.fall"));
+                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.fall"));
 
                     }else if(!(event.getLimbSwingAmount() > -0.06 && event.getLimbSwingAmount() < 0.06f)){
-                        if(this.isAggressive()) {
-                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.scythe.walk1"));
-                        }else{
-                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.scythe.walk"));
-                        }
+                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.walk"));
                     }else {
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.scythe.idle"));
+                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.huntsman.axe.idle"));
                     }
                     break;
             }
@@ -112,57 +114,44 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
 
     @Override
     public int getDefaultHatType() {
-        return 0;
+        return 2;
     }
     @Override
     public int getDefaultRobeType() {
         return 0;
     }
+
+    @Override
+    public int getDefaultHairType() {return 0;}
+    @Override
+    public int getDefaultShirtType() {return 1;}
+
     @Override
     public ItemStack getRightHandItem() {
-        return ItemInit.CHURCH_SCYTHE.get().getDefaultInstance();
+        return ItemInit.HUNTER_TORCH.get().getDefaultInstance();
     }
 
+    @Override
+    public ItemStack getLeftHandItem() {return ItemInit.HUNTSMAN_AXE.get().getDefaultInstance();}
 
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_) {
+
+        return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_);
+    }
     @Override
     public void populateClothing(){
         Random rn = new Random();
         int r = rn.nextInt(24) + 1;
-        switch(r) {
-            case 1:
-                this.setRobeType(1);
-                break;
-            case 2,3:
-                this.setRobeType(2);
-                break;
-            case 4,5,6,7:
-                this.setRobeType(3);
-                break;
-            case 8,9,10,11:
-                this.setRobeType(4);
-                break;
-            case 12,13:
-                this.setRobeType(5);
-                break;
-            case 14,15:
-                this.setRobeType(6);
-                break;
+        this.setRobeType(rn.nextInt(8));
+        this.setHatType(rn.nextInt(4));
+        this.setHairType(rn.nextInt(6));
+        this.setShirtType(rn.nextInt(6));
+        /*switch(r) {
             default:
                 this.setRobeType(0);
                 break;
-        }
-        int r1 = rn.nextInt(48) + 1;
-        switch(r1) {
-            case 1,2,3,4:
-                this.setHatType(1);
-                break;
-            case 5:
-                this.setHatType(2);
-                break;
-            default:
-                this.setHatType(0);
-                break;
-        }
+        }*/
     }
     @Override
     protected void registerGoals() {
@@ -173,7 +162,7 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
         this.goalSelector.addGoal(1, new OpenDoorGoal(this, true));
         this.goalSelector.addGoal(3, new MoveThroughVillageGoal(this, 1.0D, false, 4, ()->true));
 
-        this.goalSelector.addGoal(2, new ChurchDoctorScythe.AttackGoal(this));
+        this.goalSelector.addGoal(2, new HuntsmanAxe.AttackGoal(this));
 
         this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,0.2f,1));
         super.registerGoals();
@@ -211,7 +200,6 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
         Level levelIn = this.level();
         Vec3 pos = this.position();
         boolean flag = this.getTarget() != null && this.distanceTo(this.getTarget()) <= 2;
-        this.getNavigation().stop();
         switch (this.getAnimationState()) {
             case 1:
                 this.getNavigation().stop();
@@ -224,36 +212,8 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
                 break;
             //Attack
             case 21:
-                this.getNavigation().stop();
-                if(getAnimationTick()==18) {
-                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
-                }
-                if(getAnimationTick()==22) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX_LARGE.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.8f, 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
-                }
-                /*if(getAnimationTick()>=16&&flag) {
-                    int r = new Random().nextInt(1024);
-                    if(r<=400) {
-                        setAnimationTick(0);
-                        setAnimationState(21);
-                    }
-                }*/
-                if(getAnimationTick()>=32) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
-                break;
-            case 22:
                 if(getAnimationTick()<=22){
-                    this.moveToTarget();
+                    this.moveToTarget(1.5f);
                 }else{
                     this.getNavigation().stop();
                 }
@@ -262,7 +222,7 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
                 }
                 if(getAnimationTick()==26) {
                     this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX_LARGE.get(), level(),
+                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
                             this.position().add((1.0f)*this.getLookAngle().x,
                                     0.25,
                                     (1.0f)*this.getLookAngle().z),
@@ -280,105 +240,23 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
                     setAnimationState(0);
                 }
                 break;
-            case 23:
-                this.getNavigation().stop();
-                if(getAnimationTick()==6) {
-                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
-                }
-                if(getAnimationTick()==8) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.8f, 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
-                }
-                if(getAnimationTick()>=12&&flag) {
-                    int r = new Random().nextInt(2048);
-                    if(r<=400) {
-                        setAnimationTick(0);
-                        setAnimationState(21);
-                    }else if(r<=800){
-                        setAnimationTick(0);
-                        setAnimationState(22);
-                    } else if(r<=1200){
-                        setAnimationTick(0);
-                        setAnimationState(24);
-                    } else if(r<=1600){
-                        setAnimationTick(0);
-                        setAnimationState(25);
-                    }
-                }
-                if(getAnimationTick()>=16) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
-                break;
-            case 24:
-                this.getNavigation().stop();
-                if(getAnimationTick()==14) {
-                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
-                }
-                if(getAnimationTick()==16) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX_LARGE.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.8f, 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
-                }
-                if(getAnimationTick()>=26) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
-                break;
-            case 25:
-                if(getAnimationTick()<=38){
-                    this.moveToTarget();
-                }else{
-                    this.getNavigation().stop();
-                }
-                if(getAnimationTick()==36) {
-                    this.playSound(this.getAttackSound(), 0.2f,0.4f);
-                }
-                if(getAnimationTick()==40) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX_LARGE.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
-                }
-                if(getAnimationTick()>56) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
-                break;
         }
     }
-    public void moveToTarget(){
+    public void moveToTarget(float speed){
         boolean flag = this.getTarget()!=null;
         if(flag) {
             this.getLookControl().setLookAt(this.getTarget(), 10.0F, 10.0F);
             Path path = this.getNavigation().createPath(this.getTarget(), 0);
-            this.getNavigation().moveTo(path, 1.5f);
+            this.getNavigation().moveTo(path, speed);
         }
+
     }
     public class AttackGoal extends Goal {
 
 
         private final double speedModifier = 1.1f;
         private final boolean followingTargetEvenIfNotSeen = true;
-        protected final ChurchDoctor mob;
+        protected final Huntsman mob;
         private Path path;
         private double pathedTargetX;
         private double pathedTargetY;
@@ -392,7 +270,7 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
 
 
 
-        public AttackGoal(ChurchDoctor entityIn) {
+        public AttackGoal(Huntsman entityIn) {
             this.mob = entityIn;
             this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
         }
@@ -546,12 +424,10 @@ public class ChurchDoctorScythe extends ChurchDoctor implements GeoEntity {
 
         protected void checkForAttack(double distance, double reach){
             if (distance <= reach && this.ticksUntilNextAttack <= 0) {
-                int r = this.mob.getRandom().nextInt(3072);
+                int r = this.mob.getRandom().nextInt(2048);
                 if(r<=400)      {this.mob.setAnimationState(21);}
                 else if(r<=800) {this.mob.setAnimationState(22);}
                 else if(r<=1600){this.mob.setAnimationState(23);}
-                else if(r<=2000){this.mob.setAnimationState(24);}
-                else if(r<=2400){this.mob.setAnimationState(25);}
             }
 
 

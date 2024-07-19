@@ -19,7 +19,7 @@ public class HuntsmanHairLayer<T extends Huntsman & GeoEntity> extends GeoRender
 	private static final ResourceLocation DARK_BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hair/huntsman_hair_dark_brown.png");
 	private static final ResourceLocation GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hair/huntsman_hair_grey.png");
 	private static final ResourceLocation BLONDE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hair/huntsman_hair_blonde.png");
-	private static final ResourceLocation RED = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/church/hollow/huntsman/hair/huntsman_hair_red.png");
+	private static final ResourceLocation RED = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hair/huntsman_hair_red.png");
 
 
 	public HuntsmanHairLayer(GeoRenderer<T> entityRendererIn) {

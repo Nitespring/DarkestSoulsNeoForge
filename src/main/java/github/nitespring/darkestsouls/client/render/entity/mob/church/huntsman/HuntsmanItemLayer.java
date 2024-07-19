@@ -24,9 +24,9 @@ public class HuntsmanItemLayer<T extends Huntsman & GeoEntity> extends BlockAndI
 
 	@Override
 	protected ItemStack getStackForBone(GeoBone bone, T animatable) {
-		 if (bone.getName().equals("itemRight")) {
+		 if (bone.getName().equals("right_item")) {
 				 return animatable.getRightHandItem();
-		 }else if (bone.getName().equals("itemLeft")) {
+		 }else if (bone.getName().equals("left_item")) {
 			 return animatable.getLeftHandItem();
 		 }else{
 				 return null;
@@ -35,9 +35,9 @@ public class HuntsmanItemLayer<T extends Huntsman & GeoEntity> extends BlockAndI
 	
 	@Override
 	protected ItemDisplayContext getTransformTypeForStack(GeoBone bone, ItemStack stack, T animatable) {
-		if (bone.getName().equals("itemRight")) {
+		if (bone.getName().equals("right_item")) {
 			  return ItemDisplayContext.THIRD_PERSON_RIGHT_HAND;
-		  }else if (bone.getName().equals("itemLeft")) {
+		  }else if (bone.getName().equals("left_item")) {
 			return ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
 		}else {
 			return null;
@@ -53,19 +53,13 @@ public class HuntsmanItemLayer<T extends Huntsman & GeoEntity> extends BlockAndI
 protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack stack, T animatable,
 		MultiBufferSource bufferSource, float partialTick, int packedLight, int packedOverlay) {
 		poseStack.pushPose();
-	if (bone.getName().equals("itemRight")) {
-		if(animatable.getRightHandItem().getItem()==ItemInit.CRUCIFIX.get()){
-			poseStack.translate(0, -0.12, -0.5);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
-			poseStack.mulPose(Axis.YP.rotationDegrees(90));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-			poseStack.scale(1.2f,1.2f,1.2f);
-		}else if(animatable.getRightHandItem().getItem()==ItemInit.CHURCH_SCYTHE.get()){
-			poseStack.translate(0, -0.16, -0.1);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+	if (bone.getName().equals("right_item")) {
+		if(animatable.getRightHandItem().getItem()==ItemInit.HUNTER_TORCH.get()){
+			poseStack.translate(0, -0.075, -0.05);
+			poseStack.mulPose(Axis.XP.rotationDegrees(-80));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-			poseStack.scale(1.4f,1.4f,1.4f);
+			poseStack.scale(1.0f,1.0f,1.0f);
 		}else{
 			poseStack.translate(0, -0.12, 0);
 			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
@@ -74,27 +68,17 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 			poseStack.scale(1.0f,1.0f,1.0f);
 		}
 
-	}else if (bone.getName().equals("itemLeft")) {
-		if(animatable.getLeftHandItem().getItem()==ItemInit.REPEATING_PISTOL.get()) {
-			poseStack.translate(0, -0.22, -0.40);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-45));
-			poseStack.mulPose(Axis.YP.rotationDegrees(180));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-		}else if(animatable.getLeftHandItem().getItem()==ItemInit.LANTERN.get()) {
-			poseStack.translate(0, -0.12, -0.12);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+	}else if (bone.getName().equals("left_item")) {
+		if(animatable.getLeftHandItem().getItem()==ItemInit.HUNTSMAN_AXE.get()) {
+			poseStack.translate(0, 0.32, -0.52);
+			poseStack.mulPose(Axis.XP.rotationDegrees(-10));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-		}else if(animatable.getLeftHandItem().getItem()==ItemInit.FLAMESPRAYER.get()) {
-			poseStack.translate(0, 0, -0.12);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-60));
-			poseStack.mulPose(Axis.YP.rotationDegrees(0));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+			poseStack.mulPose(Axis.ZP.rotationDegrees(180));
 		}else{
-			poseStack.translate(0, -0.12, 0);
-			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+			poseStack.translate(0, 0.4, -0.5);
+			poseStack.mulPose(Axis.XP.rotationDegrees(0));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+			poseStack.mulPose(Axis.ZP.rotationDegrees(180));
 		}
 	}
 	super.renderStackForBone(poseStack, bone, stack, animatable, bufferSource, partialTick, packedLight, packedOverlay);

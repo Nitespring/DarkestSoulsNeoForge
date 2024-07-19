@@ -20,7 +20,7 @@ public class HuntsmanRobeLayer<T extends Huntsman & GeoEntity> extends GeoRender
 	private static final ResourceLocation BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_brown.png");
 	private static final ResourceLocation GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_gray.png");
 	private static final ResourceLocation GREEN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_green.png");
-	private static final ResourceLocation LIGHT_BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/church/hollow/huntsman/coat/huntsman_coat_light_brown.png");
+	private static final ResourceLocation LIGHT_BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_light_brown.png");
 	private static final ResourceLocation YELLOW = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_yellow.png");
 	private static final ResourceLocation WHITE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_white.png");
 
@@ -36,7 +36,7 @@ public class HuntsmanRobeLayer<T extends Huntsman & GeoEntity> extends GeoRender
 					   int packedLight, int packedOverlay) {
 
 		RenderType cameo = RenderType.entityCutoutNoCull(BLACK);
-		switch (animatable.getHairType()) {
+		switch (animatable.getRobeType()) {
 			case 1:
 				cameo = RenderType.entityCutoutNoCull(BLUE);
 				break;

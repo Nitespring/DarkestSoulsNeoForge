@@ -23,18 +23,18 @@ public class HuntsmanModel<T extends Huntsman & GeoEntity> extends GeoModel<T> {
     @Override
     public ResourceLocation getAnimationResource(T animatable) {
 
-        return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "animations/church_doctor.animation.json");
+        return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "animations/huntsman.animation.json");
     }
 
     @Override
     public ResourceLocation getModelResource(T object) {
 
-        return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "geo/church_doctor.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "geo/huntsman.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(T object) {
-        switch(object.getRobeType()) {
+        switch(object.getShirtType()) {
             case 1:
                 return GREEN;
             case 2:
@@ -58,17 +58,14 @@ public class HuntsmanModel<T extends Huntsman & GeoEntity> extends GeoModel<T> {
         EntityModelData extraData = (EntityModelData) customPredicate.getData(DataTickets.ENTITY_MODEL_DATA);
         head.setRotX(extraData.headPitch() * ((float) Math.PI / 180F));
         head.setRotY(extraData.netHeadYaw() *0.5f* ((float) Math.PI / 180F));
-        GeoBone hat = this.getAnimationProcessor().getBone("hat");
-        GeoBone overhang = this.getAnimationProcessor().getBone("hatPart");
-        if(entity.getHatType()==0){
-            hat.setHidden(false);
-            overhang.setHidden(true);
-        }else if(entity.getHatType()==1){
-            hat.setHidden(false);
-            overhang.setHidden(false);
+        GeoBone hair = this.getAnimationProcessor().getBone("hair");
+        GeoBone hood = this.getAnimationProcessor().getBone("hood");
+        if(entity.getHatType()==3){
+            hair.setHidden(true);
+            hood.setHidden(false);
         }else{
-            hat.setHidden(true);
-            hat.setHidden(true);
+            hair.setHidden(false);
+            hood.setHidden(true);
         }
 
 

@@ -14,10 +14,11 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class HuntsmanHatLayer<T extends Huntsman & GeoEntity> extends GeoRenderLayer<T>{
 
-	private static final ResourceLocation BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/huntsman/church/huntsman/hat/huntsman_hat_black.png");
-	private static final ResourceLocation TOP_HAT_BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/huntsman/church/huntsman/hat/huntsman_top_hat_black");
-	private static final ResourceLocation NO_HAT = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/huntsman/church/huntsman/hat/huntsman_hat_black.png");
-
+	private static final ResourceLocation BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hat/huntsman_hat_black.png");
+	private static final ResourceLocation TOP_HAT_BLACK = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hat/huntsman_top_hat_black.png");
+	private static final ResourceLocation TOP_HAT_WHITE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hat/huntsman_top_hat_white.png");
+	private static final ResourceLocation TOP_HAT_GRAY = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/hat/huntsman_top_hat_gray.png");
+	public static final ResourceLocation NO_HAT = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/frayed_blade/frayed_blade0.png");
 
 	public HuntsmanHatLayer(GeoRenderer<T> entityRendererIn) {
 		super(entityRendererIn);
@@ -34,10 +35,19 @@ public class HuntsmanHatLayer<T extends Huntsman & GeoEntity> extends GeoRenderL
 			RenderType cameo = RenderType.entityCutoutNoCull(TOP_HAT_BLACK);
 			switch (animatable.getHatType()) {
 				case 1:
-					cameo = RenderType.entityCutoutNoCull(TOP_HAT_BLACK);
+					if(animatable.getRobeType()==5||animatable.getRobeType()==6){
+						cameo = RenderType.entityCutoutNoCull(TOP_HAT_GRAY);
+					}else if(animatable.getRobeType()==7){
+						cameo = RenderType.entityCutoutNoCull(TOP_HAT_WHITE);
+					}else {
+						cameo = RenderType.entityCutoutNoCull(TOP_HAT_BLACK);
+					}
 					break;
 				case 2:
 					cameo = RenderType.entityCutoutNoCull(BLACK);
+					break;
+				case 3: //HOOD
+					cameo = RenderType.entityCutoutNoCull(NO_HAT);
 					break;
 			}
 			this.getRenderer().reRender(bakedModel, poseStack, bufferSource, animatable, cameo, bufferSource.getBuffer(cameo), partialTick, packedLight, packedOverlay, -1);

@@ -9,6 +9,7 @@ import github.nitespring.darkestsouls.client.render.entity.mob.abyss.Monstruosit
 import github.nitespring.darkestsouls.client.render.entity.mob.abyss.SewerCentipedeGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.beast.BeastPatientGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.church.doctor.ChurchDoctorGeoRenderer;
+import github.nitespring.darkestsouls.client.render.entity.mob.church.huntsman.HuntsmanGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.hollow.HollowGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.skeleton.*;
 import github.nitespring.darkestsouls.client.render.entity.projectile.*;
@@ -105,6 +106,7 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.CHURCH_DOCTOR_SCYTHE.get(), ChurchDoctorGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.CHURCH_DOCTOR_CRUCIFIX.get(), ChurchDoctorGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.DARKWRAITH.get(), DarkwraithGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HUNTSMAN_AXE.get(), HuntsmanGeoRenderer::new);
 
 		 event.registerEntityRenderer(EntityInit.HITBOX_SMALL.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HITBOX.get(), InvisibleProjectileRenderer::new);
