@@ -44,6 +44,8 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.CHURCH_DOCTOR_CRUCIFIX.get(), EntityAttributes.setChurchDoctorCrucifixAttributes().build());
 		event.put(EntityInit.DARKWRAITH.get(), EntityAttributes.setDarkwraithAttributes().build());
 		event.put(EntityInit.HUNTSMAN_AXE.get(), EntityAttributes.setHuntsmanAxeAttributes().build());
+		event.put(EntityInit.HUNTSMAN_CUTLASS.get(), EntityAttributes.setHuntsmanCutlassAttributes().build());
+		event.put(EntityInit.HUNTSMAN_PITCHFORK.get(), EntityAttributes.setHuntsmanPitchforkAttributes().build());
 
 	}
 

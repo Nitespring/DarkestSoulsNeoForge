@@ -2,26 +2,18 @@ package github.nitespring.darkestsouls.core.init;
 
 import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponentMap;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.component.PatchedDataComponentMap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.Set;
-import java.util.stream.IntStream;
 
 public class CreativeTabInit {
 
@@ -245,7 +237,9 @@ public class CreativeTabInit {
                         output.accept(ItemInit.HOLLOW_AXE.get());
                         output.accept(ItemInit.HOLLOW_CROSSBOW.get());
                         output.accept(ItemInit.HOLLOW_ASSASSIN.get());
-                        output.accept(ItemInit.HUNTSMAN_AXE_EGG.get());
+                        output.accept(ItemInit.EGG_HUNTSMAN_AXE.get());
+                        output.accept(ItemInit.EGG_HUNTSMAN_CUTLASS.get());
+                        output.accept(ItemInit.EGG_HUNTSMAN_PITCHFORK.get());
                         output.accept(ItemInit.CHURCH_DOCTOR.get());
                         output.accept(ItemInit.CHURCH_DOCTOR_LANTERN.get());
                         output.accept(ItemInit.CHURCH_DOCTOR_PISTOL.get());

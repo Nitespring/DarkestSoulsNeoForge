@@ -270,11 +270,14 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.CHURCH_DOCTOR_CRUCIFIX.get(), 4475990, 2097152, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> DARKWRAITH = ITEMS.register("darkwraith_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.DARKWRAITH.get(), 987415, 6750208, new Item.Properties()));
-
-	public static final DeferredHolder<Item,Item> HUNTSMAN_AXE_EGG = ITEMS.register("huntsman_axe_spawn_egg",
+	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_AXE = ITEMS.register("huntsman_axe_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_AXE.get(), 987415, 6750208, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_CUTLASS = ITEMS.register("huntsman_cutlass_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_CUTLASS.get(), 987415, 6750208, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_PITCHFORK = ITEMS.register("huntsman_pitchfork_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_PITCHFORK.get(), 987415, 6750208, new Item.Properties()));
 
-    //Items
+	//Items
 	public static final DeferredHolder<Item,Item> TITANITE_FRAGMENT = ITEMS.register("titanite_fragment",
 			() -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 	public static final DeferredHolder<Item,Item> RUNE_FRAGMENT = ITEMS.register("rune_fragment",

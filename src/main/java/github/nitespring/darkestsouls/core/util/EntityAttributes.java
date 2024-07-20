@@ -9,7 +9,7 @@ import net.neoforged.fml.common.Mod;
 public class EntityAttributes {
 	public static  AttributeSupplier.Builder setHuntsmanAxeAttributes(){
 		return Monster.createMonsterAttributes()
-				.add(Attributes.MAX_HEALTH, 40.0D)
+				.add(Attributes.MAX_HEALTH, 44.0D)
 				.add(Attributes.ARMOR, 2.0D)
 				.add(Attributes.ARMOR_TOUGHNESS, 1.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.18D)
@@ -17,6 +17,32 @@ public class EntityAttributes {
 				.add(Attributes.ATTACK_SPEED, 1.2D)
 				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 1.5D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
+	public static  AttributeSupplier.Builder setHuntsmanCutlassAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 42.0D)
+				.add(Attributes.ARMOR, 2.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 1.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.18D)
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.2D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
+	public static  AttributeSupplier.Builder setHuntsmanPitchforkAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 40.0D)
+				.add(Attributes.ARMOR, 2.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 0.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.18D)
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
