@@ -109,6 +109,7 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_AXE.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_CUTLASS.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_PITCHFORK.get(), HuntsmanGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HUNTSMAN_RIFLE.get(), HuntsmanGeoRenderer::new);
 
 		 event.registerEntityRenderer(EntityInit.HITBOX_SMALL.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HITBOX.get(), InvisibleProjectileRenderer::new);

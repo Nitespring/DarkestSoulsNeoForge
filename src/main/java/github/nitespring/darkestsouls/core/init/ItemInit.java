@@ -235,7 +235,7 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> HOLLOW_LONGSWORD = ITEMS.register("hollow_longsword_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HOLLOW_LONGSWORD.get(), 13945528, 5202790, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_CROSSBOW = ITEMS.register("hollow_crossbow_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HOLLOW_CROSSBOW.get(), 13945528, 5202790, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HOLLOW_CROSSBOW.get(), 13945528, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> GRAVETENDER_HOLLOW_CROSSBOW = ITEMS.register("gravetender_hollow_crossbow_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_CROSSBOW.get(), 13945528, 2962739, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_AXE = ITEMS.register("hollow_axe_spawn_egg",
@@ -271,11 +271,13 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> DARKWRAITH = ITEMS.register("darkwraith_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.DARKWRAITH.get(), 987415, 6750208, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_AXE = ITEMS.register("huntsman_axe_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HUNTSMAN_AXE.get(), 987415, 6750208, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_AXE.get(), 2237490, 11556644, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_CUTLASS = ITEMS.register("huntsman_cutlass_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HUNTSMAN_CUTLASS.get(), 987415, 6750208, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_CUTLASS.get(), 2237490, 7106425, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_PITCHFORK = ITEMS.register("huntsman_pitchfork_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HUNTSMAN_PITCHFORK.get(), 987415, 6750208, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_PITCHFORK.get(), 2237490, 3947592, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_RIFLE = ITEMS.register("huntsman_rifle_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
 
 	//Items
 	public static final DeferredHolder<Item,Item> TITANITE_FRAGMENT = ITEMS.register("titanite_fragment",

@@ -240,6 +240,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.EGG_HUNTSMAN_AXE.get());
                         output.accept(ItemInit.EGG_HUNTSMAN_CUTLASS.get());
                         output.accept(ItemInit.EGG_HUNTSMAN_PITCHFORK.get());
+                        output.accept(ItemInit.EGG_HUNTSMAN_RIFLE.get());
                         output.accept(ItemInit.CHURCH_DOCTOR.get());
                         output.accept(ItemInit.CHURCH_DOCTOR_LANTERN.get());
                         output.accept(ItemInit.CHURCH_DOCTOR_PISTOL.get());

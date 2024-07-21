@@ -251,7 +251,7 @@ public class ChurchDoctorPistol extends ChurchDoctor implements GeoEntity {
                     entity.zPower=flyingPower*aimVec.z;*/
                     entity.setOwner(this);
                     entity.setAttackDamage((float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)+2.0f);
-                    entity.setAttackDamage(0.4f);
+                    entity.setSize(0.6f);
                     entity.setPierce(2);
                     entity.setPoiseDamage(2);
                     levelIn.addFreshEntity(entity);

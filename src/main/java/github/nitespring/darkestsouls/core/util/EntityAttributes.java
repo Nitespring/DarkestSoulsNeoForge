@@ -45,6 +45,21 @@ public class EntityAttributes {
 				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
+
+	}
+	public static  AttributeSupplier.Builder setHuntsmanRifleAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 32.0D)
+				.add(Attributes.ARMOR, 1.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 0.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.18D)
+				.add(Attributes.ATTACK_DAMAGE, 8.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 0.8D)
+				.add(Attributes.FOLLOW_RANGE, 40)
+				.add(Attributes.STEP_HEIGHT, 1);
+
 	}
 	public static  AttributeSupplier.Builder setHollowSoldierLongswordAttributes(){
 		return Monster.createMonsterAttributes()

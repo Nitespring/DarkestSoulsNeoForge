@@ -111,6 +111,10 @@ public class EntityInit {
 			() -> EntityType.Builder.<HuntsmanPitchfork>of(HuntsmanPitchfork::new, MobCategory.MONSTER)
 					.sized(0.7f, 1.95f)
 					.build("huntsman_pitchfork"));
+	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanRifle>> HUNTSMAN_RIFLE = ENTITIES.register("huntsman_rifle",
+			() -> EntityType.Builder.<HuntsmanRifle>of(HuntsmanRifle::new, MobCategory.MONSTER)
+					.sized(0.7f, 1.95f)
+					.build("huntsman_rifle"));
 	public static final DeferredHolder<EntityType<?>,EntityType<BeastPatient>> BEAST_PATIENT = ENTITIES.register("beast_patient",
 			() -> EntityType.Builder.<BeastPatient>of(BeastPatient::new, MobCategory.MONSTER)
 					.sized(0.6f, 1.8f)
