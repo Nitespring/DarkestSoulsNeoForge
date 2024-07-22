@@ -882,6 +882,7 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
                 }
                 if(getAnimationTick()==5) {
                     //this.playSound(this.getAttackSound(), 0.2f,1.0f);
+                    if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
                     this.playSound(SoundEvents.FISHING_BOBBER_THROW);
                     this.doRangedAttack();
 

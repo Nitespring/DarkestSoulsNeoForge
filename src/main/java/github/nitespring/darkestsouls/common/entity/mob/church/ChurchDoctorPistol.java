@@ -236,6 +236,7 @@ public class ChurchDoctorPistol extends ChurchDoctor implements GeoEntity {
                     }
                 }
                 if(getAnimationTick()==10) {
+                    if(this.aimVec==null) {aimVec = this.getLookAngle().normalize();}
                     //this.playSound(this.getAttackSound(), 0.2f,0.4f);
                     this.playSound(SoundEvents.GENERIC_EXPLODE.value());
                     float x = (float) (pos.x + 0.6 * aimVec.x);

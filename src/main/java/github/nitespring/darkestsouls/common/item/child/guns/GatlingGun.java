@@ -49,6 +49,10 @@ public class GatlingGun extends Gun implements GeoItem {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.factory;
     }
+
+
+
+
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {

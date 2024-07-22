@@ -140,6 +140,8 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
     @Override
     public ItemStack getLeftHandItem() {return ItemInit.HUNTSMAN_AXE.get().getDefaultInstance();}
 
+
+
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_) {
 

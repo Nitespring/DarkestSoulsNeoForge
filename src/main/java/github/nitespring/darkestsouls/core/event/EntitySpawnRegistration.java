@@ -150,6 +150,51 @@ public class EntitySpawnRegistration {
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkDarkwraithSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.BEAST_PATIENT_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkBeastPatientGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_AXE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanAxeSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_PITCHFORK.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanPitchforkSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_CUTLASS.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanCutlassSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_RIFLE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanRifleSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.CHURCH_DOCTOR_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkChurchDoctorGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HOLLOW_SOLDIER_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHollowSoldierGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGravetenderHollowGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
 }

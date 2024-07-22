@@ -225,6 +225,7 @@ public class CustomArmourItem extends ArmorItem {
         }
     }
 
+
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(CustomArmourItem.ArmorRender.INSTANCE);

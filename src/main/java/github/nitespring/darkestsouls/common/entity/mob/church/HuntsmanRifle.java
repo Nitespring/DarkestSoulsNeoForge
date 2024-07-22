@@ -216,6 +216,7 @@ public class HuntsmanRifle extends Huntsman implements GeoEntity {
                     }
                 }
                 if (getAnimationTick() == 20) {
+                    if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
                     //this.playSound(this.getAttackSound(), 0.2f,1.0f);
                     this.playSound(SoundEvents.GENERIC_EXPLODE.value());
                     float x = (float) (pos.x + 0.6 * aimVec.x);

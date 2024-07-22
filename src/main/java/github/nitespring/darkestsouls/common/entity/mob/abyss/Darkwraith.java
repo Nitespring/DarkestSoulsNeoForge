@@ -50,7 +50,7 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
 
     @Override
     protected int getDSDefaultTeam() {
-        return 0;
+        return 1;
     }
 
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {

@@ -279,6 +279,19 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_RIFLE = ITEMS.register("huntsman_rifle_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
 
+
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), 13945528, 2962739, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_HOLLOW_SOLDIER_1 = ITEMS.register("hollow_soldier_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.HOLLOW_SOLDIER_GROUP1.get(), 13945528, 5202790, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_HUNTSMAN_1 = ITEMS.register("huntsman_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_GROUP1.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_CHURCH_DOCTOR_1 = ITEMS.register("church_doctor_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.CHURCH_DOCTOR_GROUP1.get(), 4475990, 11588863, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_BEAST_PATIENT_1 = ITEMS.register("beast_patient_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.BEAST_PATIENT_GROUP1.get(), 2962739, 11432504, new Item.Properties()));
+
+
 	//Items
 	public static final DeferredHolder<Item,Item> TITANITE_FRAGMENT = ITEMS.register("titanite_fragment",
 			() -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));

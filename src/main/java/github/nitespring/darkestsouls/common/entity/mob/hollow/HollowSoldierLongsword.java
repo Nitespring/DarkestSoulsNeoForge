@@ -399,6 +399,7 @@ public class HollowSoldierLongsword extends Hollow implements GeoEntity {
                     }
                 }
                 if(getAnimationTick()==28) {
+                    if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
                     //this.playSound(this.getAttackSound(), 0.2f,1.0f);
                     this.playSound(SoundEvents.EGG_THROW);
                     float x = (float) (pos.x + 0.6 * aimVec.x);

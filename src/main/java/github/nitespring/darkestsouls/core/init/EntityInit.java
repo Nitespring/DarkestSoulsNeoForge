@@ -27,6 +27,7 @@ import github.nitespring.darkestsouls.common.entity.projectile.weapon.melee.Fray
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.melee.HeavyWeaponAttackEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.melee.WeaponAttackEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
+import github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntities.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -159,6 +160,28 @@ public class EntityInit {
 			() -> EntityType.Builder.<Darkwraith>of(Darkwraith::new, MobCategory.MONSTER)
 					.sized(0.65f, 2.0f)
 					.build("darkwraith"));
+
+	//SpawnGroups
+	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnGroupEntity>> HUNTSMAN_GROUP1 = ENTITIES.register("huntsman_group_1",
+			() -> EntityType.Builder.<HuntsmanSpawnGroupEntity>of(HuntsmanSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(4.0f, 2.0f)
+					.build("huntsman_group_1"));
+	public static final DeferredHolder<EntityType<?>,EntityType<ChurchDoctorSpawnGroupEntity>> CHURCH_DOCTOR_GROUP1 = ENTITIES.register("church_doctor_group_1",
+			() -> EntityType.Builder.<ChurchDoctorSpawnGroupEntity>of(ChurchDoctorSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(6.0f, 2.0f)
+					.build("church_doctor_group_1"));
+	public static final DeferredHolder<EntityType<?>,EntityType<HollowSoldierSpawnGroupEntity>> HOLLOW_SOLDIER_GROUP1 = ENTITIES.register("hollow_soldier_group_1",
+			() -> EntityType.Builder.<HollowSoldierSpawnGroupEntity>of(HollowSoldierSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(4.0f, 2.0f)
+					.build("hollow_soldier_group_1"));
+	public static final DeferredHolder<EntityType<?>,EntityType<GravetenderHollowSpawnGroupEntity>> GRAVETENDER_HOLLOW_GROUP1 = ENTITIES.register("gravetender_hollow_group_1",
+			() -> EntityType.Builder.<GravetenderHollowSpawnGroupEntity>of(GravetenderHollowSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(4.0f, 2.0f)
+					.build("gravetender_hollow_group_1"));
+	public static final DeferredHolder<EntityType<?>,EntityType<BeastPatientSpawnGroupEntity>> BEAST_PATIENT_GROUP1 = ENTITIES.register("beast_patient_group_1",
+			() -> EntityType.Builder.<BeastPatientSpawnGroupEntity>of(BeastPatientSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(4.0f, 2.0f)
+					.build("beast_patient_group_1"));
 
 
 	public static final DeferredHolder<EntityType<?>,EntityType<DamageHitboxEntity>> HITBOX_SMALL = ENTITIES.register("hitbox_small",
