@@ -459,6 +459,31 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> BLOOD_ROCK = ITEMS.register("blood_rock",
 			() -> new Item(new Item.Properties()));
 
+	public static final DeferredHolder<Item,Item> TORN_LEATHER_SCRAP = ITEMS.register("torn_leather_scrap",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> REINFORCED_LEATHER = ITEMS.register("reinforced_leather",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> RUSTY_MAIL_SCRAP = ITEMS.register("rusty_mail_scrap",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> TORN_MAIL_SCRAP = ITEMS.register("torn_mail_scrap",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> REINFORCED_MAIL_SCRAP = ITEMS.register("reinforced_mail_scrap",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> RUSTY_METAL_SCRAP = ITEMS.register("rusty_metal_scrap",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> METAL_PIECE = ITEMS.register("metal_piece",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> REINFORCED_METAL_PIECE = ITEMS.register("reinforced_metal_piece",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> TORN_CLOTH_PIECE = ITEMS.register("torn_cloth_piece",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> ENCHANTED_TORN_CLOTH_PIECE = ITEMS.register("enchanted_torn_cloth_piece",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> CLOTH_PIECE = ITEMS.register("cloth_piece",
+			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> ENCHANTED_CLOTH_PIECE = ITEMS.register("enchanted_cloth_piece",
+			() -> new Item(new Item.Properties()));
+
 	//Blocks
 
 	public static final DeferredHolder<Item,BlockItem> CINNABAR_ORE = ITEMS.register("cinnabar_ore",

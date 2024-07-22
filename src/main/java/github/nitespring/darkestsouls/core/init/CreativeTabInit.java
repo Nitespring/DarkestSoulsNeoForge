@@ -160,6 +160,18 @@ public class CreativeTabInit {
                         output.accept(ItemInit.BLOOD_CRYSTAL.get());
                         output.accept(ItemInit.CINNABAR.get());
                         output.accept(ItemInit.QUICKSILVER.get());
+                        output.accept(ItemInit.TORN_CLOTH_PIECE.get());
+                        output.accept(ItemInit.ENCHANTED_TORN_CLOTH_PIECE.get());
+                        output.accept(ItemInit.CLOTH_PIECE.get());
+                        output.accept(ItemInit.ENCHANTED_CLOTH_PIECE.get());
+                        output.accept(ItemInit.TORN_LEATHER_SCRAP.get());
+                        output.accept(ItemInit.REINFORCED_LEATHER.get());
+                        output.accept(ItemInit.RUSTY_MAIL_SCRAP.get());
+                        output.accept(ItemInit.TORN_MAIL_SCRAP.get());
+                        output.accept(ItemInit.REINFORCED_MAIL_SCRAP.get());
+                        output.accept(ItemInit.RUSTY_METAL_SCRAP.get());
+                        output.accept(ItemInit.METAL_PIECE.get());
+                        output.accept(ItemInit.REINFORCED_METAL_PIECE.get());
                         output.accept(ItemInit.TITANITE_INGOT.get());
                         output.accept(ItemInit.TITANITE_NUGGET.get());
                         output.accept(ItemInit.GOLDEN_INGOT.get());
