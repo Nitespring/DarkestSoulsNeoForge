@@ -331,7 +331,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 							return true;
 						}else{return super.isAlliedTo(e);}
 					case 3://Huntsman
-						if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==3){
+						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==3||mob.getDSTeam()==5)){
 							return true;
 						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
@@ -342,6 +342,14 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==4 || mob.getDSTeam()==1)){
 							return true;
 						}else if(e.getPersistentData().contains("DSTeam")&&(e.getPersistentData().getInt("DSTeam")==4||e.getPersistentData().getInt("DSTeam")==1)){
+							return true;
+						}else{return super.isAlliedTo(e);}
+					case 5://Church
+						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==3||mob.getDSTeam()==5)){
+							return true;
+						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
+							return true;
+						}else if(e instanceof Villager){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					default:
@@ -665,9 +673,22 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						this.target = this.findTargetByPredicate(
 								(t) -> {
 									CompoundTag nbt = t.getPersistentData();
-									return (t instanceof DarkestSoulsAbstractEntity dst && dst.getDSTeam() == 4)
+									return (t instanceof DarkestSoulsAbstractEntity dst && (dst.getDSTeam() == 3||dst.getDSTeam() == 5))
 											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 3)
 											|| t instanceof Villager || t instanceof IronGolem|| t instanceof SnowGolem|| t instanceof Animal;
+								}
+						);
+					}else {
+						this.target = playerTarget;
+					}
+					break;
+				case 5:   //CHURCH
+					if(playerTarget==null) {
+						this.target = this.findTargetByPredicate(
+								(t) -> {
+									CompoundTag nbt = t.getPersistentData();
+									return (t instanceof DarkestSoulsAbstractEntity dst && dst.getDSTeam() == 4)
+											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 4);
 								}
 						);
 					}else {
@@ -741,11 +762,21 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 								switch (targetTeam) {
 									case 3:
 										this.alertOther(list.get(i),mob.getLastHurtByMob());
+									case 5:
+										this.alertOther(list.get(i),mob.getLastHurtByMob());
 								}
 								break;
 							case 4:
 								switch (targetTeam) {
 									case 4:
+										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
+								}
+								break;
+							case 5:
+								switch (targetTeam) {
+									case 3:
+										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
+									case 5:
 										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
 								}
 								break;

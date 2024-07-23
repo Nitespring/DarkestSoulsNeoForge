@@ -79,6 +79,6 @@ public class ChurchDoctorSpawnGroupEntity extends SpawnGroupEntity{
 
     @Override
     protected int getDSDefaultTeam() {
-        return 3;
+        return 5;
     }
 }
