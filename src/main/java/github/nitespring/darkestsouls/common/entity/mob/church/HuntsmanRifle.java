@@ -103,7 +103,7 @@ public class HuntsmanRifle extends Huntsman implements GeoEntity {
 
     @Override
     public int getDefaultHatType() {
-        return 2;
+        return 1;
     }
     @Override
     public int getDefaultRobeType() {
@@ -130,15 +130,89 @@ public class HuntsmanRifle extends Huntsman implements GeoEntity {
     public void populateClothing(){
         Random rn = new Random();
         int r = rn.nextInt(24) + 1;
-        this.setRobeType(rn.nextInt(8));
-        this.setHatType(rn.nextInt(4));
-        this.setHairType(rn.nextInt(6));
-        this.setShirtType(rn.nextInt(6));
-        /*switch(r) {
-            default:
-                this.setRobeType(0);
+        switch(rn.nextInt(24) + 1) {
+            case 1,2,3:
+                this.setRobeType(2);
                 break;
-        }*/
+            case 4,5,6:
+                this.setRobeType(3);
+                break;
+            case 7,8,9:
+                this.setRobeType(4);
+                break;
+            case 10,11,12:
+                this.setRobeType(5);
+                break;
+            case 13:
+                this.setRobeType(6);
+                break;
+            case 14:
+                this.setRobeType(7);
+                break;
+            case 15,16:
+                this.setRobeType(8);
+                break;
+            case 17:
+                this.setRobeType(1);
+                break;
+            default:
+                this.setRobeType(getDefaultRobeType());
+                break;
+        }
+        switch(rn.nextInt(24) + 1) {
+            case 1,2:
+                this.setHatType(0);
+                break;
+            case 3,4,5,6,7,8:
+                this.setHatType(2);
+                break;
+            case 9,10,11:
+                this.setHatType(3);
+                break;
+            default:
+                this.setHatType(getDefaultHatType());
+                break;
+        }
+        switch(rn.nextInt(24) + 1) {
+            case 1,2,3:
+                this.setHairType(1);
+                break;
+            case 4,5,6,7,8:
+                this.setHairType(2);
+                break;
+            case 9,10,11,12,13,14:
+                this.setHairType(3);
+                break;
+            case 15:
+                this.setHairType(4);
+                break;
+            case 16:
+                this.setHairType(5);
+                break;
+            default:
+                this.setHairType(getDefaultHairType());
+                break;
+        }
+        switch(rn.nextInt(24) + 1) {
+            case 1,2:
+                this.setShirtType(0);
+                break;
+            case 3,4,5,6:
+                this.setShirtType(2);
+                break;
+            case 7,8,9,10:
+                this.setShirtType(3);
+                break;
+            case 11,12,13,14:
+                this.setShirtType(4);
+                break;
+            case 15,16,17,18:
+                this.setShirtType(5);
+                break;
+            default:
+                this.setHairType(getDefaultShirtType());
+                break;
+        }
     }
     @Override
     protected void registerGoals() {

@@ -72,6 +72,12 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
 			poseStack.scale(1.0f,1.0f,1.0f);
+		}else if(animatable.getRightHandItem().getItem()==ItemInit.HUNTSMAN_CUTLASS.get()){
+			poseStack.translate(0, -0.16, -0.13);
+			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+			poseStack.mulPose(Axis.YP.rotationDegrees(0));
+			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+			poseStack.scale(1.0f,1.0f,1.0f);
 		}else{
 			poseStack.translate(0, -0.12, 0);
 			poseStack.mulPose(Axis.XP.rotationDegrees(-90));

@@ -23,6 +23,7 @@ public class HuntsmanRobeLayer<T extends Huntsman & GeoEntity> extends GeoRender
 	private static final ResourceLocation LIGHT_BROWN = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_light_brown.png");
 	private static final ResourceLocation YELLOW = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_yellow.png");
 	private static final ResourceLocation WHITE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/church/huntsman/coat/huntsman_coat_white.png");
+	private static final ResourceLocation NO_ROBE = ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/weapons/frayed_blade/frayed_blade0.png");
 
 	public HuntsmanRobeLayer(GeoRenderer<T> entityRendererIn) {
 		super(entityRendererIn);
@@ -38,24 +39,27 @@ public class HuntsmanRobeLayer<T extends Huntsman & GeoEntity> extends GeoRender
 		RenderType cameo = RenderType.entityCutoutNoCull(BLACK);
 		switch (animatable.getRobeType()) {
 			case 1:
-				cameo = RenderType.entityCutoutNoCull(BLUE);
+				cameo = RenderType.entityCutoutNoCull(NO_ROBE);
 				break;
 			case 2:
-				cameo = RenderType.entityCutoutNoCull(BROWN);
+				cameo = RenderType.entityCutoutNoCull(BLUE);
 				break;
 			case 3:
-				cameo = RenderType.entityCutoutNoCull(GRAY);
+				cameo = RenderType.entityCutoutNoCull(BROWN);
 				break;
 			case 4:
-				cameo = RenderType.entityCutoutNoCull(GREEN);
+				cameo = RenderType.entityCutoutNoCull(GRAY);
 				break;
 			case 5:
-				cameo = RenderType.entityCutoutNoCull(LIGHT_BROWN);
+				cameo = RenderType.entityCutoutNoCull(GREEN);
 				break;
 			case 6:
-				cameo = RenderType.entityCutoutNoCull(YELLOW);
+				cameo = RenderType.entityCutoutNoCull(LIGHT_BROWN);
 				break;
 			case 7:
+				cameo = RenderType.entityCutoutNoCull(YELLOW);
+				break;
+			case 8:
 				cameo = RenderType.entityCutoutNoCull(WHITE);
 				break;
 			default:

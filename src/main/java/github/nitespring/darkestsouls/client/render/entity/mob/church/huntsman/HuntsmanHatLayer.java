@@ -35,9 +35,9 @@ public class HuntsmanHatLayer<T extends Huntsman & GeoEntity> extends GeoRenderL
 			RenderType cameo = RenderType.entityCutoutNoCull(TOP_HAT_BLACK);
 			switch (animatable.getHatType()) {
 				case 1:
-					if(animatable.getRobeType()==5||animatable.getRobeType()==6){
+					if(animatable.getRobeType()==6||animatable.getRobeType()==7){
 						cameo = RenderType.entityCutoutNoCull(TOP_HAT_GRAY);
-					}else if(animatable.getRobeType()==7){
+					}else if(animatable.getRobeType()==8){
 						cameo = RenderType.entityCutoutNoCull(TOP_HAT_WHITE);
 					}else {
 						cameo = RenderType.entityCutoutNoCull(TOP_HAT_BLACK);
