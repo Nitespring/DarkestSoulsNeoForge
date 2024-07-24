@@ -4,6 +4,7 @@ import github.nitespring.darkestsouls.common.entity.projectile.throwable.Firebom
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
@@ -347,7 +348,21 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                     h.setOwner(this);
                     h.setTarget(this.getTarget());
                     this.level().addFreshEntity(h);
-
+                    Vec3 pos1 = this.position().add((1.0f)*this.getLookAngle().x,
+                            1.5,
+                            (1.0f)*this.getLookAngle().z);
+                    for(int i=0; i<=16; i++) {
+                        Vec3 offVec = new Vec3((new Random().nextFloat()-0.5f),
+                                (new Random().nextFloat() -0.5f)*0.5f,
+                                (new Random().nextFloat() -0.5f));
+                        this.level().addParticle(ParticleTypes.FLAME,
+                                pos1.x+offVec.x,
+                                pos1.y+offVec.y,
+                                pos1.z+offVec.z,
+                                0.25f*(this.getLookAngle().normalize().x+offVec.x),
+                                0.25f*(this.getLookAngle().normalize().y+offVec.y),
+                                0.25f*(this.getLookAngle().normalize().z+offVec.z));
+                    }
                     int r = this.getRandom().nextInt(2048);
                     if(r<=240) {
                         setCombatState(0);
@@ -383,7 +398,21 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                     h.setOwner(this);
                     h.setTarget(this.getTarget());
                     this.level().addFreshEntity(h);
-
+                    Vec3 pos1 = this.position().add((1.0f)*this.getLookAngle().x,
+                            1.5,
+                            (1.0f)*this.getLookAngle().z);
+                    for(int i=0; i<=16; i++) {
+                        Vec3 offVec = new Vec3((new Random().nextFloat()-0.5f),
+                                (new Random().nextFloat() -0.5f)*0.5f,
+                                (new Random().nextFloat() -0.5f));
+                        this.level().addParticle(ParticleTypes.FLAME,
+                                pos1.x+offVec.x,
+                                pos1.y+offVec.y,
+                                pos1.z+offVec.z,
+                                0.25f*(this.getLookAngle().normalize().x+offVec.x),
+                                0.25f*(this.getLookAngle().normalize().y+offVec.y),
+                                0.25f*(this.getLookAngle().normalize().z+offVec.z));
+                    }
                     int r = this.getRandom().nextInt(2048);
                     if(r<=360) {
                         setCombatState(0);

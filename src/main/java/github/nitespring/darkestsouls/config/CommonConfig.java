@@ -7,6 +7,8 @@ public class CommonConfig {
 
 
 		public static ModConfigSpec.BooleanValue do_special_attacks;
+		public static ModConfigSpec.BooleanValue do_special_weapon_attacks_left_click;
+		public static ModConfigSpec.BooleanValue do_special_weapon_attacks_right_click;
 		public static ModConfigSpec.BooleanValue do_blood_particles;
 		public static ModConfigSpec.BooleanValue spawn_darkwraith;
 		public static ModConfigSpec.BooleanValue spawn_mad_hollow;
@@ -49,6 +51,14 @@ public class CommonConfig {
 		do_special_attacks = server
 				.comment("Set to false to disable special attacks on common weapons")
 				.define("config.do_special_attacks", true);
+
+		do_special_weapon_attacks_left_click = server
+				.comment("Set to false to disable special attackson left click on special weapons")
+				.define("config.do_special_weapon_attacks_left_click", true);
+
+		do_special_weapon_attacks_right_click = server
+				.comment("Set to false to disable special attacks on right click on special weapons")
+				.define("config.do_special_weapon_attacks_right_click", true);
 
 		do_blood_particles = server
 				.comment("Set to false to disable blood particles")

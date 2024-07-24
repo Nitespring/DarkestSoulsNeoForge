@@ -401,7 +401,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					this.spawnBloodParticles(source, f);
 				}
 			}
-		//System.out.println(this.getDSTeam());
+		System.out.println(this.getDSTeam());
 
 		}
 		return super.hurt(source, f);
@@ -644,9 +644,10 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						this.target = this.findTargetByPredicate(
 								(t) -> {
 									CompoundTag nbt = t.getPersistentData();
-									return t instanceof IronGolem ||t instanceof SnowGolem;
+									return t instanceof Player || t instanceof IronGolem ||t instanceof SnowGolem;
 								}
 						);
+						break;
 					}else {
 						this.target = playerTarget;
 					}
@@ -661,9 +662,10 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 									CompoundTag nbt = t.getPersistentData();
 									return (t instanceof DarkestSoulsAbstractEntity dst && dst.getDSTeam() == 4)
 											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 4)
-											|| (t instanceof Enemy && !(t instanceof Creeper));
+											|| t instanceof Player || (t instanceof Enemy && !(t instanceof Creeper));
 								}
 						);
+						break;
 					}else {
 						this.target = playerTarget;
 					}
@@ -675,9 +677,10 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 									CompoundTag nbt = t.getPersistentData();
 									return (t instanceof DarkestSoulsAbstractEntity dst && (dst.getDSTeam() == 3||dst.getDSTeam() == 5))
 											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 3)
-											|| t instanceof Villager || t instanceof IronGolem|| t instanceof SnowGolem|| t instanceof Animal;
+											|| t instanceof Player || t instanceof Villager || t instanceof IronGolem|| t instanceof SnowGolem|| t instanceof Animal;
 								}
 						);
+						break;
 					}else {
 						this.target = playerTarget;
 					}
@@ -688,9 +691,10 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 								(t) -> {
 									CompoundTag nbt = t.getPersistentData();
 									return (t instanceof DarkestSoulsAbstractEntity dst && dst.getDSTeam() == 4)
-											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 4);
+											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 4)||t instanceof Player;
 								}
 						);
+						break;
 					}else {
 						this.target = playerTarget;
 					}
