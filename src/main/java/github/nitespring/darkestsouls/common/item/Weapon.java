@@ -337,7 +337,10 @@ public class Weapon extends Item implements ILeftClickItem {
         int fire = this.fire + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FIRE_ASPECT));
         int holy = this.holy + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.ABYSS_CLEANSER));
         int serrated = this.serrated + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.SERRATED));
-        int blood = this.bloodAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.BLOODBLADE));
+        int blood = this.bloodAttack;
+        if(stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.BLOODBLADE))>=1){
+           blood = blood+1+2*stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.BLOODBLADE));
+        }
         int poison = poisonAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.POISONED_BLADE));
         int toxic = stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.TOXIC_BLADE));
         int frost = frostAttack + stack.getEnchantmentLevel(pContext.registries().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(EnchantmentInit.FROST_BLADE));
