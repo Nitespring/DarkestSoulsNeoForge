@@ -58,6 +58,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SPEAR.get());
                         output.accept(ItemInit.HUNTSMAN_PITCHFORK.get());
                         output.accept(ItemInit.GRAVE_SCYTHE.get());
+                        output.accept(ItemInit.CHURCH_SCYTHE_UNLIT.get());
                         output.accept(ItemInit.CHURCH_SCYTHE.get());
                         output.accept(ItemInit.SAW_CLEAVER.get());
                         output.accept(ItemInit.HUNTER_AXE.get());
