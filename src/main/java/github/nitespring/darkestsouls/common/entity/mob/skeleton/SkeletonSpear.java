@@ -100,7 +100,11 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.skeleton.fall"));
 
                     }else if(!(event.getLimbSwingAmount() > -0.06 && event.getLimbSwingAmount() < 0.06f)){
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.skeleton.spear.walk"));
+                        if(getCombatState()==1){
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.skeleton.spear.run"));
+                        }else {
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.skeleton.spear.walk"));
+                        }
                     }else {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.skeleton.spear.idle"));
                     }
@@ -262,13 +266,13 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                     h.setTarget(this.getTarget());
                     this.level().addFreshEntity(h);
                 }
-                if(getAnimationTick()>=20&&flag) {
+                if(getAnimationTick()>=17&&flag) {
                     this.getNavigation().stop();
                     int r = this.getRandom().nextInt(2048);
                     if(r<=400) {setAnimationTick(0);
                         this.setAnimationState(22);}
                 }
-                if(getAnimationTick()>=28) {
+                if(getAnimationTick()>=21) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
@@ -339,7 +343,8 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
     public class AttackGoal extends Goal {
 
 
-        private final double speedModifier = 1.5f;
+        private final double walkingSpeedModifier = 1.1f;
+        private final double runningSpeedModifier = 1.7f;
         private final boolean followingTargetEvenIfNotSeen = true;
         protected final SkeletonSpear mob;
         private Path path;
@@ -351,7 +356,7 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
         private long lastCanUseCheck;
         private int failedPathFindingPenalty = 0;
         private boolean canPenalize = false;
-
+        private int lastCanUpdateStateCheck;
 
 
 
@@ -418,11 +423,17 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
         }
         @Override
         public void start() {
-            this.mob.getNavigation().moveTo(this.path, this.speedModifier);
+            this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 5;
-
+            this.lastCanUpdateStateCheck = 120;
+            int r = this.mob.getRandom().nextInt(2048);
+            if(this.mob.getCombatState()==0) {
+                if (r <= 1200) {
+                    this.mob.setCombatState(1);
+                }
+            }
             this.mob.setAnimationState(0);
         }
         @Override
@@ -447,11 +458,34 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
             this.doMovement(target, reach);
             this.checkForAttack(distance, reach);
 
+            this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
+            if(this.lastCanUpdateStateCheck<=0){
+                if(mob.getCombatState()==1) {
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 360) {
+                        this.mob.setCombatState(0);
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                }else{
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 720) {
+                        this.mob.setCombatState(1);
+                    }
+                    this.lastCanUpdateStateCheck = 160;
+                }
+            }
 
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
 
         }
-
+        public double getSpeedModifier(){
+            switch(mob.getCombatState()){
+                case 1:
+                    return runningSpeedModifier;
+                default:
+                    return walkingSpeedModifier;
+            }
+        }
 
         @SuppressWarnings("unused")
         private void checkForPreciseAttack() {
@@ -490,7 +524,7 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                     this.ticksUntilNextPathRecalculation += 5;
                 }
 
-                if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier)) {
+                if (!this.mob.getNavigation().moveTo(livingentity, this.getSpeedModifier())) {
                     this.ticksUntilNextPathRecalculation += 15;
                 }
             }

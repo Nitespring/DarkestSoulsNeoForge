@@ -565,11 +565,16 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 12;
-            this.lastCanUpdateStateCheck = 150;
+            this.lastCanUpdateStateCheck = 240;
             int r = this.mob.getRandom().nextInt(2048);
             if(this.mob.getCombatState()==0) {
-                if (r <= 520) {
+                if (r <= 240) {
                     this.mob.setCombatState(1);
+                }
+            }
+            if(this.mob.getCombatState()==1) {
+                if (r <= 720) {
+                    this.mob.setCombatState(0);
                 }
             }
             this.mob.setAnimationState(0);
@@ -599,16 +604,16 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
                     int r = this.mob.getRandom().nextInt(2048);
-                    if (r <= 600) {
+                    if (r <= 720) {
                         this.mob.setCombatState(0);
                     }
-                    this.lastCanUpdateStateCheck = 120;
+                    this.lastCanUpdateStateCheck = 60;
                 }else{
                     int r = this.mob.getRandom().nextInt(2048);
-                    if (r <= 450) {
+                    if (r <= 360) {
                         this.mob.setCombatState(1);
                     }
-                    this.lastCanUpdateStateCheck = 200;
+                    this.lastCanUpdateStateCheck = 260;
                 }
             }
 
