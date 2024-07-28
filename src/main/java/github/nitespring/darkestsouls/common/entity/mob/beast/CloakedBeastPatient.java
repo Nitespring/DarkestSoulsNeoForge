@@ -114,7 +114,11 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
                     }else if(!this.onGround()) {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.beast_patient.fall"));
                     }else if(!(event.getLimbSwingAmount() > -0.06 && event.getLimbSwingAmount() < 0.06f)){
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.beast_patient.walk1"));
+                        if(getCombatState()==1){
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.beast_patient.run"));
+                        }else {
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.beast_patient.walk1"));
+                        }
                     }else {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.beast_patient.idle"));
                     }
@@ -476,7 +480,8 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
     public class AttackGoal extends Goal {
 
 
-        private final double speedModifier = 1.4f;
+        private final double walkingSpeedModifier = 1.0f;
+        private final double runningSpeedModifier = 2.0f;
         private final boolean followingTargetEvenIfNotSeen = true;
         protected final CloakedBeastPatient mob;
         private Path path;
@@ -487,6 +492,7 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
         private int ticksUntilNextAttack;
         private long lastCanUseCheck;
         private int failedPathFindingPenalty = 0;
+        private int lastCanUpdateStateCheck;
         private boolean canPenalize = false;
 
 
@@ -555,11 +561,17 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
         }
         @Override
         public void start() {
-            this.mob.getNavigation().moveTo(this.path, this.speedModifier);
+            this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 12;
-
+            this.lastCanUpdateStateCheck = 150;
+            int r = this.mob.getRandom().nextInt(2048);
+            if(this.mob.getCombatState()==0) {
+                if (r <= 520) {
+                    this.mob.setCombatState(1);
+                }
+            }
             this.mob.setAnimationState(0);
         }
         @Override
@@ -583,7 +595,22 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
             this.doMovement(target, reach);
             this.checkForAttack(distance, reach);
             //this.checkForPreciseAttack();
-
+            this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
+            if(this.lastCanUpdateStateCheck<=0){
+                if(mob.getCombatState()==1) {
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 600) {
+                        this.mob.setCombatState(0);
+                    }
+                    this.lastCanUpdateStateCheck = 120;
+                }else{
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 450) {
+                        this.mob.setCombatState(1);
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                }
+            }
 
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
 
@@ -630,7 +657,7 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
                     this.ticksUntilNextPathRecalculation += 5;
                 }
 
-                if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier)) {
+                if (!this.mob.getNavigation().moveTo(livingentity, this.getSpeedModifier())) {
                     this.ticksUntilNextPathRecalculation += 15;
                 }
             }
@@ -638,7 +665,14 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
         }
 
 
-
+        public double getSpeedModifier(){
+            switch(mob.getCombatState()){
+                case 1:
+                    return runningSpeedModifier;
+                default:
+                    return walkingSpeedModifier;
+            }
+        }
 
 
 
