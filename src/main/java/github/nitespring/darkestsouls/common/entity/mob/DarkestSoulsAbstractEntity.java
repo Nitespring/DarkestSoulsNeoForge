@@ -33,11 +33,11 @@ import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.SnowGolem;
+import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.hoglin.HoglinBase;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -332,7 +332,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 							return true;
 						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
-						}else if(e instanceof Villager){
+						}else if(e instanceof Villager||e instanceof WanderingTrader){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					case 4://Beast
@@ -346,7 +346,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 							return true;
 						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
-						}else if(e instanceof Villager){
+						}else if(e instanceof Villager||e instanceof WanderingTrader){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					case 6://Skeleton
@@ -406,7 +406,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					this.spawnBloodParticles(source, f);
 				}
 			}
-		System.out.println(this.getDSTeam());
+		//System.out.println(this.getDSTeam());
 
 		}
 		return super.hurt(source, f);
@@ -463,6 +463,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 			super.start();
 		}
 	}
+
 
 	@Override
 	protected void registerGoals() {
@@ -682,7 +683,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 									CompoundTag nbt = t.getPersistentData();
 									return (t instanceof DarkestSoulsAbstractEntity dst && (dst.getDSTeam() == 3||dst.getDSTeam() == 5))
 											||(nbt.contains("DSTeam") && nbt.getInt("DSTeam") == 3)
-											|| t instanceof Player || t instanceof Villager || t instanceof IronGolem|| t instanceof SnowGolem|| t instanceof Animal;
+											|| t instanceof Player || t instanceof Villager || t instanceof IronGolem|| t instanceof SnowGolem||t instanceof WanderingTrader || (t instanceof Animal&&!(t instanceof Wolf||t instanceof HoglinBase));
 								}
 						);
 						break;

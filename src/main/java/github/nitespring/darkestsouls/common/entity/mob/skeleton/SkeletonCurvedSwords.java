@@ -212,6 +212,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 22:
@@ -240,6 +244,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 23:
@@ -269,6 +277,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 24:
@@ -297,6 +309,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
             case 25:
                 if(getAnimationTick()>=18) {this.getNavigation().stop();}
@@ -330,6 +346,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=26) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 252:
@@ -364,6 +384,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=26) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 26:
@@ -396,6 +420,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 27:
@@ -422,6 +450,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 28:
@@ -442,6 +474,10 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=15) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 29:
@@ -488,8 +524,11 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=28) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 240) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 292:
@@ -536,8 +575,11 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=24) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 360) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 293:
@@ -584,8 +626,11 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=36) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 720) {
+                        setCombatState(0);
+                    }
                 }
                 break;
         }

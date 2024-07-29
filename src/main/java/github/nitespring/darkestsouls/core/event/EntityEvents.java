@@ -1,6 +1,10 @@
 package github.nitespring.darkestsouls.core.event;
 
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
+import github.nitespring.darkestsouls.common.entity.mob.beast.BeastPatient;
+import github.nitespring.darkestsouls.common.entity.mob.skeleton.Bonewheel;
+import github.nitespring.darkestsouls.common.entity.mob.skeleton.Skeleton;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
@@ -10,25 +14,32 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.hoglin.Hoglin;
+import net.minecraft.world.entity.monster.hoglin.HoglinBase;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.living.LivingBreatheEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 
-@EventBusSubscriber(modid = DarkestSouls.MODID)
-public class DamageEvents {
+@EventBusSubscriber(modid = DarkestSouls.MODID, bus = EventBusSubscriber.Bus.GAME)
+public class EntityEvents {
     @SubscribeEvent
     public static void applyDamageEvent(final LivingIncomingDamageEvent event){
         DamageSource source = event.getSource();
@@ -169,6 +180,30 @@ public class DamageEvents {
 
 
         }
+    }
+
+    @SubscribeEvent
+    public static void entityJoin(EntityJoinLevelEvent event) {
+
+        if(event.getEntity() instanceof Mob mob) {
+            if (mob instanceof IronGolem || mob instanceof SnowGolem) {
+                mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Mob.class, true, predicate -> predicate instanceof DarkestSoulsAbstractEntity mob1 && (mob1.getDSTeam() == 1 || mob1.getDSTeam() == 4 || mob1.getDSTeam() == 6)));
+            }
+            if (mob instanceof Wolf) {
+                mob.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(mob, Skeleton.class, true));
+                mob.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(mob, Bonewheel.class, true));
+            }
+            if (mob instanceof Villager villager) {
+                villager.targetSelector.addGoal(2, new AvoidEntityGoal<>(villager, Mob.class, 12.0F, 1.0, 1.0, predicate -> predicate instanceof DarkestSoulsAbstractEntity mob1 && (mob1.getDSTeam() == 1 || mob1.getDSTeam() == 4 || mob1.getDSTeam() == 6)));
+            }
+            if (mob instanceof WanderingTrader villager) {
+                villager.targetSelector.addGoal(2, new AvoidEntityGoal<>(villager, Mob.class, 12.0F, 1.0, 1.0, predicate -> predicate instanceof DarkestSoulsAbstractEntity mob1 && (mob1.getDSTeam() == 1 || mob1.getDSTeam() == 4 || mob1.getDSTeam() == 6)));
+            }
+            if (mob instanceof Animal animal && !(mob instanceof Wolf || mob instanceof HoglinBase)) {
+                animal.targetSelector.addGoal(2, new AvoidEntityGoal<>(animal, Mob.class, 12.0F, 1.2, 1.4, predicate -> predicate instanceof DarkestSoulsAbstractEntity mob1 && (mob1.getDSTeam() == 4)));
+            }
+        }
+
     }
 
 

@@ -174,6 +174,14 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.FLAME.get(), FlameRenderer::new);
 		 event.registerEntityRenderer(EntityInit.MOONLIGHT_WAVE.get(), MoonlightSlashRenderer::new);
 
+		 event.registerEntityRenderer(EntityInit.SKELETON_GROUP1.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HUNTSMAN_GROUP1.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HOLLOW_SOLDIER_GROUP1.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.CHURCH_DOCTOR_GROUP1.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.BEAST_PATIENT_GROUP1.get(), InvisibleProjectileRenderer::new);
+
+
 		 
 	 }
 

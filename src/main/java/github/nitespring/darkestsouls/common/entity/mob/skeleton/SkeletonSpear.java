@@ -216,6 +216,10 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 240) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 22:
@@ -235,6 +239,10 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=36) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 240) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 23:
@@ -275,6 +283,10 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=21) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 240) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 24:
@@ -326,6 +338,10 @@ public class SkeletonSpear extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 240) {
+                        setCombatState(0);
+                    }
                 }
                 break;
         }

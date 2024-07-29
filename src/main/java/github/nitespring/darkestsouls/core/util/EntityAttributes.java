@@ -183,7 +183,7 @@ public class EntityAttributes {
 				.add(Attributes.MAX_HEALTH, 56.0D)
 				.add(Attributes.ARMOR, 8.0D)
 				.add(Attributes.ARMOR_TOUGHNESS, 2.0D)
-				.add(Attributes.MOVEMENT_SPEED, 0.21D)
+				.add(Attributes.MOVEMENT_SPEED, 0.16D)
 				.add(Attributes.ATTACK_DAMAGE, 4.0D)
 				.add(Attributes.ATTACK_SPEED, 1.2D)
 				.add(Attributes.ATTACK_KNOCKBACK, 0.2D)

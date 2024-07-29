@@ -167,10 +167,7 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 	@Override
 	protected void registerGoals() {
 
-		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
-
-
-
+		/*this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
 		this.targetSelector.addGoal(1, new CopyOwnerTargetGoal(this));
 
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
@@ -180,7 +177,9 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 
 		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, LivingEntity.class, 1.0F));
 		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(3, new DarkestSoulsAbstractEntity.RandomStrollGoal(this, 0.8D));
+		this.goalSelector.addGoal(3, new DarkestSoulsAbstractEntity.RandomStrollGoal(this, 0.8D));*/
+		super.registerGoals();
+		this.goalSelector.addGoal(1, new SewerCentipede.AttackGoal(this));
 	}
 
 	@Nullable

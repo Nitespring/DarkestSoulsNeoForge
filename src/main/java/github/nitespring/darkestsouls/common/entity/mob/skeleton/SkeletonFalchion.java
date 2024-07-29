@@ -264,6 +264,10 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=28) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 1024) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 23:
@@ -281,6 +285,10 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=20) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 24:
@@ -298,6 +306,10 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=22) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
             case 25:
                 if(getAnimationTick()==23) {
@@ -314,6 +326,10 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
                 if(getAnimationTick()>=36) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 1024) {
+                        setCombatState(0);
+                    }
                 }
                 break;
         }

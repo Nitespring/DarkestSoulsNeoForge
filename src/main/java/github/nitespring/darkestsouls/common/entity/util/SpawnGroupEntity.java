@@ -9,6 +9,7 @@ import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
@@ -37,9 +38,18 @@ public abstract class SpawnGroupEntity extends DarkestSoulsAbstractEntity{
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         spawnGroupData=super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
         this.doMobSpawns(level, difficulty, spawnType, spawnGroupData);
-        this.discard();
+        //this.discard();
         return spawnGroupData;
     }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(tickCount>=3){
+            discard();
+        }
+    }
+
     public abstract void doMobSpawns(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData);
     public void finalizeMobSpawn(DarkestSoulsAbstractEntity mob){
         Random r = new Random();
@@ -52,12 +62,27 @@ public abstract class SpawnGroupEntity extends DarkestSoulsAbstractEntity{
         if(getOwner()!=null){mob.setOwner(getOwner());}
     }
 
-    @Override
-    public AttributeMap getAttributes() {
+
+    /*public AttributeMap getAttributes() {
         return new AttributeMap(new AttributeSupplier.Builder()
                 .add(Attributes.MAX_HEALTH,1)
                 .add(Attributes.MOVEMENT_SPEED,0)
                 .add(Attributes.FOLLOW_RANGE,0)
+                .add(Attributes.GRAVITY,0)
                 .build());
+    }*/
+    public static  AttributeSupplier.Builder setAttributes() {
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MAX_HEALTH, 1.0D)
+                .add(Attributes.ARMOR, 0.0D)
+                .add(Attributes.ARMOR_TOUGHNESS, 0.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0D)
+                .add(Attributes.ATTACK_DAMAGE, 0D)
+                .add(Attributes.ATTACK_SPEED, 0D)
+                .add(Attributes.ATTACK_KNOCKBACK, 0D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0D)
+                .add(Attributes.FOLLOW_RANGE, 0)
+                .add(Attributes.STEP_HEIGHT, 0)
+                .add(Attributes.GRAVITY,0);
     }
 }

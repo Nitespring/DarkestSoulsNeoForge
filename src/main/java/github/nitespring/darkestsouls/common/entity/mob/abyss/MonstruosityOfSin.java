@@ -142,19 +142,15 @@ public class MonstruosityOfSin extends DarkestSoulsAbstractEntity implements Geo
 	@Override
 	protected void registerGoals() {
 
-		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
-
-
-
+		/*this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
 		this.targetSelector.addGoal(1, new DarkestSoulsAbstractEntity.CopyOwnerTargetGoal(this));
 
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Villager.class, true));
-
-		this.goalSelector.addGoal(1, new MonstruosityOfSin.AttackGoal(this));
-
 		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, LivingEntity.class, 1.0F));
-		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));*/
+		super.registerGoals();
+		this.goalSelector.addGoal(1, new MonstruosityOfSin.AttackGoal(this));
 	}
 
 	@Override

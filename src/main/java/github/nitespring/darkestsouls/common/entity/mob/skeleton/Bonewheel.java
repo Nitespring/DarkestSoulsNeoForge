@@ -272,7 +272,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
                             this.position().add((1.0f)*this.getLookAngle().x,
                                                 0.25,
                                                 (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.6f, 5);
+                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)*1.4f, 5);
                     h.setOwner(this);
                     h.setTarget(this.getTarget());
                     this.level().addFreshEntity(h);
@@ -305,7 +305,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
     public class AttackGoal extends Goal {
 
 
-        private final double speedModifier = 1.4f;
+        private final double speedModifier = 1.0f;
         private final boolean followingTargetEvenIfNotSeen = true;
         protected final Bonewheel mob;
         private Path path;
