@@ -195,6 +195,11 @@ public class EntitySpawnRegistration {
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkGravetenderHollowGroupSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.SKELETON_GROUP1.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkSkeletonGroupSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
 }

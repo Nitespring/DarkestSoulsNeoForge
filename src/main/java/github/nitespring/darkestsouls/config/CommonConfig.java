@@ -42,6 +42,7 @@ public class CommonConfig {
 		public static ModConfigSpec.BooleanValue spawn_huntsman_group;
 		public static ModConfigSpec.BooleanValue spawn_church_doctor_group;
 		public static ModConfigSpec.BooleanValue spawn_beast_patient_group;
+		public static ModConfigSpec.BooleanValue spawn_skeleton_group;
 		
 		
 		
@@ -162,6 +163,9 @@ public class CommonConfig {
 		spawn_beast_patient_group = server
 				.comment("Set to false to disable Beast Patient Groups")
 				.define("spawnconfig.spawn_beast_patient_group", true);
+		spawn_skeleton_group = server
+				.comment("Set to false to disable Skeleton Groups")
+				.define("spawnconfig.spawn_skeleton_group", true);
 
 		}
 

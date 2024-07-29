@@ -278,6 +278,10 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 22:
@@ -308,6 +312,10 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=16) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 23:
@@ -346,8 +354,11 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=16) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 24:
@@ -373,6 +384,10 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 25:
@@ -403,6 +418,10 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=16) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 26:
@@ -441,8 +460,11 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=16) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 120) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 27:
@@ -480,8 +502,11 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=15) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 540) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 28:
@@ -520,8 +545,11 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 if(getAnimationTick()>=12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 540) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 29:
@@ -561,6 +589,10 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 540) {
+                        setCombatState(0);
+                    }
                 }
                 break;
         }

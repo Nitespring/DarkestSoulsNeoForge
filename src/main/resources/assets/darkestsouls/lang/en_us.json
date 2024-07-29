@@ -229,6 +229,7 @@
   "item.darkestsouls.huntsman_spawn_group_1" : "Spawn Huntsman Group",
   "item.darkestsouls.church_doctor_spawn_group_1" : "Spawn Church Doctor Group",
   "item.darkestsouls.beast_patient_spawn_group_1" : "Spawn Beast Patient Group",
+  "item.darkestsouls.skeleton_spawn_group_1" : "Spawn Skeleton Group",
 
   "entity.darkestsouls.hollow_broken_straightsword" : "Mad Hollow",
   "entity.darkestsouls.gravetender_hollow_broken_straightsword" : "Gravetender Hollow",

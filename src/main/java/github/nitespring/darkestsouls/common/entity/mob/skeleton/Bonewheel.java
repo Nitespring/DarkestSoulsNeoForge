@@ -49,7 +49,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
     @Override
     public boolean isBoss() {return false;}
     @Override
-    public int getDSDefaultTeam() {return 1;}
+    public int getDSDefaultTeam() {return 6;}
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {return this.factory;}
 

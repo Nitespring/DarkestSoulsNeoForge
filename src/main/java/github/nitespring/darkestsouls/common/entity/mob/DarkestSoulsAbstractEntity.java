@@ -36,10 +36,7 @@ import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.animal.SnowGolem;
-import net.minecraft.world.entity.monster.AbstractIllager;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -350,6 +347,14 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
 						}else if(e instanceof Villager){
+							return true;
+						}else{return super.isAlliedTo(e);}
+					case 6://Skeleton
+						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==1||mob.getDSTeam()==6)){
+							return true;
+						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==6){
+							return true;
+						}else if(e instanceof AbstractSkeleton){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					default:
@@ -699,6 +704,19 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						this.target = playerTarget;
 					}
 					break;
+				case 6:   //SKELETON
+					if(playerTarget==null) {
+						this.target = this.findTargetByPredicate(
+								(t) -> {
+									CompoundTag nbt = t.getPersistentData();
+									return t instanceof Player || t instanceof IronGolem || t instanceof SnowGolem;
+								}
+						);
+						break;
+					}else {
+						this.target = playerTarget;
+					}
+					break;
 			}
 
 
@@ -781,6 +799,12 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 									case 3:
 										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
 									case 5:
+										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
+								}
+								break;
+							case 6:
+								switch (targetTeam) {
+									case 6:
 										this.alertOther(list.get(i), this.mob.getLastHurtByMob());
 								}
 								break;

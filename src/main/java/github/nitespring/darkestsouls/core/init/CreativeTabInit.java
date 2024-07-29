@@ -277,6 +277,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SPAWN_GROUP_HUNTSMAN_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_CHURCH_DOCTOR_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_BEAST_PATIENT_1.get());
+                        output.accept(ItemInit.SPAWN_GROUP_SKELETON_1.get());
                     })
                     .build());
     public static final DeferredHolder<CreativeModeTab,CreativeModeTab> BLOCKS = TABS.register("blocks",

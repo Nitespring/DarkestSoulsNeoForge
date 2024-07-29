@@ -226,6 +226,10 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 22:
@@ -247,6 +251,10 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=16) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 23:
@@ -268,7 +276,6 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     }else {
                         this.setDeltaMovement(this.getLookAngle().normalize().add(0,0.01f,0).scale(0.35));
                     }
-
                 }
                 if(getAnimationTick()==7) {
                     this.doAttack(1.0f, 0.0f);
@@ -277,6 +284,10 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 24:
@@ -293,6 +304,10 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=12) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 25:
@@ -314,6 +329,10 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=16) {
                     setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 26:
@@ -342,9 +361,12 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 }
                 if(getAnimationTick()>=16) {
                     this.getNavigation().stop();
-    setAnimationTick(0);
-
+                    setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 40) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 27:
@@ -365,16 +387,18 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     }else {
                         this.setDeltaMovement(this.getLookAngle().normalize().add(0,0.005f,0).scale(0.25));
                     }
-
                 }
                 if(getAnimationTick()==8) {
                     this.doAttack(4.0f, 0.0f);
                 }
                 if(getAnimationTick()>=15) {
                     this.getNavigation().stop();
-                    setAnimationTick(0);;
-
+                    setAnimationTick(0);
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 180) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 28:
@@ -404,8 +428,11 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 180) {
+                        setCombatState(0);
+                    }
                 }
                 break;
             case 29:
@@ -435,8 +462,11 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 if(getAnimationTick()>=22) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
-
                     setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 360) {
+                        setCombatState(0);
+                    }
                 }
                 break;
         }

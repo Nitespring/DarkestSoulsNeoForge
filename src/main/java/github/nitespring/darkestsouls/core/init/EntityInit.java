@@ -182,6 +182,10 @@ public class EntityInit {
 			() -> EntityType.Builder.<BeastPatientSpawnGroupEntity>of(BeastPatientSpawnGroupEntity::new, MobCategory.MONSTER)
 					.sized(4.0f, 2.0f)
 					.build("beast_patient_group_1"));
+	public static final DeferredHolder<EntityType<?>,EntityType<SkeletonSpawnGroupEntity>> SKELETON_GROUP1 = ENTITIES.register("skeleton_group_1",
+			() -> EntityType.Builder.<SkeletonSpawnGroupEntity>of(SkeletonSpawnGroupEntity::new, MobCategory.MONSTER)
+					.sized(4.0f, 2.0f)
+					.build("skeleton_group_1"));
 
 
 	public static final DeferredHolder<EntityType<?>,EntityType<DamageHitboxEntity>> HITBOX_SMALL = ENTITIES.register("hitbox_small",

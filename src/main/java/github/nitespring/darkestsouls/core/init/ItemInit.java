@@ -290,7 +290,8 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.CHURCH_DOCTOR_GROUP1.get(), 4475990, 11588863, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_BEAST_PATIENT_1 = ITEMS.register("beast_patient_spawn_group_1",
 			() -> new SpawnEggItem(EntityInit.BEAST_PATIENT_GROUP1.get(), 2962739, 11432504, new Item.Properties()));
-
+	public static final DeferredHolder<Item,Item> SPAWN_GROUP_SKELETON_1 = ITEMS.register("skeleton_spawn_group_1",
+			() -> new SpawnEggItem(EntityInit.SKELETON_GROUP1.get(), 13684684, 14079971, new Item.Properties()));
 
 	//Items
 	public static final DeferredHolder<Item,Item> TITANITE_FRAGMENT = ITEMS.register("titanite_fragment",
