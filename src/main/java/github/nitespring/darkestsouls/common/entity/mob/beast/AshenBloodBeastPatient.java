@@ -227,7 +227,7 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 this.getNavigation().stop();
                 if(getAnimationTick()==24) {
                     this.playAttackSound();
-                    this.playSound(SoundInit.BEAST_PATIENT_SCREAM.get(), 3.6f,1.0f);
+                    this.playSound(SoundInit.BEAST_PATIENT_SCREAM.get(), 1.6f,1.0f);
                     Vec3 aim = this.getLookAngle();
                     Vec3 pos = this.position();
                     this.level().addParticle(ParticleTypes.SONIC_BOOM,pos.x+0.75*aim.x,pos.y+2.15,pos.z+0.75*aim.z,0,0,0);

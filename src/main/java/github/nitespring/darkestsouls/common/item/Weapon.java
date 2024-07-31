@@ -235,17 +235,17 @@ public class Weapon extends Item implements ILeftClickItem {
                 }
             }
             if (!target.getType().is(CustomEntityTags.ROT_IMMUNE)) {
-                if (this.getToxicAttack(playerIn,stackIn) >= 1) {
+                if (this.getRotAttack(playerIn,stackIn) >= 1) {
                     target.addEffect(new MobEffectInstance(EffectInit.ROT, 90 + this.getRotAttack(playerIn,stackIn) * 45, this.getRotAttack(playerIn,stackIn) - 1), playerIn);
                 }
             }
             if (!target.getType().is(CustomEntityTags.FROST_IMMUNE)) {
-                if (this.getToxicAttack(playerIn,stackIn) >= 1) {
+                if (this.getFrostAttack(playerIn,stackIn) >= 1) {
                     target.addEffect(new MobEffectInstance(EffectInit.FROST, 90 + this.getFrostAttack(playerIn,stackIn) * 45, this.getFrostAttack(playerIn,stackIn) - 1), playerIn);
                 }
             }
             if (!target.getType().is(CustomEntityTags.WITHER_IMMUNE)) {
-                if (this.getPoisonAttack(playerIn,stackIn) >= 1) {
+                if (this.getWitherAttack(playerIn,stackIn) >= 1) {
                     target.addEffect(new MobEffectInstance(MobEffects.WITHER, 90 + this.getWitherAttack(playerIn,stackIn) * 45, this.getWitherAttack(playerIn,stackIn) - 1), playerIn);
                 }
             }
