@@ -687,6 +687,7 @@ public class HuntsmanPitchfork extends Huntsman implements GeoEntity {
                     if (r <= 350) {
                         this.mob.setCombatState(0);
                         this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
                         this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 200;
@@ -695,6 +696,7 @@ public class HuntsmanPitchfork extends Huntsman implements GeoEntity {
                     if (r <= 650) {
                         this.mob.setCombatState(1);
                         this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
                         this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 160;

@@ -649,6 +649,7 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     if (r <= 450) {
                         this.mob.setCombatState(0);
                         this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
                         this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 200;
@@ -657,6 +658,7 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     if (r <= 600) {
                         this.mob.setCombatState(1);
                         this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
                         this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 160;
