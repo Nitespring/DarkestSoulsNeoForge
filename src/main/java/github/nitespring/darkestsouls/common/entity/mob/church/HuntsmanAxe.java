@@ -701,14 +701,16 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                     int r = this.mob.getRandom().nextInt(2048);
                     if (r <= 350) {
                         this.mob.setCombatState(0);
+                        this.mob.getNavigation().stop();
+                        this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 200;
-                    this.stop();
                 }else{
                     int r = this.mob.getRandom().nextInt(2048);
                     if (r <= 450) {
                         this.mob.setCombatState(1);
-                        this.stop();
+                        this.mob.getNavigation().stop();
+                        this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 200;
                 }

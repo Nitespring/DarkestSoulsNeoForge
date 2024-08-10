@@ -770,12 +770,16 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                     int r = this.mob.getRandom().nextInt(2048);
                     if (r <= 450) {
                         this.mob.setCombatState(0);
+                        this.mob.getNavigation().stop();
+                        this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 200;
                 }else{
                     int r = this.mob.getRandom().nextInt(2048);
                     if (r <= 600) {
                         this.mob.setCombatState(1);
+                        this.mob.getNavigation().stop();
+                        this.ticksUntilNextPathRecalculation=0;
                     }
                     this.lastCanUpdateStateCheck = 160;
                 }
@@ -793,7 +797,6 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
             }
         }
 
-        @SuppressWarnings("unused")
         private void checkForPreciseAttack() {
             if (this.ticksUntilNextAttack <= 0) {
 
@@ -803,7 +806,6 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
         }
 
 
-        @SuppressWarnings("unused")
         protected void doMovement(LivingEntity livingentity, Double d0) {
             this.mob.getLookControl().setLookAt(this.mob.getTarget(), 30.0F, 30.0F);
             this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
