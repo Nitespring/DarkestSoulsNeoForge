@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="darkestsouls"
-version="1.2.2.1"
+version="1.2.2.3"
 displayName="Darkest Souls"
 authors="Nitespring"
 
@@ -25,6 +25,6 @@ description='''Miyazaki's Dirty Socks'''
 [[dependencies.darkestsouls]]
     modId="geckolib"
     mandatory=true
-    versionRange="[4.5.7,)"
+    versionRange="[4.5.8,)"
     ordering="NONE"
     side="BOTH"
