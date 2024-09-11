@@ -33,7 +33,7 @@ public class ItemInit {
 
 	//Special Weapons
 
-	public static final Supplier<FrayedBlade> FRAYED_BLADE = ITEMS.register("frayed_blade",
+	public static final DeferredHolder<Item, FrayedBlade> FRAYED_BLADE = ITEMS.register("frayed_blade",
 			() -> new FrayedBlade(Tiers.TITANITE, 8.0f, 1.6f, 3.5f,0.1f, 8, 3,0,0,0,0,0,0,0,1350,12,0.11f,-1, new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item, ShadowBlade> SHADOW_BLADE = ITEMS.register("shadow_blade",
 			() -> new ShadowBlade(Tiers.TITANITE, 8.0f, 1.6f,3.5f, 0.2f, 8,1,0,0,0,0,1,0,1, 1350,15,0.11f, 2,new Item.Properties().rarity(Rarity.EPIC)));

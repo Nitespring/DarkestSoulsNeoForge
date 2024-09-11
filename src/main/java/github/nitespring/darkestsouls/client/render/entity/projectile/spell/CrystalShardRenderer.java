@@ -55,7 +55,7 @@ public class CrystalShardRenderer<T extends CrystalShardEntity> extends EntityRe
 
 	@Override
 	 public void render(T entity, float p_114529_, float p_114530_, PoseStack stack, MultiBufferSource p_114532_, int p_114533_) {
-	     
+
 		VertexConsumer vertexconsumer;
 		stack.pushPose();
 
@@ -68,7 +68,7 @@ public class CrystalShardRenderer<T extends CrystalShardEntity> extends EntityRe
 		stack.scale(0.25f, 0.25f, 0.25f);
 		vertexconsumer = p_114532_.getBuffer(RenderType.entityCutoutNoCull(getTextureLocation(entity)));
 
-	         
+
 		this.model.renderToBuffer(stack, vertexconsumer, p_114533_, OverlayTexture.NO_OVERLAY, 1);
 		stack.popPose();
 		super.render(entity, p_114529_, p_114530_, stack, p_114532_, p_114533_);
