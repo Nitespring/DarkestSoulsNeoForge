@@ -35,7 +35,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.List;
 
-public class Weapon extends Item implements ILeftClickItem {
+public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackItem{
     private float attackDamage;
     private float attackSpeed;
     private float attackKnockback;
@@ -140,6 +140,10 @@ public class Weapon extends Item implements ILeftClickItem {
         //return f+this.getAttackDamage();
         //System.out.println(f);
         return f;
+    }
+
+    public float getSweepAttackDamage(Player playerIn, ItemStack stackIn){
+        return 1.0F + (float)playerIn.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO) * getAttackDamage(playerIn,stackIn);
     }
     public float getAttackSpeed() {return this.attackSpeed;}
     public float getAttackKnockback() {return this.attackKnockback;}
@@ -330,6 +334,8 @@ public class Weapon extends Item implements ILeftClickItem {
         return true;
     }
 
+
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, TooltipContext pContext, List<Component> tooltip, TooltipFlag p_41424_) {
@@ -401,4 +407,8 @@ public class Weapon extends Item implements ILeftClickItem {
 
     }
 
+    @Override
+    public void performSweepAttack(Player playerIn, ItemStack stackIn) {
+
+    }
 }

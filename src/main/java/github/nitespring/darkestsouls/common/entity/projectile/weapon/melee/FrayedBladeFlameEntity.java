@@ -61,6 +61,10 @@ public class FrayedBladeFlameEntity extends Entity {
 
     }
 
+    public void setDamage(float damage) {
+        this.damage = damage;
+    }
+
     @Override
     protected void addAdditionalSaveData(CompoundTag p_20139_) {
         p_20139_.putInt("Warmup", this.warmupDelayTicks);

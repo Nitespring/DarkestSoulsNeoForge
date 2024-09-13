@@ -17,7 +17,7 @@ public class Shotel extends Weapon {
     }
 
     @Override
-    public void doLeftClickAction(Player playerIn, ItemStack stackIn) {
+    public void performSweepAttack(Player playerIn, ItemStack stackIn) {
         if(CommonConfig.do_special_attacks.get()) {
             if (!playerIn.isUsingItem()) {
                 Vec3 pos = playerIn.position().add(playerIn.getLookAngle().x() * 2.0, 0.4, playerIn.getLookAngle().z() * 2.0);
@@ -28,7 +28,7 @@ public class Shotel extends Weapon {
                 entity.setItemStack(stackIn);
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
-                        this.getAttackDamage(playerIn, stackIn),
+                        this.getSweepAttackDamage(playerIn, stackIn),
                         this.getPoiseDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn,stackIn),
                         this.getSmiteAttack(playerIn,stackIn),

@@ -26,7 +26,36 @@ public class DragonslayerSpear extends Weapon {
         super(tier, attack, speed, reach, knockback, poise, blood, poison, frost, rot, death, fire, holy, serrated, durability, enchantability, movementSpeed, maxTargets, properties);
     }
 
+    @Override
+    public void performSweepAttack(Player playerIn, ItemStack stackIn) {
+        if(CommonConfig.do_special_attacks.get()) {
+            Vec3 pos = playerIn.position().add(playerIn.getLookAngle().x() * 2.0, 0.4, playerIn.getLookAngle().z() * 2.0);
 
+            Level levelIn = playerIn.level();
+            WeaponAttackEntity entity = new WeaponAttackEntity(EntityInit.DRAGONSLAYER_SPEAR.get(), levelIn, pos, (float) Mth.atan2(pos.z - playerIn.getZ(), pos.x - playerIn.getX()));
+            entity.setOwner(playerIn);
+            entity.setItemStack(stackIn);
+            entity.setMaxTargets(this.getMaxTargets(playerIn,stackIn));
+            entity.setDamage(
+                    this.getSweepAttackDamage(playerIn, stackIn),
+                    this.getPoiseDamage(playerIn, stackIn),
+                    this.getFireAttack(playerIn,stackIn),
+                    this.getSmiteAttack(playerIn,stackIn),
+                    this.getBaneOfArthropodsAttack(playerIn,stackIn),
+                    this.getBeastHunterAttack(playerIn,stackIn),
+                    this.getBloodAttack(playerIn,stackIn),
+                    this.getPoisonAttack(playerIn,stackIn),
+                    this.getToxicAttack(playerIn,stackIn),
+                    this.getRotAttack(playerIn,stackIn),
+                    this.getFrostAttack(playerIn,stackIn),
+                    this.getWitherAttack(playerIn,stackIn));
+            entity.setHitboxModifications(1.2f, 0f, 0.4f, 2.0f);
+            entity.configureTicks(4, 10, 1, 2);
+            levelIn.addFreshEntity(entity);
+            playerIn.getCooldowns().addCooldown(stackIn.getItem(), 16);
+            playerIn.swing(InteractionHand.MAIN_HAND);
+        }
+    }
 
     @Override
     public void doLeftClickAction(Player playerIn, ItemStack stackIn) {
@@ -34,33 +63,6 @@ public class DragonslayerSpear extends Weapon {
 
 
         if(playerIn.isUsingItem()&&playerIn.getUseItem().getItem() instanceof ShieldItem && !playerIn.getCooldowns().isOnCooldown(stackIn.getItem())){
-            if(CommonConfig.do_special_attacks.get()) {
-                Vec3 pos = playerIn.position().add(playerIn.getLookAngle().x() * 2.0, 0.4, playerIn.getLookAngle().z() * 2.0);
-
-                Level levelIn = playerIn.level();
-                WeaponAttackEntity entity = new WeaponAttackEntity(EntityInit.DRAGONSLAYER_SPEAR.get(), levelIn, pos, (float) Mth.atan2(pos.z - playerIn.getZ(), pos.x - playerIn.getX()));
-                entity.setOwner(playerIn);
-                entity.setItemStack(stackIn);
-                entity.setMaxTargets(this.getMaxTargets(playerIn,stackIn));
-                entity.setDamage(
-                        (this.getAttackDamage(playerIn, stackIn)) - 2.0f,
-                        this.getPoiseDamage(playerIn, stackIn),
-                        this.getFireAttack(playerIn,stackIn),
-                        this.getSmiteAttack(playerIn,stackIn),
-                        this.getBaneOfArthropodsAttack(playerIn,stackIn),
-                        this.getBeastHunterAttack(playerIn,stackIn),
-                        this.getBloodAttack(playerIn,stackIn),
-                        this.getPoisonAttack(playerIn,stackIn),
-                        this.getToxicAttack(playerIn,stackIn),
-                        this.getRotAttack(playerIn,stackIn),
-                        this.getFrostAttack(playerIn,stackIn),
-                        this.getWitherAttack(playerIn,stackIn));
-                entity.setHitboxModifications(1.2f, 0f, 0.4f, 2.0f);
-                entity.configureTicks(4, 10, 1, 2);
-                levelIn.addFreshEntity(entity);
-                playerIn.getCooldowns().addCooldown(stackIn.getItem(), 16);
-                playerIn.swing(InteractionHand.MAIN_HAND);
-            }
 
         } else  if(!playerIn.isUsingItem() /*&& !playerIn.getCooldowns().isOnCooldown(stackIn.getItem())*/){
             if(CommonConfig.do_special_weapon_attacks_left_click.get()) {

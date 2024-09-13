@@ -27,7 +27,7 @@ public class Chikage extends TrickWeapon {
     }
 
     @Override
-    public void doLeftClickAction(Player playerIn, ItemStack stackIn) {
+    public void performSweepAttack(Player playerIn, ItemStack stackIn) {
         if(CommonConfig.do_special_attacks.get()) {
             Vec3 pos = playerIn.position().add(playerIn.getLookAngle().x() * 1.5, 0.4, playerIn.getLookAngle().z() * 1.5);
 
@@ -37,7 +37,7 @@ public class Chikage extends TrickWeapon {
             entity.setItemStack(stackIn);
             entity.setMaxTargets(this.getMaxTargets(playerIn,stackIn));
             entity.setDamage(
-                    this.getAttackDamage(playerIn, stackIn),
+                    this.getSweepAttackDamage(playerIn, stackIn),
                     this.getPoiseDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn,stackIn),
                         this.getSmiteAttack(playerIn,stackIn),

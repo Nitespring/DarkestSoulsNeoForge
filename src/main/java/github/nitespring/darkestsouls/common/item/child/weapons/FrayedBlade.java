@@ -117,6 +117,7 @@ public class FrayedBlade extends Weapon {
 
         if (flag) {
             FrayedBladeFlameEntity e = new FrayedBladeFlameEntity(playerIn.level(), this.getAttackDamage(playerIn,stackIn), p_32673_, (double)blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, playerIn);
+            e.setDamage(this.getAttackDamage(playerIn, stackIn));
             playerIn.level().addFreshEntity(e);
 
 
