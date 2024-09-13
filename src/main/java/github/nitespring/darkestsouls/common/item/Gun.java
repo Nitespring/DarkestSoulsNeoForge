@@ -1,5 +1,7 @@
 package github.nitespring.darkestsouls.common.item;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import github.nitespring.darkestsouls.common.entity.projectile.throwable.FirebombEntity;
 import github.nitespring.darkestsouls.core.init.EnchantmentInit;
 import github.nitespring.darkestsouls.core.init.EntityInit;
@@ -8,6 +10,9 @@ import github.nitespring.darkestsouls.core.util.ArmourUtils;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import github.nitespring.darkestsouls.core.util.MathUtils;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -15,6 +20,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -25,9 +31,11 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
@@ -214,13 +222,13 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     }
 
     @Override
-    public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
+    public boolean onEntitySwing(ItemStack stack, LivingEntity entity, InteractionHand hand) {
         return true;
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack p_41452_) {
-        return UseAnim.BOW;
+        return UseAnim.NONE;
     }
 
     @Override
@@ -299,4 +307,33 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         }
         super.appendHoverText(stack, context, tooltip, flag);
     }
+
+
+    public static final IClientItemExtensions GUN_ITEM_EXTENSIONS = new IClientItemExtensions() {
+
+        @Nullable
+        @Override
+        public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+            return entityLiving.isUsingItem()&&entityLiving.getUseItem()==itemStack&&
+                    entityLiving.getUsedItemHand()==InteractionHand.MAIN_HAND&&!entityLiving.swinging ? HumanoidModel.ArmPose.CROSSBOW_HOLD : HumanoidModel.ArmPose.ITEM;
+        }
+
+        @Override
+        public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player,
+                                               HumanoidArm arm, ItemStack itemInHand,
+                                               float partialTick, float equipProcess, float swingProcess) {
+            if(player.isUsingItem()&&player.getUseItem()==itemInHand&&
+                    player.getUsedItemHand()==InteractionHand.MAIN_HAND){
+
+                poseStack.translate(-0.5,0.3,0);
+                poseStack.mulPose(Axis.ZP.rotationDegrees(5));
+                poseStack.mulPose(Axis.XP.rotationDegrees(-20));
+
+            }
+            return IClientItemExtensions.super.applyForgeHandTransform(poseStack,player,arm,itemInHand,
+                    partialTick,equipProcess,swingProcess);
+        }
+    };
+
+
 }

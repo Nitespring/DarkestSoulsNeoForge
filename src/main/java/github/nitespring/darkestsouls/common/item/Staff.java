@@ -115,7 +115,7 @@ public class Staff extends Item implements ILeftClickItem, IAmmoConsumingItem{
     public void doSpellB(Player playerIn, ItemStack stackIn, InteractionHand handIn){};
 
     @Override
-    public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
+    public boolean onEntitySwing(ItemStack stack, LivingEntity entity, InteractionHand hand) {
         return true;}
 
 

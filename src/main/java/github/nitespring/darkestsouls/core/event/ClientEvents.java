@@ -52,7 +52,12 @@ public class ClientEvents {
 
 
 	    
-	    
+	    /*@SubscribeEvent
+	public static void renderHandEvent(RenderHandEvent event){
+		ItemStack stack = event.getItemStack();
+		InteractionHand hand = event.getHand();
+
+	}*/
 	   
 	   
 	    
