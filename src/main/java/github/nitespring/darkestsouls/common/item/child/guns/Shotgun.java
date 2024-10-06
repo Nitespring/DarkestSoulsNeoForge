@@ -56,7 +56,10 @@ public class Shotgun extends Gun{
                     double b = rF * a;
                     double by = verticalSpread * rY;
                     double d = horizontalSpread + by;
-                    Vec3 aim1 = new Vec3(d * (aim.x * Math.cos(b) - aim.z * Math.sin(b)) + 1.5 * d * by * rF1, by * k * aim.y, d * (aim.z * Math.cos(b) + aim.x * Math.sin(b)) + 1.5 * d * by * rF2);
+                    Vec3 aim1 = new Vec3(
+                            d * (aim.x * Math.cos(b) - aim.z * Math.sin(b)) + 1.5 * d * by * rF1,
+                            by * k * aim.y,
+                            d * (aim.z * Math.cos(b) + aim.x * Math.sin(b)) + 1.5 * d * by * rF2);
                     double xVar = aim1.x;
                     double yVar = aim1.y;
                     double zVar = aim1.z;
