@@ -278,6 +278,8 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_PITCHFORK.get(), 2237490, 3947592, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_RIFLE = ITEMS.register("huntsman_rifle_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> EGG_SPIDER = ITEMS.register("spider_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.SPIDER.get(), 2237490, 6633254, new Item.Properties()));
 
 
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",

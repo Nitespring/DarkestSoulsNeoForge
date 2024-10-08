@@ -11,6 +11,7 @@ import github.nitespring.darkestsouls.common.entity.mob.beast.BeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.beast.CloakedBeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.church.*;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.*;
+import github.nitespring.darkestsouls.common.entity.mob.kin.Spider;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.*;
 import github.nitespring.darkestsouls.common.entity.mob.abyss.MonstruosityOfSin;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.Bullet;
@@ -161,6 +162,10 @@ public class EntityInit {
 			() -> EntityType.Builder.<Darkwraith>of(Darkwraith::new, MobCategory.MONSTER)
 					.sized(0.65f, 2.0f)
 					.build("darkwraith"));
+	public static final DeferredHolder<EntityType<?>,EntityType<Spider>> SPIDER = ENTITIES.register("spider",
+			() -> EntityType.Builder.<Spider>of(Spider::new, MobCategory.MONSTER)
+					.sized(1.25f, 0.95f)
+					.build("spider"));
 
 	//SpawnGroups
 	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnGroupEntity>> HUNTSMAN_GROUP1 = ENTITIES.register("huntsman_group_1",

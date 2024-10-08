@@ -11,6 +11,7 @@ import github.nitespring.darkestsouls.client.render.entity.mob.beast.BeastPatien
 import github.nitespring.darkestsouls.client.render.entity.mob.church.doctor.ChurchDoctorGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.church.huntsman.HuntsmanGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.hollow.HollowGeoRenderer;
+import github.nitespring.darkestsouls.client.render.entity.mob.kin.NightmareApostleGeoRenderer;
 import github.nitespring.darkestsouls.client.render.entity.mob.skeleton.*;
 import github.nitespring.darkestsouls.client.render.entity.projectile.*;
 import github.nitespring.darkestsouls.client.render.entity.projectile.bullet.BulletModel;
@@ -126,6 +127,7 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_CUTLASS.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_PITCHFORK.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_RIFLE.get(), HuntsmanGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.SPIDER.get(), NightmareApostleGeoRenderer::new);
 
 		 event.registerEntityRenderer(EntityInit.HITBOX_SMALL.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HITBOX.get(), InvisibleProjectileRenderer::new);

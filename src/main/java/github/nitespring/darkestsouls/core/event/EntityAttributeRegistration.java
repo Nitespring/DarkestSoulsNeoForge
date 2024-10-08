@@ -48,6 +48,7 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.HUNTSMAN_CUTLASS.get(), EntityAttributes.setHuntsmanCutlassAttributes().build());
 		event.put(EntityInit.HUNTSMAN_PITCHFORK.get(), EntityAttributes.setHuntsmanPitchforkAttributes().build());
 		event.put(EntityInit.HUNTSMAN_RIFLE.get(), EntityAttributes.setHuntsmanRifleAttributes().build());
+		event.put(EntityInit.SPIDER.get(), EntityAttributes.setSpiderAttributes().build());
 
 
 		event.put(EntityInit.HUNTSMAN_GROUP1.get(), SpawnGroupEntity.setAttributes().build());

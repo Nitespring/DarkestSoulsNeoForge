@@ -272,6 +272,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LEECH.get());
                         output.accept(ItemInit.SEWER_CENTIPEDE.get());
                         output.accept(ItemInit.SIN.get());
+                        output.accept(ItemInit.EGG_SPIDER.get());
                         output.accept(ItemInit.SPAWN_GROUP_GRAVETENDER_HOLLOW_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_HOLLOW_SOLDIER_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_HUNTSMAN_1.get());

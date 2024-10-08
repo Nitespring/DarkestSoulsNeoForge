@@ -402,5 +402,18 @@ public class EntityAttributes {
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
+	public static  AttributeSupplier.Builder setSpiderAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 28.0D)
+				.add(Attributes.ARMOR, 0.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 0.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.24D)
+				.add(Attributes.ATTACK_DAMAGE, 4.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.1D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
 
 }
