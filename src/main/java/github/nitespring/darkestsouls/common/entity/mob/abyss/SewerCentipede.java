@@ -550,6 +550,9 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 						TrashPoison e = new TrashPoison(EntityInit.VOMIT.get(), levelIn);
 						e.setDamage((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE));
 						e.setLifeTicks(46);
+						if(aim==null){
+							aim = this.getLookAngle().normalize();
+						}
 						double x = (aim.x*Math.cos(angle) - aim.z * Math.sin(angle));
 						double y = (this.getRandom().nextFloat()-0.5f);
 						double z = (aim.z*Math.cos(angle) + aim.x * Math.sin(angle));
