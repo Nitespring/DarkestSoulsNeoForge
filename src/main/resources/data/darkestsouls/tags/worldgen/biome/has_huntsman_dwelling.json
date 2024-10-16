@@ -1,0 +1,13 @@
+{
+  "remove": [
+    "#c:is_jungle",
+    "#c:is_sparse_vegetation",
+    "#c:is_nether",
+    "#c:is_end"
+  ],
+  "values": [
+    "#c:is_taiga",
+    "#c:is_forest",
+    "#c:is_spooky"
+  ]
+}

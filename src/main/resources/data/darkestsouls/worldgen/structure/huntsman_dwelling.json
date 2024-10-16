@@ -1,8 +1,38 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#darkestsouls:has_huntsman_dwelling",
   "step": "surface_structures",
-  "spawn_overrides": {},
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "darkestsouls:huntsman_axe",
+          "maxCount": 3,
+          "minCount": 1,
+          "weight": 10
+        },
+        {
+          "type": "darkestsouls:huntsman_pitchfork",
+          "maxCount": 2,
+          "minCount": 1,
+          "weight": 8
+        },
+        {
+          "type": "darkestsouls:huntsman_rifle",
+          "maxCount": 5,
+          "minCount": 1,
+          "weight": 5
+        },
+        {
+          "type": "darkestsouls:huntsman_cutlass",
+          "maxCount": 3,
+          "minCount": 1,
+          "weight": 8
+        }
+      ]
+    }
+  },
   "terrain_adaptation": "beard_thin",
   "start_pool": "darkestsouls:huntsman_dwelling/main",
   "size": 1,
