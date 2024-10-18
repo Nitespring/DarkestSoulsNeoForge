@@ -64,9 +64,9 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }*/
 
         if(hitStunTicks>0) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.hit"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.spider.hit"));
         }else {
-            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.church_doctor.new"));
+            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.spider.new"));
         }
         return PlayState.CONTINUE;
     }
@@ -117,11 +117,6 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(0, new BreakDoorGoal(this, (p_34082_) -> {
-            return p_34082_ == Difficulty.NORMAL || p_34082_ == Difficulty.HARD;
-        }));
-        this.goalSelector.addGoal(1, new OpenDoorGoal(this, true));
-        this.goalSelector.addGoal(3, new MoveThroughVillageGoal(this, 1.0D, false, 4, ()->true));
 
         this.goalSelector.addGoal(2, new Spider.AttackGoal(this));
 

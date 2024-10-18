@@ -1,0 +1,12 @@
+{
+  "remove": [
+    "#c:is_nether",
+    "#c:is_end"
+  ],
+  "values": [
+    "#c:is_swamp",
+    "#c:is_forest",
+    "#c:is_taiga",
+    "#c:is_spooky"
+  ]
+}
