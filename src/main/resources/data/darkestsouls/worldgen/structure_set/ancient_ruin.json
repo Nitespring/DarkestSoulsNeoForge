@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "darkestsouls:ancient_ruin",
+      "weight": 5
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 12,
+    "separation": 0,
+    "salt": 1666566659
+  }
+}
