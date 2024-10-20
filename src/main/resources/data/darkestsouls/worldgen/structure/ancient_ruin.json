@@ -4,7 +4,7 @@
   "step": "surface_structures",
   "spawn_overrides": {},
   "terrain_adaptation": "beard_thin",
-  "start_pool": "darkestsouls:ancient_ruin",
+  "start_pool": "darkestsouls:ancient_ruin/ancient_ruin_start",
   "size": 1,
   "start_height": {
     "absolute": 0
