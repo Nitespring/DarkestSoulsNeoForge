@@ -8,7 +8,7 @@
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
-      "weight": 25
+      "weight": 45
     },
     {
       "element": {
@@ -53,7 +53,43 @@
         "processors": "minecraft:empty",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "darkestsouls:ancient_ruin/ancient_ruin6",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 5
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "darkestsouls:ancient_ruin/ancient_ruin7",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 5
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "darkestsouls:ancient_ruin/ancient_ruin8",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "darkestsouls:ancient_ruin/ancient_ruin9",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 3
     }
   ]
 }
