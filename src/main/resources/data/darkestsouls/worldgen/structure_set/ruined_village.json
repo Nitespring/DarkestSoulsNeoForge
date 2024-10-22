@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "darkestsouls:ruined_village",
+      "weight": 5
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 12,
+    "separation": 4,
+    "salt": 1666566888
+  }
+}
