@@ -7,7 +7,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/hall1",
         "projection": "rigid",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:ruin_degradation"
       }
     },
     {
@@ -16,7 +16,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/hall2",
         "projection": "rigid",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:ruin_degradation"
       }
     },
     {
@@ -25,7 +25,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/tower1",
         "projection": "rigid",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:ruin_degradation"
       }
     },
     {
@@ -34,7 +34,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/crossroad1",
         "projection": "terrain_matching",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:road_degradation"
       }
     },
     {
@@ -43,7 +43,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/crossroad2",
         "projection": "terrain_matching",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:road_degradation"
       }
     },
     {
@@ -52,7 +52,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/crossroad3",
         "projection": "terrain_matching",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:road_degradation"
       }
     },
     {
@@ -61,7 +61,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/road1",
         "projection": "terrain_matching",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:road_degradation"
       }
     },
     {
@@ -70,7 +70,7 @@
         "element_type": "minecraft:single_pool_element",
         "location": "darkestsouls:ruined_village/road2",
         "projection": "terrain_matching",
-        "processors": "minecraft:empty"
+        "processors": "darkestsouls:road_degradation"
       }
     }
   ]
