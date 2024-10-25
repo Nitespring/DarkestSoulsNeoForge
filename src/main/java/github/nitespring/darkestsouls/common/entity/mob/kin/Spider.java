@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.common.entity.mob.kin;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.entity.mob.church.ChurchDoctor;
+import github.nitespring.darkestsouls.common.entity.mob.church.Huntsman;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
@@ -29,12 +30,12 @@ import java.util.EnumSet;
 import java.util.Random;
 
 public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
-    protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
+    protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
     public Spider(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
-        this.xpReward=6;
+        this.xpReward=12;
     }
 
     @Override
@@ -97,7 +98,11 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     break;
                 default:
                     if(!(event.getLimbSwingAmount() > -0.06 && event.getLimbSwingAmount() < 0.06f)){
-                        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.spider.walk"));
+                        if(this.getCombatState()==1) {
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.spider.run"));
+                        }else {
+                            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.spider.walk2"));
+                        }
                     }else {
                         event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.spider.idle"));
                     }
@@ -248,10 +253,12 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }
 
     }
+
     public class AttackGoal extends Goal {
 
 
-        private final double speedModifier = 1.1f;
+        private final double walkingSpeedModifier = 1.1f;
+        private final double runningSpeedModifier = 1.5f;
         private final boolean followingTargetEvenIfNotSeen = true;
         protected final Spider mob;
         private Path path;
@@ -260,14 +267,20 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         private double pathedTargetZ;
         private int ticksUntilNextPathRecalculation;
         private int ticksUntilNextAttack;
+        private int ticksUntilNextRangedAttack;
         private long lastCanUseCheck;
         private int failedPathFindingPenalty = 0;
         private boolean canPenalize = false;
+
+        private int lastCanUpdateStateCheck;
+
 
         public AttackGoal(Spider entityIn) {
             this.mob = entityIn;
             this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
         }
+
+
         @Override
         public boolean canUse() {
             if(this.mob.getAnimationState()==0) {
@@ -325,12 +338,26 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }
         @Override
         public void start() {
-            this.mob.getNavigation().moveTo(this.path, this.speedModifier);
+            this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 8;
-
+            this.ticksUntilNextRangedAttack = 120;
+            this.lastCanUpdateStateCheck = getStateUpdateInitialTimer();
             this.mob.setAnimationState(0);
+            if(mob.getCombatState()==1){
+                int r = this.mob.getRandom().nextInt(2048);
+                if(r<=240) {
+                    this.mob.setCombatState(0);
+                    this.stop();
+                }
+            }else{
+                int r = this.mob.getRandom().nextInt(2048);
+                if(r<=840) {
+                    this.mob.setCombatState(1);
+                    this.stop();
+                }
+            }
         }
         @Override
         public void stop() {
@@ -342,19 +369,58 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
             this.mob.getNavigation().stop();
         }
 
-
+        public double getSpeedModifier() {
+            if(mob.getCombatState()==1){
+                return runningSpeedModifier;
+            }else{
+                return walkingSpeedModifier;
+            }
+        }
+        public int getStateUpdateInitialTimer(){
+            if(mob.getCombatState()==1){
+                return 800;
+            }else{
+                return 600;
+            }
+        }
 
 
         @Override
         public void tick() {
             LivingEntity target = this.mob.getTarget();
-            double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
-            double reach = this.getAttackReachSqr(target);
-
-            this.doMovement(target, reach);
+            double distanceSQR = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
+            double reachSQR = this.getAttackReachSqr(target);
+            double distance = this.mob.distanceTo(target);
+            double reach = this.getAttackReach(target);
+            this.doMovement(target, reachSQR);
             this.checkForAttack(distance, reach);
             //this.checkForPreciseAttack();
-
+            this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
+            if(this.lastCanUpdateStateCheck<=0){
+                if(mob.getCombatState()==1) {
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 350) {
+                        this.mob.setCombatState(0);
+                        this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
+                        this.ticksUntilNextPathRecalculation=0;
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                }else{
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 450) {
+                        this.mob.setCombatState(1);
+                        this.mob.getNavigation().stop();
+                        this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
+                        this.ticksUntilNextPathRecalculation=0;
+                    }
+                    this.lastCanUpdateStateCheck = 200;
+                }
+            }
+            this.ticksUntilNextRangedAttack = Math.max(this.ticksUntilNextRangedAttack - 1, 0);
+            if(this.ticksUntilNextRangedAttack<=0 && this.ticksUntilNextAttack <= 0){
+                this.ticksUntilNextRangedAttack=10;
+            }
 
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
 
@@ -364,8 +430,10 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         @SuppressWarnings("unused")
         private void checkForPreciseAttack() {
             LivingEntity target = this.mob.getTarget();
-            double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
-            double reach = this.getAttackReachSqr(target);
+            //double distance = this.mob.distanceToSqr(target.getX(), target.getY(), target.getZ());
+            //double reach = this.getAttackReachSqr(target);
+            double distance = this.mob.distanceTo(target);
+            double reach = this.getAttackReach(target);
             if (this.ticksUntilNextAttack <= 0 && distance <= reach) {
 
                 this.mob.setAnimationState(23);
@@ -401,15 +469,12 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.ticksUntilNextPathRecalculation += 5;
                 }
 
-                if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier)) {
+                if (!this.mob.getNavigation().moveTo(livingentity, this.getSpeedModifier())) {
                     this.ticksUntilNextPathRecalculation += 15;
                 }
             }
 
         }
-
-
-
 
 
 
@@ -432,9 +497,14 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }
 
 
-        protected double getAttackReachSqr(LivingEntity p_179512_1_) {
-            return (double)(this.mob.getBbWidth() * 8.0F * this.mob.getBbWidth());
+        protected double getAttackReachSqr(LivingEntity target) {
+            return getAttackReach(target)*getAttackReach(target);
+        }
+
+        protected double getAttackReach (LivingEntity target){
+            return this.mob.getBbWidth() + target.getBbWidth() + 2.0f;
         }
 
     }
+
 }

@@ -53,9 +53,9 @@ public class SpawnRules{
         return checkVanillaMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
     public static boolean checkMadHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL && levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
+        return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL /*&& levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
                 && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE_VEGETATION))
-                || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))
+                || isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random))*/
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
     public static boolean checkHollowSoldierGroupSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {

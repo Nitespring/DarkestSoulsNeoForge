@@ -1,6 +1,9 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.spider.new": {
+			"loop": true
+		},
 		"animation.spider.pose": {
 			"loop": true,
 			"bones": {
@@ -1596,6 +1599,762 @@
 				}
 			}
 		},
+		"animation.spider.stunned": {
+			"loop": true,
+			"bones": {
+				"femur_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, -30]
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, 52.5]
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 17.5]
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"spider": {
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"vector": [0, 17.5, 0]
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -35]
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 45]
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 50]
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, 17.5]
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"vector": [0, -20, 0]
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -27.5]
+					}
+				},
+				"tibia_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"metatarsus_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, 47.5]
+					}
+				},
+				"tarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"vector": [0, 35, 0]
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, -35]
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 47.5]
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 47.5]
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 17.5]
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"vector": [0, -40, 0]
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, -30]
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 50]
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"vector": [0, 0, 22.5]
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"vector": [0, 47.5, 0]
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, -40]
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 50]
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 50]
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 22.5]
+					}
+				},
+				"upper_body": {
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"vector": [0, 0, -10]
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, -37.5]
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, -60]
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -27.5]
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"vector": [0, -17.5, 0]
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 30]
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -37.5]
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -50]
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -25]
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"vector": [0, 40, 0]
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 42.5]
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -52.5]
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -57.5]
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"vector": [0, 0, -17.5]
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"vector": [0, -35, 0]
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -42.5]
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -50]
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -22.5]
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"vector": [0, -47.5, 0]
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -52.5]
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -50]
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -15]
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"vector": [0, 20, 0]
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 37.5]
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -50]
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -52.5]
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -20]
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"vector": [0, 0, 10]
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"vector": [-10, 22.5, 0]
+					}
+				},
+				"pedipalps": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"right_pedipalp1": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"vector": [-52.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, -0.5, 0]
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"vector": [-45, 0, 0]
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"vector": [-15, -22.5, 0]
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"vector": [50, 0, 0]
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"vector": [-42.5, 0, 0]
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"vector": [-52.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, -0.25, -0.25]
+					}
+				},
+				"thorax": {
+					"rotation": {
+						"vector": [2.5, 0, 0]
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": [-5, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.spider.dead": {
+			"loop": true,
+			"bones": {
+				"spider": {
+					"rotation": {
+						"vector": [-180, 0, 0]
+					},
+					"position": {
+						"vector": [0, 6, 9]
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"vector": [47.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0, 3]
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"vector": [27.5, 15, 0]
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"vector": [27.5, -15, 0]
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"vector": [7.5, 0, 0]
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"vector": [43.18528, 9.18229, 8.51814]
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"vector": [-37.5, 0, 0]
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": [-20, 0, 0]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"vector": [0, 0, 10]
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"vector": [0, 35, 0]
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"vector": [0, 0, 52.5]
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"vector": [0, 20, 0]
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"vector": [0, 7.5, 0]
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"vector": [0, -5, 0]
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"vector": [0, -17.5, 0]
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"vector": [0, -32.5, 0]
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"vector": [0, 0, -7.5]
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"vector": [0, -35, 0]
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, -20]
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, -40]
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"vector": [0, 0, -52.5]
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"vector": [0, -20, 0]
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"vector": [0, -7.5, 0]
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"vector": [0, 5, 0]
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"vector": [0, 17.5, 0]
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"vector": [0, 30, 0]
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"vector": [42.74529, -5.52235, -5.08269]
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"vector": [-35, 0, 0]
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 17.5]
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, 37.5]
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -22.5]
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 57.5]
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 47.5]
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, 22.5]
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, -12.5]
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 52.5]
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 57.5]
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -5]
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, 35]
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, 15]
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, 45]
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -20]
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, 55]
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, 12.5]
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [-2.24522, 0.16327, -23.59064]
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, 57.5]
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -17.5]
+					}
+				},
+				"femur_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, -47.5]
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, -20]
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -35]
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -57.5]
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -20]
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 5]
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, -42.5]
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, -12.5]
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, -45]
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 20]
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, -57.5]
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, -10]
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, -52.5]
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 35]
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, -62.5]
+					}
+				}
+			}
+		},
 		"animation.spider.idle": {
 			"loop": true,
 			"bones": {
@@ -2139,161 +2898,6 @@
 						"vector": [0, 0, -10]
 					}
 				},
-				"legs_right2": {
-					"rotation": {
-						"vector": [0, 0, -10]
-					}
-				},
-				"large_right_leg3": {
-					"rotation": {
-						"vector": [0, 0, 0]
-					}
-				},
-				"femur_large_right_leg3": {
-					"rotation": {
-						"vector": [0, 0, -12.5]
-					}
-				},
-				"tibia_large_right_leg3": {
-					"rotation": {
-						"vector": [0, 0, 7.5]
-					}
-				},
-				"metatarsus_large_right_leg3": {
-					"rotation": {
-						"vector": [0, 0, 42.5]
-					}
-				},
-				"tarsus_large_right_leg4": {
-					"rotation": {
-						"vector": [0, 0, 32.5]
-					}
-				},
-				"large_right_leg4": {
-					"rotation": {
-						"vector": [0, 20, 0]
-					}
-				},
-				"femur_large_right_leg4": {
-					"rotation": {
-						"vector": [0, 0, -7.5]
-					}
-				},
-				"tibia_large_right_leg4": {
-					"rotation": {
-						"vector": [0, 0, 7.5]
-					}
-				},
-				"metatarsus_large_right_leg4": {
-					"rotation": {
-						"vector": [0, 0, 30]
-					}
-				},
-				"tarsus_large_right_leg5": {
-					"rotation": {
-						"vector": [0, 0, 37.5]
-					}
-				},
-				"small_right_leg5": {
-					"rotation": {
-						"vector": [0, -40, 0]
-					}
-				},
-				"femur_small_right_leg5": {
-					"rotation": {
-						"vector": [0, 0, -22.5]
-					}
-				},
-				"tibia_small_right_leg6": {
-					"rotation": {
-						"vector": [0, 0, 25]
-					}
-				},
-				"metatarsus_small_right_leg6": {
-					"rotation": {
-						"vector": [0, 0, 15]
-					}
-				},
-				"tarsus_small_right_leg3": {
-					"rotation": {
-						"vector": [0, 0, 42.5]
-					}
-				},
-				"small_right_leg6": {
-					"rotation": {
-						"vector": [0, -20, 0]
-					}
-				},
-				"femur_small_right_leg6": {
-					"rotation": {
-						"vector": [0, 0, -12.5]
-					}
-				},
-				"tibia_small_right_leg7": {
-					"rotation": {
-						"vector": [0, 0, 15]
-					}
-				},
-				"metatarsus_small_right_leg7": {
-					"rotation": {
-						"vector": [0, 0, 20]
-					}
-				},
-				"tarsus_small_right_leg7": {
-					"rotation": {
-						"vector": [0, 0, 45]
-					}
-				},
-				"small_right_leg7": {
-					"rotation": {
-						"vector": [0, 35, 0]
-					}
-				},
-				"femur_small_right_leg7": {
-					"rotation": {
-						"vector": [0, 0, -30]
-					}
-				},
-				"tibia_small_right_leg8": {
-					"rotation": {
-						"vector": [0, 0, 30]
-					}
-				},
-				"metatarsus_small_right_leg8": {
-					"rotation": {
-						"vector": [0, 0, 40]
-					}
-				},
-				"tarsus_small_right_leg8": {
-					"rotation": {
-						"vector": [0, 0, 32.5]
-					}
-				},
-				"small_right_leg8": {
-					"rotation": {
-						"vector": [0, 47.5, 0]
-					}
-				},
-				"femur_small_right_leg8": {
-					"rotation": {
-						"vector": [0, 0, -32.5]
-					}
-				},
-				"tibia_small_right_leg9": {
-					"rotation": {
-						"vector": [0, 0, 32.5]
-					}
-				},
-				"metatarsus_small_right_leg9": {
-					"rotation": {
-						"vector": [0, 0, 32.5]
-					}
-				},
-				"tarsus_small_right_leg9": {
-					"rotation": {
-						"vector": [0, 0, 35]
-					}
-				},
 				"large_left_leg1": {
 					"rotation": {
 						"vector": [0, "7.5*Math.sin(query.anim_time*180)", 0]
@@ -2515,6 +3119,792 @@
 				"necklace": {
 					"rotation": {
 						"vector": ["-2.4-2.5*Math.sin(query.anim_time*360)", 0, "12.5*Math.cos(query.anim_time*180-30)"]
+					}
+				}
+			}
+		},
+		"animation.spider.walk2": {
+			"loop": true,
+			"bones": {
+				"femur_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-12.5+15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "7.5+15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "47.5-45*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"vector": [0, "-7.5*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"spider": {
+					"position": {
+						"vector": [0, 3, 0]
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"vector": [0, "17.5-10*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-7.5+15*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "7.5+15*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "30-35*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, 37.5]
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"vector": [0, "-17.5+10*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-12.5+15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "15+15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "20-15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 45]
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"vector": [0, "30+10*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-30+15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 30]
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"vector": [0, "-40+15*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-22.5+15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "25+15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "17.5-15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"vector": [0, 0, 42.5]
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"vector": [0, "47.5+10*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-32.5+15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 35]
+					}
+				},
+				"upper_body": {
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"vector": [0, 0, -10]
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"vector": [0, "10*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "12.5-15*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-7.5-15*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-47.5+45*Math.max(0,Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"vector": [0, "-17.5-10*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "7.5-15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-7.5-15*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-30+35*Math.max(0,Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -37.5]
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"vector": [0, "40-15*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "22.5-15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-25-15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-17.5+15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"vector": [0, 0, -42.5]
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"vector": [0, "-30-10*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "30-15*Math.max(0,-Math.cos(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -30]
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -40]
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"vector": [0, "-47.5+10*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "32.5-15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -35]
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"vector": [0, "17.5+10*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "12.5-15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-15-15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-20+15*Math.max(0,-Math.sin(query.anim_time*180))"]
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -45]
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"vector": [0, 0, 10]
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"vector": ["20-5*Math.max(0,-Math.cos(query.anim_time*180))", "22.5+5*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"pedipalps": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"right_pedipalp1": {
+					"rotation": {
+						"vector": ["2.5-5*Math.max(0,-Math.cos(query.anim_time*180))", 0, 0]
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"vector": [-32.5, 0, 0]
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"vector": ["-25+5*Math.max(0,-Math.cos(query.anim_time*180))", 0, 0]
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"vector": ["20-5*Math.max(0,Math.sin(query.anim_time*180))", "-22.5-5*Math.cos(query.anim_time*180)", 0]
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"vector": ["2.5-5*Math.max(0,Math.sin(query.anim_time*180))", 0, 0]
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"vector": ["-25+5*Math.max(0,Math.sin(query.anim_time*180))", 0, 0]
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"vector": [-32.5, 0, 0]
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": ["2.5+2.5*Math.sin(query.anim_time*180)", "2.5*Math.sin(query.anim_time*90)", 0]
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"vector": ["-2.5*Math.cos(query.anim_time*180)", 0, 0]
+					}
+				},
+				"human_head": {
+					"rotation": {
+						"vector": [0, 0, "-2.5*Math.cos(query.anim_time*180)"]
+					},
+					"position": {
+						"vector": [0, "0.25*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"necklace": {
+					"rotation": {
+						"vector": ["-2.4-2.5*Math.sin(query.anim_time*360)", 0, "12.5*Math.cos(query.anim_time*180-30)"]
+					}
+				}
+			}
+		},
+		"animation.spider.run": {
+			"loop": true,
+			"bones": {
+				"femur_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-12.5+15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "7.5+15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "47.5-45*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"vector": [0, "-7.5*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"spider": {
+					"position": {
+						"vector": [0, 3, 0]
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"vector": [0, "17.5-10*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-7.5+15*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "7.5+15*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "30-35*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, 37.5]
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"vector": [0, "-17.5+10*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-12.5+15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "15+15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "20-15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 45]
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"vector": [0, "30+10*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-30+15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 30]
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"vector": [0, "-40+15*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-22.5+15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "25+15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "17.5-15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"vector": [0, 0, 42.5]
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"vector": [0, "47.5+10*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-32.5+15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"vector": [0, 0, 32.5]
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"vector": [0, 0, 35]
+					}
+				},
+				"upper_body": {
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"vector": [0, 0, -10]
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"vector": [0, "10*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "12.5-15*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-7.5-15*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "-47.5+45*Math.max(0,Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"vector": [0, "-17.5-10*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "7.5-15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-7.5-15*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "-30+35*Math.max(0,Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, -37.5]
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"vector": [0, "40-15*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"vector": [0, 0, "22.5-15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-25-15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "-17.5+15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"vector": [0, 0, -42.5]
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"vector": [0, "-30-10*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "30-15*Math.max(0,-Math.cos(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -30]
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -40]
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"vector": [0, "-47.5+10*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, "32.5-15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -32.5]
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"vector": [0, 0, -35]
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"vector": [0, "17.5+10*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, "12.5-15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-15-15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"vector": [0, 0, "-20+15*Math.max(0,-Math.sin(query.anim_time*360))"]
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"vector": [0, 0, -45]
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"vector": [0, 0, 10]
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"vector": ["20-5*Math.max(0,-Math.cos(query.anim_time*360))", "22.5+5*Math.sin(query.anim_time*360)", 0]
+					}
+				},
+				"pedipalps": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"right_pedipalp1": {
+					"rotation": {
+						"vector": ["2.5-5*Math.max(0,-Math.cos(query.anim_time*360))", 0, 0]
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"vector": [-32.5, 0, 0]
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"vector": ["-25+5*Math.max(0,-Math.cos(query.anim_time*360))", 0, 0]
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"vector": ["20-5*Math.max(0,Math.sin(query.anim_time*360))", "-22.5-5*Math.cos(query.anim_time*360)", 0]
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"vector": ["2.5-5*Math.max(0,Math.sin(query.anim_time*360))", 0, 0]
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"vector": ["-25+5*Math.max(0,Math.sin(query.anim_time*360))", 0, 0]
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"vector": [-32.5, 0, 0]
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": ["2.5+2.5*Math.sin(query.anim_time*360)", "2.5*Math.sin(query.anim_time*180)", 0]
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"vector": ["-2.5*Math.cos(query.anim_time*360)", 0, 0]
+					}
+				},
+				"human_head": {
+					"rotation": {
+						"vector": [0, 0, "-2.5*Math.cos(query.anim_time*360)"]
+					},
+					"position": {
+						"vector": [0, "0.25*Math.cos(query.anim_time*720)", 0]
+					}
+				},
+				"necklace": {
+					"rotation": {
+						"vector": ["-2.4-2.5*Math.sin(query.anim_time*720)", 0, "12.5*Math.cos(query.anim_time*360-60)"]
 					}
 				}
 			}
@@ -6067,6 +7457,2098 @@
 						},
 						"0.25": {
 							"vector": [0, 0, -2]
+						}
+					}
+				}
+			}
+		},
+		"animation.spider.death": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"femur_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.125": {
+							"vector": [0, 0, -30]
+						},
+						"0.25": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -47.5]
+						}
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 17.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 17.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -20]
+						}
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -35]
+						}
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, -7.5, 0]
+						}
+					}
+				},
+				"spider": {
+					"rotation": {
+						"0.125": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-180, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 3, 0]
+						},
+						"0.125": {
+							"vector": [0, 22.5, 4.5]
+						},
+						"0.25": {
+							"vector": [0, 25, 6]
+						},
+						"0.3333": {
+							"vector": [0, 27, 9]
+						},
+						"0.5": {
+							"vector": [0, 6, 13]
+						}
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 17.5, 0]
+						},
+						"0.25": {
+							"vector": [0, 17.5, 0]
+						},
+						"0.3333": {
+							"vector": [0, 17.5, 0]
+						},
+						"0.5": {
+							"vector": [0, 5, 0]
+						}
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.125": {
+							"vector": [0, 0, -38.75]
+						},
+						"0.25": {
+							"vector": [0, 0, -30]
+						},
+						"0.3333": {
+							"vector": [0, 0, -30]
+						},
+						"0.5": {
+							"vector": [0, 0, -57.5]
+						}
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -20]
+						}
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.25": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 5]
+						}
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 37.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -25]
+						},
+						"0.3333": {
+							"vector": [0, 0, -25]
+						},
+						"0.5": {
+							"vector": [0, 0, -42.5]
+						}
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -20, 0]
+						},
+						"0.25": {
+							"vector": [0, -20, 0]
+						},
+						"0.3333": {
+							"vector": [0, -20, 0]
+						},
+						"0.5": {
+							"vector": [0, -20, 0]
+						}
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.125": {
+							"vector": [0, 0, -37.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -17.5]
+						}
+					}
+				},
+				"tibia_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 15]
+						},
+						"0.25": {
+							"vector": [0, 0, 30]
+						},
+						"0.3333": {
+							"vector": [0, 0, 30]
+						},
+						"0.5": {
+							"vector": [0, 0, -42.5]
+						}
+					}
+				},
+				"metatarsus_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 20]
+						},
+						"0.25": {
+							"vector": [0, 0, 50]
+						},
+						"0.3333": {
+							"vector": [0, 0, 50]
+						},
+						"0.5": {
+							"vector": [0, 0, 5]
+						}
+					}
+				},
+				"tarsus_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 45]
+						},
+						"0.25": {
+							"vector": [0, 0, -25]
+						},
+						"0.3333": {
+							"vector": [0, 0, -25]
+						},
+						"0.5": {
+							"vector": [0, 0, -45]
+						}
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 35, 0]
+						},
+						"0.25": {
+							"vector": [0, 35, 0]
+						},
+						"0.3333": {
+							"vector": [0, 35, 0]
+						},
+						"0.5": {
+							"vector": [0, 17.5, 0]
+						}
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.125": {
+							"vector": [0, 0, -42.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -30]
+						},
+						"0.3333": {
+							"vector": [0, 0, -30]
+						},
+						"0.5": {
+							"vector": [0, 0, -12.5]
+						}
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.25": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -45]
+						}
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 40]
+						},
+						"0.25": {
+							"vector": [0, 0, 60]
+						},
+						"0.3333": {
+							"vector": [0, 0, 60]
+						},
+						"0.5": {
+							"vector": [0, 0, 20]
+						}
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -57.5]
+						}
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -40, 0]
+						},
+						"0.25": {
+							"vector": [0, -40, 0]
+						},
+						"0.3333": {
+							"vector": [0, -40, 0]
+						},
+						"0.5": {
+							"vector": [0, -35, 0]
+						}
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.125": {
+							"vector": [0, 0, -45]
+						},
+						"0.25": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -20]
+						}
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 25]
+						},
+						"0.25": {
+							"vector": [0, 0, 42.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 42.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -40]
+						}
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 17.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 40]
+						},
+						"0.3333": {
+							"vector": [0, 0, 40]
+						},
+						"0.5": {
+							"vector": [0, 0, 32.5]
+						}
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 42.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -30]
+						},
+						"0.3333": {
+							"vector": [0, 0, -30]
+						},
+						"0.5": {
+							"vector": [0, 0, -52.5]
+						}
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 47.5, 0]
+						},
+						"0.25": {
+							"vector": [0, 47.5, 0]
+						},
+						"0.3333": {
+							"vector": [0, 47.5, 0]
+						},
+						"0.5": {
+							"vector": [0, 30, 0]
+						}
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.125": {
+							"vector": [0, 0, -45]
+						},
+						"0.25": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -10]
+						}
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 55]
+						},
+						"0.3333": {
+							"vector": [0, 0, 55]
+						},
+						"0.5": {
+							"vector": [0, 0, -52.5]
+						}
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 62.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 62.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 35]
+						}
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 35]
+						},
+						"0.25": {
+							"vector": [0, 0, -30]
+						},
+						"0.3333": {
+							"vector": [0, 0, -30]
+						},
+						"0.5": {
+							"vector": [0, 0, -62.5]
+						}
+					}
+				},
+				"upper_body": {
+					"position": {
+						"0.0": {
+							"vector": [0, -2, 0]
+						},
+						"0.25": {
+							"vector": [0, -2, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -10]
+						},
+						"0.25": {
+							"vector": [0, 0, -10]
+						},
+						"0.3333": {
+							"vector": [0, 0, -10]
+						},
+						"0.5": {
+							"vector": [0, 0, -7.5]
+						}
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 0]
+						},
+						"0.3333": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 7.5, 0]
+						}
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.125": {
+							"vector": [0, 0, 35]
+						},
+						"0.25": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 47.5]
+						}
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -35]
+						},
+						"0.3333": {
+							"vector": [0, 0, -35]
+						},
+						"0.5": {
+							"vector": [0, 0, 22.5]
+						}
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -47.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -47.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -47.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -12.5]
+						}
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 30]
+						},
+						"0.3333": {
+							"vector": [0, 0, 30]
+						},
+						"0.5": {
+							"vector": [0, 0, 52.5]
+						}
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -17.5, 0]
+						},
+						"0.25": {
+							"vector": [0, -17.5, 0]
+						},
+						"0.3333": {
+							"vector": [0, -17.5, 0]
+						},
+						"0.5": {
+							"vector": [0, -5, 0]
+						}
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.125": {
+							"vector": [0, 0, 40]
+						},
+						"0.25": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 57.5]
+						}
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 20]
+						}
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.25": {
+							"vector": [0, 0, -50]
+						},
+						"0.3333": {
+							"vector": [0, 0, -50]
+						},
+						"0.5": {
+							"vector": [0, 0, -5]
+						}
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -37.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 35]
+						}
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 40, 0]
+						},
+						"0.25": {
+							"vector": [0, 40, 0]
+						},
+						"0.3333": {
+							"vector": [0, 40, 0]
+						},
+						"0.5": {
+							"vector": [0, 35, 0]
+						}
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 20]
+						}
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -25]
+						},
+						"0.25": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -17.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -32.5]
+						}
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -42.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 52.5]
+						}
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -35, 0]
+						},
+						"0.25": {
+							"vector": [0, -35, 0]
+						},
+						"0.3333": {
+							"vector": [0, -35, 0]
+						},
+						"0.5": {
+							"vector": [0, -17.5, 0]
+						}
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.125": {
+							"vector": [0, 0, 40]
+						},
+						"0.25": {
+							"vector": [0, 0, 30]
+						},
+						"0.3333": {
+							"vector": [0, 0, 30]
+						},
+						"0.5": {
+							"vector": [0, 0, 15]
+						}
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.25": {
+							"vector": [0, 0, -55]
+						},
+						"0.3333": {
+							"vector": [0, 0, -55]
+						},
+						"0.5": {
+							"vector": [0, 0, 45]
+						}
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -40]
+						},
+						"0.25": {
+							"vector": [0, 0, -40]
+						},
+						"0.3333": {
+							"vector": [0, 0, -40]
+						},
+						"0.5": {
+							"vector": [0, 0, -20]
+						}
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 25]
+						},
+						"0.3333": {
+							"vector": [0, 0, 25]
+						},
+						"0.5": {
+							"vector": [0, 0, 55]
+						}
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -47.5, 0]
+						},
+						"0.25": {
+							"vector": [0, -47.5, 0]
+						},
+						"0.3333": {
+							"vector": [0, -47.5, 0]
+						},
+						"0.5": {
+							"vector": [0, -32.5, 0]
+						}
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.125": {
+							"vector": [0, 0, 37.5]
+						},
+						"0.25": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 12.5]
+						}
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.25": {
+							"vector": [0, 0, -62.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -62.5]
+						},
+						"0.5": {
+							"vector": [-2.24522, 0.16327, -23.59064]
+						}
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -35]
+						},
+						"0.25": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 27.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 57.5]
+						}
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 20, 0]
+						},
+						"0.25": {
+							"vector": [0, 20, 0]
+						},
+						"0.3333": {
+							"vector": [0, 20, 0]
+						},
+						"0.5": {
+							"vector": [0, 20, 0]
+						}
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.125": {
+							"vector": [0, 0, 30]
+						},
+						"0.25": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 17.5]
+						}
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -15]
+						},
+						"0.25": {
+							"vector": [0, 0, -35]
+						},
+						"0.3333": {
+							"vector": [0, 0, -35]
+						},
+						"0.5": {
+							"vector": [0, 0, 37.5]
+						}
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -20]
+						},
+						"0.25": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.3333": {
+							"vector": [0, 0, -52.5]
+						},
+						"0.5": {
+							"vector": [0, 0, -22.5]
+						}
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -45]
+						},
+						"0.25": {
+							"vector": [0, 0, 30]
+						},
+						"0.3333": {
+							"vector": [0, 0, 30]
+						},
+						"0.5": {
+							"vector": [0, 0, 57.5]
+						}
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 10]
+						},
+						"0.25": {
+							"vector": [0, 0, 10]
+						},
+						"0.3333": {
+							"vector": [0, 0, 10]
+						},
+						"0.5": {
+							"vector": [0, 0, 10]
+						}
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"0.0": {
+							"vector": [20, 22.5, 0]
+						},
+						"0.25": {
+							"vector": [20, 22.5, 0]
+						},
+						"0.3333": {
+							"vector": [20, 22.5, 0]
+						},
+						"0.5": {
+							"vector": [27.5, 15, 0]
+						}
+					}
+				},
+				"pedipalps": {
+					"rotation": {
+						"0.0": {
+							"vector": [10, 0, 0]
+						},
+						"0.25": {
+							"vector": [10, 0, 0]
+						},
+						"0.3333": {
+							"vector": [10, 0, 0]
+						}
+					}
+				},
+				"right_pedipalp1": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.3333": {
+							"vector": [2.5, 0, 0]
+						}
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"0.0": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.3333": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [-35, 0, 0]
+						}
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.25": {
+							"vector": [-25, 0, 0]
+						},
+						"0.3333": {
+							"vector": [-25, 0, 0]
+						},
+						"0.5": {
+							"vector": [42.74529, -5.52235, -5.08269]
+						}
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"0.0": {
+							"vector": [20, -22.5, 0]
+						},
+						"0.25": {
+							"vector": [20, -22.5, 0]
+						},
+						"0.3333": {
+							"vector": [20, -22.5, 0]
+						},
+						"0.5": {
+							"vector": [27.5, -15, 0]
+						}
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.3333": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [7.5, 0, 0]
+						}
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.25": {
+							"vector": [-25, 0, 0]
+						},
+						"0.3333": {
+							"vector": [-25, 0, 0]
+						},
+						"0.5": {
+							"vector": [43.18528, 9.18229, 8.51814]
+						}
+					},
+					"position": {
+						"vector": [0, 1, 1]
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"0.0": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.3333": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [-37.5, 0, 0]
+						}
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": [-20, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, -4]
+						},
+						"0.25": {
+							"vector": [0, 0, -4]
+						},
+						"0.5": {
+							"vector": [0, -2, 0]
+						}
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"0.0": {
+							"vector": [47.5, 0, 0]
+						},
+						"0.25": {
+							"vector": [47.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [47.5, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 1, 3]
+						},
+						"0.25": {
+							"vector": [0, 1, 3]
+						},
+						"0.5": {
+							"vector": [0, 0, 3]
+						}
+					}
+				},
+				"human_head": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					},
+					"position": {
+						"vector": [0, -1, 0]
+					}
+				},
+				"necklace": {
+					"rotation": {
+						"vector": [-10, 0, 0]
+					},
+					"position": {
+						"vector": [0, -3, -1]
+					}
+				},
+				"thorax": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [-52.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0833": {
+							"vector": [0, 2, -6]
+						},
+						"0.5": {
+							"vector": [0, 1, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.spider.stun": {
+			"loop": true,
+			"animation_length": 5,
+			"bones": {
+				"femur_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -30]
+						}
+					}
+				},
+				"tibia_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"metatarsus_large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 47.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 52.5]
+						}
+					}
+				},
+				"tarsus_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 17.5]
+						}
+					}
+				},
+				"large_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"spider": {
+					"position": {
+						"0.0": {
+							"vector": [0, 3, 0]
+						},
+						"0.1667": {
+							"vector": [0, -2, 0]
+						}
+					}
+				},
+				"large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 17.5, 0]
+						},
+						"0.1667": {
+							"vector": [0, 17.5, 0]
+						}
+					}
+				},
+				"femur_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -35]
+						}
+					}
+				},
+				"tibia_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 45]
+						}
+					}
+				},
+				"metatarsus_large_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.1667": {
+							"vector": [0, 0, 50]
+						}
+					}
+				},
+				"tarsus_large_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 37.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 17.5]
+						}
+					}
+				},
+				"small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -20, 0]
+						},
+						"0.1667": {
+							"vector": [0, -20, 0]
+						}
+					}
+				},
+				"femur_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -12.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -27.5]
+						}
+					}
+				},
+				"tibia_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 15]
+						},
+						"0.1667": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"metatarsus_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 20]
+						},
+						"0.1667": {
+							"vector": [0, 0, 47.5]
+						}
+					}
+				},
+				"tarsus_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 45]
+						},
+						"0.1667": {
+							"vector": [0, 0, 20]
+						}
+					}
+				},
+				"small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 35, 0]
+						},
+						"0.1667": {
+							"vector": [0, 35, 0]
+						}
+					}
+				},
+				"femur_small_right_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.1667": {
+							"vector": [0, 0, -35]
+						}
+					}
+				},
+				"tibia_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.1667": {
+							"vector": [0, 0, 47.5]
+						}
+					}
+				},
+				"metatarsus_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 40]
+						},
+						"0.1667": {
+							"vector": [0, 0, 47.5]
+						}
+					}
+				},
+				"tarsus_small_right_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 17.5]
+						}
+					}
+				},
+				"small_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -40, 0]
+						},
+						"0.1667": {
+							"vector": [0, -40, 0]
+						}
+					}
+				},
+				"femur_small_right_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -22.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -30]
+						}
+					}
+				},
+				"tibia_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 25]
+						},
+						"0.1667": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"metatarsus_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 17.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 50]
+						}
+					}
+				},
+				"tarsus_small_right_leg6": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 42.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 22.5]
+						}
+					}
+				},
+				"small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 47.5, 0]
+						},
+						"0.1667": {
+							"vector": [0, 47.5, 0]
+						}
+					}
+				},
+				"femur_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -40]
+						}
+					}
+				},
+				"tibia_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 50]
+						}
+					}
+				},
+				"metatarsus_small_right_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 50]
+						}
+					}
+				},
+				"tarsus_small_right_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 35]
+						},
+						"0.1667": {
+							"vector": [0, 0, 22.5]
+						}
+					}
+				},
+				"upper_body": {
+					"position": {
+						"0.0": {
+							"vector": [0, -2, 0]
+						},
+						"0.1667": {
+							"vector": [0, -2, 0]
+						}
+					}
+				},
+				"legs_right": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -10]
+						},
+						"0.1667": {
+							"vector": [0, 0, -10]
+						}
+					}
+				},
+				"large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"femur_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 32.5]
+						}
+					}
+				},
+				"tibia_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -37.5]
+						}
+					}
+				},
+				"metatarsus_large_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -47.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -60]
+						}
+					}
+				},
+				"tarsus_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -27.5]
+						}
+					}
+				},
+				"large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -17.5, 0]
+						},
+						"0.1667": {
+							"vector": [0, -17.5, 0]
+						}
+					}
+				},
+				"femur_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 30]
+						}
+					}
+				},
+				"tibia_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -7.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -37.5]
+						}
+					}
+				},
+				"metatarsus_large_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.1667": {
+							"vector": [0, 0, -50]
+						}
+					}
+				},
+				"tarsus_large_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -37.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -25]
+						}
+					}
+				},
+				"small_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 40, 0]
+						},
+						"0.1667": {
+							"vector": [0, 40, 0]
+						}
+					}
+				},
+				"femur_small_left_leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 22.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 42.5]
+						}
+					}
+				},
+				"tibia_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -25]
+						},
+						"0.1667": {
+							"vector": [0, 0, -52.5]
+						}
+					}
+				},
+				"metatarsus_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -17.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -57.5]
+						}
+					}
+				},
+				"tarsus_small_left_leg6": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -42.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -17.5]
+						}
+					}
+				},
+				"small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -35, 0]
+						},
+						"0.1667": {
+							"vector": [0, -35, 0]
+						}
+					}
+				},
+				"femur_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 30]
+						},
+						"0.1667": {
+							"vector": [0, 0, 32.5]
+						}
+					}
+				},
+				"tibia_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -30]
+						},
+						"0.1667": {
+							"vector": [0, 0, -42.5]
+						}
+					}
+				},
+				"metatarsus_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -40]
+						},
+						"0.1667": {
+							"vector": [0, 0, -50]
+						}
+					}
+				},
+				"tarsus_small_left_leg5": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -22.5]
+						}
+					}
+				},
+				"small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -47.5, 0]
+						},
+						"0.1667": {
+							"vector": [0, -47.5, 0]
+						}
+					}
+				},
+				"femur_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 40]
+						}
+					}
+				},
+				"tibia_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -52.5]
+						}
+					}
+				},
+				"metatarsus_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -32.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, -50]
+						}
+					}
+				},
+				"tarsus_small_left_leg4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -35]
+						},
+						"0.1667": {
+							"vector": [0, 0, -15]
+						}
+					}
+				},
+				"small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 20, 0]
+						},
+						"0.1667": {
+							"vector": [0, 20, 0]
+						}
+					}
+				},
+				"femur_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 12.5]
+						},
+						"0.1667": {
+							"vector": [0, 0, 37.5]
+						}
+					}
+				},
+				"tibia_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -15]
+						},
+						"0.1667": {
+							"vector": [0, 0, -50]
+						}
+					}
+				},
+				"metatarsus_small_left_leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -20]
+						},
+						"0.1667": {
+							"vector": [0, 0, -52.5]
+						}
+					}
+				},
+				"tarsus_small_left_leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -45]
+						},
+						"0.1667": {
+							"vector": [0, 0, -20]
+						}
+					}
+				},
+				"legs_left": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 10]
+						},
+						"0.1667": {
+							"vector": [0, 0, 10]
+						}
+					}
+				},
+				"right_pedipalp": {
+					"rotation": {
+						"0.0": {
+							"vector": [20, 22.5, 0]
+						},
+						"0.1667": {
+							"vector": [-10, 22.5, 0]
+						}
+					}
+				},
+				"pedipalps": {
+					"rotation": {
+						"0.0": {
+							"vector": [10, 0, 0]
+						},
+						"0.1667": {
+							"vector": [10, 0, 0]
+						}
+					}
+				},
+				"right_pedipalp1": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [45, 0, 0]
+						}
+					}
+				},
+				"right_pedipalp3": {
+					"rotation": {
+						"0.0": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [-52.5, 0, 0]
+						}
+					},
+					"position": {
+						"vector": [0, -0.5, 0]
+					}
+				},
+				"right_pedipalp2": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.1667": {
+							"vector": [-45, 0, 0]
+						}
+					}
+				},
+				"left_pedipalp": {
+					"rotation": {
+						"0.0": {
+							"vector": [20, -22.5, 0]
+						},
+						"0.1667": {
+							"vector": [-15, -22.5, 0]
+						}
+					}
+				},
+				"left_pedipalp1": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [50, 0, 0]
+						}
+					}
+				},
+				"left_pedipalp2": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.1667": {
+							"vector": [-42.5, 0, 0]
+						}
+					}
+				},
+				"left_pedipalp3": {
+					"rotation": {
+						"0.0": {
+							"vector": [-32.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [-52.5, 0, 0]
+						}
+					},
+					"position": {
+						"vector": [0, -0.25, -0.25]
+					}
+				},
+				"abdomen": {
+					"rotation": {
+						"vector": [-5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0, -4]
+					}
+				},
+				"spider_head": {
+					"rotation": {
+						"0.0": {
+							"vector": [47.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [10, 0, 0]
+						}
+					},
+					"position": {
+						"vector": [0, 1, 3]
+					}
+				},
+				"human_head": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					},
+					"position": {
+						"vector": [0, -1, 0]
+					}
+				},
+				"necklace": {
+					"rotation": {
+						"vector": [-10, 0, 0]
+					},
+					"position": {
+						"vector": [0, -3, -1]
+					}
+				},
+				"thorax": {
+					"rotation": {
+						"0.0": {
+							"vector": [-52.5, 0, 0]
+						},
+						"0.1667": {
+							"vector": [2.5, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 2, -6]
+						},
+						"0.1667": {
+							"vector": [0, 0, -4]
 						}
 					}
 				}
