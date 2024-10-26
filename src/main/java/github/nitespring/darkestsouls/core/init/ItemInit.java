@@ -278,9 +278,16 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_PITCHFORK.get(), 2237490, 3947592, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_RIFLE = ITEMS.register("huntsman_rifle_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
-	public static final DeferredHolder<Item,Item> EGG_SPIDER = ITEMS.register("spider_spawn_egg",
+	public static final DeferredHolder<Item,Item> SPIDER = ITEMS.register("spider_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SPIDER.get(), 2237490, 6633254, new Item.Properties()));
-
+	public static final DeferredHolder<Item,Item> RABID_DOG = ITEMS.register("rabid_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.RABID_DOG.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SILVER_DOG = ITEMS.register("silver_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.SILVER_DOG.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> HUNTING_DOG = ITEMS.register("hunting_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HUNTING_DOG.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> HOLLOW_DOG = ITEMS.register("hollow_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HOLLOW_DOG.get(), 2237490, 6633254, new Item.Properties()));
 
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",
 			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), 13945528, 2962739, new Item.Properties()));

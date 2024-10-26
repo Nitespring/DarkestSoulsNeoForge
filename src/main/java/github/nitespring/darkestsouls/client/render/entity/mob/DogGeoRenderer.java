@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.client.render.entity.mob;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.common.entity.mob.dog.Dog;
 import github.nitespring.darkestsouls.common.entity.mob.kin.Spider;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -16,11 +17,11 @@ import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class DogGeoRenderer<T extends Spider & GeoEntity> extends GeoEntityRenderer<T>{
+public class DogGeoRenderer<T extends Dog & GeoEntity> extends GeoEntityRenderer<T>{
 
 	public DogGeoRenderer(EntityRendererProvider.Context renderManager)
     {
-        super(renderManager, new NightmareApostleModel<>());
+        super(renderManager, new DogModel<>());
         
         this.shadowRadius = 0.5F;
 
@@ -61,7 +62,7 @@ public class DogGeoRenderer<T extends Spider & GeoEntity> extends GeoEntityRende
 	}
 
 
-    public static class NightmareApostleModel<T extends Spider & GeoEntity> extends GeoModel<T> {
+    public static class DogModel<T extends Dog & GeoEntity> extends GeoModel<T> {
 
         @Override
         public ResourceLocation getAnimationResource(T animatable) {
@@ -77,8 +78,23 @@ public class DogGeoRenderer<T extends Spider & GeoEntity> extends GeoEntityRende
 
         @Override
         public ResourceLocation getTextureResource(T object) {
+            switch(object.getDogType()) {
+                case 1:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/rabid_dog1.png");
+                case 2:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/rabid_dog2.png");
+                case 3:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/silver_dog.png");
+                case 4:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/hunting_dog.png");
+                case 5:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/hollow_dog.png");
+                case 6:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/hollow_dog1.png");
+                default:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/rabid_dog.png");
 
-            return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/spider/nightmare_apostle.png");
+            }
         }
 
 

@@ -1,16 +1,23 @@
 package github.nitespring.darkestsouls.common.entity.mob.dog;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
+import github.nitespring.darkestsouls.common.entity.mob.church.ChurchDoctor;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.Path;
@@ -27,11 +34,13 @@ import java.util.EnumSet;
 
 public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
 
+    private static final EntityDataAccessor<Integer> DOG_TYPE = SynchedEntityData.defineId(Dog.class, EntityDataSerializers.INT);
+
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
     public Dog(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
-        this.xpReward=2;
+        this.xpReward=5;
     }
 
     @Override
@@ -43,8 +52,16 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
         return false;
     }
 
-    public int getDogType() {return 0;}
-    public float getBaseScale() {return 1.0f;}
+    public int getDogType() {return this.getEntityData().get(DOG_TYPE);}
+    public void setRobeType(int i){this.getEntityData().set(DOG_TYPE, i);}
+    public int getDefaultDogType() {return 0;}
+    public float getBaseScale() {return 0.8f;}
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DOG_TYPE, this.getDefaultDogType());
+    }
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {return this.factory;}
@@ -74,7 +91,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
         int animState = this.getAnimationState();
         int combatState = this.getCombatState();
         if(this.isDeadOrDying()) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.death"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.die"));
         }else {
             switch(animState) {
                 case 1:
@@ -109,21 +126,52 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_) {
-
+        defineDogType();
         return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_);
     }
 
+    protected void defineDogType(){}
+
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-
-        this.goalSelector.addGoal(2, new Dog.AttackGoal(this));
-
-        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,0.2f,1));
+        dogAIGoals();
+        defaultDogGoals();
         super.registerGoals();
 
     }
 
+    protected void defaultDogGoals(){
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,0.2f,1));
+    }
+
+    protected void dogAIGoals(){
+        this.goalSelector.addGoal(2, new Dog.AttackGoal(this));
+    }
+
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return SoundEvents.WOLF_HURT;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.WOLF_AMBIENT;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.WOLF_DEATH;
+    }
+
+    @Override
+    public int getMaxPoise() {
+        return 8;
+    }
 
     @Override
     public void tick() {
@@ -156,7 +204,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.getNavigation().stop();
                 }
                 if (getAnimationTick() == 10) {
-                    this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f, 0.4f);
+                    this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
                 }
                 if (getAnimationTick() == 12) {
                     this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
@@ -185,7 +233,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.getNavigation().stop();
                 }
                 if (getAnimationTick() == 10) {
-                    this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f, 0.4f);
+                    this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
                 }
                 if (getAnimationTick() == 12) {
                     this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
@@ -447,9 +495,8 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
         protected void checkForAttack(double distance, double reach){
             if (distance <= reach && this.ticksUntilNextAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(2048);
-                if(r<=400)      {this.mob.setAnimationState(21);}
-                else if(r<=800) {this.mob.setAnimationState(22);}
-                else if(r<=1600){this.mob.setAnimationState(23);}
+                if(r<=800)      {this.mob.setAnimationState(21);}
+                else if(r<=1600) {this.mob.setAnimationState(22);}
             }
 
 
