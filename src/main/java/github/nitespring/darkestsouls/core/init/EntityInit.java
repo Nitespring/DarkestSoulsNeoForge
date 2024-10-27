@@ -10,10 +10,7 @@ import github.nitespring.darkestsouls.common.entity.mob.beast.AshenBloodBeastPat
 import github.nitespring.darkestsouls.common.entity.mob.beast.BeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.beast.CloakedBeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.church.*;
-import github.nitespring.darkestsouls.common.entity.mob.dog.HollowDog;
-import github.nitespring.darkestsouls.common.entity.mob.dog.HuntingDog;
-import github.nitespring.darkestsouls.common.entity.mob.dog.RabidDog;
-import github.nitespring.darkestsouls.common.entity.mob.dog.SilverDog;
+import github.nitespring.darkestsouls.common.entity.mob.dog.*;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.*;
 import github.nitespring.darkestsouls.common.entity.mob.kin.Spider;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.*;
@@ -172,20 +169,24 @@ public class EntityInit {
 					.build("spider"));
 	public static final DeferredHolder<EntityType<?>,EntityType<RabidDog>> RABID_DOG = ENTITIES.register("rabid_dog",
 			() -> EntityType.Builder.<RabidDog>of(RabidDog::new, MobCategory.MONSTER)
-					.sized(0.8f, 0.9f)
+					.sized(0.9f, 1.2f)
 					.build("rabid_dog"));
 	public static final DeferredHolder<EntityType<?>,EntityType<HuntingDog>> HUNTING_DOG = ENTITIES.register("hunting_dog",
 			() -> EntityType.Builder.<HuntingDog>of(HuntingDog::new, MobCategory.MONSTER)
-					.sized(0.8f, 0.9f)
+					.sized(0.9f, 1.2f)
 					.build("hunting_dog"));
 	public static final DeferredHolder<EntityType<?>,EntityType<SilverDog>> SILVER_DOG = ENTITIES.register("silver_dog",
 			() -> EntityType.Builder.<SilverDog>of(SilverDog::new, MobCategory.MONSTER)
-					.sized(0.8f, 0.9f)
+					.sized(0.9f, 1.2f)
 					.build("silver_dog"));
 	public static final DeferredHolder<EntityType<?>,EntityType<HollowDog>> HOLLOW_DOG = ENTITIES.register("hollow_dog",
 			() -> EntityType.Builder.<HollowDog>of(HollowDog::new, MobCategory.MONSTER)
-					.sized(0.8f, 0.9f)
+					.sized(0.9f, 1.2f)
 					.build("hollow_dog"));
+	public static final DeferredHolder<EntityType<?>,EntityType<UndeadDog>> UNDEAD_DOG = ENTITIES.register("undead_dog",
+			() -> EntityType.Builder.<UndeadDog>of(UndeadDog::new, MobCategory.MONSTER)
+					.sized(0.9f, 1.2f)
+					.build("undead_dog"));
 
 	//SpawnGroups
 	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnGroupEntity>> HUNTSMAN_GROUP1 = ENTITIES.register("huntsman_group_1",

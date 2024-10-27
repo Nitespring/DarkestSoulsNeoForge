@@ -91,6 +91,8 @@ public class DogGeoRenderer<T extends Dog & GeoEntity> extends GeoEntityRenderer
                     return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/hollow_dog.png");
                 case 6:
                     return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/hollow_dog1.png");
+                case 7:
+                    return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/skeletal_dog.png");
                 default:
                     return ResourceLocation.fromNamespaceAndPath(DarkestSouls.MODID, "textures/entity/dog/rabid_dog.png");
 

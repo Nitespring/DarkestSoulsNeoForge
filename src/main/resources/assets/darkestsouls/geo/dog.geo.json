@@ -411,7 +411,7 @@
 					"parent": "human_hair_right_root",
 					"pivot": [-4.25, 15.75, -17],
 					"cubes": [
-						{"origin": [-4.25, 7.75, -21], "size": [0, 8, 8], "uv": [209, 112]}
+						{"origin": [-4.25, 7.75, -21], "size": [0, 8, 8], "uv": [209, 112], "mirror": true}
 					]
 				},
 				{
@@ -424,7 +424,7 @@
 					"parent": "human_hair_left_root",
 					"pivot": [4.25, 15.75, -17],
 					"cubes": [
-						{"origin": [4.25, 7.75, -21], "size": [0, 8, 8], "uv": [225, 112], "mirror": true}
+						{"origin": [4.25, 7.75, -21], "size": [0, 8, 8], "uv": [217, 112]}
 					]
 				},
 				{
