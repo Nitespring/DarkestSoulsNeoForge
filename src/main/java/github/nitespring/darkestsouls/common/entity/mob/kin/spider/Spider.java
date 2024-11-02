@@ -1,19 +1,15 @@
-package github.nitespring.darkestsouls.common.entity.mob.kin;
+package github.nitespring.darkestsouls.common.entity.mob.kin.spider;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.mob.church.ChurchDoctor;
-import github.nitespring.darkestsouls.common.entity.mob.church.Huntsman;
+import github.nitespring.darkestsouls.common.entity.projectile.spell.ArcaneBullet;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
-import github.nitespring.darkestsouls.core.init.ItemInit;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.Path;
@@ -27,12 +23,11 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
-import java.util.Random;
 
 public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
-
+    public Vec3 aimVec;
     public Spider(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
         this.xpReward=12;
@@ -49,6 +44,11 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     public int getHeadType() {return 0;}
     public float getBaseScale() {return 1.0f;}
+
+
+    public boolean canPerformMagic() {
+        return false;
+    }
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {return this.factory;}
@@ -242,6 +242,41 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     setAnimationState(0);
                 }
                 break;
+            case 31:
+                this.getNavigation().stop();
+
+                if(getAnimationTick()==5) {
+                    if(this.getTarget()==null) {
+                        aimVec = this.getLookAngle().normalize();
+                    }else{
+                        aimVec = this.getTarget().position().add(pos.scale(-1)).normalize();
+                    }
+                }
+                if(getAnimationTick()==12) {
+                    if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
+                    //this.playSound(this.getAttackSound(), 0.2f,1.0f);
+                    this.playSound(SoundEvents.RESPAWN_ANCHOR_CHARGE);
+                    float x = (float) (pos.x + 0.6 * aimVec.x);
+                    float y = (float) (pos.y + 1.8 + 0.6 * aimVec.y);
+                    float z = (float) (pos.z + 0.6 * aimVec.z);
+                    ArcaneBullet entity = new ArcaneBullet(EntityInit.ARCANE_BULLET.get(), levelIn);
+                    entity.setPos(x,y,z);
+                    entity.setMaxLifeTime(60);
+                    float flyingPower = 0.05f;
+                    entity.setDeltaMovement(aimVec.scale(0.05f));
+                    entity.accelerationPower=flyingPower;
+                    entity.setOwner(this);
+                    if(this.getTarget()!=null){entity.setTarget(this.getTarget());}
+                    entity.setDamage((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+                    levelIn.addFreshEntity(entity);
+
+                }
+                
+                if(getAnimationTick()>=30) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
         }
     }
     public void moveToTarget(){
@@ -338,11 +373,11 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }
         @Override
         public void start() {
-            this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
+            //this.mob.getNavigation().moveTo(this.path, this.getSpeedModifier());
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 8;
-            this.ticksUntilNextRangedAttack = 120;
+            this.ticksUntilNextRangedAttack = 10;
             this.lastCanUpdateStateCheck = getStateUpdateInitialTimer();
             this.mob.setAnimationState(0);
             if(mob.getCombatState()==1){
@@ -394,7 +429,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
             double reach = this.getAttackReach(target);
             this.doMovement(target, reachSQR);
             this.checkForAttack(distance, reach);
-            //this.checkForPreciseAttack();
+            this.checkForPreciseAttack();
             this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
@@ -485,6 +520,16 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                 if(r<=400)      {this.mob.setAnimationState(21);}
                 else if(r<=800) {this.mob.setAnimationState(22);}
                 else if(r<=1600){this.mob.setAnimationState(23);}
+            }
+            if(canPerformMagic()) {
+                if (this.ticksUntilNextRangedAttack <= 2 && this.ticksUntilNextAttack <= 2) {
+                    int r = this.mob.getRandom().nextInt(2048);
+                    if (r <= 560) {
+
+                        this.mob.setAnimationState(31);
+
+                    }
+                }
             }
 
 

@@ -12,7 +12,7 @@ import github.nitespring.darkestsouls.common.entity.mob.beast.CloakedBeastPatien
 import github.nitespring.darkestsouls.common.entity.mob.church.*;
 import github.nitespring.darkestsouls.common.entity.mob.dog.*;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.*;
-import github.nitespring.darkestsouls.common.entity.mob.kin.Spider;
+import github.nitespring.darkestsouls.common.entity.mob.kin.spider.Spider;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.*;
 import github.nitespring.darkestsouls.common.entity.mob.abyss.MonstruosityOfSin;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.Bullet;
@@ -420,10 +420,15 @@ public class EntityInit {
 			() -> EntityType.Builder.<Bullet>of(Bullet::new, MobCategory.MISC)
 					.sized(0.2f, 0.2f)
 					.build("bullet"));
+
 	public static final DeferredHolder<EntityType<?>,EntityType<Flame>> FLAME = ENTITIES.register("flame",
 			() -> EntityType.Builder.<Flame>of(Flame::new, MobCategory.MISC)
 					.sized(0.4f, 0.4f)
 					.build("flame"));
 
+	public static final DeferredHolder<EntityType<?>,EntityType<ArcaneBullet>> ARCANE_BULLET = ENTITIES.register("arcane_bullet",
+			() -> EntityType.Builder.<ArcaneBullet>of(ArcaneBullet::new, MobCategory.MISC)
+					.sized(0.25f, 0.25f)
+					.build("arcane_bullet"));
 
 }

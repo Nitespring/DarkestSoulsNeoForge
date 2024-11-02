@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.magic_bullet.new": {
+			"loop": true,
+			"bones": {
+				"core": {
+					"rotation": {
+						"vector": ["query.anim_time*180", "-query.anim_time*180", "query.anim_time*180"]
+					}
+				},
+				"ring1": {
+					"rotation": {
+						"vector": ["query.anim_time*180", "-15*Math.cos(query.anim_time*180)", "15*Math.sin(query.anim_time*180)"]
+					}
+				},
+				"ring2": {
+					"rotation": {
+						"vector": ["15*Math.cos(query.anim_time*180)", "15*Math.sin(query.anim_time*180)", "query.anim_time*180"]
+					}
+				},
+				"ring3": {
+					"rotation": {
+						"vector": ["-15*Math.sin(query.anim_time*180)", "query.anim_time*180", "15*Math.cos(query.anim_time*180)"]
+					}
+				}
+			}
+		}
+	}
+}

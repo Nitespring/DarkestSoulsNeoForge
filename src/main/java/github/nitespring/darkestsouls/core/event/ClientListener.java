@@ -49,6 +49,7 @@ import net.neoforged.neoforge.client.event.RenderHandEvent;
 import net.neoforged.neoforge.client.extensions.common.ClientExtensionsManager;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import org.lwjgl.opengl.ARBTextureCubeMapArray;
 
 
 @EventBusSubscriber(modid = DarkestSouls.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -188,6 +189,7 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.BULLET.get(), BulletRenderer::new);
 		 event.registerEntityRenderer(EntityInit.FLAME.get(), FlameRenderer::new);
 		 event.registerEntityRenderer(EntityInit.MOONLIGHT_WAVE.get(), MoonlightSlashRenderer::new);
+		 event.registerEntityRenderer(EntityInit.ARCANE_BULLET.get(), ArcaneBulletRenderer::new);
 
 		 event.registerEntityRenderer(EntityInit.SKELETON_GROUP1.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_GROUP1.get(), InvisibleProjectileRenderer::new);

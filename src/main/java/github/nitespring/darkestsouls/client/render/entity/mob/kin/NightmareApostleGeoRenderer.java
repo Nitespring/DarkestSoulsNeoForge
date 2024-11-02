@@ -2,9 +2,7 @@ package github.nitespring.darkestsouls.client.render.entity.mob.kin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import github.nitespring.darkestsouls.DarkestSouls;
-import github.nitespring.darkestsouls.client.render.entity.mob.beast.BeastPatientEmissiveLayer;
-import github.nitespring.darkestsouls.common.entity.mob.beast.BeastPatientEntity;
-import github.nitespring.darkestsouls.common.entity.mob.kin.Spider;
+import github.nitespring.darkestsouls.common.entity.mob.kin.spider.Spider;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
