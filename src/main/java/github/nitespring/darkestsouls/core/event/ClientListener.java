@@ -130,6 +130,7 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_PITCHFORK.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTSMAN_RIFLE.get(), HuntsmanGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.SPIDER.get(), NightmareApostleGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.NIGHTMARE_APOSTLE.get(), NightmareApostleGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.RABID_DOG.get(), DogGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.SILVER_DOG.get(), DogGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTING_DOG.get(), DogGeoRenderer::new);

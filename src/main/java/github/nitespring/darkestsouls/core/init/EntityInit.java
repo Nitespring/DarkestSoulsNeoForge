@@ -12,6 +12,7 @@ import github.nitespring.darkestsouls.common.entity.mob.beast.CloakedBeastPatien
 import github.nitespring.darkestsouls.common.entity.mob.church.*;
 import github.nitespring.darkestsouls.common.entity.mob.dog.*;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.*;
+import github.nitespring.darkestsouls.common.entity.mob.kin.spider.NightmareApostle;
 import github.nitespring.darkestsouls.common.entity.mob.kin.spider.Spider;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.*;
 import github.nitespring.darkestsouls.common.entity.mob.abyss.MonstruosityOfSin;
@@ -167,6 +168,10 @@ public class EntityInit {
 			() -> EntityType.Builder.<Spider>of(Spider::new, MobCategory.MONSTER)
 					.sized(1.25f, 0.95f)
 					.build("spider"));
+	public static final DeferredHolder<EntityType<?>,EntityType<NightmareApostle>> NIGHTMARE_APOSTLE = ENTITIES.register("nightmare_apostle",
+			() -> EntityType.Builder.<NightmareApostle>of(NightmareApostle::new, MobCategory.MONSTER)
+					.sized(1.25f, 0.95f)
+					.build("NightmareApostle"));
 	public static final DeferredHolder<EntityType<?>,EntityType<RabidDog>> RABID_DOG = ENTITIES.register("rabid_dog",
 			() -> EntityType.Builder.<RabidDog>of(RabidDog::new, MobCategory.MONSTER)
 					.sized(0.9f, 1.2f)

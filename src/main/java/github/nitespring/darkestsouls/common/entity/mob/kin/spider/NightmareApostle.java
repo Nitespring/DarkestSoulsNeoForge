@@ -9,7 +9,7 @@ public class NightmareApostle extends Spider{
         super(p_21683_, p_21684_);
     }
 
-    public int getHeadType() {return 0;}
+    public int getHeadType() {return 1;}
     public float getBaseScale() {return 1.0f;}
     public boolean canPerformMagic() {
         return true;

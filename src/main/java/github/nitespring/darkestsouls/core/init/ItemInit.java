@@ -280,6 +280,8 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SPIDER = ITEMS.register("spider_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.SPIDER.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> NIGHTMARE_APOSTLE = ITEMS.register("nightmare_apostle_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.NIGHTMARE_APOSTLE.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> RABID_DOG = ITEMS.register("rabid_dog_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.RABID_DOG.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SILVER_DOG = ITEMS.register("silver_dog_spawn_egg",
