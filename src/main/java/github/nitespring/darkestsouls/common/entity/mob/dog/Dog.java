@@ -52,6 +52,8 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
         return false;
     }
 
+
+
     public int getDogType() {return this.getEntityData().get(DOG_TYPE);}
     public void setRobeType(int i){this.getEntityData().set(DOG_TYPE, i);}
     public int getDefaultDogType() {return 0;}
@@ -207,15 +209,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
                 }
                 if (getAnimationTick() == 12) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f) * this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f) * this.getLookAngle().z),
-                            (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
+                    doAttack(0,1.0f,1.0f);
                 }
                 if (getAnimationTick() >= 24 && flag) {
                     setAnimationTick(0);
@@ -236,15 +230,9 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
                 }
                 if (getAnimationTick() == 12) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f) * this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f) * this.getLookAngle().z),
-                            (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
+                    if (getAnimationTick() == 12) {
+                        doAttack(2.0f,1.2f,1.25f);
+                    }
                 }
                 if (getAnimationTick() >= 24 && flag) {
                     setAnimationTick(0);
@@ -267,8 +255,22 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     }
 
-    public class AttackGoal extends Goal {
+    public void doAttack(float dmgFlat, float dmgMull, float range){
+        this.playSound(SoundEvents.WOLF_GROWL);
+        DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                this.position().add((range*1.0f) * this.getLookAngle().x,
+                        0.25,
+                        (range*1.0f) * this.getLookAngle().z),
+                (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
+        h.setOwner(this);
+        h.setHitboxScaleAbsolute(0);
+        h.setHitboxScaleHeight(0);
+        h.setHitboxType(0);
+        h.setTarget(this.getTarget());
+        this.level().addFreshEntity(h);
+    }
 
+    public class AttackGoal extends Goal {
 
         private final double walkingSpeedModifier = 1.1f;
         private final double runningSpeedModifier = 1.8f;

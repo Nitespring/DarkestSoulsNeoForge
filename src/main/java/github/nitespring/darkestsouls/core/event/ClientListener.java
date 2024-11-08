@@ -135,7 +135,9 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.SILVER_DOG.get(), DogGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HUNTING_DOG.get(), DogGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HOLLOW_DOG.get(), DogGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.LARGE_HOLLOW_DOG.get(), DogGeoRenderer::new);
 		 event.registerEntityRenderer(EntityInit.UNDEAD_DOG.get(), DogGeoRenderer::new);
+		 event.registerEntityRenderer(EntityInit.LARGE_UNDEAD_DOG.get(), DogGeoRenderer::new);
 
 		 event.registerEntityRenderer(EntityInit.HITBOX_SMALL.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.HITBOX.get(), InvisibleProjectileRenderer::new);

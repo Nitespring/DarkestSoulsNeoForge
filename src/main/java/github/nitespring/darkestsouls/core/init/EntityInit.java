@@ -188,10 +188,18 @@ public class EntityInit {
 			() -> EntityType.Builder.<HollowDog>of(HollowDog::new, MobCategory.MONSTER)
 					.sized(0.9f, 1.2f)
 					.build("hollow_dog"));
+	public static final DeferredHolder<EntityType<?>,EntityType<LargeHollowDog>> LARGE_HOLLOW_DOG = ENTITIES.register("large_hollow_dog",
+			() -> EntityType.Builder.<LargeHollowDog>of(LargeHollowDog::new, MobCategory.MONSTER)
+					.sized(1.0f, 1.5f)
+					.build("large_hollow_dog"));
 	public static final DeferredHolder<EntityType<?>,EntityType<UndeadDog>> UNDEAD_DOG = ENTITIES.register("undead_dog",
 			() -> EntityType.Builder.<UndeadDog>of(UndeadDog::new, MobCategory.MONSTER)
 					.sized(0.9f, 1.2f)
 					.build("undead_dog"));
+	public static final DeferredHolder<EntityType<?>,EntityType<LargeUndeadDog>> LARGE_UNDEAD_DOG = ENTITIES.register("large_undead_dog",
+			() -> EntityType.Builder.<LargeUndeadDog>of(LargeUndeadDog::new, MobCategory.MONSTER)
+					.sized(1.0f, 1.5f)
+					.build("large_undead_dog"));
 
 	//SpawnGroups
 	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnGroupEntity>> HUNTSMAN_GROUP1 = ENTITIES.register("huntsman_group_1",

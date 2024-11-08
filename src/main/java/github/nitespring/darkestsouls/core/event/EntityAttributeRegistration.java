@@ -49,12 +49,14 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.HUNTSMAN_PITCHFORK.get(), EntityAttributes.setHuntsmanPitchforkAttributes().build());
 		event.put(EntityInit.HUNTSMAN_RIFLE.get(), EntityAttributes.setHuntsmanRifleAttributes().build());
 		event.put(EntityInit.SPIDER.get(), EntityAttributes.setSpiderAttributes().build());
-		event.put(EntityInit.NIGHTMARE_APOSTLE.get(), EntityAttributes.setSpiderAttributes().build());
+		event.put(EntityInit.NIGHTMARE_APOSTLE.get(), EntityAttributes.setNightmareApostleAttributes().build());
 		event.put(EntityInit.RABID_DOG.get(), EntityAttributes.setRabidDogAttributes().build());
 		event.put(EntityInit.HUNTING_DOG.get(), EntityAttributes.setHuntingDogAttributes().build());
 		event.put(EntityInit.SILVER_DOG.get(), EntityAttributes.setSilverDogAttributes().build());
 		event.put(EntityInit.HOLLOW_DOG.get(), EntityAttributes.setHollowDogAttributes().build());
 		event.put(EntityInit.UNDEAD_DOG.get(), EntityAttributes.setUndeadDogAttributes().build());
+		event.put(EntityInit.LARGE_HOLLOW_DOG.get(), EntityAttributes.setLargeHollowDogAttributes().build());
+		event.put(EntityInit.LARGE_UNDEAD_DOG.get(), EntityAttributes.setLargeUndeadDogAttributes().build());
 
 
 		event.put(EntityInit.HUNTSMAN_GROUP1.get(), SpawnGroupEntity.setAttributes().build());

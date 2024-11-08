@@ -162,7 +162,7 @@ public class DamageHitboxEntity extends Entity {
 
 			this.remove(RemovalReason.DISCARDED);
 		}
-		for (LivingEntity localTarget : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(hitboxScaleAbsolute, hitboxScaleAbsolute * hitboxScaleHeight, hitboxScaleAbsolute))) {
+		for (LivingEntity localTarget : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(hitboxScaleAbsolute, hitboxScaleHeight, hitboxScaleAbsolute))) {
 			if ((this.target != null) && (localTarget == this.target)) {
 				this.attackLocalTarget(localTarget);
 			} else if (this.getOwner() == null || !localTarget.isAlliedTo(this.getOwner())) {
@@ -228,6 +228,10 @@ public class DamageHitboxEntity extends Entity {
 						case 6:
 							target.hurt(this.damageSources().inFire(), damage);
 							target.igniteForTicks(60);
+							break;
+						case 7:
+							target.hurt(this.damageSources().mobAttack(owner), damage);
+							target.addEffect(new MobEffectInstance(EffectInit.FROST, 100,0), this.getOwner());
 							break;
 						default:
 							target.hurt(this.damageSources().mobAttack(owner), damage);

@@ -8,10 +8,10 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
 
-public class UndeadDog extends Dog{
+public class LargeUndeadDog extends LargeDog{
 
 
-    public UndeadDog(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
+    public LargeUndeadDog(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
 
@@ -32,12 +32,12 @@ public class UndeadDog extends Dog{
     public void doAttack(float dmgFlat, float dmgMull, float range){
         this.playSound(SoundEvents.WOLF_GROWL);
         DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                this.position().add((range*1.0f) * this.getLookAngle().x,
+                this.position().add((range*1.5f) * this.getLookAngle().x,
                         0.25,
-                        (range*1.0f) * this.getLookAngle().z),
+                        (range*1.5f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleAbsolute(0.0f);
+        h.setHitboxScaleAbsolute(0.5f);
         h.setHitboxScaleHeight(0);
         h.setHitboxType(7);
         h.setTarget(this.getTarget());

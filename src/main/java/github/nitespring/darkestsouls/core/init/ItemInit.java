@@ -292,6 +292,10 @@ public class ItemInit {
 			() -> new SpawnEggItem(EntityInit.HOLLOW_DOG.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> UNDEAD_DOG = ITEMS.register("undead_dog_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.UNDEAD_DOG.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> LARGE_HOLLOW_DOG = ITEMS.register("large_hollow_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.LARGE_HOLLOW_DOG.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> LARGE_UNDEAD_DOG = ITEMS.register("large_undead_dog_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.LARGE_UNDEAD_DOG.get(), 2237490, 6633254, new Item.Properties()));
 
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",
 			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), 13945528, 2962739, new Item.Properties()));

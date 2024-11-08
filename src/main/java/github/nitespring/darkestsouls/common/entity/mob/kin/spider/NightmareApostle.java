@@ -5,8 +5,8 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.level.Level;
 
 public class NightmareApostle extends Spider{
-    public NightmareApostle(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
-        super(p_21683_, p_21684_);
+    public NightmareApostle(EntityType<? extends PathfinderMob> mob, Level level) {
+        super(mob, level);
     }
 
     public int getHeadType() {return 1;}

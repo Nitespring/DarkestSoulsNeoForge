@@ -454,6 +454,19 @@ public class EntityAttributes {
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
+	public static  AttributeSupplier.Builder setLargeHollowDogAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 24.0D)
+				.add(Attributes.ARMOR, 2.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 0.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.21D)
+				.add(Attributes.ATTACK_DAMAGE, 6.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.25D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
 	public static  AttributeSupplier.Builder setHuntingDogAttributes(){
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 20.0D)
@@ -493,6 +506,20 @@ public class EntityAttributes {
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
+	public static  AttributeSupplier.Builder setLargeUndeadDogAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 36.0D)
+				.add(Attributes.ARMOR, 6.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 2.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.21D)
+				.add(Attributes.ATTACK_DAMAGE, 7.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.25D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.1D)
+				.add(Attributes.FOLLOW_RANGE, 20)
+				.add(Attributes.STEP_HEIGHT, 1);
+	}
+
 
 
 }
