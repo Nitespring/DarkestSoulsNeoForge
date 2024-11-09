@@ -274,6 +274,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SIN.get());
                         output.accept(ItemInit.SPIDER.get());
                         output.accept(ItemInit.NIGHTMARE_APOSTLE.get());
+                        output.accept(ItemInit.LARGE_SPIDER.get());
+                        output.accept(ItemInit.LARGE_NIGHTMARE_APOSTLE.get());
                         output.accept(ItemInit.RABID_DOG.get());
                         output.accept(ItemInit.HUNTING_DOG.get());
                         output.accept(ItemInit.SILVER_DOG.get());

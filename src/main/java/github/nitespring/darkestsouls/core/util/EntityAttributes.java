@@ -415,6 +415,19 @@ public class EntityAttributes {
 				.add(Attributes.FOLLOW_RANGE, 20)
 				.add(Attributes.STEP_HEIGHT, 1);
 	}
+	public static  AttributeSupplier.Builder setLargeSpiderAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 70.0D)
+				.add(Attributes.ARMOR, 10.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 5.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.24D)
+				.add(Attributes.ATTACK_DAMAGE, 8.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.5D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.5D)
+				.add(Attributes.FOLLOW_RANGE, 30)
+				.add(Attributes.STEP_HEIGHT, 3);
+	}
 	public static  AttributeSupplier.Builder setNightmareApostleAttributes(){
 		return Monster.createMonsterAttributes()
 				.add(Attributes.MAX_HEALTH, 32.0D)
@@ -427,6 +440,19 @@ public class EntityAttributes {
 				.add(Attributes.KNOCKBACK_RESISTANCE, 1.0D)
 				.add(Attributes.FOLLOW_RANGE, 30)
 				.add(Attributes.STEP_HEIGHT, 1);
+	}
+	public static  AttributeSupplier.Builder setLargeNightmareApostleAttributes(){
+		return Monster.createMonsterAttributes()
+				.add(Attributes.MAX_HEALTH, 100.0D)
+				.add(Attributes.ARMOR, 10.0D)
+				.add(Attributes.ARMOR_TOUGHNESS, 5.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.24D)
+				.add(Attributes.ATTACK_DAMAGE, 10.0D)
+				.add(Attributes.ATTACK_SPEED, 1.2D)
+				.add(Attributes.ATTACK_KNOCKBACK, 0.5D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 1.5D)
+				.add(Attributes.FOLLOW_RANGE, 30)
+				.add(Attributes.STEP_HEIGHT, 3);
 	}
 	public static  AttributeSupplier.Builder setRabidDogAttributes(){
 		return Monster.createMonsterAttributes()

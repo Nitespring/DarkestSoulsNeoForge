@@ -50,6 +50,8 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.HUNTSMAN_RIFLE.get(), EntityAttributes.setHuntsmanRifleAttributes().build());
 		event.put(EntityInit.SPIDER.get(), EntityAttributes.setSpiderAttributes().build());
 		event.put(EntityInit.NIGHTMARE_APOSTLE.get(), EntityAttributes.setNightmareApostleAttributes().build());
+		event.put(EntityInit.LARGE_SPIDER.get(), EntityAttributes.setLargeSpiderAttributes().build());
+		event.put(EntityInit.LARGE_NIGHTMARE_APOSTLE.get(), EntityAttributes.setLargeNightmareApostleAttributes().build());
 		event.put(EntityInit.RABID_DOG.get(), EntityAttributes.setRabidDogAttributes().build());
 		event.put(EntityInit.HUNTING_DOG.get(), EntityAttributes.setHuntingDogAttributes().build());
 		event.put(EntityInit.SILVER_DOG.get(), EntityAttributes.setSilverDogAttributes().build());

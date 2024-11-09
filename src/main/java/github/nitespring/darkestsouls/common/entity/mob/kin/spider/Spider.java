@@ -165,15 +165,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f,0.4f);
                 }
                 if(getAnimationTick()==12) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
+                    doAttack(0.0f,1.0f,1.0f);
                 }
                 if(getAnimationTick()>=24&&flag) {
                     setAnimationTick(0);
@@ -194,15 +186,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f,0.4f);
                 }
                 if(getAnimationTick()==12) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
+                    doAttack(0.0f,1.0f,1.0f);
                 }
                 if(getAnimationTick()>=24&&flag) {
                     setAnimationTick(0);
@@ -223,15 +207,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f,0.4f);
                 }
                 if(getAnimationTick()==12) {
-                    this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
-                    DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                            this.position().add((1.0f)*this.getLookAngle().x,
-                                    0.25,
-                                    (1.0f)*this.getLookAngle().z),
-                            (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE), 5);
-                    h.setOwner(this);
-                    h.setTarget(this.getTarget());
-                    this.level().addFreshEntity(h);
+                    doAttack(0.0f,1.0f,1.0f);
                 }
                 if(getAnimationTick()>=24&&flag) {
                     setAnimationTick(0);
@@ -287,6 +263,21 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
             this.getNavigation().moveTo(path, 1.5f);
         }
 
+    }
+
+    public void doAttack(float dmgFlat, float dmgMull, float range){
+        this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
+        DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                this.position().add((range*1.0f) * this.getLookAngle().x,
+                        0.25,
+                        (range*1.0f) * this.getLookAngle().z),
+                (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
+        h.setOwner(this);
+        h.setHitboxScaleAbsolute(0);
+        h.setHitboxScaleHeight(0);
+        h.setHitboxType(0);
+        h.setTarget(this.getTarget());
+        this.level().addFreshEntity(h);
     }
 
     public class AttackGoal extends Goal {

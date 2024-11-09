@@ -230,9 +230,8 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
                 }
                 if (getAnimationTick() == 12) {
-                    if (getAnimationTick() == 12) {
-                        doAttack(2.0f,1.2f,1.25f);
-                    }
+                    doAttack(2.0f,1.2f,1.25f);
+
                 }
                 if (getAnimationTick() >= 24 && flag) {
                     setAnimationTick(0);
