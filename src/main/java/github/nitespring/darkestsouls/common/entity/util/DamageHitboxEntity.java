@@ -30,10 +30,10 @@ public class DamageHitboxEntity extends Entity {
 	@Nullable
 	private LivingEntity target;
 	private int maxTargets = 0; //if 0 there is no max number of targets
-	private int delayTicks = 1;
+	private int delayTicks = 5;
 	private int hitboxType = 0;
 	private float damage = 4.0f;
-	private float hitboxScaleAbsolute = 0.0f;
+	private float hitboxScaleWidth = 0.0f;
 	private float hitboxScaleHeight = 0.0f;
 	private List<LivingEntity> hitEntities = new ArrayList<LivingEntity>();
 
@@ -54,7 +54,7 @@ public class DamageHitboxEntity extends Entity {
 
 	public DamageHitboxEntity(EntityType<?> e, Level level, Vec3 pos, float dmg, int delayTicks, float scale) {
 		this(e, level, pos, dmg, delayTicks);
-		this.hitboxScaleAbsolute = scale;
+		this.hitboxScaleWidth = scale;
 	}
 
 	public DamageHitboxEntity(EntityType<?> e, Level level, Vec3 pos, float dmg, int delayTicks, float scale, float height) {
@@ -116,8 +116,8 @@ public class DamageHitboxEntity extends Entity {
 		return this.owner;
 	}
 
-	public void setHitboxScaleAbsolute(float hitboxScaleAbsolute) {
-		this.hitboxScaleAbsolute = hitboxScaleAbsolute;
+	public void setHitboxScaleWidth(float hitboxScaleAbsolute) {
+		this.hitboxScaleWidth = hitboxScaleAbsolute;
 	}
 
 	public void setHitboxScaleHeight(float hitboxScaleHeight) {
@@ -162,7 +162,7 @@ public class DamageHitboxEntity extends Entity {
 
 			this.remove(RemovalReason.DISCARDED);
 		}
-		for (LivingEntity localTarget : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(hitboxScaleAbsolute, hitboxScaleHeight, hitboxScaleAbsolute))) {
+		for (LivingEntity localTarget : this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(hitboxScaleWidth, hitboxScaleHeight, hitboxScaleWidth))) {
 			if ((this.target != null) && (localTarget == this.target)) {
 				this.attackLocalTarget(localTarget);
 			} else if (this.getOwner() == null || !localTarget.isAlliedTo(this.getOwner())) {

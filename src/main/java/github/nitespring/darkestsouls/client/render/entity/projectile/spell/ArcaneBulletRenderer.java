@@ -23,7 +23,7 @@ public class ArcaneBulletRenderer<T extends ArcaneBullet> extends GeoEntityRende
     @Override
     public RenderType getRenderType(T animatable, ResourceLocation texture, MultiBufferSource bufferSource,
                                     float partialTick) {
-        return RenderType.eyes(texture);
+        return RenderType.breezeEyes(texture);
     }
 
     @Override
@@ -32,12 +32,10 @@ public class ArcaneBulletRenderer<T extends ArcaneBullet> extends GeoEntityRende
         float scaleFactor = entity.getDimensionScale();
         poseStack.pushPose();
         poseStack.scale(scaleFactor, scaleFactor, scaleFactor);
-        poseStack.mulPose(Axis.YP.rotationDegrees(entity.getYRot()));
-        poseStack.mulPose(Axis.XP.rotationDegrees(-entity.getXRot()));
 
-        poseStack.translate(0, 6-scaleFactor*18, 0);
+        poseStack.translate(0, 0, 0);
 
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, 255);
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
         poseStack.popPose();
     }
     public static class ArcaneBulletModel<T extends ArcaneBullet> extends GeoModel<T>{

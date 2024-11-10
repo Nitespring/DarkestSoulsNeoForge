@@ -1,7 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.mob.dog;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.mob.church.ChurchDoctor;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.Path;
@@ -262,7 +260,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                         (range*1.0f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleAbsolute(0);
+        h.setHitboxScaleWidth(0);
         h.setHitboxScaleHeight(0);
         h.setHitboxType(0);
         h.setTarget(this.getTarget());

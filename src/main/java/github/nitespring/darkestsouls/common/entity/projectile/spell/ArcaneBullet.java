@@ -31,7 +31,7 @@ public class ArcaneBullet extends AbstractHurtingProjectile implements GeoEntity
 
     public float damage=2.0f;
     public int maxLifeTime=60;
-    public static float dScale=1;
+    public static float dScale=0.4f;
 
     public int lifeTicks=0;
 
@@ -118,11 +118,11 @@ public class ArcaneBullet extends AbstractHurtingProjectile implements GeoEntity
 
 
         //this.level().addAlwaysVisibleParticle(ParticleTypes.SOUL_FIRE_FLAME, this.position().x, this.position().y + 0.6, this.position().z, 0, 0, 0);
-        for(int i=0; i<=1+20*this.getDimensionScale(); i++){
+        for(int i=0; i<=24; i++){
             RandomSource r = this.random;
             Vec3 off = new Vec3(r.nextFloat()-0.5, r.nextFloat()-0.5,r.nextFloat()-0.5).multiply(0.5f,0.5f,0.5f);
             this.level().addAlwaysVisibleParticle(new DustParticleOptions(new Vector3f(0.7f, 0.9f, 1), 0.5f),
-                    this.position().x+0.5*this.getDimensionScale()*off.x, this.position().y + this.getBbHeight()/2 + 0.5*this.getDimensionScale()*off.y, this.position().z +0.5*this.getDimensionScale()*off.z, off.x*r.nextFloat(), off.y*r.nextFloat(), off.z*r.nextFloat());
+                    this.position().x-mov.x*0.5+1.5*this.getDimensionScale()*off.x, this.position().y-mov.y*0.5 + this.getBbHeight()/2 + 1.5*this.getDimensionScale()*off.y, this.position().z-mov.z*0.5 +1.5*this.getDimensionScale()*off.z, off.x*r.nextFloat(), off.y*r.nextFloat(), off.z*r.nextFloat());
         }
     }
 
@@ -153,18 +153,26 @@ public class ArcaneBullet extends AbstractHurtingProjectile implements GeoEntity
     }
 
     @Override
+    protected boolean canHitEntity(Entity target) {
+        if(this.getOwner()!=null && (target == this.getOwner() || this.getOwner().isAlliedTo(target))){
+            return false;
+        }
+        return super.canHitEntity(target);
+    }
+
+    @Override
     protected void onHitEntity(EntityHitResult p_37259_) {
         super.onHitEntity(p_37259_);
         Entity e = p_37259_.getEntity();
         e.hurt(e.level().damageSources().indirectMagic(this, this.getOwner()),this.damage);
         this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_CHARGE, this.getSoundSource(), 1.0f, 2.0f);
-        for(int i=0; i<=1+26*this.getDimensionScale(); i++){
+        /*for(int i=0; i<=1+26*this.getDimensionScale(); i++){
             RandomSource r = this.random;
             Vec3 off = new Vec3(r.nextFloat() - 0.5, r.nextFloat() - 0.5, r.nextFloat() - 0.5).multiply(0.75f, 0.75f, 0.75f);
             if(this.level() instanceof ServerLevel level) {
                 level.sendParticles(new DustParticleOptions(new Vector3f(0.2f, 0.8f, 1),1.25f), this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
             }
-        }
+        }*/
         doDiscard();
     }
 
@@ -189,8 +197,8 @@ public class ArcaneBullet extends AbstractHurtingProjectile implements GeoEntity
                 RandomSource r = this.random;
                 Vec3 off = new Vec3(r.nextFloat() - 0.5, r.nextFloat() - 0.5, r.nextFloat() - 0.5).multiply(0.75f, 0.75f, 0.75f);
                 if(this.level() instanceof ServerLevel level) {
-                    level.sendParticles(new DustParticleOptions(new Vector3f(0.2f, 0.8f, 1),1.5f), this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
-                    level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
+                    level.sendParticles(new DustParticleOptions(new Vector3f(0.7f, 0.9f, 1), 1.5f), this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
+                    level.sendParticles(new DustParticleOptions(new Vector3f(0.7f, 0.9f, 1), 0.5f), this.position().x+off.x, this.position().y+this.getBbHeight()*0.5f+off.y, this.position().z+off.z, 5,  off.x, off.y + 0.05D, off.z, 0.05D + 5*0.003);
                 }
             }
 

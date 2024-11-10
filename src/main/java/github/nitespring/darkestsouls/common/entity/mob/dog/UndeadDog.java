@@ -37,7 +37,7 @@ public class UndeadDog extends Dog{
                         (range*1.0f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleAbsolute(0.0f);
+        h.setHitboxScaleWidth(0.0f);
         h.setHitboxScaleHeight(0);
         h.setHitboxType(7);
         h.setTarget(this.getTarget());

@@ -169,18 +169,22 @@ public class EntityInit {
 	public static final DeferredHolder<EntityType<?>,EntityType<Spider>> SPIDER = ENTITIES.register("spider",
 			() -> EntityType.Builder.<Spider>of(Spider::new, MobCategory.MONSTER)
 					.sized(1.25f, 1.2f)
+					.eyeHeight(0.6f)
 					.build("spider"));
 	public static final DeferredHolder<EntityType<?>,EntityType<LargeSpider>> LARGE_SPIDER = ENTITIES.register("large_spider",
 			() -> EntityType.Builder.<LargeSpider>of(LargeSpider::new, MobCategory.MONSTER)
 					.sized(4.0f, 3.6f)
+					.eyeHeight(1.5f)
 					.build("large_spider"));
 	public static final DeferredHolder<EntityType<?>,EntityType<NightmareApostle>> NIGHTMARE_APOSTLE = ENTITIES.register("nightmare_apostle",
 			() -> EntityType.Builder.<NightmareApostle>of(NightmareApostle::new, MobCategory.MONSTER)
 					.sized(1.25f, 1.2f)
+					.eyeHeight(0.75f)
 					.build("nightmare_apostle"));
 	public static final DeferredHolder<EntityType<?>,EntityType<LargeNightmareApostle>> LARGE_NIGHTMARE_APOSTLE = ENTITIES.register("large_nightmare_apostle",
 			() -> EntityType.Builder.<LargeNightmareApostle>of(LargeNightmareApostle::new, MobCategory.MONSTER)
 					.sized(4.0f, 3.6f)
+					.eyeHeight(1.8f)
 					.build("large_nightmare_apostle"));
 	public static final DeferredHolder<EntityType<?>,EntityType<RabidDog>> RABID_DOG = ENTITIES.register("rabid_dog",
 			() -> EntityType.Builder.<RabidDog>of(RabidDog::new, MobCategory.MONSTER)
@@ -244,11 +248,11 @@ public class EntityInit {
 					.build("hitbox_small"));
 	public static final DeferredHolder<EntityType<?>,EntityType<DamageHitboxEntity>> HITBOX = ENTITIES.register("hitbox",
 			() -> EntityType.Builder.<DamageHitboxEntity>of(DamageHitboxEntity::new, MobCategory.MISC)
-					.sized(2.0f, 2.0f)
+					.sized(2.0f, 1.25f)
 					.build("hitbox"));
 	public static final DeferredHolder<EntityType<?>,EntityType<DamageHitboxEntity>> HITBOX_LARGE = ENTITIES.register("hitbox_large",
 			() -> EntityType.Builder.<DamageHitboxEntity>of(DamageHitboxEntity::new, MobCategory.MISC)
-					.sized(4.0f, 4.0f)
+					.sized(4.0f, 2.5f)
 					.build("hitbox_large"));
 
 	public static final DeferredHolder<EntityType<?>,EntityType<FrayedBladeAttackEntity>> FRAYED_BLADE = ENTITIES.register("frayed_blade",

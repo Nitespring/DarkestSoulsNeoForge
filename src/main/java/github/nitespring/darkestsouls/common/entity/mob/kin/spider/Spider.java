@@ -4,14 +4,19 @@ import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEnti
 import github.nitespring.darkestsouls.common.entity.projectile.spell.ArcaneBullet;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -23,6 +28,7 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
 
@@ -37,6 +43,9 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
     protected int getDSDefaultTeam() {
         return 0;
     }
+
+
+
     @Override
     public boolean isBoss() {
         return false;
@@ -93,7 +102,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                 case 23:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.spider.atk3"));
                     break;
-                case 31:
+                case 31,32:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.spider.cast"));
                     break;
                 default:
@@ -118,7 +127,32 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
 
         return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_);
     }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.SPIDER_AMBIENT;
+    }
 
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return SoundEvents.SPIDER_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.SPIDER_DEATH;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState block) {
+        this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
+    }
+
+    @Override
+    public void makeStuckInBlock(BlockState state, Vec3 motionMultiplier) {
+        if (!state.is(Blocks.COBWEB)) {
+            super.makeStuckInBlock(state, motionMultiplier);
+        }
+    }
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
@@ -129,7 +163,6 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         super.registerGoals();
 
     }
-
 
     @Override
     public void tick() {
@@ -164,12 +197,8 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                 if(getAnimationTick()==10) {
                     this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f,0.4f);
                 }
-                if(getAnimationTick()==12) {
-                    doAttack(0.0f,1.0f,1.0f);
-                }
-                if(getAnimationTick()>=24&&flag) {
-                    setAnimationTick(0);
-                    setAnimationState(23);
+                if(getAnimationTick()==16) {
+                    doLargeAttack(1.0f,1.25f,1.0f);
                 }
                 if(getAnimationTick()>=30) {
                     setAnimationTick(0);
@@ -188,11 +217,11 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                 if(getAnimationTick()==12) {
                     doAttack(0.0f,1.0f,1.0f);
                 }
-                if(getAnimationTick()>=24&&flag) {
+                if(getAnimationTick()>=18&&flag) {
                     setAnimationTick(0);
                     setAnimationState(23);
                 }
-                if(getAnimationTick()>=30) {
+                if(getAnimationTick()>=22) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
@@ -207,52 +236,101 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     this.playSound(SoundEvents.SPIDER_AMBIENT, 0.2f,0.4f);
                 }
                 if(getAnimationTick()==12) {
-                    doAttack(0.0f,1.0f,1.0f);
+                    doAttack(1.0f,1.0f,1.0f);
                 }
-                if(getAnimationTick()>=24&&flag) {
-                    setAnimationTick(0);
-                    setAnimationState(23);
-                }
-                if(getAnimationTick()>=30) {
+                if(getAnimationTick()>=24) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
                 break;
             case 31:
-                this.getNavigation().stop();
-
-                if(getAnimationTick()==5) {
-                    if(this.getTarget()==null) {
-                        aimVec = this.getLookAngle().normalize();
-                    }else{
-                        aimVec = this.getTarget().position().add(pos.scale(-1)).normalize();
-                    }
-                }
-                if(getAnimationTick()==12) {
-                    if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
-                    //this.playSound(this.getAttackSound(), 0.2f,1.0f);
-                    this.playSound(SoundEvents.RESPAWN_ANCHOR_CHARGE);
-                    float x = (float) (pos.x + 0.6 * aimVec.x);
-                    float y = (float) (pos.y + 1.8 + 0.6 * aimVec.y);
-                    float z = (float) (pos.z + 0.6 * aimVec.z);
-                    ArcaneBullet entity = new ArcaneBullet(EntityInit.ARCANE_BULLET.get(), levelIn);
-                    entity.setPos(x,y,z);
-                    entity.setMaxLifeTime(60);
-                    float flyingPower = 0.05f;
-                    entity.setDeltaMovement(aimVec.scale(0.05f));
-                    entity.accelerationPower=flyingPower;
-                    entity.setOwner(this);
-                    if(this.getTarget()!=null){entity.setTarget(this.getTarget());}
-                    entity.setDamage((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE));
-                    levelIn.addFreshEntity(entity);
-
-                }
-                
-                if(getAnimationTick()>=30) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
+                performRangedAttack1();
                 break;
+            case 32:
+                performRangedAttack2();
+                break;
+        }
+    }
+    public void performRangedAttack1(){
+        Level levelIn = this.level();
+        Vec3 pos = this.position();
+
+        this.getNavigation().stop();
+
+        if(getAnimationTick()==5) {
+            if(this.getTarget()==null) {
+                aimVec = this.getLookAngle().normalize();
+            }else{
+                aimVec = this.getTarget().position().add(pos.scale(-1)).normalize();
+            }
+        }
+        if(getAnimationTick()==12) {
+            if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
+            //this.playSound(this.getAttackSound(), 0.2f,1.0f);
+            this.playSound(SoundEvents.RESPAWN_ANCHOR_CHARGE);
+            float x = (float) (pos.x + 0.6 * aimVec.x);
+            float y = (float) (pos.y + 1.8 + 0.6 * aimVec.y);
+            float z = (float) (pos.z + 0.6 * aimVec.z);
+            ArcaneBullet entity = new ArcaneBullet(EntityInit.ARCANE_BULLET.get(), levelIn);
+            entity.setPos(x,y,z);
+            entity.setMaxLifeTime(40);
+            float flyingPower = 0.05f;
+            entity.setDeltaMovement(aimVec.scale(0.05f));
+            entity.accelerationPower=flyingPower;
+            entity.setOwner(this);
+            if(this.getTarget()!=null){entity.setTarget(this.getTarget());}
+            entity.setDamage((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+            levelIn.addFreshEntity(entity);
+
+        }
+
+        if(getAnimationTick()>=30) {
+            setAnimationTick(0);
+            setAnimationState(0);
+        }
+    }
+    public void performRangedAttack2(){
+        Level levelIn = this.level();
+        Vec3 pos = this.position();
+
+        this.getNavigation().stop();
+
+        if(getAnimationTick()==5) {
+            if(this.getTarget()==null) {
+                aimVec = this.getLookAngle().normalize();
+            }else{
+                aimVec = this.getTarget().position().add(pos.scale(-1)).normalize();
+            }
+        }
+        float f = (float) (Math.PI/12);
+        Random r = new Random();
+        if(getAnimationTick()==12||getAnimationTick()==16||getAnimationTick()==20) {
+            if (aimVec == null) {aimVec = this.getLookAngle().normalize();}
+            //this.playSound(this.getAttackSound(), 0.2f,1.0f);
+            this.playSound(SoundEvents.RESPAWN_ANCHOR_CHARGE);
+            float x = (float) (pos.x + 0.6 * aimVec.x);
+            float y = (float) (pos.y + 1.8 + 0.6 * aimVec.y);
+            float z = (float) (pos.z + 0.6 * aimVec.z);
+            ArcaneBullet entity = new ArcaneBullet(EntityInit.ARCANE_BULLET.get(), levelIn);
+            entity.setPos(x,y,z);
+            entity.setMaxLifeTime(40);
+            float flyingPower = 0.05f;
+            entity.setDeltaMovement(aimVec.add(
+                    new Vec3(r.nextInt(-3,4)*f,
+                            r.nextInt(4)*f,
+                            r.nextInt(-3,4)*f)
+            ).scale(0.05f));
+            entity.accelerationPower=flyingPower;
+            entity.setOwner(this);
+            if(this.getTarget()!=null){entity.setTarget(this.getTarget());}
+            entity.setDamage((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+            levelIn.addFreshEntity(entity);
+
+        }
+
+        if(getAnimationTick()>=48) {
+            setAnimationTick(0);
+            setAnimationState(0);
         }
     }
     public void moveToTarget(){
@@ -264,16 +342,29 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         }
 
     }
-
+    public void doLargeAttack(float dmgFlat, float dmgMull, float range){
+        this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
+        DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                this.position().add((range*1.75f) * this.getLookAngle().x,
+                        0.25,
+                        (range*1.75f) * this.getLookAngle().z),
+                (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
+        h.setOwner(this);
+        h.setHitboxScaleWidth(0.5f);
+        h.setHitboxScaleHeight(0);
+        h.setHitboxType(0);
+        h.setTarget(this.getTarget());
+        this.level().addFreshEntity(h);
+    }
     public void doAttack(float dmgFlat, float dmgMull, float range){
         this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
         DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
-                this.position().add((range*1.0f) * this.getLookAngle().x,
+                this.position().add((range*1.25f) * this.getLookAngle().x,
                         0.25,
-                        (range*1.0f) * this.getLookAngle().z),
+                        (range*1.25f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleAbsolute(0);
+        h.setHitboxScaleWidth(0.25f);
         h.setHitboxScaleHeight(0);
         h.setHitboxType(0);
         h.setTarget(this.getTarget());
@@ -420,7 +511,7 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
             double reach = this.getAttackReach(target);
             this.doMovement(target, reachSQR);
             this.checkForAttack(distance, reach);
-            this.checkForPreciseAttack();
+            //this.checkForPreciseAttack();
             this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
@@ -508,9 +599,9 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
         protected void checkForAttack(double distance, double reach){
             if (distance <= reach && this.ticksUntilNextAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(2048);
-                if(r<=400)      {this.mob.setAnimationState(21);}
-                else if(r<=800) {this.mob.setAnimationState(22);}
-                else if(r<=1600){this.mob.setAnimationState(23);}
+                if(r<=800)      {this.mob.setAnimationState(21);}
+                else if(r<=1400) {this.mob.setAnimationState(22);}
+                else if(r<=1900){this.mob.setAnimationState(23);}
             }
             if(canPerformMagic()) {
                 if (this.ticksUntilNextRangedAttack <= 2 && this.ticksUntilNextAttack <= 2) {
@@ -518,6 +609,10 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
                     if (r <= 560) {
 
                         this.mob.setAnimationState(31);
+
+                    }else if (r <= 960) {
+
+                        this.mob.setAnimationState(32);
 
                     }
                 }

@@ -23,7 +23,7 @@ public class LargeDog extends Dog{
                         (range*1.5f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleAbsolute(0.5f);
+        h.setHitboxScaleWidth(0.5f);
         h.setHitboxScaleHeight(0);
         h.setHitboxType(0);
         h.setTarget(this.getTarget());
