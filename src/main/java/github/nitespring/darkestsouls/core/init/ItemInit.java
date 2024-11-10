@@ -279,13 +279,13 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> EGG_HUNTSMAN_RIFLE = ITEMS.register("huntsman_rifle_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RIFLE.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SPIDER = ITEMS.register("spider_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.SPIDER.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.SPIDER.get(), 5, 16711685, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> LARGE_SPIDER = ITEMS.register("large_spider_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.LARGE_SPIDER.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.LARGE_SPIDER.get(), 5, 16711685, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> NIGHTMARE_APOSTLE = ITEMS.register("nightmare_apostle_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.NIGHTMARE_APOSTLE.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.NIGHTMARE_APOSTLE.get(), 5, 15462112, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> LARGE_NIGHTMARE_APOSTLE = ITEMS.register("large_nightmare_apostle_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.LARGE_NIGHTMARE_APOSTLE.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.LARGE_NIGHTMARE_APOSTLE.get(), 5, 15462112, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> RABID_DOG = ITEMS.register("rabid_dog_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.RABID_DOG.get(), 2237490, 6633254, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SILVER_DOG = ITEMS.register("silver_dog_spawn_egg",
