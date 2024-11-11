@@ -2,11 +2,15 @@ package github.nitespring.darkestsouls.common.entity.mob.dog;
 
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
+import org.joml.Vector3f;
 
 public class LargeUndeadDog extends LargeDog{
 
@@ -42,5 +46,17 @@ public class LargeUndeadDog extends LargeDog{
         h.setHitboxType(7);
         h.setTarget(this.getTarget());
         this.level().addFreshEntity(h);
+    }
+    @Override
+    public void tick() {
+        super.tick();
+        this.level().addParticle(
+                ParticleTypes.DUST_PLUME,
+                this.getRandomX(0.6D),
+                this.getRandomY(),
+                this.getRandomZ(0.6D),
+                0.0,
+                0.0,
+                0.0);
     }
 }

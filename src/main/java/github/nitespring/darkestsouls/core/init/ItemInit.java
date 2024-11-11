@@ -287,19 +287,19 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> LARGE_NIGHTMARE_APOSTLE = ITEMS.register("large_nightmare_apostle_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.LARGE_NIGHTMARE_APOSTLE.get(), 5, 15462112, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> RABID_DOG = ITEMS.register("rabid_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.RABID_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.RABID_DOG.get(), 8404781, 12344123, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SILVER_DOG = ITEMS.register("silver_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.SILVER_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.SILVER_DOG.get(), 11051445, 15790591, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HUNTING_DOG = ITEMS.register("hunting_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HUNTING_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HUNTING_DOG.get(), 655383, 13489643, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> HOLLOW_DOG = ITEMS.register("hollow_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.HOLLOW_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.HOLLOW_DOG.get(), 12038310, 13355202, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> UNDEAD_DOG = ITEMS.register("undead_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.UNDEAD_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.UNDEAD_DOG.get(), 3750485, 13950446, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> LARGE_HOLLOW_DOG = ITEMS.register("large_hollow_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.LARGE_HOLLOW_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.LARGE_HOLLOW_DOG.get(), 12038310, 13355202, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> LARGE_UNDEAD_DOG = ITEMS.register("large_undead_dog_spawn_egg",
-			() -> new SpawnEggItem(EntityInit.LARGE_UNDEAD_DOG.get(), 2237490, 6633254, new Item.Properties()));
+			() -> new SpawnEggItem(EntityInit.LARGE_UNDEAD_DOG.get(), 3750485, 13950446, new Item.Properties()));
 
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",
 			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), 13945528, 2962739, new Item.Properties()));
