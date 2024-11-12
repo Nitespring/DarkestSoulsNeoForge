@@ -53,7 +53,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
 
 
     public int getDogType() {return this.getEntityData().get(DOG_TYPE);}
-    public void setRobeType(int i){this.getEntityData().set(DOG_TYPE, i);}
+    public void setDogType(int i){this.getEntityData().set(DOG_TYPE, i);}
     public int getDefaultDogType() {return 0;}
     public float getBaseScale() {return 0.8f;}
 
