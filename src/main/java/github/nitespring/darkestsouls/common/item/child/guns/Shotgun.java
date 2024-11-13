@@ -27,8 +27,8 @@ public class Shotgun extends Gun{
     private final float horizontalSpread;
     private final float verticalSpread;
 
-    public Shotgun(float damage, int cooldown, int poise, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, float horizontalSpread, float verticalSpread, int enchantability, Properties properties) {
-        super(damage, cooldown, poise, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
+    public Shotgun(float damage, int cooldown, int poise, int posture, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, float horizontalSpread, float verticalSpread, int enchantability, Properties properties) {
+        super(damage, cooldown, poise, posture, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
         this.horizontalSpread=horizontalSpread;
         this.verticalSpread=verticalSpread;
     }

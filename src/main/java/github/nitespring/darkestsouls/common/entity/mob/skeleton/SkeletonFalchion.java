@@ -101,6 +101,9 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.hit_stun"));
+                    break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.roll"));
                     break;
@@ -182,6 +185,15 @@ public class SkeletonFalchion extends Skeleton implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

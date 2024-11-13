@@ -78,6 +78,9 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.hit_stun"));
+                    break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.huntsman.axe.atk1"));
                     break;
@@ -287,6 +290,15 @@ public class HuntsmanAxe extends Huntsman implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if (getAnimationTick() >= 85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

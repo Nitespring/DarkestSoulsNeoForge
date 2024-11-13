@@ -133,6 +133,9 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.bonewheel.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.bonewheel.hit_stun"));
+                    break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.bonewheel.attack1"));
                     break;
@@ -171,7 +174,9 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
     public boolean canDrownInFluidType(FluidType type) {return false;}
 
     @Override
-    public int getMaxPoise() {return 20;}
+    public int getMaxPosture() {return 28;}
+    @Override
+    public int getMaxPoise() {return 13;}
 
     @Override
     public int getBloodResistance() {return 999;}
@@ -191,6 +196,15 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

@@ -315,6 +315,50 @@
 				}
 			}
 		},
+		"animation.skeleton.hit_stun": {
+			"loop": true,
+			"bones": {
+				"waist": {
+					"rotation": [-15.0214, 0.32621, -7.493]
+				},
+				"chest": {
+					"rotation": [4.9149, 1.30364, -0.00095]
+				},
+				"head": {
+					"rotation": [6.67692, -20.49362, 15.50347]
+				},
+				"arm_right": {
+					"rotation": [27.12096, 7.0653, 17.30958],
+					"position": [0, -1, 0]
+				},
+				"forearm_right": {
+					"rotation": [-32.5, 0, 0]
+				},
+				"arm_left": {
+					"rotation": [23.55528, -10.19784, -4.52699],
+					"position": [0, -1, 0]
+				},
+				"forearm_left": {
+					"rotation": [-25, 0, 0]
+				},
+				"leg_right": {
+					"rotation": [-14.87739, 1.93597, 7.24721]
+				},
+				"foreleg_right": {
+					"rotation": [15, 0, 0]
+				},
+				"leg_left": {
+					"rotation": [-2.47864, -0.32621, -7.49294]
+				},
+				"foreleg_left": {
+					"rotation": [20, 0, 0]
+				},
+				"jaw": {
+					"rotation": [5, 0, 0],
+					"position": [0, -0.5, 0]
+				}
+			}
+		},
 		"animation.skeleton.idle": {
 			"loop": true,
 			"bones": {

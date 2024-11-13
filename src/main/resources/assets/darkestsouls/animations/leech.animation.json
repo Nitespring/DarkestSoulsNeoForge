@@ -3734,6 +3734,127 @@
 				}
 			}
 		},
+		"animation.leech.hit_stun": {
+			"loop": true,
+			"bones": {
+				"chest": {
+					"rotation": [35, 0, 0]
+				},
+				"neck1": {
+					"rotation": [-45, 0, 0]
+				},
+				"neck2": {
+					"rotation": [17.5, 0, 0]
+				},
+				"head": {
+					"rotation": [7.5, 0, 0]
+				},
+				"right_arm": {
+					"rotation": [42.1927, -4.21413, 23.56456],
+					"position": [0, -1, 0]
+				},
+				"right_forearm": {
+					"rotation": [37.5, 0, 0]
+				},
+				"right_wrist": {
+					"rotation": [-17.5, 0, 0]
+				},
+				"right_thumb": {
+					"rotation": [-42.00461, 5.27654, 28.45981]
+				},
+				"right_hand": {
+					"rotation": [0, 50, 0]
+				},
+				"neck": {
+					"rotation": [35, 0, 0]
+				},
+				"right_finger4": {
+					"rotation": [11.92635, -39.07504, -11.44384]
+				},
+				"right_phalanx4": {
+					"rotation": [0, 50, 0]
+				},
+				"right_finger3": {
+					"rotation": [6.00096, -34.81486, -4.30495]
+				},
+				"right_finger1": {
+					"rotation": [-5.49707, -27.34586, 3.61609]
+				},
+				"right_phalanx1": {
+					"rotation": [0, 40, 0]
+				},
+				"right_finger2": {
+					"rotation": [0, -35, 0]
+				},
+				"right_phalanx2": {
+					"rotation": [0, 40, 0]
+				},
+				"right_phalanx3": {
+					"rotation": [0, 25, 0]
+				},
+				"right_fingers": {
+					"rotation": [0, -5, 0]
+				},
+				"left_arm": {
+					"rotation": [30.25965, 11.06234, -22.45395],
+					"position": [0, -1, 0]
+				},
+				"left_forearm": {
+					"rotation": [37.5, 0, 0]
+				},
+				"left_wrist": {
+					"rotation": [0, 0, 17.5]
+				},
+				"left_thumb": {
+					"rotation": [-42.00461, -5.2765, -28.4598]
+				},
+				"left_hand": {
+					"rotation": [0, -52.5, 0]
+				},
+				"left_fingers": {
+					"rotation": [0, 17.5, 0]
+				},
+				"left_finger1": {
+					"rotation": [0, 17.5, 0]
+				},
+				"left_phalanx1": {
+					"rotation": [0, -55, 0]
+				},
+				"left_finger2": {
+					"rotation": [0, 10, 0]
+				},
+				"left_phalanx2": {
+					"rotation": [0, -30, 0]
+				},
+				"left_finger3": {
+					"rotation": [0, 2.5, 0]
+				},
+				"left_phalanx3": {
+					"rotation": [0, -22.5, 0]
+				},
+				"left_finger4": {
+					"rotation": [0, 15, 0]
+				},
+				"left_phalanx4": {
+					"rotation": [0, -17.5, 0]
+				},
+				"waist": {
+					"rotation": [-42.5, 0, 0]
+				},
+				"hips": {
+					"rotation": [10, 0, 0]
+				},
+				"tail": {
+					"rotation": [2.5, 2.5, 0]
+				},
+				"tail1": {
+					"rotation": [-5, -7.5, 0]
+				},
+				"tail2": {
+					"rotation": [2.5, 5, 0]
+				}
+			}
+		},
 		"animation.leech.death": {
 			"animation_length": 3,
 			"bones": {

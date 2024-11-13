@@ -83,6 +83,9 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.hit_stun"));
+                    break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.scream"));
                     break;
@@ -147,7 +150,9 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
     @Override
     public int getBeastPatientType() {return 2;}
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 36;}
+    @Override
+    public int getMaxPoise() {return 16;}
     @Override
     public int getBloodResistance() {return 9;}
 
@@ -217,6 +222,15 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                     this.playSound(SoundEvents.BLAZE_HURT);
                 }
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

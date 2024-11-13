@@ -26,7 +26,6 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
@@ -65,6 +64,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 	private static final EntityDataAccessor<Integer> COMBAT_STATE = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> ENTITY_PHASE = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> TEAM = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
+	private static final EntityDataAccessor<Integer> POSTURE_HEALTH = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> POISE_HEALTH = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Integer> PROJECTILE_LOADED = SynchedEntityData.defineId(DarkestSoulsAbstractEntity.class, EntityDataSerializers.INT);
 	private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS));
@@ -165,8 +165,42 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		return 10;
 	}
 
-	public int getMaxPoise() {
+	public int getMaxPosture() {
 		return 20;
+	}
+
+	public int getPostureHealth() {
+		return this.getEntityData().get(POSTURE_HEALTH);
+	}
+
+	public void setPostureHealth(int i) {
+		this.getEntityData().set(POSTURE_HEALTH, i);
+		//System.out.println("Poise: " + i + "/" + this.getMaxPoise());
+	}
+
+	public void damagePostureHealth(int i) {
+		this.setPostureHealth(this.getPostureHealth() - i);
+		//System.out.println("damaged poise " + i);
+	}
+
+	public void healPostureHealth(int i) {
+		this.setPostureHealth(this.getPostureHealth() + i);
+	}
+
+	public void resetPostureHealth() {
+		this.setPostureHealth(this.getMaxPosture());
+		this.resetPoiseHealth();
+	}
+
+	public int getPostureBreakAnimation() {
+		return 1;
+	}
+
+	public void setPostureBreakAnimation() {
+		this.setAnimationState(this.getPostureBreakAnimation());
+	}
+	public int getMaxPoise() {
+		return 10;
 	}
 
 	public int getPoiseHealth() {
@@ -191,12 +225,10 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		this.setPoiseHealth(this.getMaxPoise());
 	}
 
-	public int getStunAnimation() {
-		return 1;
-	}
+	public int getPoiseBreakAnimation() {return 2;}
 
-	public void setStunAnimation() {
-		this.setAnimationState(this.getStunAnimation());
+	public void setPoiseBreakAnimation() {
+		this.setAnimationState(this.getPoiseBreakAnimation());
 	}
 	public boolean shouldResetCombatStateWhenIdle(){return true;}
 
@@ -209,6 +241,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 		builder.define(COMBAT_STATE, 0);
 		builder.define(ENTITY_PHASE, 0);
 		builder.define(TEAM, getDSDefaultTeam());
+		builder.define(POSTURE_HEALTH, getMaxPosture());
 		builder.define(POISE_HEALTH, getMaxPoise());
 		builder.define(PROJECTILE_LOADED, 0);
 	}
@@ -278,9 +311,12 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 			hitStunTicks--;
 		}
 
-		if (this.getEntityData().get(POISE_HEALTH) <= -1) {
-			this.setStunAnimation();
+		if (this.getEntityData().get(POSTURE_HEALTH) <= -1) {
+			this.setPostureBreakAnimation();
 
+			//System.out.println("should Stun");
+		}else if (this.getEntityData().get(POISE_HEALTH) <= -1) {
+			this.setPoiseBreakAnimation();
 			//System.out.println("should Stun");
 		}
 
@@ -377,10 +413,12 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 				if (hitStunTicks <= 0) {
 					hitStunTicks = 3;
 				}
-				if(this.getAnimationState()==this.getStunAnimation()){
+				if(this.getAnimationState()==this.getPostureBreakAnimation()){
 					this.playSound(SoundEvents.BLAZE_HURT, 0.4f, 1.0f);
 				}
-
+				if(this.getAnimationState()==this.getPoiseBreakAnimation()){
+					this.playSound(SoundEvents.BLAZE_HURT, 0.2f, 1.2f);
+				}
 				/*
 				if(!source.is(DamageTypes.PLAYER_ATTACK)&&!(source.getEntity()!=null && source.getEntity() instanceof Player)) {
 					float poiseDmgMod = 1;

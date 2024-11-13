@@ -1,7 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.weapon;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.projectile.throwable.ThrowingKnifeEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import net.minecraft.core.BlockPos;
@@ -18,7 +17,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
-import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -104,7 +102,7 @@ public class Bullet extends AbstractHurtingProjectile {
             if(e instanceof Mob mob) {
                 if (mob instanceof DarkestSoulsAbstractEntity dsMob) {
                     if(mob.hurtTime<=0) {
-                        dsMob.damagePoiseHealth(this.getPoiseDamage());
+                        dsMob.damagePostureHealth(this.getPoiseDamage());
                     }
                 }
                 if (this.getPoison() >= 1) {

@@ -97,6 +97,9 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.hit_stun"));
+                    break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.atk1"));
                     break;
@@ -169,9 +172,11 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
     }
 
     @Override
-    public int getMaxPoise() {
-        return 8;
+    public int getMaxPosture() {
+        return 12;
     }
+    @Override
+    public int getMaxPoise() {return 6;}
 
     @Override
     public void tick() {
@@ -190,6 +195,15 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if (getAnimationTick() >= 85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

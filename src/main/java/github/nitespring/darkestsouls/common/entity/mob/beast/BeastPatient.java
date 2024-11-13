@@ -1,6 +1,5 @@
 package github.nitespring.darkestsouls.common.entity.mob.beast;
 
-import github.nitespring.darkestsouls.common.entity.mob.skeleton.SkeletonCurvedSwords;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EntityInit;
@@ -79,6 +78,9 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.hit_stun"));
+                    break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.scream"));
                     break;
@@ -140,7 +142,9 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
     @Override
     public int getBeastPatientType() {return 0;}
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 30;}
+    @Override
+    public int getMaxPoise() {return 12;}
     @Override
     public int getBloodResistance() {return 8;}
 
@@ -206,6 +210,15 @@ public class BeastPatient extends BeastPatientEntity implements GeoEntity, IBuff
                     this.playSound(SoundEvents.BLAZE_HURT);
                 }
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

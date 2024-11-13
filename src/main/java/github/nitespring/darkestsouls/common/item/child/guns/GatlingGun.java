@@ -33,8 +33,8 @@ public class GatlingGun extends Gun implements GeoItem {
     private static final RawAnimation SHOOT_ANIM = RawAnimation.begin().thenLoop("animation.gatling_gun.shoot");
     private static final RawAnimation STOP = RawAnimation.begin().thenLoop("animation.gatling_gun.new");
 
-    public GatlingGun(float damage, int cooldown, int poise, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, int enchantability, Properties properties) {
-        super(damage, cooldown, poise, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
+    public GatlingGun(float damage, int cooldown, int poise, int posture, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, int enchantability, Properties properties) {
+        super(damage, cooldown, poise, posture, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
     }
 

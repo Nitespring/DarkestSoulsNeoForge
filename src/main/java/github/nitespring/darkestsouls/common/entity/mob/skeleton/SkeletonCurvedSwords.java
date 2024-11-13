@@ -77,6 +77,9 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.hit_stun"));
+                    break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.skeleton.curved_swords.attack1"));
                     break;
@@ -179,6 +182,15 @@ public class SkeletonCurvedSwords extends Skeleton implements GeoEntity {
                 this.getNavigation().stop();
                 this.getNavigation().stop();
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

@@ -2,9 +2,7 @@ package github.nitespring.darkestsouls.common.entity.mob.hollow;
 
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -82,6 +80,9 @@ public class MadHollowBrokenStraightsword extends Hollow implements GeoEntity {
             switch(animState) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.stun"));
+                    break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.hit_stun"));
                     break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.longsword.attack1"));
@@ -223,6 +224,15 @@ public class MadHollowBrokenStraightsword extends Hollow implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

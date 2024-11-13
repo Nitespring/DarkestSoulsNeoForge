@@ -22,7 +22,7 @@ public class MolotovCocktail extends Item {
     private final float attackDamage;
     private final int useCooldown;
     private final int poiseDamage;
-    public MolotovCocktail(float attackDamage, int useCooldown, int poiseDamage, Properties properties) {
+    public MolotovCocktail(float attackDamage, int useCooldown, int poiseDamage, int postureDamage, Properties properties) {
         super(properties);
         this.attackDamage=attackDamage;
         this.useCooldown=useCooldown;

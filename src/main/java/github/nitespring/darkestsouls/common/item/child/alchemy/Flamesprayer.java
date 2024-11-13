@@ -30,8 +30,8 @@ public class Flamesprayer extends AlchemyTool {
     private final float flyingPower;
     private final float size;
     private final int ricochet;
-    public Flamesprayer(float damage, int cooldown, int flyingTime, float flyingPower, int ricochet, float size,int poise, int ammoAmount, int durability, int enchantability, Properties properties) {
-        super(damage, cooldown, poise, ammoAmount, durability, enchantability, properties);
+    public Flamesprayer(float damage, int cooldown, int flyingTime, float flyingPower, int ricochet, float size,int poise, int posture, int ammoAmount, int durability, int enchantability, Properties properties) {
+        super(damage, cooldown, poise, posture, ammoAmount, durability, enchantability, properties);
         this.flyingPower = flyingPower;
         this.flyingTime = flyingTime;
         this.size = size;

@@ -34,89 +34,89 @@ public class ItemInit {
 	//Special Weapons
 
 	public static final DeferredHolder<Item, FrayedBlade> FRAYED_BLADE = ITEMS.register("frayed_blade",
-			() -> new FrayedBlade(Tiers.TITANITE, 8.0f, 1.6f, 3.5f,0.1f, 8, 3,0,0,0,0,0,0,0,1350,12,0.11f,-1, new Item.Properties().rarity(Rarity.EPIC)));
+			() -> new FrayedBlade(Tiers.TITANITE, 8.0f, 1.6f, 3.5f,0.1f, 4,8, 3,0,0,0,0,0,0,0,1350,12,0.11f,-1, new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item, ShadowBlade> SHADOW_BLADE = ITEMS.register("shadow_blade",
-			() -> new ShadowBlade(Tiers.TITANITE, 8.0f, 1.6f,3.5f, 0.2f, 8,1,0,0,0,0,1,0,1, 1350,15,0.11f, 2,new Item.Properties().rarity(Rarity.EPIC)));
+			() -> new ShadowBlade(Tiers.TITANITE, 8.0f, 1.6f,3.5f, 0.2f, 4,8,1,0,0,0,0,1,0,1, 1350,15,0.11f, 2,new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item,DragonslayerSpear> DRAGONSLAYER_SPEAR = ITEMS.register("dragonslayer_spear",
-			() -> new DragonslayerSpear(Tiers.TITANITE, 6.0f, 2.0f, 4.25f, -0.1f,5, 0,0,0,0,0,0,0, 0,1350,10,0.15f, -1,new Item.Properties().rarity(Rarity.EPIC)));
+			() -> new DragonslayerSpear(Tiers.TITANITE, 6.0f, 2.0f, 4.25f, -0.1f,3,5, 0,0,0,0,0,0,0, 0,1350,10,0.15f, -1,new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item,Weapon> DRAGONSLAYER_SWORDSPEAR = ITEMS.register("dragonslayer_swordspear",
-			() -> new DragonslayerSwordspear(Tiers.TITANITE, 7.0f, 1.8f,4.0f, 0.1f, 7, 0,0,0,0,0,0,0,0,1350,10,0.12f, 2,new Item.Properties().rarity(Rarity.EPIC)));
+			() -> new DragonslayerSwordspear(Tiers.TITANITE, 7.0f, 1.8f,4.0f, 0.1f, 4,7, 0,0,0,0,0,0,0,0,1350,10,0.12f, 2,new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item,StormCurvedSword> STORM_CURVED_SWORD = ITEMS.register("storm_curved_sword",
-			() -> new StormCurvedSword(Tiers.TITANITE, 6.0f, 2.1f, 2.75f,0.1f, 5, 0,0,0,0,0,0,0, 0,1350,10,0.14f, 2,new Item.Properties().rarity(Rarity.EPIC)));
+			() -> new StormCurvedSword(Tiers.TITANITE, 6.0f, 2.1f, 2.75f,0.1f, 3,5, 0,0,0,0,0,0,0, 0,1350,10,0.14f, 2,new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item,DragonslayerGreataxe> DRAGONSLAYER_GREATAXE = ITEMS.register("dragonslayer_greataxe",
-			() -> new DragonslayerGreataxe(Tiers.TITANITE, 10.0f, 1.0f, 3.5f,0.4f, 10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
+			() -> new DragonslayerGreataxe(Tiers.TITANITE, 10.0f, 1.0f, 3.5f,0.4f, 6,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
 	//Trick Weapons
 	public static final DeferredHolder<Item,SawCleaver> SAW_CLEAVER = ITEMS.register("saw_cleaver",
-			() -> new SawCleaver(Tiers.TITANITE, 6.0f, 1.7f, 3.0f,0.1f, 6, 0,0,0,0,0,0,0,3,1350,15,0.108f, 2,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new SawCleaver(Tiers.TITANITE, 6.0f, 1.7f, 3.0f,0.1f, 4,6, 0,0,0,0,0,0,0,3,1350,15,0.108f, 2,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,SawCleaverExtended> SAW_CLEAVER_EXTENDED = ITEMS.register("saw_cleaver_extended",
-			() -> new SawCleaverExtended(Tiers.TITANITE, 7.5f, 1.5f,3.5f, 0.2f, 8, 0,0,0,0,0,0,0,0,1350,15,0.104f, 3,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new SawCleaverExtended(Tiers.TITANITE, 7.5f, 1.5f,3.5f, 0.2f, 5,8, 0,0,0,0,0,0,0,0,1350,15,0.104f, 3,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,HunterAxe> HUNTER_AXE = ITEMS.register("hunter_axe",
-			() -> new HunterAxe(Tiers.TITANITE, 7.0f, 1.4f, 3.0f,0.4f, 8, 0,0,0,0,0,0,0,0,1350,15,0.11f, 2,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new HunterAxe(Tiers.TITANITE, 7.0f, 1.4f, 3.0f,0.4f, 6,8, 0,0,0,0,0,0,0,0,1350,15,0.11f, 2,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,HunterAxeExtended> HUNTER_AXE_EXTENDED = ITEMS.register("hunter_axe_extended",
-			() -> new HunterAxeExtended(Tiers.TITANITE, 8.0f, 1.2f, 3.75f,0.6f, 12,0,0,0,0,0,0,0, 0,1350,15,0.11f, 3,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new HunterAxeExtended(Tiers.TITANITE, 8.0f, 1.2f, 3.75f,0.6f, 8,12,0,0,0,0,0,0,0, 0,1350,15,0.11f, 3,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,Chikage> CHIKAGE = ITEMS.register("chikage",
-			() -> new Chikage(Tiers.TITANITE, 6.0f, 1.9f, 3.5f,0.1f, 5,1,0,0,0,0,0,0, 0,1350,15,0.12f, 2,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new Chikage(Tiers.TITANITE, 6.0f, 1.9f, 3.5f,0.1f, 3,5,1,0,0,0,0,0,0, 0,1350,15,0.12f, 2,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,ChikageExtended> CHIKAGE_EXTENDED = ITEMS.register("chikage_extended",
-			() -> new ChikageExtended(Tiers.TITANITE, 12.0f, 1.7f,3.7f, 0.3f, 8,4,0,0,0,0,0,0, 0,1350,15,0.112f, 2,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new ChikageExtended(Tiers.TITANITE, 12.0f, 1.7f,3.7f, 0.3f, 5,8,4,0,0,0,0,0,0, 0,1350,15,0.112f, 2,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,HolyMoonlightSword> HOLY_MOONLIGHT = ITEMS.register("holy_moonlight_sword",
-			() -> new HolyMoonlightSword(Tiers.TITANITE, 7.0f, 1.4f,3.6f, 0.2f, 6, 0,0,0,0,0,0,0,0,1350,17,0.1f, 3,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new HolyMoonlightSword(Tiers.TITANITE, 7.0f, 1.4f,3.6f, 0.2f, 4,6, 0,0,0,0,0,0,0,0,1350,17,0.1f, 3,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,HolyMoonlightSwordLit> HOLY_MOONLIGHT_LIT = ITEMS.register("holy_moonlight_sword_lit",
-			() -> new HolyMoonlightSwordLit(Tiers.TITANITE, 8.0f, 1.2f, 3.75f,0.2f, 6, 0,0,0,0,0,0,0,0,1350,17,0.1f, -1,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new HolyMoonlightSwordLit(Tiers.TITANITE, 8.0f, 1.2f, 3.75f,0.2f, 4,6, 0,0,0,0,0,0,0,0,1350,17,0.1f, -1,new Item.Properties().rarity(Rarity.RARE)));
 
 	public static final DeferredHolder<Item,BrokenStraightsword> BROKEN_STRAIGHTSWORD = ITEMS.register("broken_straightsword",
-			() -> new BrokenStraightsword(Tiers.TITANITE, 3.0f, 1.6f,1.75f, 0.0f, 2, 0,0,0,0,0,0,0,0,127,8,0.1f, 1,new Item.Properties()));
+			() -> new BrokenStraightsword(Tiers.TITANITE, 3.0f, 1.6f,1.75f, 0.0f, 3,2, 0,0,0,0,0,0,0,0,127,8,0.1f, 1,new Item.Properties()));
 	public static final DeferredHolder<Item,BanditKnife> BANDIT_KNIFE = ITEMS.register("bandit_knife",
-			() -> new BanditKnife(Tiers.TITANITE, 3.0f, 2.4f, 2.25f,0.0f, 2, 3,0,0,0,0,0,0,0,63,6,0.18f, 1,new Item.Properties()));
+			() -> new BanditKnife(Tiers.TITANITE, 3.0f, 2.4f, 2.25f,0.0f, 2, 3,3,0,0,0,0,0,0,0,63,6,0.18f, 1,new Item.Properties()));
 	public static final DeferredHolder<Item,Longsword> LONGSWORD = ITEMS.register("longsword",
-			() -> new Longsword(Tiers.TITANITE, 7.0f, 1.6f, 3.25f,0.0f, 6, 0,0,0,0,0,0,0,0,225,8,0.1f, 2,new Item.Properties()));
+			() -> new Longsword(Tiers.TITANITE, 7.0f, 1.6f, 3.25f,0.0f, 4,6, 0,0,0,0,0,0,0,0,225,8,0.1f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,DarkSword> DARKSWORD = ITEMS.register("dark_sword",
-			() -> new DarkSword(Tiers.TITANITE, 7.5f, 1.5f, 3.0f,0.05f, 6, 0,0,0,0,0,0,0,0,1024,10,0.0975f, 2,new Item.Properties()));
+			() -> new DarkSword(Tiers.TITANITE, 7.5f, 1.5f, 3.0f,0.05f, 5,6, 0,0,0,0,0,0,0,0,1024,10,0.0975f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Scimitar> SCIMITAR = ITEMS.register("scimitar",
-			() -> new Scimitar(Tiers.TITANITE, 5.0f, 1.9f,3.0f, -0.2f, 4, 0,0,0,0,0,0,0,0,225,8,0.14f, 2,new Item.Properties()));
+			() -> new Scimitar(Tiers.TITANITE, 5.0f, 1.9f,3.0f, -0.2f, 3,4, 0,0,0,0,0,0,0,0,225,8,0.14f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Falchion> FALCHION = ITEMS.register("falchion",
-			() -> new Falchion(Tiers.TITANITE, 6.0f, 1.7f,3.2f, -0.1f, 5,0,0,0,0,0,0,0, 0,275,7,0.13f, 2,new Item.Properties()));
+			() -> new Falchion(Tiers.TITANITE, 6.0f, 1.7f,3.2f, -0.1f, 4,5,0,0,0,0,0,0,0, 0,275,7,0.13f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Shotel> SHOTEL = ITEMS.register("shotel",
-			() -> new Shotel(Tiers.TITANITE, 5.5f, 1.8f,3.0f, -0.2f, 4,0,0,0,0,0,0,0, 0,275,7,0.14f, 2,new Item.Properties()));
+			() -> new Shotel(Tiers.TITANITE, 5.5f, 1.8f,3.0f, -0.2f, 3,4,0,0,0,0,0,0,0, 0,275,7,0.14f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Shotel> CARTHUS_SHOTEL = ITEMS.register("carthus_shotel",
-			() -> new Shotel(Tiers.TITANITE, 5.5f, 1.8f,3.1f, -0.2f, 5, 1,0,0,0,0,0,0,0,275,7,0.14f, 2,new Item.Properties()));
+			() -> new Shotel(Tiers.TITANITE, 5.5f, 1.8f,3.1f, -0.2f, 4,5, 1,0,0,0,0,0,0,0,275,7,0.14f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,CurvedGreatsword> CARTHUS_CURVED_GREATSWORD= ITEMS.register("carthus_curved_greatsword",
-			() -> new CurvedGreatsword(Tiers.TITANITE, 7.0f, 1.6f,3.75f, 0.2f, 7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
+			() -> new CurvedGreatsword(Tiers.TITANITE, 7.0f, 1.6f,3.75f, 0.2f, 6,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Claymore> CLAYMORE = ITEMS.register("claymore",
-			() -> new Claymore(Tiers.TITANITE, 9.0f, 1.2f, 3.6f, 0.4f, 12,0,0,0,0,0,0,0, 0,500,7,0.09f, 3,new Item.Properties()));
+			() -> new Claymore(Tiers.TITANITE, 9.0f, 1.2f, 3.6f, 0.4f, 7,12,0,0,0,0,0,0,0, 0,500,7,0.09f, 3,new Item.Properties()));
 	public static final DeferredHolder<Item,Flamberge> FLAMBERGE = ITEMS.register("flamberge",
-			() -> new Flamberge(Tiers.TITANITE, 8.5f, 1.2f, 3.6f,0.3f, 11,4, 0,0,0,0,0,0,1,400,6,0.09f, 3,new Item.Properties()));
+			() -> new Flamberge(Tiers.TITANITE, 8.5f, 1.2f, 3.6f,0.3f, 7,11,4, 0,0,0,0,0,0,1,400,6,0.09f, 3,new Item.Properties()));
 	public static final DeferredHolder<Item,Zweihander> ZWEIHANDER = ITEMS.register("zweihander",
-			() -> new Zweihander(Tiers.TITANITE, 10.5f, 1.0f, 4.0f,0.8f, 14, 0,0,0,0,0,0,0,0,1024,15,0.07f, 5,new Item.Properties()));
+			() -> new Zweihander(Tiers.TITANITE, 10.5f, 1.0f, 4.0f,0.8f, 9,14, 0,0,0,0,0,0,0,0,1024,15,0.07f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Scimitar> BANDIT_CURVED_SWORD = ITEMS.register("bandit_curved_sword",
-			() -> new Scimitar(Tiers.TITANITE, 6.0f, 1.6f, 3.15f,-0.2f, 4, 0,0,0,0,0,0,0,0,250,8,0.14f, 2,new Item.Properties()));
+			() -> new Scimitar(Tiers.TITANITE, 6.0f, 1.6f, 3.15f,-0.2f, 4,4, 0,0,0,0,0,0,0,0,250,8,0.14f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Spear> SPEAR = ITEMS.register("spear",
-			() -> new Spear(Tiers.TITANITE, 5.0f, 2.0f,4.5f, -0.1f, 4, 0,0,0,0,0,0,0,0,1350,10,0.13f, 1,new Item.Properties()));
+			() -> new Spear(Tiers.TITANITE, 5.0f, 2.0f,4.5f, -0.1f, 3,4, 0,0,0,0,0,0,0,0,1350,10,0.13f, 1,new Item.Properties()));
 	public static final DeferredHolder<Item,GraveScythe> GRAVE_SCYTHE= ITEMS.register("grave_scythe",
-			() -> new GraveScythe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
+			() -> new GraveScythe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 5,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Uchigatana> UCHIGATANA = ITEMS.register("uchigatana",
-			() -> new Uchigatana(Tiers.TITANITE, 6.0f, 1.7f,3.5f, 0.1f, 5,2,0,0,0,0,0,0, 0,200,15,0.11f, 2,new Item.Properties()));
+			() -> new Uchigatana(Tiers.TITANITE, 6.0f, 1.7f,3.5f, 0.1f, 3,5,2,0,0,0,0,0,0, 0,200,15,0.11f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> BATTLE_AXE = ITEMS.register("battle_axe",
-			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
+			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 4,6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Greataxe> EXECUTIONER_GREATAXE = ITEMS.register("executioner_greataxe",
-			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 4.0f,0.4f, 10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
+			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 4.0f,0.4f, 11,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
 	public static final DeferredHolder<Item,Greataxe> CRESCENT_MOON_GREATAXE = ITEMS.register("crescent_moon_greataxe",
-			() -> new Greataxe(Tiers.TITANITE, 9.0f, 1.2f, 4.25f,0.4f, 10, 0,0,0,0,0,0,0,0,225,8,0.08f, 3,new Item.Properties()));
+			() -> new Greataxe(Tiers.TITANITE, 9.0f, 1.2f, 4.25f,0.4f, 10,10, 0,0,0,0,0,0,0,0,225,8,0.08f, 3,new Item.Properties()));
 
 
 	public static final DeferredHolder<Item,Weapon> HUNTSMAN_AXE = ITEMS.register("hunting_axe",
-			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
+			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 5,6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Scimitar> HUNTSMAN_CUTLASS = ITEMS.register("huntsman_cutlass",
-			() -> new Scimitar(Tiers.TITANITE, 5.0f, 1.9f,3.0f, -0.2f, 4, 0,0,0,0,0,0,0,0,225,8,0.11f, 2,new Item.Properties()));
+			() -> new Scimitar(Tiers.TITANITE, 5.0f, 1.9f,3.0f, -0.2f, 4,4, 0,0,0,0,0,0,0,0,225,8,0.11f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> HUNTSMAN_PITCHFORK = ITEMS.register("huntsman_pitchfork",
-			() -> new Spear(Tiers.TITANITE, 5.0f, 1.9f,3.8f, -0.2f, 4, 0,0,0,0,0,0,0,0,225,8,0.12f, 2,new Item.Properties()));
+			() -> new Spear(Tiers.TITANITE, 5.0f, 1.9f,3.8f, -0.2f, 3,4, 0,0,0,0,0,0,0,0,225,8,0.12f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> CHURCH_SCYTHE= ITEMS.register("church_scythe",
-			() -> new ChurchScythe(Tiers.TITANITE, 7.5f, 1.6f,4.5f, 0.2f, 7, 0,0,0,0,0,0,1,0,325,12,0.105f, 5,new Item.Properties()));
+			() -> new ChurchScythe(Tiers.TITANITE, 7.5f, 1.6f,4.5f, 0.2f, 5,7, 0,0,0,0,0,0,1,0,325,12,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> CHURCH_SCYTHE_UNLIT = ITEMS.register("church_scythe_unlit",
-			() -> new ChurchScythe(Tiers.TITANITE, 7.5f, 1.6f,4.5f, 0.2f, 7, 0,0,0,0,0,0,1,0,325,12,0.105f, 5,new Item.Properties()));
+			() -> new ChurchScythe(Tiers.TITANITE, 7.5f, 1.6f,4.5f, 0.2f, 5,7, 0,0,0,0,0,0,1,0,325,12,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> CHURCH_CANE = ITEMS.register("church_cane",
-			() -> new Weapon(Tiers.TITANITE, 4.0f, 1.4f, 2.5f,0.1f, 6, 0,0,0,0,0,0,0,0,255,8,0.1f, 0,new Item.Properties()));
+			() -> new Weapon(Tiers.TITANITE, 4.0f, 1.4f, 2.5f,0.1f, 3,6, 0,0,0,0,0,0,0,0,255,8,0.1f, 0,new Item.Properties()));
 	public static final DeferredHolder<Item,Spear> CRUCIFIX = ITEMS.register("crucifix",
-			() -> new Spear(Tiers.TITANITE, 6.0f, 1.2f,4.0f, 0.2f, 6, 0,0,0,0,1, 0,1,0,1350,10,0.08f, 2,new Item.Properties()));
+			() -> new Spear(Tiers.TITANITE, 6.0f, 1.2f,4.0f, 0.2f, 4,6, 0,0,0,0,1, 0,1,0,1350,10,0.08f, 2,new Item.Properties()));
 	//Staves
 	public static final DeferredHolder<Item,SorcererStaff> SORCERER_STAFF_A = ITEMS.register("sorcerer_staff_a",
 			() -> new SorcererStaff(2.0f, 128, 0, new Item.Properties().rarity(Rarity.COMMON)));
@@ -135,42 +135,42 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> QUICKSILVER_BULLET = ITEMS.register("quicksilver_bullet",
 			() -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(24)));
 	public static final DeferredHolder<Item,Pistol> HUNTER_PISTOL = ITEMS.register("hunter_pistol",
-			() -> new Pistol(6.0f, 18,2,0.4f,0.5f, 8, 0,0,1, 255, 5, new Item.Properties().rarity(Rarity.UNCOMMON)));
+			() -> new Pistol(6.0f, 18,3,2,0.4f,0.5f, 8, 0,0,1, 255, 5, new Item.Properties().rarity(Rarity.UNCOMMON)));
 	public static final DeferredHolder<Item,Shotgun> BLUNDERBUSS = ITEMS.register("blunderbuss",
-			() -> new Shotgun(10.0f, 24,2,0.3f,0.25f, 10, 0,0,1, 127, 0.4f, 0.4f, 5, new Item.Properties().rarity(Rarity.UNCOMMON)));
+			() -> new Shotgun(10.0f, 24,4,2,0.3f,0.25f, 10, 0,0,1, 127, 0.4f, 0.4f, 5, new Item.Properties().rarity(Rarity.UNCOMMON)));
 	public static final DeferredHolder<Item,Pistol> EVELYN = ITEMS.register("evelyn",
-			() -> new Pistol(6.5f, 12,2,0.3f,0.5f, 10, 0,0,1, 511, 10, new Item.Properties().rarity(Rarity.RARE)));
+			() -> new Pistol(6.5f, 12,3,2,0.3f,0.5f, 10, 0,0,1, 511, 10, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,Pistol> REPEATING_PISTOL = ITEMS.register("repeating_pistol",
-			() -> new Pistol(16.0f, 28,6,0.5f,0.5f, 12, 0,0,2, 511, 8, new Item.Properties().rarity(Rarity.RARE)));
+			() -> new Pistol(16.0f, 28,4,6,0.5f,0.5f, 12, 0,0,2, 511, 8, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,GatlingGun> GATLING_GUN = ITEMS.register("gatling_gun",
-			() -> new GatlingGun(2.0f, 60,0,0.5f,0.5f, 12, 0,0,1, 511, 5, new Item.Properties().rarity(Rarity.RARE)));
+			() -> new GatlingGun(2.0f, 60,1,0,0.5f,0.5f, 12, 0,0,1, 511, 5, new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,Pistol> MUSKET = ITEMS.register("musket",
-			() -> new Pistol(8.0f, 24,2,0.4f,0.5f, 16, 0,0,1, 511, 8, new Item.Properties().rarity(Rarity.UNCOMMON)));
+			() -> new Pistol(8.0f, 24,4,2,0.4f,0.5f, 16, 0,0,1, 511, 8, new Item.Properties().rarity(Rarity.UNCOMMON)));
 	//Alchemy
 	public static final DeferredHolder<Item,Weapon> HUNTER_TORCH= ITEMS.register("hunter_torch",
-			() -> new Weapon(Tiers.TITANITE, 1.0f, 1.9f, 2.5f,-0.2f, 4, 0,0,0,0,0,2,0,0,225,8,0.10f, 2,new Item.Properties()));
+			() -> new Weapon(Tiers.TITANITE, 1.0f, 1.9f, 2.5f,-0.2f, 3,4, 0,0,0,0,0,2,0,0,225,8,0.10f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,LanternNormal> LANTERN = ITEMS.register("lantern",
 			() -> new LanternNormal(new Item.Properties().rarity(Rarity.UNCOMMON)));
 	public static final DeferredHolder<Item,Flamesprayer> FLAMESPRAYER = ITEMS.register("flamesprayer",
-			() -> new Flamesprayer(4.0f, 30, 10, 0.1f, 1, 0.8f, 1, 1, 256, 15, new Item.Properties().rarity(Rarity.UNCOMMON)));
+			() -> new Flamesprayer(4.0f, 30, 10, 0.1f, 1, 0.8f, 2,1, 1, 256, 15, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
 	//Throwing
 	public static final DeferredHolder<Item,ThrowingKnife> THROWING_KNIFE = ITEMS.register("throwing_knife",
-			() -> new ThrowingKnife(4.0f, 18,0,0,6, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
+			() -> new ThrowingKnife(4.0f, 18,0,0,4,6, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
 	public static final DeferredHolder<Item,ThrowingKnife> BONE_KNIFE = ITEMS.register("bone_knife",
-			() -> new ThrowingKnife(2.0f, 12,0,0,3,0.22f, 0.012f, true,0,  new Item.Properties().stacksTo(24)));
+			() -> new ThrowingKnife(2.0f, 12,0,0,3,3,0.22f, 0.012f, true,0,  new Item.Properties().stacksTo(24)));
 	public static final DeferredHolder<Item,ThrowingKnife> BLOOD_KNIFE = ITEMS.register("blood_knife",
-			() -> new ThrowingKnife(2.0f, 18,2,0,4, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
+			() -> new ThrowingKnife(2.0f, 18,2,0,3,4, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
 	public static final DeferredHolder<Item,ThrowingKnife> POISON_KNIFE = ITEMS.register("poison_knife",
-			() -> new ThrowingKnife(2.0f, 18,0,2,4, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
+			() -> new ThrowingKnife(2.0f, 18,0,2,3,4, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
 	public static final DeferredHolder<Item,ThrowingKnife> KUKRI = ITEMS.register("kukri",
-			() -> new ThrowingKnife(6.0f, 24,4,0,8, 0.3f, 0.008f, false,1,new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(16)));
+			() -> new ThrowingKnife(6.0f, 24,4,0,6,8, 0.3f, 0.008f, false,1,new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(16)));
 	public static final DeferredHolder<Item,Firebomb> FIREBOMB = ITEMS.register("firebomb",
-			() -> new Firebomb(6.0f, 24, 8, 0, new Item.Properties().stacksTo(20)));
+			() -> new Firebomb(6.0f, 24, 6,8, 0, new Item.Properties().stacksTo(20)));
 	public static final DeferredHolder<Item,Firebomb> BLACK_FIREBOMB = ITEMS.register("black_firebomb",
-			() -> new Firebomb(10.0f, 24, 8, 1, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(12)));
+			() -> new Firebomb(10.0f, 24, 6,8, 1, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(12)));
 	public static final DeferredHolder<Item,MolotovCocktail> MOLOTOV = ITEMS.register("molotov",
-			() -> new MolotovCocktail(6.0f, 28, 4, new Item.Properties().stacksTo(16)));
+			() -> new MolotovCocktail(6.0f, 28, 4,4, new Item.Properties().stacksTo(16)));
 
 	//Armour
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_HAT = ITEMS.register("hunter_hat",

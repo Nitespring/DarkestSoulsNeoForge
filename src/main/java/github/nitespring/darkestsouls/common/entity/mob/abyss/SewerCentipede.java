@@ -1,7 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.mob.abyss;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.projectile.TrashParasites;
 import github.nitespring.darkestsouls.common.entity.projectile.TrashPoison;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
@@ -17,10 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.Spider;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -232,7 +227,7 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 
 
 	@Override
-	public int getMaxPoise() {return 28;}
+	public int getMaxPosture() {return 28;}
 
 	@Override
 	public int getBloodResistance() {return 12;}
@@ -256,7 +251,7 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 		switch(this.getAnimationState()) {
 			case 1:this.getNavigation().stop();
 				if(getAnimationTick()>=50) {
-					this.resetPoiseHealth();
+					this.resetPostureHealth();
 					this.getNavigation().stop();
 					setAnimationTick(0);
 					setAnimationState(0);

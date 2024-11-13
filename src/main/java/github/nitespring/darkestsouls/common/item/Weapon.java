@@ -22,7 +22,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -44,6 +43,7 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
     private int maxTargets;
 
     public int poisedmg;
+    public int posturedmg;
     private int bloodAttack;
     private int poisonAttack;
     private int rotAttack;
@@ -59,7 +59,7 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
     protected static final ResourceLocation BASE_MOVEMENT_SPEED_ID = ResourceLocation.withDefaultNamespace("base_attack_speed");
     protected static final ResourceLocation BASE_ATTACK_REACH_ID = ResourceLocation.withDefaultNamespace("base_attack_reach");
 
-    public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int blood, int poison, int frost, int rot, int death, int fire, int holy,int serrated, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
+    public Weapon(Tier tier, float attack, float speed,float reach, float knockback, int poise, int posture, int blood, int poison, int frost, int rot, int death, int fire, int holy,int serrated, int durability, int enchantability, float movementSpeed, int maxTargets, Properties properties) {
         super(properties.stacksTo(1).durability(durability).attributes(
                 Weapon.createAttributes(
                         attack-1.0f, reach-3.0, speed-4.0f, knockback, movementSpeed-0.1f)));
@@ -68,6 +68,7 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
         this.attackSpeed=speed-4.0f;
         this.attackKnockback=knockback;
         this.poisedmg=poise;
+        this.posturedmg=posture;
         this.durability=durability;
         this.movementSpeed=movementSpeed-0.1f;
         this.enchantability=enchantability;
@@ -165,6 +166,13 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
             return this.poisedmg;
         }
     }
+    public int getPostureDamage(Player playerIn, ItemStack item) {
+        if (playerIn.hasEffect(MobEffects.DAMAGE_BOOST)) {
+            return this.posturedmg + (int) 3.0f * playerIn.getEffect(MobEffects.DAMAGE_BOOST).getAmplifier();
+        }else{
+            return this.posturedmg;
+        }
+    }
     public int getDurability() {return this.durability;}
     public int getBloodAttack(Player playerIn, ItemStack item){
         if(item.isEnchanted()&&item.getEnchantmentLevel(playerIn.level().registryAccess().registry(Registries.ENCHANTMENT).get().getHolder(EnchantmentInit.BLOODBLADE).get())>=1) {
@@ -224,6 +232,7 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
         if(entityIn instanceof Player playerIn) {
             if (target instanceof DarkestSoulsAbstractEntity) {
                 ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage(playerIn, stackIn));
+                ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.getPostureDamage(playerIn, stackIn));
             }
             if (!target.fireImmune()) {
                 if (this.getFireAttack(playerIn, stackIn) >= 1) {

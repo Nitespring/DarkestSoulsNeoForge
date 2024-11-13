@@ -1,13 +1,9 @@
 package github.nitespring.darkestsouls.common.entity.mob.abyss;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.mob.hollow.HollowAssassin;
-import github.nitespring.darkestsouls.common.entity.projectile.throwable.ThrowingKnifeEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
-import github.nitespring.darkestsouls.core.init.ItemInit;
 import github.nitespring.darkestsouls.core.init.SoundInit;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
@@ -16,7 +12,6 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.AABB;
@@ -24,7 +19,6 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Random;
-import org.joml.Vector3f;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -90,6 +84,9 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
             switch(animState) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.darkwraith.stun"));
+                    break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.darkwraith.hit_stun"));
                     break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.darkwraith.shield.arm"));
@@ -219,7 +216,9 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
     }
 
     @Override
-    public int getMaxPoise() {return 36;}
+    public int getMaxPosture() {return 42;}
+    @Override
+    public int getMaxPoise() {return 18;}
     @Override
     public boolean canDrownInFluidType(FluidType type) {return false;}
     @Override
@@ -253,6 +252,15 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
                 this.getNavigation().stop();
                 this.getNavigation().stop();
                 if(getAnimationTick()>=55) {
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
+                    this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();
                     setAnimationState(0);

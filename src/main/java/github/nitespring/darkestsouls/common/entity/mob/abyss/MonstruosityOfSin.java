@@ -5,7 +5,6 @@ import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.SoundInit;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntitySelector;
@@ -14,11 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.Path;
@@ -154,7 +148,7 @@ public class MonstruosityOfSin extends DarkestSoulsAbstractEntity implements Geo
 	}
 
 	@Override
-	public int getMaxPoise() {return 46;}
+	public int getMaxPosture() {return 46;}
 
 	@Override
 	public int getBloodResistance() {return 5;}
@@ -197,7 +191,7 @@ public class MonstruosityOfSin extends DarkestSoulsAbstractEntity implements Geo
 				if(getAnimationTick()>=50) {
 					this.getNavigation().stop();
 					setAnimationTick(0);
-					this.resetPoiseHealth();
+					this.resetPostureHealth();
 					setAnimationState(0);
 				}
 				break;

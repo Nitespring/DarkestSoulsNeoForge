@@ -32,7 +32,7 @@ public class ThrowingKnife extends Item {
 
 
 
-    public ThrowingKnife(float attackDamage, int useCooldown, int bloodDamage, int poisonDamage, int poiseDamage, float flyingPower, float gravPower, boolean shouldRotate, int type, Properties properties) {
+    public ThrowingKnife(float attackDamage, int useCooldown, int bloodDamage, int poisonDamage, int poiseDamage, int postureDamage, float flyingPower, float gravPower, boolean shouldRotate, int type, Properties properties) {
         super(properties);
         this.attackDamage=attackDamage;
         this.useCooldown=useCooldown;

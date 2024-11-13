@@ -19,8 +19,8 @@ import java.util.function.Consumer;
 public class Pistol extends Gun{
 
 
-    public Pistol(float damage, int cooldown, int poise, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, int enchantability, Properties properties) {
-        super(damage, cooldown, poise, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
+    public Pistol(float damage, int cooldown, int poise, int posture, float size, float flyingPower, int flyingTime, int ricochet, int pierce, int ammoAmount, int durability, int enchantability, Properties properties) {
+        super(damage, cooldown, poise, posture, size, flyingPower, flyingTime, ricochet, pierce, ammoAmount, durability, enchantability, properties);
     }
 
 

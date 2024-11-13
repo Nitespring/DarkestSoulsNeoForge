@@ -34,7 +34,9 @@ public abstract class ChurchDoctor extends DarkestSoulsAbstractEntity {
     }
 
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 36;}
+    @Override
+    public int getMaxPoise() {return 16;}
     @Override
     public int getBloodResistance() {return 10;}
     @Override

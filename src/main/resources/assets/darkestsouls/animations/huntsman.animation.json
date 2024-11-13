@@ -4811,6 +4811,63 @@
 					}
 				}
 			}
+		},
+		"animation.huntsman.hit_stun": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0.5, 0]
+				},
+				"hips": {
+					"rotation": [0, 0, -5],
+					"position": [0, 0, 0]
+				},
+				"waist": {
+					"rotation": [-17.5, 0, 2.5]
+				},
+				"chest": {
+					"rotation": [9.91615, 1.29876, -4.88733]
+				},
+				"head": {
+					"rotation": [-5.01586, -2.05533, -5.19821]
+				},
+				"right_arm": {
+					"rotation": [27.5, 0, 15]
+				},
+				"right_forearm": {
+					"rotation": [-30, 0, 0]
+				},
+				"right_hand": {
+					"rotation": [10, 0, 0]
+				},
+				"left_arm": {
+					"rotation": [27.14233, -4.59902, -3.61073]
+				},
+				"left_forearm": {
+					"rotation": [-40, 0, 0]
+				},
+				"left_hand": {
+					"scale": 0
+				},
+				"coat_mid": {
+					"rotation": [-7.38733, 1.29876, 7.41615]
+				},
+				"coat_low": {
+					"rotation": [9.96271, -0.86717, -0.07558]
+				},
+				"right_tigh": {
+					"rotation": [-10, 0, 0]
+				},
+				"right_leg": {
+					"rotation": [15, 0, 0]
+				},
+				"left_tigh": {
+					"rotation": [0, 0, -10]
+				},
+				"left_leg": {
+					"rotation": [15, 0, 0]
+				}
+			}
 		}
 	}
 }

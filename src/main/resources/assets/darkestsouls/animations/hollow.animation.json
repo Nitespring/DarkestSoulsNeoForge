@@ -1,6 +1,87 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.hollow.hit_stun": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"waist": {
+					"rotation": {
+						"0.0": [-2.5, 0, 0],
+						"0.25": [-19.9905, -0.21782, -4.99527]
+					}
+				},
+				"chest": {
+					"rotation": {
+						"0.0": [-20, 0, 0],
+						"0.25": [0.0701, -1.70818, -4.69986]
+					}
+				},
+				"cape": {
+					"rotation": [35, 0, 0]
+				},
+				"cape1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-14.78217, 2.57594, 9.6658]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [2.5, 0, 0]
+					}
+				},
+				"right_arm": {
+					"rotation": {
+						"0.0": [17.5, 0, 37.5],
+						"0.25": [27.25002, 2.99318, 27.95411]
+					}
+				},
+				"right_forearm": {
+					"rotation": [-30, 0, 0]
+				},
+				"right_hand": {
+					"rotation": [32.5, 0, 0]
+				},
+				"left_arm": {
+					"rotation": {
+						"0.0": [20, 0, -45],
+						"0.25": [35.39244, -9.08661, -18.93337]
+					}
+				},
+				"left_forearm": {
+					"rotation": [-32.5, 0, 0]
+				},
+				"left_hand": {
+					"rotation": [37.5, 0, 0]
+				},
+				"skirt": {
+					"rotation": {
+						"0.0": [7.5, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"skirt2": {
+					"rotation": {
+						"0.0": [10, 0, 0],
+						"0.25": [5, 0, 0]
+					}
+				},
+				"right_thigh": {
+					"rotation": [-2.5, 0, 2.5]
+				},
+				"right_leg": {
+					"rotation": [7.5, 0, 0]
+				},
+				"left_thigh": {
+					"rotation": [2.5, 0, -2.5]
+				},
+				"left_leg": {
+					"rotation": [10, 0, 0]
+				}
+			}
+		},
 		"animation.hollow.pose": {
 			"loop": true,
 			"bones": {

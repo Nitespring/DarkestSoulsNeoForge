@@ -29,7 +29,9 @@ public abstract class Hollow extends DarkestSoulsAbstractEntity {
         super(p_21683_, p_21684_);
     }
     @Override
-    public int getMaxPoise() {return 12;}
+    public int getMaxPosture() {return 22;}
+    @Override
+    public int getMaxPoise() {return 10;}
     @Override
     public int getBloodResistance() {return 6;}
     @Override

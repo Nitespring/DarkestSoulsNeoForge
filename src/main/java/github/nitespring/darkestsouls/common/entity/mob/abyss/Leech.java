@@ -2,31 +2,19 @@ package github.nitespring.darkestsouls.common.entity.mob.abyss;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.TrashParasites;
-import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstParent;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
-import github.nitespring.darkestsouls.core.init.EffectInit;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -180,7 +168,7 @@ public class Leech extends DarkestSoulsAbstractEntity implements GeoEntity{
 	}
 
 	@Override
-	public int getMaxPoise() {return 28;}
+	public int getMaxPosture() {return 28;}
 	@Override
 	public int getBloodResistance() {return 6;}
 
@@ -230,7 +218,7 @@ public class Leech extends DarkestSoulsAbstractEntity implements GeoEntity{
 			case 1:
 				this.getNavigation().stop();
 				if(getAnimationTick()>=50) {
-					this.resetPoiseHealth();
+					this.resetPostureHealth();
 					this.getNavigation().stop();
 					setAnimationTick(0);
 					setAnimationState(0);

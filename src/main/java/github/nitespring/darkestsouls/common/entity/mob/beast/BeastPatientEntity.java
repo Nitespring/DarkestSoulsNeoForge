@@ -13,7 +13,9 @@ public abstract class BeastPatientEntity extends Beast{
 
     public int getBeastPatientType() {return 0;}
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 30;}
+    @Override
+    public int getMaxPoise() {return 12;}
     @Override
     public int getBloodResistance() {return 8;}
 

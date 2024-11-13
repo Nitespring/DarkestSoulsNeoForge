@@ -33,7 +33,9 @@ public abstract class Huntsman extends DarkestSoulsAbstractEntity {
     }
 
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 28;}
+    @Override
+    public int getMaxPoise() {return 11;}
     @Override
     public int getBloodResistance() {return 10;}
     @Override

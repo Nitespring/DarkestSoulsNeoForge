@@ -3,29 +3,17 @@ package github.nitespring.darkestsouls.common.entity.mob.hollow;
 import github.nitespring.darkestsouls.common.entity.projectile.throwable.FirebombEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.behavior.Swim;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.util.DefaultRandomPos;
-import net.minecraft.world.entity.animal.Cow;
-import net.minecraft.world.entity.monster.Drowned;
-import net.minecraft.world.entity.monster.Pillager;
-import net.minecraft.world.entity.monster.Vindicator;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.Path;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -96,6 +84,9 @@ public class HollowSoldierLongsword extends Hollow implements GeoEntity {
             switch(animState) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.stun"));
+                    break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.hit_stun"));
                     break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.longsword.attack1"));
@@ -280,6 +271,15 @@ public class HollowSoldierLongsword extends Hollow implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

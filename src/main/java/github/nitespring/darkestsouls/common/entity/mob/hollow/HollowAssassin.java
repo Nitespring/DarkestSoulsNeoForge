@@ -1,11 +1,9 @@
 package github.nitespring.darkestsouls.common.entity.mob.hollow;
 
-import github.nitespring.darkestsouls.common.entity.projectile.throwable.FirebombEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.throwable.ThrowingKnifeEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
@@ -30,7 +28,6 @@ import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
-import java.util.Random;
 
 public class HollowAssassin extends Hollow implements GeoEntity {
 
@@ -88,6 +85,9 @@ public class HollowAssassin extends Hollow implements GeoEntity {
             switch(animState) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.stun"));
+                    break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.hit_stun"));
                     break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.hollow.dash_right"));
@@ -240,6 +240,15 @@ public class HollowAssassin extends Hollow implements GeoEntity {
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

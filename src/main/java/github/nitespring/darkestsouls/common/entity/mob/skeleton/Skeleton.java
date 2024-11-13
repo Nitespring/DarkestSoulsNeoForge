@@ -30,7 +30,9 @@ public abstract class Skeleton extends DarkestSoulsAbstractEntity {
     }
 
     @Override
-    public int getMaxPoise() {return 20;}
+    public int getMaxPosture() {return 24;}
+    @Override
+    public int getMaxPoise() {return 12;}
     @Override
     public int getBloodResistance() {return 999;}
     @Override

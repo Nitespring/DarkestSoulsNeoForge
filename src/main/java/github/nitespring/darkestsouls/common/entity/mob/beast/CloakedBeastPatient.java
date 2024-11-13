@@ -78,6 +78,9 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.hit_stun"));
+                    break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.beast_patient.scream"));
                     break;
@@ -139,7 +142,9 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
     @Override
     public int getBeastPatientType() {return 1;}
     @Override
-    public int getMaxPoise() {return 24;}
+    public int getMaxPosture() {return 30;}
+    @Override
+    public int getMaxPoise() {return 12;}
     @Override
     public int getBloodResistance() {return 9;}
 
@@ -231,6 +236,15 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
                     this.playSound(SoundEvents.BLAZE_HURT);
                 }
                 if(getAnimationTick()>=30) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

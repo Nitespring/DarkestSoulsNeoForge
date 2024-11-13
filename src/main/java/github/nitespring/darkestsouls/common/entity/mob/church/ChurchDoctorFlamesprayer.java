@@ -1,11 +1,9 @@
 package github.nitespring.darkestsouls.common.entity.mob.church;
 
-import github.nitespring.darkestsouls.common.entity.projectile.weapon.Bullet;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.Flame;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
@@ -74,6 +72,9 @@ public class ChurchDoctorFlamesprayer extends ChurchDoctor implements GeoEntity 
             switch(animState) {
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.stun"));
+                    break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.hit_stun"));
                     break;
                 case 21:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.church_doctor.flamesprayer.shoot"));
@@ -219,6 +220,15 @@ public class ChurchDoctorFlamesprayer extends ChurchDoctor implements GeoEntity 
             case 1:
                 this.getNavigation().stop();
                 if (getAnimationTick() >= 85) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

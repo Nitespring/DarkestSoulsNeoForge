@@ -16,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import github.nitespring.darkestsouls.core.interfaces.CustomItemSupplier;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -148,7 +147,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
                 this.rotationTick = 0;
                 target.hurt(target.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), this.attackPower);
                 if (target instanceof DarkestSoulsAbstractEntity dsMob) {
-                    dsMob.damagePoiseHealth(this.poiseDamage);
+                    dsMob.damagePostureHealth(this.poiseDamage);
                 }
                 if (this.getPoisonDamage() >= 1) {
                     target.addEffect(new MobEffectInstance(MobEffects.POISON, 60, this.poisonDamage - 1));

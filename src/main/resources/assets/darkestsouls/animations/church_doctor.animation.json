@@ -6826,6 +6826,47 @@
 					}
 				}
 			}
+		},
+		"animation.church_doctor.hit_stun": {
+			"loop": true,
+			"bones": {
+				"bodyMid": {
+					"rotation": [2.5, 0, 0]
+				},
+				"bodyHigh": {
+					"rotation": [12.5, 0, 0]
+				},
+				"bell": {
+					"rotation": [-25, 0, 0]
+				},
+				"head": {
+					"rotation": [17.53959, 6.27095, -3.26408]
+				},
+				"armRightHigh": {
+					"rotation": [-9.98436, 0.75155, 2.38443]
+				},
+				"armLeftHigh": {
+					"rotation": [-12.42287, -1.91134, -4.62111]
+				},
+				"coatMid": {
+					"rotation": [-2.5, 0, 0]
+				},
+				"coatLow": {
+					"rotation": [5, 0, 0]
+				},
+				"legRightHigh": {
+					"rotation": [-7.5, 0, 5]
+				},
+				"legRightLow": {
+					"rotation": [12.5, 0, 0]
+				},
+				"legLeftHigh": {
+					"rotation": [5, 0, -5]
+				},
+				"legLeftLow": {
+					"rotation": [10, 0, 0]
+				}
+			}
 		}
 	}
 }

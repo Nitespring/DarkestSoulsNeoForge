@@ -133,7 +133,7 @@ public class FirebombEntity extends AbstractHurtingProjectile{
                 livingentity.igniteForTicks(60);
                 if(livingentity.hurtTime<=0) {
                     if (livingentity instanceof DarkestSoulsAbstractEntity) {
-                        ((DarkestSoulsAbstractEntity) livingentity).damagePoiseHealth(this.poiseDamage);
+                        ((DarkestSoulsAbstractEntity) livingentity).damagePostureHealth(this.poiseDamage);
                     }
                     livingentity.hurt(this.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), this.getAttackDamage());
                 }

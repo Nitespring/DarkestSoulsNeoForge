@@ -23,7 +23,7 @@ public class Firebomb extends Item {
     private final int useCooldown;
     private final int poiseDamage;
     private final int type;
-    public Firebomb(float attackDamage, int useCooldown, int poiseDamage, int type,Properties properties) {
+    public Firebomb(float attackDamage, int useCooldown, int poiseDamage, int postureDamage, int type,Properties properties) {
         super(properties);
         this.attackDamage=attackDamage;
         this.useCooldown=useCooldown;

@@ -1,13 +1,10 @@
 package github.nitespring.darkestsouls.common.entity.mob.skeleton;
 
-import github.nitespring.darkestsouls.common.entity.mob.hollow.Hollow;
 import github.nitespring.darkestsouls.common.entity.projectile.throwable.ThrowingKnifeEntity;
-import github.nitespring.darkestsouls.common.entity.projectile.weapon.Flame;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
@@ -106,6 +103,9 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
                 case 1:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.tall_skeleton.stun"));
                     break;
+                case 2:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.tall_skeleton.hit_stun"));
+                    break;
                 case 11:
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.tall_skeleton.dodge_right"));
                     break;
@@ -182,7 +182,9 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
         return 1;
     }
     @Override
-    public int getMaxPoise() {return 28;}
+    public int getMaxPosture() {return 36;}
+    @Override
+    public int getMaxPoise() {return 16;}
     @Override
     public ItemStack getRightHandItem() {
         return ItemInit.CARTHUS_SHOTEL.get().getDefaultInstance();
@@ -266,6 +268,15 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
             case 1:
                 this.getNavigation().stop();
                 if(getAnimationTick()>=55) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    this.resetPostureHealth();
+                    setAnimationState(0);
+                }
+                break;
+            case 2:
+                this.getNavigation().stop();
+                if (getAnimationTick() >= 12) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

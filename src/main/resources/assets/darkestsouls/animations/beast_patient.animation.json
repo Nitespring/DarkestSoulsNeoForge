@@ -539,6 +539,142 @@
 				}
 			}
 		},
+		"animation.beast_patient.hit_stun": {
+			"loop": true,
+			"bones": {
+				"hips": {
+					"rotation": {
+						"vector": [7.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 1, 0]
+					}
+				},
+				"chest": {
+					"rotation": {
+						"vector": [4.98107, 0.43523, -4.98107]
+					},
+					"position": {
+						"vector": [-0.25, 0, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [33.93937, 16.18245, 4.89876]
+					}
+				},
+				"upperRightArm": {
+					"rotation": {
+						"vector": [23.95458, -2.82201, 16.7213]
+					}
+				},
+				"lowerRightArm": {
+					"rotation": {
+						"vector": [-32.5, 0, 0]
+					}
+				},
+				"upperLeftArm": {
+					"rotation": {
+						"vector": [4.64876, 36.22567, -6.38622]
+					}
+				},
+				"lowerLeftArm": {
+					"rotation": {
+						"vector": [-20.29485, 2.57382, -0.59842]
+					}
+				},
+				"upperLeftLeg": {
+					"rotation": {
+						"vector": [-31.81282, -8.80348, -8.90928]
+					}
+				},
+				"lowerLeftLeg": {
+					"rotation": {
+						"vector": [37.5, 0, 0]
+					}
+				},
+				"upperRightLeg": {
+					"rotation": {
+						"vector": [-11.5123, 10.07026, 11.17505]
+					}
+				},
+				"lowerRightLeg": {
+					"rotation": {
+						"vector": [35, 0, 0]
+					}
+				},
+				"waist": {
+					"rotation": {
+						"vector": [-14.87739, -1.93597, -7.24721]
+					}
+				},
+				"rightHand": {
+					"rotation": {
+						"vector": [0, -20, 0]
+					}
+				},
+				"rightFingers": {
+					"rotation": {
+						"vector": [0, 0, 15]
+					}
+				},
+				"rightTumb": {
+					"rotation": {
+						"vector": [0, 0, -17.5]
+					}
+				},
+				"leftFoot": {
+					"rotation": {
+						"vector": [-12.43123, 0.76144, 7.47417]
+					}
+				},
+				"rightFoot": {
+					"rotation": {
+						"vector": [-27.15993, -3.21132, -12.08681]
+					}
+				},
+				"cloak_head_overhang": {
+					"rotation": {
+						"vector": [-24.80445, 2.25061, 3.54469]
+					}
+				},
+				"cloak_arm_left": {
+					"rotation": {
+						"vector": [0, -5, 7.5]
+					}
+				},
+				"cloak_part_1": {
+					"rotation": {
+						"vector": [-4.98107, 0.43523, 4.98107]
+					}
+				},
+				"cloak_part_2": {
+					"rotation": {
+						"vector": [9.99067, -0.43399, 2.46207]
+					}
+				},
+				"cloack_part_3": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"cloak_arm_right": {
+					"rotation": {
+						"vector": [-2.20462, 12.3071, -10.23772]
+					}
+				},
+				"leftTumb": {
+					"rotation": {
+						"vector": [0, 0, 25]
+					}
+				},
+				"cloak_chest": {
+					"rotation": {
+						"vector": [2.5, 0, 0]
+					}
+				}
+			}
+		},
 		"animation.beast_patient.atk_r1": {
 			"animation_length": 2,
 			"bones": {

@@ -710,6 +710,54 @@
 				}
 			}
 		},
+		"animation.sin.hit_stun": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [-5, 0, 0],
+					"position": [0, -2, 0]
+				},
+				"bodysup": {
+					"rotation": [2.5, 0, 0]
+				},
+				"head": {
+					"rotation": [2.5, 0, 0]
+				},
+				"armrighttop": {
+					"rotation": [7.63074, 12.95254, -14.13252]
+				},
+				"armrightbottom": {
+					"rotation": [0, -37.5, 0]
+				},
+				"armlefttop": {
+					"rotation": [3.5191, -16.80851, 17.12103]
+				},
+				"armleftbottom": {
+					"rotation": [0, 58.56624, 0]
+				},
+				"legrighttop": {
+					"rotation": [-99.81338, 2.69286, 80.92653],
+					"position": [-3, -6, 0]
+				},
+				"legrightbottom": {
+					"rotation": [55, 0, 0]
+				},
+				"leglefttop": {
+					"rotation": [-102.59154, -3.74949, -80.71353],
+					"position": [2, -7, -1]
+				},
+				"legleftbottom": {
+					"rotation": [47.5, 0, 0]
+				},
+				"bodylow": {
+					"rotation": [5, 0, 0],
+					"position": [0, -4, 0]
+				},
+				"head_rotation": {
+					"rotation": [-5, 0, 0]
+				}
+			}
+		},
 		"animation.sin.stun": {
 			"loop": true,
 			"bones": {
