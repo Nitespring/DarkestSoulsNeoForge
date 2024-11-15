@@ -146,6 +146,12 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
     public float getSweepAttackDamage(Player playerIn, ItemStack stackIn){
         return 1.0F + (float)playerIn.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO) * getAttackDamage(playerIn,stackIn);
     }
+    public int getSweepPoiseDamage(Player playerIn, ItemStack stackIn){
+        return 1 + Math.round((float)playerIn.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO)*0.75f*getPoiseDamage(playerIn,stackIn));
+    }
+    public int getSweepPostureDamage(Player playerIn, ItemStack stackIn){
+        return 1 + Math.round((float)playerIn.getAttributeValue(Attributes.SWEEPING_DAMAGE_RATIO)*0.5f*getPostureDamage(playerIn,stackIn));
+    }
     public float getAttackSpeed() {return this.attackSpeed;}
     public float getAttackKnockback() {return this.attackKnockback;}
     public float getMovementSpeed() {return this.movementSpeed;}

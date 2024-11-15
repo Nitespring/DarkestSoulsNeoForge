@@ -48,8 +48,9 @@ public class FrayedBlade extends Weapon {
                 entity.setItemStack(stackIn);
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
-                        this.getAttackDamage(playerIn, stackIn) - 4,
-                        this.getPoiseDamage(playerIn, stackIn) - 7,
+                        Math.round(this.getSweepAttackDamage(playerIn, stackIn) *0.2f),
+                        Math.round(this.getSweepPoiseDamage(playerIn, stackIn) * 0.1f),
+                        Math.round(this.getSweepPostureDamage(playerIn, stackIn) *0.1f),
                         this.getFireAttack(playerIn, stackIn),
                         this.getSmiteAttack(playerIn, stackIn),
                         this.getBaneOfArthropodsAttack(playerIn, stackIn),

@@ -184,7 +184,7 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
     @Override
     public int getMaxPosture() {return 36;}
     @Override
-    public int getMaxPoise() {return 16;}
+    public int getMaxPoise() {return 12;}
     @Override
     public ItemStack getRightHandItem() {
         return ItemInit.CARTHUS_SHOTEL.get().getDefaultInstance();
@@ -276,7 +276,7 @@ public class SkeletonSwordsmanTwinShotels extends Skeleton implements GeoEntity 
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

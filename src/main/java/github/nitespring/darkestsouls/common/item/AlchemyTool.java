@@ -32,6 +32,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     private final float attackDamage;
     private final int useCooldown;
     private final int poiseDamage;
+    private final int postureDamage;
     private final int ammoAmount;
     private final int durability;
     private final int enchantability;
@@ -40,6 +41,7 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
         this.attackDamage = damage;
         this.useCooldown = cooldown;
         this.poiseDamage = poise;
+        this.postureDamage = posture;
         this.ammoAmount=ammoAmount;
         this.durability=durability;
         this.enchantability=enchantability;
@@ -62,6 +64,9 @@ public class AlchemyTool extends Item implements IAmmoConsumingItem{
     }
     public int getPoiseDamage(Player playerIn, ItemStack stackIn) {
         return poiseDamage;
+    }
+    public int getPostureDamage(Player playerIn, ItemStack stackIn) {
+        return postureDamage;
     }
     public float getLuck(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;

@@ -44,6 +44,7 @@ public class WeaponAttackEntity extends Entity {
     public int maxTargets=-1;
 
     public int poiseDmg=5;
+    public int postureDmg=5;
     public int bleed=0;
     public int poison=0;
     public int rot=0;
@@ -335,7 +336,8 @@ public class WeaponAttackEntity extends Entity {
                 }
 
                 if (target instanceof DarkestSoulsAbstractEntity /*&& this.itemStack!=null && this.getOwner()!=null*/){
-                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.poiseDmg);
+                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.poiseDmg);
+                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.postureDmg);
                 }
                 //System.out.println("entity damage " + damage+ mobTypeBonus);
                 this.hitEntities++;
@@ -377,10 +379,11 @@ public class WeaponAttackEntity extends Entity {
         this.playerDistance=distance;
     }
 
-    public void setDamage(float dmg, int poisedmg, int fire, float smite, float bane, float beastHunter, int bleed, int poison, int toxic, int rot, int frost, int wither){
+    public void setDamage(float dmg, int poisedmg,int postureDmg, int fire, float smite, float bane, float beastHunter, int bleed, int poison, int toxic, int rot, int frost, int wither){
         this.damage=dmg;
         //System.out.println(dmg);
         this.poiseDmg=poisedmg;
+        this.postureDmg=postureDmg;
         this.fire=fire;
         this.smite=smite;
         this.baneOfArthropods=bane;

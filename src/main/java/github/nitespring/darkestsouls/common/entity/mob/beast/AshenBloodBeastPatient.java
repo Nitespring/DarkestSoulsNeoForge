@@ -152,7 +152,7 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
     @Override
     public int getMaxPosture() {return 36;}
     @Override
-    public int getMaxPoise() {return 16;}
+    public int getMaxPoise() {return 12;}
     @Override
     public int getBloodResistance() {return 9;}
 
@@ -230,7 +230,7 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

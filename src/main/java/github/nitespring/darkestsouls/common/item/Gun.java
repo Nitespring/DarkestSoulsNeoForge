@@ -43,6 +43,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     private final float attackDamage;
     private final int useCooldown;
     private final int poiseDamage;
+    private final int postureDamage;
     private final int flyingTime;
     private final float flyingPower;
     private final float size;
@@ -57,6 +58,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
         this.attackDamage = damage;
         this.useCooldown = cooldown;
         this.poiseDamage = poise;
+        this.postureDamage = posture;
         this.flyingPower = flyingPower;
         this.flyingTime = flyingTime;
         this.size = size;

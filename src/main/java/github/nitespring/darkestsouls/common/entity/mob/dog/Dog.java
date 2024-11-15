@@ -176,7 +176,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
         return 12;
     }
     @Override
-    public int getMaxPoise() {return 6;}
+    public int getMaxPoise() {return 4;}
 
     @Override
     public void tick() {
@@ -203,7 +203,7 @@ public class Dog extends DarkestSoulsAbstractEntity implements GeoEntity {
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

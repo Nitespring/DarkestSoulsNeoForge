@@ -38,7 +38,8 @@ public class DragonslayerSpear extends Weapon {
             entity.setMaxTargets(this.getMaxTargets(playerIn,stackIn));
             entity.setDamage(
                     this.getSweepAttackDamage(playerIn, stackIn),
-                    this.getPoiseDamage(playerIn, stackIn),
+                    this.getSweepPoiseDamage(playerIn, stackIn),
+                    this.getSweepPostureDamage(playerIn, stackIn),
                     this.getFireAttack(playerIn,stackIn),
                     this.getSmiteAttack(playerIn,stackIn),
                     this.getBaneOfArthropodsAttack(playerIn,stackIn),
@@ -75,8 +76,9 @@ public class DragonslayerSpear extends Weapon {
                 entity.setItemStack(stackIn);
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
-                        this.getAttackDamage(playerIn, stackIn),
-                        this.getPoiseDamage(playerIn, stackIn),
+                        this.getSweepAttackDamage(playerIn, stackIn),
+                        this.getSweepPoiseDamage(playerIn, stackIn),
+                        this.getSweepPostureDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn, stackIn),
                         this.getSmiteAttack(playerIn, stackIn),
                         this.getBaneOfArthropodsAttack(playerIn, stackIn),
@@ -135,8 +137,9 @@ public class DragonslayerSpear extends Weapon {
             entity.setItemStack(stackIn);
             entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
             entity.setDamage(
-                    this.getAttackDamage(playerIn, stackIn),
-                    this.getPoiseDamage(playerIn, stackIn),
+                    this.getSweepAttackDamage(playerIn, stackIn),
+                    this.getSweepPoiseDamage(playerIn, stackIn),
+                    this.getSweepPostureDamage(playerIn, stackIn),
                     this.getFireAttack(playerIn, stackIn),
                     this.getSmiteAttack(playerIn, stackIn),
                     this.getBaneOfArthropodsAttack(playerIn, stackIn),

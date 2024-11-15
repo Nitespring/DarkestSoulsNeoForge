@@ -33,8 +33,9 @@ public class Spear extends Weapon {
                 entity.setItemStack(stackIn);
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
-                        (this.getSweepAttackDamage(playerIn, stackIn)) - 2.0f,
+                        Math.max(1,(this.getSweepAttackDamage(playerIn, stackIn)) - 2.0f),
                         this.getPoiseDamage(playerIn, stackIn),
+                        this.getPostureDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn,stackIn),
                         this.getSmiteAttack(playerIn,stackIn),
                         this.getBaneOfArthropodsAttack(playerIn,stackIn),
@@ -61,7 +62,8 @@ public class Spear extends Weapon {
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
                         this.getSweepAttackDamage(playerIn, stackIn),
-                        this.getPoiseDamage(playerIn, stackIn),
+                        this.getSweepPoiseDamage(playerIn, stackIn),
+                        this.getSweepPostureDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn,stackIn),
                         this.getSmiteAttack(playerIn,stackIn),
                         this.getBaneOfArthropodsAttack(playerIn,stackIn),

@@ -195,6 +195,15 @@ public class MonstruosityOfSin extends DarkestSoulsAbstractEntity implements Geo
 					setAnimationState(0);
 				}
 				break;
+			case 2:
+				this.getNavigation().stop();
+				if (getAnimationTick() >= 6) {
+					this.getNavigation().stop();
+					setAnimationTick(0);
+					this.resetPoiseHealth();
+					setAnimationState(0);
+				}
+				break;
 			case 11:
 				if(getAnimationTick()>=20) {
 					this.playSound(SoundInit.SIN_BOOM.get());

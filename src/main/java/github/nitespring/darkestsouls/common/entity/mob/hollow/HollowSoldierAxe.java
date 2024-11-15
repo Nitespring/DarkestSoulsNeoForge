@@ -282,7 +282,7 @@ public class HollowSoldierAxe extends Hollow implements GeoEntity {
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

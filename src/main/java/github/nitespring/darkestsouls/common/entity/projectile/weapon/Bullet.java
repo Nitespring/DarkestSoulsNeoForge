@@ -32,6 +32,7 @@ public class Bullet extends AbstractHurtingProjectile {
 
     protected float damage;
     protected int poiseDamage;
+    protected int postureDamage;
     protected int blood;
     protected int poison;
     protected int explosion;
@@ -49,10 +50,11 @@ public class Bullet extends AbstractHurtingProjectile {
     public Bullet(EntityType<? extends AbstractHurtingProjectile> e, Level l) {
         super(e, l);
     }
-    public Bullet(EntityType<? extends AbstractHurtingProjectile> e, float damageIn, int flyingTime, int poiseIn, int pierceIn, int ricochetIn, Level l) {
+    public Bullet(EntityType<? extends AbstractHurtingProjectile> e, float damageIn, int flyingTime, int poiseIn, int postureIn, int pierceIn, int ricochetIn, Level l) {
         super(e, l);
         this.damage = damageIn;
         this.poiseDamage = poiseIn;
+        this.postureDamage = postureIn;
         this.setPierce(pierceIn);
         this.setRicochet(ricochetIn);
         this.setFlyingTime(flyingTime);
@@ -62,6 +64,8 @@ public class Bullet extends AbstractHurtingProjectile {
     public void setAttackDamage(float damage) {this.damage = damage;}
     public int getPoiseDamage() {return poiseDamage;}
     public void setPoiseDamage(int poiseDamage) {this.poiseDamage = poiseDamage;}
+    public int getPostureDamage() {return postureDamage;}
+    public void setPostureDamage(int poiseDamage) {this.postureDamage = poiseDamage;}
     public int getPoison() {return poison;}
     public void setPoison(int i) {this.poison = i;}
     public int getBlood() {return blood;}
@@ -102,7 +106,8 @@ public class Bullet extends AbstractHurtingProjectile {
             if(e instanceof Mob mob) {
                 if (mob instanceof DarkestSoulsAbstractEntity dsMob) {
                     if(mob.hurtTime<=0) {
-                        dsMob.damagePostureHealth(this.getPoiseDamage());
+                        dsMob.damagePoiseHealth(this.getPoiseDamage());
+                        dsMob.damagePostureHealth(this.getPostureDamage());
                     }
                 }
                 if (this.getPoison() >= 1) {

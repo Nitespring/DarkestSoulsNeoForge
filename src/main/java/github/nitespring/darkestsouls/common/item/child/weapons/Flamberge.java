@@ -31,7 +31,8 @@ public class Flamberge extends Weapon {
                 entity.setMaxTargets(this.getMaxTargets(playerIn, stackIn));
                 entity.setDamage(
                         this.getSweepAttackDamage(playerIn, stackIn),
-                        this.getPoiseDamage(playerIn, stackIn),
+                        this.getSweepPoiseDamage(playerIn, stackIn),
+                        this.getSweepPostureDamage(playerIn, stackIn),
                         this.getFireAttack(playerIn,stackIn),
                         this.getSmiteAttack(playerIn,stackIn),
                         this.getBaneOfArthropodsAttack(playerIn,stackIn),

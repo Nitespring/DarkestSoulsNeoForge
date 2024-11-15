@@ -176,7 +176,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
     @Override
     public int getMaxPosture() {return 28;}
     @Override
-    public int getMaxPoise() {return 13;}
+    public int getMaxPoise() {return 10;}
 
     @Override
     public int getBloodResistance() {return 999;}
@@ -204,7 +204,7 @@ public Bonewheel(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

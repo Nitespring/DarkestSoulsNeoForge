@@ -144,7 +144,7 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
     @Override
     public int getMaxPosture() {return 30;}
     @Override
-    public int getMaxPoise() {return 12;}
+    public int getMaxPoise() {return 10;}
     @Override
     public int getBloodResistance() {return 9;}
 
@@ -244,7 +244,7 @@ public class CloakedBeastPatient extends BeastPatientEntity implements GeoEntity
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();

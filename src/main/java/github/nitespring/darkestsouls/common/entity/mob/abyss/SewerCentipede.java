@@ -257,6 +257,15 @@ public class SewerCentipede extends DarkestSoulsAbstractEntity implements GeoEnt
 					setAnimationState(0);
 				}
 				break;
+			case 2:
+				this.getNavigation().stop();
+				if (getAnimationTick() >= 6) {
+					this.getNavigation().stop();
+					setAnimationTick(0);
+					this.resetPoiseHealth();
+					setAnimationState(0);
+				}
+				break;
 			//Attack
 			case 21:
 				this.moveToTarget();

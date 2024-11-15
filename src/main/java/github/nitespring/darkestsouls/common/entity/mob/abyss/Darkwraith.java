@@ -218,7 +218,7 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
     @Override
     public int getMaxPosture() {return 42;}
     @Override
-    public int getMaxPoise() {return 18;}
+    public int getMaxPoise() {return 15;}
     @Override
     public boolean canDrownInFluidType(FluidType type) {return false;}
     @Override
@@ -259,7 +259,7 @@ public class Darkwraith extends DarkestSoulsAbstractEntity implements GeoEntity{
                 break;
             case 2:
                 this.getNavigation().stop();
-                if (getAnimationTick() >= 12) {
+                if (getAnimationTick() >= 6) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();
