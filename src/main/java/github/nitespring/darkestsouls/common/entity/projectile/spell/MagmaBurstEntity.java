@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
@@ -144,6 +145,10 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
         if(p_37259_.getEntity() != this.getOwner()) {
             this.spawnMagma();
             this.doRemoval();
+        }
+        if(p_37259_.getEntity() instanceof DarkestSoulsAbstractEntity e1){
+            e1.damagePoiseHealth(2);
+            e1.damagePostureHealth(1);
         }
     }
 

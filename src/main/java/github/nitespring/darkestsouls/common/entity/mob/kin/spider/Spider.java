@@ -41,10 +41,18 @@ public class Spider extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     @Override
     protected int getDSDefaultTeam() {
-        return 0;
+        return 1;
     }
 
+    @Override
+    public int getMaxPoise() {
+        return 12;
+    }
 
+    @Override
+    public int getMaxPosture() {
+        return 24;
+    }
 
     @Override
     public boolean isBoss() {

@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -176,6 +177,10 @@ public class TrashParasites extends AbstractHurtingProjectile implements ItemSup
         if (p_36945_.isAlive() && !p_36945_.isInvulnerable() && p_36945_ != livingentity) {
             if (livingentity == null) {
                 p_36945_.hurt(this.level().damageSources().generic(), 1.0F);
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(6);
+                    e1.damagePostureHealth(4);
+                }
                 p_36945_.addEffect(new MobEffectInstance(EffectInit.PARASITES,360));
             } else {
                 if (livingentity.isAlliedTo(p_36945_)) {
@@ -183,6 +188,10 @@ public class TrashParasites extends AbstractHurtingProjectile implements ItemSup
                 }
 
                 p_36945_.hurt(this.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), damage);
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(6);
+                    e1.damagePostureHealth(4);
+                }
                 p_36945_.addEffect(new MobEffectInstance(EffectInit.PARASITES,360));
             }
 

@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -138,6 +139,10 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
             Entity e = p_37259_.getEntity();
             e.hurt(e.level().damageSources().indirectMagic(this, this.getOwner()),this.damage);
             this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), this.getSoundSource(), 1.0f, 1.4f);
+            if(e instanceof DarkestSoulsAbstractEntity e1){
+                e1.damagePoiseHealth(6);
+                e1.damagePostureHealth(4);
+            }
             for(int i=0; i<=2; i++){
                 RandomSource r = this.random;
                 Vec3 off = new Vec3(r.nextFloat() - 0.5, r.nextFloat() - 0.5, r.nextFloat() - 0.5).multiply(0.25f, 0.25f, 0.25f);

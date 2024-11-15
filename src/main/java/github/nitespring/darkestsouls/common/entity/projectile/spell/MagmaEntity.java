@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
@@ -200,11 +201,16 @@ public class MagmaEntity extends Entity implements GeoEntity{
             if (livingentity == null) {
                 p_36945_.hurt(this.level().damageSources().inFire(), 6.0F);
                 p_36945_.igniteForTicks(40);
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(1);
+                }
             } else {
                 if (livingentity.isAlliedTo(p_36945_)) {
                     return;
                 }
-
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(1);
+                }
                 p_36945_.hurt(this.level().damageSources().inFire(), damage);
                 p_36945_.igniteForTicks(40);
             }

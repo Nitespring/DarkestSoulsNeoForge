@@ -350,7 +350,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					case 0:
 						return super.isAlliedTo(e);
 					case 1://Monster
-						if(e instanceof Monster && !e.getPersistentData().contains("DSTeam")){
+						if(e instanceof Monster && this.getTarget() != e){
 							return true;
 						}if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==1){
 							return true;

@@ -29,7 +29,7 @@ public class LargeUndeadDog extends LargeDog{
 
     @Override
     protected int getDSDefaultTeam() {
-        return 0;
+        return 2;
     }
 
     @Override

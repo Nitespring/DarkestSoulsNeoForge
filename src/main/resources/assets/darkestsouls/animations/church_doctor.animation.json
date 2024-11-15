@@ -6831,10 +6831,10 @@
 			"loop": true,
 			"bones": {
 				"bodyMid": {
-					"rotation": [2.5, 0, 0]
+					"rotation": [-7.5, 0, 0]
 				},
 				"bodyHigh": {
-					"rotation": [12.5, 0, 0]
+					"rotation": [-5, 0, 0]
 				},
 				"bell": {
 					"rotation": [-25, 0, 0]
@@ -6843,16 +6843,16 @@
 					"rotation": [17.53959, 6.27095, -3.26408]
 				},
 				"armRightHigh": {
-					"rotation": [-9.98436, 0.75155, 2.38443]
+					"rotation": [-3.06037, 25.03061, 17.27721]
 				},
 				"armLeftHigh": {
-					"rotation": [-12.42287, -1.91134, -4.62111]
+					"rotation": [-9.2331, -14.54188, -17.5562]
 				},
 				"coatMid": {
-					"rotation": [-2.5, 0, 0]
+					"rotation": [2.5, 0, 0]
 				},
 				"coatLow": {
-					"rotation": [5, 0, 0]
+					"rotation": [7.5, 0, 0]
 				},
 				"legRightHigh": {
 					"rotation": [-7.5, 0, 5]
@@ -6865,6 +6865,12 @@
 				},
 				"legLeftLow": {
 					"rotation": [10, 0, 0]
+				},
+				"armRightLow": {
+					"rotation": [-30, 0, 0]
+				},
+				"armLeftLow": {
+					"rotation": [-12.5, 0, 0]
 				}
 			}
 		}

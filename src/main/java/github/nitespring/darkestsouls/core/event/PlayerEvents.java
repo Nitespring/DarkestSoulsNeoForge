@@ -1,11 +1,14 @@
 package github.nitespring.darkestsouls.core.event;
 
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.common.item.ICustomSweepAttackItem;
+import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.config.CommonConfig;
 import github.nitespring.darkestsouls.config.Config;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
@@ -30,7 +33,7 @@ public class PlayerEvents {
         Entity target = event.getTarget();
         Level level = player.level();
         ItemStack itemstack = player.getWeaponItem();
-        if(itemstack.getItem() instanceof ICustomSweepAttackItem weapon && CommonConfig.do_special_attacks.get()){
+        //if(itemstack.getItem() instanceof ICustomSweepAttackItem weapon1 && CommonConfig.do_special_attacks.get()){
             if(target.isAttackable()&&!target.skipAttackInteraction(player)){
                 float f = player.isAutoSpinAttack() ? 1 :
                         (float)player.getAttributeValue(Attributes.ATTACK_DAMAGE);
@@ -68,9 +71,49 @@ public class PlayerEvents {
                     double d0 = (double)(player.walkDist - player.walkDistO);
                     boolean flag2 = flag4 && !flag1 && !flag && player.onGround() && d0 < (double)player.getSpeed();
                     if(flag2){
-                        weapon.performSweepAttack(player, itemstack);
+                        if(itemstack.getItem() instanceof ICustomSweepAttackItem weapon1 && CommonConfig.do_special_attacks.get()){
+                            weapon1.performSweepAttack(player, itemstack);
+                        }
                     }
-                }
+
+                    if (target instanceof DarkestSoulsAbstractEntity) {
+                        float poiseModifier = 1.0f;
+                        boolean flag5 = !flag2;
+                        if(flag5){
+                            poiseModifier=1.5f;
+                        }
+                        if (itemstack.getItem() instanceof Weapon weapon) {
+                            ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(Math.round(weapon.getPoiseDamage(player, itemstack)*poiseModifier));
+                            ((DarkestSoulsAbstractEntity) target).damagePostureHealth(Math.round(weapon.getPostureDamage(player, itemstack)*poiseModifier));
+                        }else{
+                            if (itemstack.is(ItemTags.SWORDS)) {
+                                if(!flag5) {
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(5);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(4);
+                                }else{
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(6);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(6);
+                                }
+                            }else if (itemstack.is(ItemTags.AXES)) {
+                                if(!flag5) {
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(6);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(6);
+                                }else{
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(12);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(10);
+                                }
+                            }else {
+                                if(!flag5) {
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(1);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(1);
+                                }else{
+                                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(2);
+                                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(2);
+                                }
+                            }
+                        }
+                    }
+                //}
 
             }
         }

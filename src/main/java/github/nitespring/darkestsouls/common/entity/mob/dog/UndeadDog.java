@@ -28,7 +28,7 @@ public class UndeadDog extends Dog{
 
     @Override
     protected int getDSDefaultTeam() {
-        return 0;
+        return 2;
     }
 
     @Override

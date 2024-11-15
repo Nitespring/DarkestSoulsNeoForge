@@ -51,7 +51,7 @@ public class HuntsmanGeoRenderer<T extends Huntsman & GeoEntity> extends GeoEnti
 
 	@Override
 	public void actuallyRender(PoseStack poseStack, T animatable, BakedGeoModel model, @Nullable RenderType renderType, MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
-		float scaleFactor = 1.1f;
+		float scaleFactor = 1.0f;
 		poseStack.pushPose();
 		poseStack.scale(scaleFactor, scaleFactor, scaleFactor);
 		super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);

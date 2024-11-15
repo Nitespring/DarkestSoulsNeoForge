@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.util;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -188,6 +189,10 @@ public class DamageHitboxEntity extends Entity {
 	      if (target.isAlive() && !target.isInvulnerable() && target != owner) {
 	         if (owner == null) {
 				 target.hurt(this.damageSources().generic(), damage);
+				 if(target instanceof DarkestSoulsAbstractEntity e1){
+					 e1.damagePoiseHealth(Math.round(damage));
+					 e1.damagePostureHealth(Math.round(damage));
+				 }
 	         } else {
 	            if (owner.isAlliedTo(target)||owner==target) {
 	               return;
@@ -236,6 +241,10 @@ public class DamageHitboxEntity extends Entity {
 						default:
 							target.hurt(this.damageSources().mobAttack(owner), damage);
 							break;
+					}
+					if(target instanceof DarkestSoulsAbstractEntity e1){
+						e1.damagePoiseHealth(Math.round(damage));
+						e1.damagePostureHealth(Math.round(damage));
 					}
 	            }
 	         }

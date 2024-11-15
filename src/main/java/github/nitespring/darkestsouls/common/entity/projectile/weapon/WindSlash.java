@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.weapon;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -139,6 +140,10 @@ public class WindSlash extends AbstractHurtingProjectile {
         Entity e = p_37259_.getEntity();
         e.hurt(e.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()),this.damage);
         //this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.WOOL_BREAK, this.getSoundSource(), 1.0f, 2.0f);
+        if(e instanceof DarkestSoulsAbstractEntity e1){
+            e1.damagePoiseHealth(6);
+            e1.damagePostureHealth(4);
+        }
         for(int i=0; i<=12; i++){
             RandomSource r = this.random;
             Vec3 off = new Vec3(r.nextFloat()-0.5, r.nextFloat()-0.5,r.nextFloat()-0.5).multiply(0.5f,0.5f,0.5f);

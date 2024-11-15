@@ -236,10 +236,10 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
         });*/
         stackIn.hurtAndBreak(1, entityIn, EquipmentSlot.MAINHAND);
         if(entityIn instanceof Player playerIn) {
-            if (target instanceof DarkestSoulsAbstractEntity) {
+            /*if (target instanceof DarkestSoulsAbstractEntity) {
                 ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.getPoiseDamage(playerIn, stackIn));
                 ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.getPostureDamage(playerIn, stackIn));
-            }
+            }*/
             if (!target.fireImmune()) {
                 if (this.getFireAttack(playerIn, stackIn) >= 1) {
                     target.igniteForTicks(40 * this.getFireAttack(playerIn,stackIn));

@@ -21,6 +21,6 @@ public class SilverDog extends Dog{
 
     @Override
     protected int getDSDefaultTeam() {
-        return 0;
+        return 1;
     }
 }

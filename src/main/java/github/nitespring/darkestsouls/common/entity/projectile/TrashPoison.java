@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.init.EffectInit;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -176,6 +177,10 @@ public class TrashPoison extends AbstractHurtingProjectile implements ItemSuppli
             if (livingentity == null) {
                 p_36945_.hurt(this.level().damageSources().generic(), 1.0F);
                 p_36945_.addEffect(new MobEffectInstance(MobEffects.POISON,120,1));
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(6);
+                    e1.damagePostureHealth(4);
+                }
             } else {
                 if (livingentity.isAlliedTo(p_36945_)) {
                     return;
@@ -183,6 +188,10 @@ public class TrashPoison extends AbstractHurtingProjectile implements ItemSuppli
 
                 p_36945_.hurt(this.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), damage);
                 p_36945_.addEffect(new MobEffectInstance(MobEffects.POISON,120,1));
+                if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(6);
+                    e1.damagePostureHealth(4);
+                }
             }
 
         }

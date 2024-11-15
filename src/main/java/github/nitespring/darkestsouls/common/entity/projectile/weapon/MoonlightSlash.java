@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.weapon;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -141,6 +142,10 @@ public class MoonlightSlash extends AbstractHurtingProjectile {
         Entity e = p_37259_.getEntity();
         //e.hurt(e.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()),this.damage);
         e.hurt(e.level().damageSources().indirectMagic(this, (LivingEntity) this.getOwner()),this.damage);
+        if(e instanceof DarkestSoulsAbstractEntity e1){
+            e1.damagePoiseHealth(10);
+            e1.damagePostureHealth(6);
+        }
         this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.PLAYER_SPLASH_HIGH_SPEED, this.getSoundSource(), 0.2f, 0.2f);
         for(int i=0; i<=12; i++){
             RandomSource r = this.random;

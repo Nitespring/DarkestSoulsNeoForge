@@ -21,6 +21,16 @@ public class LargeSpider extends Spider{
     public float getBaseScale() {return 2.5f;}
 
     @Override
+    public int getMaxPoise() {
+        return 24;
+    }
+
+    @Override
+    public int getMaxPosture() {
+        return 56;
+    }
+
+    @Override
     public void doLargeAttack(float dmgFlat, float dmgMull, float range){
         this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
         for(int i = 0; i<=1; i++) {

@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -112,6 +113,10 @@ public class FireBallEntity extends AbstractHurtingProjectile {
             if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
                 e.hurt(e.level().damageSources().explosion(this, this.getOwner()), this.damage);
                 e.igniteForTicks(80);
+                if(e instanceof DarkestSoulsAbstractEntity e1){
+                    e1.damagePoiseHealth(12);
+                    e1.damagePostureHealth(8);
+                }
             }
         }
         this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.FIRE_EXTINGUISH, this.getSoundSource(), 1.0F, this.random.nextFloat() * 0.2F + 0.85F, false);
