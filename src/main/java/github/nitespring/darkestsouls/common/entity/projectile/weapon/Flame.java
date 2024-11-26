@@ -34,6 +34,7 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
 
     protected float damage;
     protected int poiseDamage;
+    protected int postureDamage;
     //protected int pierce;
     //protected int ricochet;
     public int gravTick;
@@ -44,10 +45,11 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
     public Flame(EntityType<? extends AbstractHurtingProjectile> e, Level l) {
         super(e, l);
     }
-    public Flame(EntityType<? extends AbstractHurtingProjectile> e, float damageIn, int flyingTime, int poiseIn, int ricochetIn, Level l) {
+    public Flame(EntityType<? extends AbstractHurtingProjectile> e, float damageIn, int flyingTime, int poiseIn, int postureIn, int ricochetIn, Level l) {
         super(e, l);
         this.damage = damageIn;
         this.poiseDamage = poiseIn;
+        this.postureDamage = postureIn;
         this.setRicochet(ricochetIn);
         this.setFlyingTime(flyingTime);
     }
@@ -56,6 +58,8 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
     public void setAttackDamage(float damage) {this.damage = damage;}
     public int getPoiseDamage() {return poiseDamage;}
     public void setPoiseDamage(int poiseDamage) {this.poiseDamage = poiseDamage;}
+    public int getPostureDamage() {return poiseDamage;}
+    public void setPostureDamage(int poiseDamage) {this.poiseDamage = poiseDamage;}
     public int getFlyingTime() {return entityData.get(FLYING_TIME);}
     public void setFlyingTime(int flyingTime) {entityData.set(FLYING_TIME, flyingTime);}
     public float getSize() {return entityData.get(SIZE);}
@@ -80,6 +84,7 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
                 if (mob instanceof DarkestSoulsAbstractEntity dsMob) {
                     if(mob.hurtTime<=0) {
                         dsMob.damagePoiseHealth(this.getPoiseDamage());
+                        dsMob.damagePostureHealth(this.getPostureDamage());
                     }
                 }
             }

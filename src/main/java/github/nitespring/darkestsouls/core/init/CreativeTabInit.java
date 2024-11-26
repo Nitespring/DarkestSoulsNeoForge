@@ -31,6 +31,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.BLOOD_KNIFE.get());
                         output.accept(ItemInit.POISON_KNIFE.get());
                         output.accept(ItemInit.KUKRI.get());
+                        output.accept(ItemInit.CRYSTALIAN_SMALL_CHAKRAM.get());
                         output.accept(ItemInit.FIREBOMB.get());
                         output.accept(ItemInit.BLACK_FIREBOMB.get());
                         output.accept(ItemInit.MOLOTOV.get());
@@ -52,10 +53,11 @@ public class CreativeTabInit {
                         output.accept(ItemInit.FLAMBERGE.get());
                         output.accept(ItemInit.ZWEIHANDER.get());
                         output.accept(ItemInit.CARTHUS_CURVED_GREATSWORD.get());
-                        //output.accept(ItemInit.SPEAR.get());
                         output.accept(ItemInit.CRESCENT_MOON_GREATAXE.get());
                         output.accept(ItemInit.EXECUTIONER_GREATAXE.get());
+                        output.accept(ItemInit.DEMON_GREAT_MACHETE.get());
                         output.accept(ItemInit.SPEAR.get());
+                        output.accept(ItemInit.CRYSTALIAN_SPEAR.get());
                         output.accept(ItemInit.HUNTSMAN_PITCHFORK.get());
                         output.accept(ItemInit.GRAVE_SCYTHE.get());
                         output.accept(ItemInit.CHURCH_SCYTHE_UNLIT.get());
@@ -69,6 +71,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.DRAGONSLAYER_SWORDSPEAR.get());
                         output.accept(ItemInit.DRAGONSLAYER_GREATAXE.get());
                         output.accept(ItemInit.FRAYED_BLADE.get());
+                        output.accept(ItemInit.CRYSTALIAN_CHAKRAM.get());
                         output.accept(ItemInit.HUNTER_PISTOL.get());
                         output.accept(ItemInit.BLUNDERBUSS.get());
                         output.accept(ItemInit.MUSKET.get());

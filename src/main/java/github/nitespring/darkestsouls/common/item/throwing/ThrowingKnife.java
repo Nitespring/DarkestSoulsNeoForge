@@ -25,6 +25,7 @@ public class ThrowingKnife extends Item {
     private final int bloodDamage;
     private final int poisonDamage;
     private final int poiseDamage;
+    private final int postureDamage;
     private final float flyingPower;
     private final float gravPower;
     private final boolean shouldRotate;
@@ -39,6 +40,7 @@ public class ThrowingKnife extends Item {
         this.bloodDamage=bloodDamage;
         this.poisonDamage=poisonDamage;
         this.poiseDamage=poiseDamage;
+        this.postureDamage=postureDamage;
         this.flyingPower=flyingPower;
         this.gravPower=gravPower;
         this.shouldRotate=shouldRotate;
@@ -80,6 +82,7 @@ public class ThrowingKnife extends Item {
             entity.setPoisonDamage(this.poisonDamage);
             entity.setBloodDamage(this.bloodDamage);
             entity.setPoiseDamage(this.poiseDamage);
+            entity.setPostureDamage(this.postureDamage);
             entity.setGravPower(this.gravPower);
             levelIn.addFreshEntity(entity);
             entity.setToRotate(shouldRotate);

@@ -91,6 +91,8 @@ public class ItemInit {
 			() -> new Scimitar(Tiers.TITANITE, 6.0f, 1.6f, 3.15f,-0.2f, 4,4, 0,0,0,0,0,0,0,0,250,8,0.14f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Spear> SPEAR = ITEMS.register("spear",
 			() -> new Spear(Tiers.TITANITE, 5.0f, 2.0f,4.5f, -0.1f, 3,4, 0,0,0,0,0,0,0,0,1350,10,0.13f, 1,new Item.Properties()));
+	public static final DeferredHolder<Item,Spear> CRYSTALIAN_SPEAR = ITEMS.register("crystalian_spear",
+			() -> new Spear(Tiers.TITANITE, 6.0f, 1.9f,4.5f, -0.1f, 4,4, 0,0,0,0,0,0,0,0,1350,16,0.12f, 1,new Item.Properties()));
 	public static final DeferredHolder<Item,GraveScythe> GRAVE_SCYTHE= ITEMS.register("grave_scythe",
 			() -> new GraveScythe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 5,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Uchigatana> UCHIGATANA = ITEMS.register("uchigatana",
@@ -101,7 +103,10 @@ public class ItemInit {
 			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 4.0f,0.4f, 11,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
 	public static final DeferredHolder<Item,Greataxe> CRESCENT_MOON_GREATAXE = ITEMS.register("crescent_moon_greataxe",
 			() -> new Greataxe(Tiers.TITANITE, 9.0f, 1.2f, 4.25f,0.4f, 10,10, 0,0,0,0,0,0,0,0,225,8,0.08f, 3,new Item.Properties()));
-
+	public static final DeferredHolder<Item,Greataxe> DEMON_GREAT_MACHETE = ITEMS.register("demon_great_machete",
+			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 3.25f,0.5f, 12,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 2,new Item.Properties()));
+	public static final DeferredHolder<Item,Weapon> CRYSTALIAN_CHAKRAM = ITEMS.register("crystalian_chakram",
+			() -> new Weapon(Tiers.TITANITE, 6.0f, 1.9f,4.5f, -0.1f, 4,4, 0,0,0,0,0,0,0,0,1350,16,0.12f, 2,new Item.Properties()));
 
 	public static final DeferredHolder<Item,Weapon> HUNTSMAN_AXE = ITEMS.register("hunting_axe",
 			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 5,6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
@@ -171,7 +176,8 @@ public class ItemInit {
 			() -> new Firebomb(10.0f, 24, 6,8, 1, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(12)));
 	public static final DeferredHolder<Item,MolotovCocktail> MOLOTOV = ITEMS.register("molotov",
 			() -> new MolotovCocktail(6.0f, 28, 4,4, new Item.Properties().stacksTo(16)));
-
+	public static final DeferredHolder<Item,ThrowingKnife> CRYSTALIAN_SMALL_CHAKRAM = ITEMS.register("crystalian_small_chakram",
+			() -> new ThrowingKnife(8.0f, 18,0,0,4,6, 0.28f, 0.01f, true,0, new Item.Properties().stacksTo(20)));
 	//Armour
 	public static final DeferredHolder<Item, HunterArmourItem> HUNTER_HAT = ITEMS.register("hunter_hat",
 			() -> new HunterArmourItem(1,1,50,3,1,0,0,0.1f,0.3f, 0,0,0,0,0.005f,0.01f,0,0,2,1025,12, ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,new Item.Properties()));

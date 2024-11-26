@@ -36,6 +36,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
     public int bloodDamage = 0;
     public int poisonDamage = 0;
     public int poiseDamage = 6;
+    public int postureDamage = 4;
 
     public boolean canBePickedUp = false;
 
@@ -62,6 +63,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
     public int getBloodDamage() {return this.bloodDamage;}
     public int getPoisonDamage() {return this.poisonDamage;}
     public int getPoiseDamage() {return this.poiseDamage;}
+    public int getPostureDamage() {return this.postureDamage;}
     public float getGravpower() {return this.gravPower;}
 
     public boolean shouldRotate(){return entityData.get(SHOULD_ROTATE);}
@@ -75,6 +77,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
     public void setBloodDamage(int i) {this.bloodDamage=i;}
     public void setPoisonDamage(int i) {this.poisonDamage=i;}
     public void setPoiseDamage(int i) {this.poiseDamage=i;}
+    public void setPostureDamage(int i) {this.postureDamage=i;}
     public void setGravPower(float f) {this.gravPower=f;}
 
     @Override
@@ -148,6 +151,7 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
                 target.hurt(target.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), this.attackPower);
                 if (target instanceof DarkestSoulsAbstractEntity dsMob) {
                     dsMob.damagePostureHealth(this.poiseDamage);
+                    dsMob.damagePoiseHealth(this.postureDamage);
                 }
                 if (this.getPoisonDamage() >= 1) {
                     target.addEffect(new MobEffectInstance(MobEffects.POISON, 60, this.poisonDamage - 1));

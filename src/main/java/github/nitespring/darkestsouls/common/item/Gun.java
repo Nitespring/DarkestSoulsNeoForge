@@ -112,6 +112,9 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     public int getPoiseDamage(Player playerIn, ItemStack stackIn) {
         return poiseDamage;
     }
+    public int getPostureDamage(Player playerIn, ItemStack stackIn) {
+        return postureDamage;
+    }
     public int getFlyingTime(Player playerIn, ItemStack stackIn) {
         int enchantModifier=0;
         if(stackIn.isEnchanted()){

@@ -135,6 +135,7 @@ public class Flamesprayer extends AlchemyTool {
             entity.setOwner(player);
             entity.setAttackDamage(this.getAttackDamage(player, stackIn));
             entity.setPoiseDamage(this.getPoiseDamage(player, stackIn));
+            entity.setPostureDamage(this.getPostureDamage(player, stackIn));
             //entity.setFlyingTime(10);
             entity.setFlyingTime(this.getFlyingTime(stackIn));
             entity.setSize(this.getBaseSize());
