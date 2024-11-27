@@ -91,32 +91,32 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
                                 BASE_ATTACK_DAMAGE_ID,
                                 attackDamage,
                                 AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.MAINHAND
+                        ), EquipmentSlotGroup.HAND
                 ).add(
                         Attributes.ATTACK_SPEED,
                         new AttributeModifier(
                                 BASE_ATTACK_SPEED_ID,
                                 attackSpeed,
                                 AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.MAINHAND
+                        ), EquipmentSlotGroup.HAND
                 ).add(
                         Attributes.ENTITY_INTERACTION_RANGE,
                         new AttributeModifier(
                                 BASE_ATTACK_REACH_ID,
                                 reach,
                                 AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.MAINHAND
+                        ), EquipmentSlotGroup.HAND
                 ).add(Attributes.ATTACK_KNOCKBACK,
                         new AttributeModifier(BASE_ATTACK_KNOCKBACK_ID,
                                 attackKnockback,
                                 AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.MAINHAND
+                        ), EquipmentSlotGroup.HAND
                 ).add(
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(BASE_MOVEMENT_SPEED_ID,
                                 movementSpeed,
                                 AttributeModifier.Operation.ADD_VALUE
-                        ), EquipmentSlotGroup.MAINHAND
+                        ), EquipmentSlotGroup.HAND
                 ).build();
     }
 
