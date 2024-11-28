@@ -168,6 +168,112 @@
 				}
 			}
 		},
+		"animation.hollow.pose2": {
+			"loop": true,
+			"bones": {
+				"hips": {
+					"rotation": [-5, 0, 0]
+				},
+				"waist": {
+					"rotation": [2.5, 0, 0]
+				},
+				"chest": {
+					"rotation": [12.5, 0, 0]
+				},
+				"head": {
+					"rotation": [0, 0, 0],
+					"position": [0, 0, -0.25]
+				},
+				"right_arm": {
+					"rotation": [44.4539, -1.11388, 11.11397],
+					"position": [0, -1, 0]
+				},
+				"right_forearm": {
+					"rotation": [-62.5, 0, 0]
+				},
+				"right_hand": {
+					"rotation": [15, 0, 0]
+				},
+				"left_arm": {
+					"rotation": [-11.04492, -9.69864, -19.14838],
+					"position": [0, -0.5, 0]
+				},
+				"left_forearm": {
+					"rotation": [-72.93162, 26.12797, 8.89674]
+				},
+				"left_hand": {
+					"rotation": [-20.12579, 4.0184, 48.53284]
+				},
+				"skirt": {
+					"rotation": [5.02595, -0.05189, -0.50397]
+				},
+				"right_thigh": {
+					"rotation": [-9.98992, -0.11297, 2.13504]
+				},
+				"right_leg": {
+					"rotation": [7.5, 0, 0]
+				},
+				"left_thigh": {
+					"rotation": [7.49294, 0.32621, -2.47864]
+				},
+				"left_leg": {
+					"rotation": [7.5, 0, 0]
+				}
+			}
+		},
+		"animation.hollow.pose3": {
+			"loop": true,
+			"bones": {
+				"hips": {
+					"rotation": [-5, 0, 0]
+				},
+				"waist": {
+					"rotation": [2.5, 0, 0]
+				},
+				"chest": {
+					"rotation": [12.5, 0, 0]
+				},
+				"head": {
+					"rotation": [-5, 0, 0],
+					"position": [0, 0, -0.25]
+				},
+				"right_arm": {
+					"rotation": [44.4539, -1.11388, 11.11397],
+					"position": [0, -1, 0]
+				},
+				"right_forearm": {
+					"rotation": [-62.5, 0, 0]
+				},
+				"right_hand": {
+					"rotation": [15, 0, 0]
+				},
+				"left_arm": {
+					"rotation": [-11.04492, -9.69864, -19.14838],
+					"position": [0, -0.5, 0]
+				},
+				"left_forearm": {
+					"rotation": [-72.93162, 26.12797, 8.89674]
+				},
+				"left_hand": {
+					"rotation": [-20.20411, 6.36521, 47.66754]
+				},
+				"skirt": {
+					"rotation": [5.02595, -0.05189, -0.50397]
+				},
+				"right_thigh": {
+					"rotation": [-9.98992, -0.11297, 2.13504]
+				},
+				"right_leg": {
+					"rotation": [7.5, 0, 0]
+				},
+				"left_thigh": {
+					"rotation": [7.49294, 0.32621, -2.47864]
+				},
+				"left_leg": {
+					"rotation": [7.5, 0, 0]
+				}
+			}
+		},
 		"animation.hollow.pose_climb": {
 			"loop": true,
 			"bones": {
@@ -12798,6 +12904,59 @@
 							"vector": [-60, 25, 0]
 						}
 					}
+				}
+			}
+		},
+		"animation.hollow.spear.idle": {
+			"loop": true,
+			"bones": {
+				"hips": {
+					"rotation": ["-5-2.5*Math.sin(query.anim_time*180)", 0, 0]
+				},
+				"waist": {
+					"rotation": ["2.5+2.5*Math.sin(query.anim_time*180)", 0, 0]
+				},
+				"chest": {
+					"rotation": ["12.5-2.5*Math.sin(query.anim_time*180)", 0, 0]
+				},
+				"head": {
+					"rotation": ["-5+2.5*Math.sin(query.anim_time*180)", 0, 0],
+					"position": [0, 0, -0.25]
+				},
+				"right_arm": {
+					"rotation": ["44.4539+2.5*Math.sin(query.anim_time*180)", -1.11388, 11.11397],
+					"position": [0, -1, 0]
+				},
+				"right_forearm": {
+					"rotation": ["-62.5-2.5*Math.sin(query.anim_time*180)", 0, 0]
+				},
+				"right_hand": {
+					"rotation": ["15+2.5*Math.sin(query.anim_time*180)", 0, 0]
+				},
+				"left_arm": {
+					"rotation": ["-11.0449+2.5*Math.sin(query.anim_time*180)+2.5*Math.sin(query.anim_time*180)", -9.69864, -19.14838],
+					"position": [0, -0.5, 0]
+				},
+				"left_forearm": {
+					"rotation": ["-72.9316-2.5*Math.sin(query.anim_time*180)", 26.12797, 8.89674]
+				},
+				"left_hand": {
+					"rotation": [-20.1258, "4.0184+2.5*Math.sin(query.anim_time*180)", 48.53284]
+				},
+				"skirt": {
+					"rotation": ["2.5259+3.5*Math.sin(query.anim_time*180)", -0.05189, -0.50397]
+				},
+				"right_thigh": {
+					"rotation": [-9.98992, -0.11297, 2.13504]
+				},
+				"right_leg": {
+					"rotation": [7.5, 0, 0]
+				},
+				"left_thigh": {
+					"rotation": [7.49294, 0.32621, -2.47864]
+				},
+				"left_leg": {
+					"rotation": [7.5, 0, 0]
 				}
 			}
 		}
