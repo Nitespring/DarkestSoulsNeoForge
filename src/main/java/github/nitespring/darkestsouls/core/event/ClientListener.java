@@ -28,6 +28,7 @@ import github.nitespring.darkestsouls.client.render.entity.projectile.weapon.fra
 import github.nitespring.darkestsouls.client.render.equipment.armour.*;
 import github.nitespring.darkestsouls.client.render.item.gun.GatlingGunGeoRenderer;
 import github.nitespring.darkestsouls.common.item.Gun;
+import github.nitespring.darkestsouls.common.item.Shield;
 import github.nitespring.darkestsouls.common.item.child.guns.GatlingGun;
 import github.nitespring.darkestsouls.common.item.child.guns.Shotgun;
 import github.nitespring.darkestsouls.core.init.EntityInit;
@@ -39,6 +40,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShieldItem;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -213,6 +215,8 @@ public class ClientListener {
 		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.EVELYN);
 		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.MUSKET);
 		event.registerItem(Shotgun.BLUNDERBUSS_ITEM_EXTENSIONS, ItemInit.BLUNDERBUSS);
+		event.registerItem(Shield.SHIELD_ITEM_EXTENSIONS, ItemInit.IRON_ROUND_SHIELD);
+		event.registerItem(Shield.SHIELD_ITEM_EXTENSIONS, ItemInit.SMALL_ROUND_SHIELD);
 
 	}
 

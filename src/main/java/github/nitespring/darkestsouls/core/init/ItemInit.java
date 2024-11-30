@@ -1,6 +1,7 @@
 package github.nitespring.darkestsouls.core.init;
 
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.common.item.Shield;
 import github.nitespring.darkestsouls.common.item.Weapon;
 import github.nitespring.darkestsouls.common.item.child.alchemy.Flamesprayer;
 import github.nitespring.darkestsouls.common.item.child.alchemy.LanternNormal;
@@ -122,6 +123,12 @@ public class ItemInit {
 			() -> new Weapon(Tiers.TITANITE, 4.0f, 1.4f, 2.5f,0.1f, 3,6, 0,0,0,0,0,0,0,0,255,8,0.1f, 0,new Item.Properties()));
 	public static final DeferredHolder<Item,Spear> CRUCIFIX = ITEMS.register("crucifix",
 			() -> new Spear(Tiers.TITANITE, 6.0f, 1.2f,4.0f, 0.2f, 4,6, 0,0,0,0,1, 0,1,0,1350,10,0.08f, 2,new Item.Properties()));
+	//Shield
+	public static final DeferredHolder<Item, Shield> SMALL_ROUND_SHIELD = ITEMS.register("small_round_shield",
+			() -> new Shield(new Item.Properties().durability(256).stacksTo(1)));
+	public static final DeferredHolder<Item, Shield> IRON_ROUND_SHIELD = ITEMS.register("iron_round_shield",
+			() -> new Shield(new Item.Properties().durability(256).stacksTo(1)));
+
 	//Staves
 	public static final DeferredHolder<Item,SorcererStaff> SORCERER_STAFF_A = ITEMS.register("sorcerer_staff_a",
 			() -> new SorcererStaff(2.0f, 128, 0, new Item.Properties().rarity(Rarity.COMMON)));
