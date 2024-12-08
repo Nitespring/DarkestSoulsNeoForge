@@ -37,6 +37,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
@@ -45,6 +46,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RenderArmEvent;
 import net.neoforged.neoforge.client.event.RenderHandEvent;
@@ -220,6 +222,27 @@ public class ClientListener {
 
 	}
 
+	@SubscribeEvent
+	public static void onClientSetup(FMLClientSetupEvent event) {
+		event.enqueueWork(() -> {
+			ItemProperties.register(
+					ItemInit.SMALL_ROUND_SHIELD.get(),
+					ResourceLocation.withDefaultNamespace("blocking"),
+					(stack, level, player, seed) -> player != null
+							&& player.isUsingItem()
+							&& player.getUseItem() == stack
+							 ? 1.0F : 0.0F
+			);
+			ItemProperties.register(
+					ItemInit.IRON_ROUND_SHIELD.get(),
+					ResourceLocation.withDefaultNamespace("blocking"),
+					(stack, level, player, seed) -> player != null
+							&& player.isUsingItem()
+							&& player.getUseItem() == stack
+							? 1.0F : 0.0F
+			);
+		});
+	}
 
 
 }

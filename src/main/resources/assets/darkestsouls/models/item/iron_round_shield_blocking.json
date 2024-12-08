@@ -1,0 +1,30 @@
+{
+  "parent": "darkestsouls:item/iron_round_shield",
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [25, -25, -5],
+      "translation": [1.5, 0, -2.5],
+      "scale": [1.75, 1.75, 2.25]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [25, -25, -5],
+      "translation": [1.5, 0, -2.5],
+      "scale": [1.75, 1.75, 2.25]
+    },
+    "firstperson_righthand": {
+      "translation": [1, 0.5, 0],
+      "scale": [1.4, 1.4, 1.8]
+    },
+    "firstperson_lefthand": {
+      "translation": [1, 0.5, 0],
+      "scale": [1.4, 1.4, 1.8]
+    },
+    "gui": {
+      "rotation": [180, 0, -180],
+      "scale": [2, 2, 2]
+    },
+    "fixed": {
+      "scale": [2.4, 2.4, 2.4]
+    }
+  }
+}
