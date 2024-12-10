@@ -3,17 +3,17 @@
   "pools": [
     {
       "rolls": {
-        "min": 3,
-        "max": 6
+        "min": 2,
+        "max": 5
       },
       "bonus_rolls": {
         "min": 1,
-        "max": 3
+        "max": 2
       },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "darkestsouls:steel_ingot",
+          "name": "minecraft:iron_ingot",
           "weight": 3,
           "quality": 3,
           "functions": [
@@ -21,90 +21,45 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 0,
-                "max": 3
+                "max": 2
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond",
-          "weight": 3,
-          "quality": 1,
+          "name": "minecraft:potato",
+          "weight": 5,
+          "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 0,
-                "max": 5
+                "max": 2
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:emerald",
-          "weight": 3,
-          "quality": 1,
+          "name": "minecraft:carrot",
+          "weight": 5,
+          "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 0,
-                "max": 5
+                "max": 2
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:lapis_lazuli",
-          "weight": 3,
-          "quality": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 13
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:redstone",
-          "weight": 3,
-          "quality": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 13
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "darkestsouls:quicksilver",
-          "weight": 3,
-          "quality": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0,
-                "max": 5
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "darkestsouls:siderite_ingot",
-          "weight": 1,
+          "name": "minecraft:poisonous_potato",
+          "weight": 4,
           "quality": 2,
           "functions": [
             {
@@ -118,9 +73,39 @@
         },
         {
           "type": "minecraft:item",
-          "name": "darkestsouls:rusty_metal_scrap",
+          "name": "minecraft:gunpowder",
           "weight": 3,
-          "quality": 1,
+          "quality": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 5,
+          "quality": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 2,
+          "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -133,9 +118,24 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_apple",
-          "weight": 1,
+          "name": "minecraft:copper_ingot",
+          "weight": 3,
           "quality": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_iron",
+          "weight": 5,
+          "quality": 2,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -148,9 +148,39 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_carrot",
-          "weight": 1,
+          "name": "minecraft:raw_gold",
+          "weight": 4,
+          "quality": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_copper",
+          "weight": 5,
           "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "weight": 5,
+          "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -163,7 +193,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:amethyst_shard",
+          "name": "minecraft:rotten_flesh",
           "weight": 3,
           "quality": 1,
           "functions": [
@@ -171,75 +201,61 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 0,
-                "max": 13
+                "max": 5
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 5,
+          "name": "minecraft:bread",
+          "weight": 3,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "darkestsouls:titanite_fragment",
+          "weight": 2,
           "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
-                "type": "minecraft:uniform",
-                "min": 3,
-                "max": 10
-              },
-              "add": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "rolls": {
-        "min": 1,
-        "max": 3
-      },
-      "bonus_rolls": {
-        "min": 0,
-        "max": 2
-      },
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gold_block",
-          "weight": 1,
-          "quality": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
                 "min": 0,
-                "max": 5
+                "max": 3
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_block",
+          "name": "darkestsouls:titanite_ingot",
           "weight": 1,
-          "quality": 1,
+          "quality": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 0,
-                "max": 5
+                "max": 1
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_block",
+          "name": "minecraft:diamond",
           "weight": 1,
-          "quality": 1,
+          "quality": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -252,9 +268,9 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:emerald_block",
+          "name": "minecraft:emerald",
           "weight": 1,
-          "quality": 1,
+          "quality": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -267,13 +283,61 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 5,
-          "quality": 2,
+          "name": "darkestsouls:torn_leather_scrap",
+          "weight": 1,
+          "quality": 4,
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "#minecraft:on_random_loot"
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "darkestsouls:rusty_mail_scrap",
+          "weight": 1,
+          "quality": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "darkestsouls:rusty_metal_scrap",
+          "weight": 1,
+          "quality": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "darkestsouls:torn_cloth_piece",
+          "weight": 1,
+          "quality": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
             }
           ]
         }
