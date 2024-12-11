@@ -8,6 +8,7 @@
   "item.darkestsouls.blood_knife" : "Blood Knife",
   "item.darkestsouls.poison_knife" : "Poison Knife",
   "item.darkestsouls.kukri" : "Kukri",
+  "item.darkestsouls.crystalian_small_chakram" : "Small Crystal Circlet",
 
   "item.darkestsouls.broken_straightsword" : "Broken Straightsword",
   "item.darkestsouls.bandit_knife" : "Bandit's Knife",
@@ -48,6 +49,12 @@
   "item.darkestsouls.chikage_extended" : "Chikage",
   "item.darkestsouls.holy_moonlight_sword" : "Holy Moonlight Sword",
   "item.darkestsouls.holy_moonlight_sword_lit" : "Holy Moonlight Sword",
+  "item.darkestsouls.demon_great_machete" : "Demon Great Machete",
+  "item.darkestsouls.crystalian_chakram" : "Crystal Circlet",
+  "item.darkestsouls.crystalian_spear" : "Crystal Spear",
+
+  "item.darkestsouls.iron_round_shield" : "Iron Round Small Shield",
+  "item.darkestsouls.small_round_shield" : "Round Small Shield",
 
   "item.darkestsouls.hunter_pistol" : "Hunter's Pistol",
   "item.darkestsouls.blunderbuss" : "Blunderbuss",

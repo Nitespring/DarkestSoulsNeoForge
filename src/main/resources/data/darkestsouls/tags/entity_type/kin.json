@@ -1,0 +1,9 @@
+{
+  "replace" : false,
+  "values" : [
+    "darkestsouls:spider",
+    "darkestsouls:large_spider",
+    "darkestsouls:nightmare_apostle",
+    "darkestsouls:large_nightmare_apostle"
+  ]
+}
