@@ -37,6 +37,10 @@ public class CommonConfig {
 		public static ModConfigSpec.BooleanValue spawn_huntsman_cutlass;
 		public static ModConfigSpec.BooleanValue spawn_huntsman_pitchfork;
 		public static ModConfigSpec.BooleanValue spawn_huntsman_rifle;
+		public static ModConfigSpec.BooleanValue spawn_spider;
+		public static ModConfigSpec.BooleanValue spawn_large_spider;
+		public static ModConfigSpec.BooleanValue spawn_nightmare_apostle;
+		public static ModConfigSpec.BooleanValue spawn_large_nightmare_apostle;
 		public static ModConfigSpec.BooleanValue spawn_gravetender_hollow_group;
 		public static ModConfigSpec.BooleanValue spawn_hollow_soldier_group;
 		public static ModConfigSpec.BooleanValue spawn_huntsman_group;
@@ -148,6 +152,18 @@ public class CommonConfig {
 		spawn_darkwraith = server
 				.comment("Set to false to disable Darkwraith")
 				.define("spawnconfig.spawn_darkwraith", true);
+		spawn_spider = server
+				.comment("Set to false to disable Spider")
+				.define("spawnconfig.spawn_spider", true);
+		spawn_large_spider = server
+				.comment("Set to false to disable Spider")
+				.define("spawnconfig.spawn_large_spider", true);
+		spawn_nightmare_apostle = server
+				.comment("Set to false to disable Nightmare Apostle")
+				.define("spawnconfig.spawn_nightmare_apostle", true);
+		spawn_nightmare_apostle = server
+				.comment("Set to false to disable Large Nightmare Apostle")
+				.define("spawnconfig.spawn_large_nightmare_apostle", true);
 		spawn_gravetender_hollow_group = server
 				.comment("Set to false to disable Gravetender Hollow Groups")
 				.define("spawnconfig.spawn_gravetender_hollow_group", true);

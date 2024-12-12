@@ -1,0 +1,26 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values":
+    [
+      "#minecraft:is_overworld",
+      {
+        "type": "neoforge:not",
+        "value":
+        [
+          "minecraft:deep_dark",
+          "minecraft:mushroom_fields"
+        ]
+      }
+    ]
+  },
+  "spawners": 
+    {
+    "type": "darkestsouls:nightmare_apostle",
+    "weight": 5,
+    "minCount": 1,
+    "maxCount": 3
+    }
+
+}

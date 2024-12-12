@@ -175,6 +175,26 @@ public class EntitySpawnRegistration {
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkHuntsmanRifleSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.SPIDER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkSpiderSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.LARGE_SPIDER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkLargeSpiderSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.NIGHTMARE_APOSTLE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkNightmareApostleSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.LARGE_NIGHTMARE_APOSTLE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkLargeNightmareApostleSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
         event.register(EntityInit.HUNTSMAN_GROUP1.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Types.MOTION_BLOCKING_NO_LEAVES,

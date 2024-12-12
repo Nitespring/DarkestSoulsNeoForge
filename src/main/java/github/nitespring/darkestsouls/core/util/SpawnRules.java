@@ -52,6 +52,30 @@ public class SpawnRules{
     public static boolean checkGeneralBeastPatientSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return checkVanillaMonsterSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
+    public static boolean checkLargeSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random){
+        return CommonConfig.spawn_large_spider.get() && checkGeneralLargeSpiderSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
+    public static boolean checkLargeNightmareApostleSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random){
+        return CommonConfig.spawn_large_nightmare_apostle.get() && checkGeneralLargeSpiderSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
+    public static boolean checkSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random){
+        return CommonConfig.spawn_spider.get() && checkGeneralSpiderSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
+    public static boolean checkNightmareApostleSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random){
+        return CommonConfig.spawn_nightmare_apostle.get() && checkGeneralSpiderSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
+    public static boolean checkGeneralSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL
+                && (!levelAccessor.canSeeSky(pos) || levelAccessor.getBiome(pos).is(CustomBiomeTags.SPIDER_ON_SURFACE))
+                && isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random)
+                && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
+    public static boolean checkGeneralLargeSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return levelAccessor.getDifficulty() != Difficulty.PEACEFUL
+                && !levelAccessor.canSeeSky(pos) && isDeepEnoughForDeepMob(pos)
+                && isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random)
+                && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
+    }
     public static boolean checkMadHollowSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return CommonConfig.spawn_mad_hollow.get() && levelAccessor.getDifficulty() != Difficulty.PEACEFUL /*&& levelAccessor.canSeeSky(pos) && !levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DESERT)
                 && ((levelAccessor.getBiome(pos).is(Tags.Biomes.IS_DENSE_VEGETATION))
