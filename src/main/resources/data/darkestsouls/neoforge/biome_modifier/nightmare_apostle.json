@@ -18,7 +18,7 @@
   "spawners": 
     {
     "type": "darkestsouls:nightmare_apostle",
-    "weight": 5,
+    "weight": 15,
     "minCount": 1,
     "maxCount": 3
     }

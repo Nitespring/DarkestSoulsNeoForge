@@ -161,7 +161,7 @@ public class CommonConfig {
 		spawn_nightmare_apostle = server
 				.comment("Set to false to disable Nightmare Apostle")
 				.define("spawnconfig.spawn_nightmare_apostle", true);
-		spawn_nightmare_apostle = server
+		spawn_large_nightmare_apostle = server
 				.comment("Set to false to disable Large Nightmare Apostle")
 				.define("spawnconfig.spawn_large_nightmare_apostle", true);
 		spawn_gravetender_hollow_group = server

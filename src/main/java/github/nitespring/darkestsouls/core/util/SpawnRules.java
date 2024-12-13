@@ -66,13 +66,13 @@ public class SpawnRules{
     }
     public static boolean checkGeneralSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return levelAccessor.getDifficulty() != Difficulty.PEACEFUL
-                && (!levelAccessor.canSeeSky(pos) || levelAccessor.getBiome(pos).is(CustomBiomeTags.SPIDER_ON_SURFACE))
+                && (!levelAccessor.canSeeSky(pos) || isDeepEnoughForDeepMob(pos) || levelAccessor.getBiome(pos).is(CustomBiomeTags.SPIDER_ON_SURFACE))
                 && isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random)
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
     public static boolean checkGeneralLargeSpiderSpawnRules(EntityType<? extends DarkestSoulsAbstractEntity> mob, ServerLevelAccessor levelAccessor, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return levelAccessor.getDifficulty() != Difficulty.PEACEFUL
-                && !levelAccessor.canSeeSky(pos) && isDeepEnoughForDeepMob(pos)
+                /*&& !levelAccessor.canSeeSky(pos)*/ && isDeepEnoughForDeepMob(pos)
                 && isDarkEnoughToSpawnForVanilla(levelAccessor, pos, random)
                 && checkVanillaMobSpawnRules(mob, levelAccessor, spawnType, pos, random);
     }
