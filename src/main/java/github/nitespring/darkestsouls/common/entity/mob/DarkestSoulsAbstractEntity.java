@@ -334,7 +334,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 			if (this.owner.getPersistentData().contains("DSTeam")) {
 				this.setDSTeam(this.owner.getPersistentData().getInt("DSTeam"));
 			} else if (this.owner instanceof Player) {
-				this.setDSTeam(4);
+				this.setDSTeam(7);
 			}
 		}
 		return spawnGroupData;
@@ -391,6 +391,14 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==6){
 							return true;
 						}else if(e instanceof AbstractSkeleton){
+							return true;
+						}else{return super.isAlliedTo(e);}
+					case 7://Player
+						if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==7){
+							return true;
+						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==7){
+							return true;
+						}else if(e instanceof Player){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					default:
