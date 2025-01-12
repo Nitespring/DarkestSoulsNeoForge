@@ -319,31 +319,7 @@ public class Gun extends Item implements IAmmoConsumingItem,ILeftClickItem {
     }
 
 
-    public static final IClientItemExtensions GUN_ITEM_EXTENSIONS = new IClientItemExtensions() {
 
-        @Nullable
-        @Override
-        public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
-            return entityLiving.isUsingItem()&&entityLiving.getUseItem()==itemStack&&
-                    entityLiving.getUsedItemHand()==InteractionHand.MAIN_HAND&&!entityLiving.swinging ? HumanoidModel.ArmPose.CROSSBOW_HOLD : HumanoidModel.ArmPose.ITEM;
-        }
-
-        @Override
-        public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player,
-                                               HumanoidArm arm, ItemStack itemInHand,
-                                               float partialTick, float equipProcess, float swingProcess) {
-            if(player.isUsingItem()&&player.getUseItem()==itemInHand&&
-                    player.getUsedItemHand()==InteractionHand.MAIN_HAND){
-
-                poseStack.translate(-0.5,0.3,0);
-                poseStack.mulPose(Axis.ZP.rotationDegrees(5));
-                poseStack.mulPose(Axis.XP.rotationDegrees(-20));
-
-            }
-            return IClientItemExtensions.super.applyForgeHandTransform(poseStack,player,arm,itemInHand,
-                    partialTick,equipProcess,swingProcess);
-        }
-    };
 
 
 }

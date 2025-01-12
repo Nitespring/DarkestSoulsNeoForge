@@ -3,6 +3,7 @@ package github.nitespring.darkestsouls.core.init;
 import github.nitespring.darkestsouls.DarkestSouls;
 import github.nitespring.darkestsouls.core.util.CustomItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
@@ -17,7 +18,7 @@ import java.util.Set;
 
 public class CreativeTabInit {
 
-    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB,
+    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB,
             DarkestSouls.MODID);
 
     public static final DeferredHolder<CreativeModeTab,CreativeModeTab> EQUIPMENT =   TABS.register("equipment",

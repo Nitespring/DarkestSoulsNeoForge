@@ -31,6 +31,7 @@ import github.nitespring.darkestsouls.common.item.Gun;
 import github.nitespring.darkestsouls.common.item.Shield;
 import github.nitespring.darkestsouls.common.item.child.guns.GatlingGun;
 import github.nitespring.darkestsouls.common.item.child.guns.Shotgun;
+import github.nitespring.darkestsouls.core.ClientItemExtensions;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.init.ItemInit;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -212,13 +213,13 @@ public class ClientListener {
 
 	@SubscribeEvent
 	public static void registerClientExtensions(RegisterClientExtensionsEvent event){
-		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.HUNTER_PISTOL);
-		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.REPEATING_PISTOL);
-		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.EVELYN);
-		event.registerItem(Gun.GUN_ITEM_EXTENSIONS, ItemInit.MUSKET);
-		event.registerItem(Shotgun.BLUNDERBUSS_ITEM_EXTENSIONS, ItemInit.BLUNDERBUSS);
-		event.registerItem(Shield.SHIELD_ITEM_EXTENSIONS, ItemInit.IRON_ROUND_SHIELD);
-		event.registerItem(Shield.SHIELD_ITEM_EXTENSIONS, ItemInit.SMALL_ROUND_SHIELD);
+		event.registerItem(ClientItemExtensions.GUN_ITEM_EXTENSIONS, ItemInit.HUNTER_PISTOL);
+		event.registerItem(ClientItemExtensions.GUN_ITEM_EXTENSIONS, ItemInit.REPEATING_PISTOL);
+		event.registerItem(ClientItemExtensions.GUN_ITEM_EXTENSIONS, ItemInit.EVELYN);
+		event.registerItem(ClientItemExtensions.GUN_ITEM_EXTENSIONS, ItemInit.MUSKET);
+		event.registerItem(ClientItemExtensions.BLUNDERBUSS_ITEM_EXTENSIONS, ItemInit.BLUNDERBUSS);
+		event.registerItem(ClientItemExtensions.SHIELD_ITEM_EXTENSIONS, ItemInit.IRON_ROUND_SHIELD);
+		event.registerItem(ClientItemExtensions.SHIELD_ITEM_EXTENSIONS, ItemInit.SMALL_ROUND_SHIELD);
 
 	}
 

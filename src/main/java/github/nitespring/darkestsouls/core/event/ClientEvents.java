@@ -14,7 +14,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 
 
-@OnlyIn(Dist.CLIENT)
 @EventBusSubscriber(modid = DarkestSouls.MODID, value = Dist.CLIENT)
 public class ClientEvents {
 	

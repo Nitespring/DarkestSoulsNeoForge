@@ -97,24 +97,6 @@ public class Shotgun extends Gun{
 
         player.level().playSound((Player) null, player, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.0F, 1.0f);
     }
-    public static final IClientItemExtensions BLUNDERBUSS_ITEM_EXTENSIONS = new IClientItemExtensions() {
 
-        @Override
-        public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player,
-                                               HumanoidArm arm, ItemStack itemInHand,
-                                               float partialTick, float equipProcess, float swingProcess) {
-            if(player.isUsingItem()&&player.getUseItem()==itemInHand&&
-                    player.getUsedItemHand()==InteractionHand.MAIN_HAND){
-
-                poseStack.translate(-0.4,0.3,0);
-
-                poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-                poseStack.mulPose(Axis.XP.rotationDegrees(-20));
-
-            }
-            return IClientItemExtensions.super.applyForgeHandTransform(poseStack,player,arm,itemInHand,
-                    partialTick,equipProcess,swingProcess);
-        }
-    };
 
 }
