@@ -61,7 +61,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
 			poseStack.scale(1.0f,1.0f,1.0f);
 		}else if(animatable.getRightHandItem().getItem()==ItemInit.HUNTSMAN_PITCHFORK.get()){
-			poseStack.translate(0, -0.025, -0.5);
+			poseStack.translate(0, -0.05, -0.5);
 			poseStack.mulPose(Axis.XP.rotationDegrees(-80));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
@@ -88,7 +88,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 
 	}else if (bone.getName().equals("left_item")) {
 		if(animatable.getLeftHandItem().getItem()==ItemInit.HUNTSMAN_AXE.get()) {
-			poseStack.translate(0, 0.32, -0.52);
+			poseStack.translate(0, 0.7, -1);
 			poseStack.mulPose(Axis.XP.rotationDegrees(-10));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(180));

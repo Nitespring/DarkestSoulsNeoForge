@@ -83,7 +83,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(180));
 		}else if(animatable instanceof HollowSoldierAxe) {
-			poseStack.translate(0, 0.54, -0.5);
+			poseStack.translate(0.00, 0.85, -0.75);
 			poseStack.mulPose(Axis.XP.rotationDegrees(0));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(180));

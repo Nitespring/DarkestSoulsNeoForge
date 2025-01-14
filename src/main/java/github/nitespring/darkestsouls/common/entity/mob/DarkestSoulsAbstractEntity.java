@@ -311,11 +311,13 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 			hitStunTicks--;
 		}
 
-		if (this.getEntityData().get(POSTURE_HEALTH) <= -1) {
+		if (this.getEntityData().get(POSTURE_HEALTH) <= -1 && this.getAnimationState()!=getPostureBreakAnimation()) {
 			this.setPostureBreakAnimation();
 
 			//System.out.println("should Stun");
-		}else if (this.getEntityData().get(POISE_HEALTH) <= -1) {
+		}else if (this.getEntityData().get(POISE_HEALTH) <= -1
+				&& !(this.getAnimationState()==getPostureBreakAnimation()
+				|| this.getAnimationState()==getPoiseBreakAnimation())) {
 			this.setPoiseBreakAnimation();
 			//System.out.println("should Stun");
 		}

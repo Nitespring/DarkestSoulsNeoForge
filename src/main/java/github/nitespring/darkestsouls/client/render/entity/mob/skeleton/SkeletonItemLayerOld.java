@@ -51,7 +51,7 @@ public class SkeletonItemLayerOld<T extends Skeleton & GeoEntity> extends BlockA
 	@Override
 	protected ItemDisplayContext getTransformTypeForStack(GeoBone bone, ItemStack stack, T animatable) {
 		if (bone.getName().equals("item_right")) {
-			  return ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
+			  return ItemDisplayContext.THIRD_PERSON_RIGHT_HAND;
 		  }else if (bone.getName().equals("item_left")) {
 			return ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
 		}else {
@@ -68,28 +68,15 @@ public class SkeletonItemLayerOld<T extends Skeleton & GeoEntity> extends BlockA
 protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack stack, T animatable,
 		MultiBufferSource bufferSource, float partialTick, int packedLight, int packedOverlay) {
 	if (bone.getName().equals("item_right")) {
-		if(animatable instanceof SkeletonCurvedSwords) {
-			poseStack.translate(0.05, 0.76, -0.71);
-			poseStack.mulPose(Axis.XP.rotationDegrees(0));
-			poseStack.mulPose(Axis.YP.rotationDegrees(-15));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-		}else if(animatable instanceof SkeletonSpear) {
-			poseStack.translate(-0.0, 0.25, -0.7);
-			poseStack.mulPose(Axis.XP.rotationDegrees(0));
-			poseStack.mulPose(Axis.YP.rotationDegrees(0));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-		}else{
-			poseStack.translate(0.00, 0.6, -0.5);
-			poseStack.mulPose(Axis.XP.rotationDegrees(0));
-			poseStack.mulPose(Axis.YP.rotationDegrees(0));
-			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
-		}
-      
+		poseStack.translate(0.0, -0.1, -0.1);
+		poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+		poseStack.mulPose(Axis.YP.rotationDegrees(0));
+		poseStack.mulPose(Axis.ZP.rotationDegrees(0));
 	  }
 	if (bone.getName().equals("item_left")) {
-		poseStack.translate(0.05, 0.76, -0.71);
+		poseStack.translate(0.00, 0.75, -0.65);
 		poseStack.mulPose(Axis.XP.rotationDegrees(0));
-		poseStack.mulPose(Axis.YP.rotationDegrees(-15));
+		poseStack.mulPose(Axis.YP.rotationDegrees(0));
 		poseStack.mulPose(Axis.ZP.rotationDegrees(180));
 
 
