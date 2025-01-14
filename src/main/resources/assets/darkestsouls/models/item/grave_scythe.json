@@ -1,28 +1,33 @@
 {
-"parent": "minecraft:item/handheld",
-"textures": {
-    "layer0": "darkestsouls:item/weapon/grave_scythe"
+	"parent": "darkestsouls:item/basic/handheld_xl",
+	"textures": {
+		"layer0": "darkestsouls:item/weapon/grave_scythe"
     },
-"display": {
-    "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-    		"translation": [0, 6, -1.75],
-            "scale": [ 2.06, 2.06, 0.65 ]
-      		},
-    "firstperson_righthand": {
-    		"rotation": [ 0, -90, 45 ],
-      		"translation": [ 0.63, 3.2, 0.13 ],
-            "scale": [ 1.26, 1.26, 0.48 ]
-    		},
-   "thirdperson_lefthand": {
-    		"rotation": [ 0, 90, -55 ],
-    		"translation": [0, 6, -1.75],
-            "scale": [ 2.06, 2.06, 0.65 ]
-			},
-    "firstperson_lefthand": {
-    		"rotation": [ 0, 90, -45 ],
-      		"translation": [ 0.63, 3.2, 0.13 ],
-      		"scale": [ 1.26, 1.26, 0.48 ]
-    		}
-}
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, -90, 55 ],
+			"translation": [ 0, 16.0, -3 ],
+			"scale": [ 3.0, 3.0, 0.85 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 90, -55 ],
+			"translation": [ 0, 16.0, -3 ],
+			"scale": [ 3.0, 3.0, 0.85 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 0, -90, 45 ],
+			"translation": [ 1.13, 9, 0.13 ],
+			"scale": [ 1.5, 1.5, 0.68 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 0, 90, -45 ],
+			"translation": [ 1.13, 9, 0.13 ],
+			"scale": [ 1.5, 1.5, 0.68 ]
+		},
+		"gui": {
+			"translation": [ 2.5, 2, 0 ],
+			"rotation": [ 0, 0, 0 ],
+			"scale": [ 1.2, 1.2, 1.0 ]
+		}
+	}
 }

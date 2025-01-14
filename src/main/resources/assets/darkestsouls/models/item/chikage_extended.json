@@ -1,28 +1,33 @@
 {
-"parent": "minecraft:item/handheld",
-"textures": {
+  "parent": "darkestsouls:item/basic/handheld_xl",
+  "textures": {
     "layer0": "darkestsouls:item/weapon/chikage_blood"
-    },
-"display": {
+  },
+  "display": {
     "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-    		"translation": [0, 14.5, -1.1],
-            "scale": [ 1.95, 1.95, 0.65 ]
-      		},
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 27, -3.75 ],
+      "scale": [ 3.2, 3.2, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 27, -3.75 ],
+      "scale": [ 3.2, 3.2, 0.85 ]
+    },
     "firstperson_righthand": {
-    		"rotation": [ 0, -90, 55 ],
-      		"translation": [ 1.13, 7.6, 1.13 ],
-            "scale": [ 0.89, 0.89, 0.36 ]
-    		},
-   "thirdperson_lefthand": {
-    		"rotation": [ 0, 90, -55 ],
-    		"translation": [0, 14.5, -1.1],
-            "scale": [ 1.95, 1.95, 0.65 ]
-			},
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 17, 0.13 ],
+      "scale": [ 2.0, 2.0, 0.68 ]
+    },
     "firstperson_lefthand": {
-    		"rotation": [ 0, 90, -55 ],
-      		"translation": [ 1.13, 7.6, 1.13 ],
-      		"scale": [ 0.89, 0.89, 0.36 ]
-    		}
-}
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 17, 0.13 ],
+      "scale": [ 2.0, 2.0, 0.68 ]
+    },
+    "gui": {
+      "translation": [ 3, 5, 0 ],
+      "rotation": [ 0, 0, 5 ],
+      "scale": [ 1.5, 1.5, 1.0 ]
+    }
+  }
 }

@@ -1,28 +1,13 @@
 {
-  "parent": "minecraft:item/generated",
-"textures": {
+  "parent": "darkestsouls:item/basic/handheld_large",
+  "textures": {
     "layer0": "darkestsouls:item/weapon/battle_axe"
-    },
-"display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [0, 7, -1.3],
-            "scale": [ 1.30, 1.30, 0.65 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 1.23, 6.5, -0.43 ],
-            "scale": [ 0.86, 0.86, 0.36 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [0, 7, -1.3],
-            "scale": [ 1.30, 1.30, 0.65 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [ 1.23, 6.5, -0.43 ],
-            "scale": [ 0.86, 0.86, 0.36 ]
-        }
+  },
+  "display": {
+    "gui": {
+      "translation": [ 2.5, 2, 0 ],
+      "rotation": [ 0, 0, 0 ],
+      "scale": [ 1.25, 1.25, 1.0 ]
     }
+  }
 }

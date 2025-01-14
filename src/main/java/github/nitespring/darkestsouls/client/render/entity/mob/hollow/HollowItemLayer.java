@@ -99,7 +99,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 			poseStack.mulPose(Axis.YP.rotationDegrees(-70));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
 		}else {
-			poseStack.translate(0.00, 0.6, -0.5);
+			poseStack.translate(0.00, 0.85, -0.75);
 			poseStack.mulPose(Axis.XP.rotationDegrees(0));
 			poseStack.mulPose(Axis.YP.rotationDegrees(0));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(180));

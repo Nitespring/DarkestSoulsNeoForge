@@ -1,29 +1,33 @@
 {
-
-    "parent": "item/generated",
-    "display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 0, 7.0, 1.0 ],
-            "scale": [ 1.07, 1.07, 0.85 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [ 0, 7.0, 1.0 ],
-            "scale": [ 1.07, 1.07, 0.85 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 1.13, 4.6, 0.43 ],
-            "scale": [ 0.78, 0.78, 0.58 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [ 1.13, 4.6, 0.43 ],
-            "scale": [ 0.78, 0.78, 0.58 ]
-        }
-    },
-"textures": {
+  "parent": "darkestsouls:item/basic/handheld_large",
+  "textures": {
     "layer0": "darkestsouls:item/weapon/falchion"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 13.0, -0.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 13.0, -0.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 9.6, 1.63 ],
+      "scale": [ 1.1, 1.1, 0.5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 9.6, 1.63 ],
+      "scale": [ 1.1, 1.1, 0.5 ]
+    },
+    "gui": {
+      "translation": [ 4, 4, 0 ],
+      "rotation": [ 0, 0, 0 ],
+      "scale": [ 1.5, 1.5, 1.0 ]
     }
+  }
 }

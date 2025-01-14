@@ -1,32 +1,25 @@
 {
-    "parent": "darkestsouls:item/basic/handheld_xl",
+    "parent": "item/generated",
     "display": {
         "thirdperson_righthand": {
             "rotation": [ 0, -90, 55 ],
-            "translation": [ 0, 16.0, -2.0 ],
+            "translation": [ 0, 22.0, -2.5 ],
             "scale": [ 3.0, 3.0, 0.85 ]
         },
         "thirdperson_lefthand": {
             "rotation": [ 0, 90, -55 ],
-            "translation": [ 0, 16.0, -2.0 ],
+            "translation": [ 0, 22.0, -2.5 ],
             "scale": [ 3.0, 3.0, 0.85 ]
         },
         "firstperson_righthand": {
             "rotation": [ 0, -90, 45 ],
-            "translation": [ 1.13, 9, 0.13 ],
+            "translation": [ 1.13, 12, 0.13 ],
             "scale": [ 1.5, 1.5, 0.68 ]
         },
         "firstperson_lefthand": {
             "rotation": [ 0, 90, -45 ],
-            "translation": [ 1.13, 9, 0.13 ],
+            "translation": [ 1.13, 12, 0.13 ],
             "scale": [ 1.5, 1.5, 0.68 ]
-        },
-        "gui": {
-            "translation": [ 2.0, 2.0, 0 ],
-            "scale": [ 1.15, 1.15, 1 ]
         }
-    },
-    "textures": {
-    "layer0": "darkestsouls:item/weapon/crescent_moon_greataxe"
     }
 }

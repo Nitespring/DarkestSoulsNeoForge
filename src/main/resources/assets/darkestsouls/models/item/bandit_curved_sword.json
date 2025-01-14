@@ -1,36 +1,33 @@
 {
-    "parent": "item/generated",
-    "display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 0, 8.5, 2.5 ],
-            "scale": [ 1.70, 1.70, 0.85 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 75, -55 ],
-            "translation": [ 0, 8.5, 2.5 ],
-            "scale": [ 1.70, 1.70, 0.85 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 0, -75, 65 ],
-            "translation": [ 1.13, 5.5, -0.63 ],
-            "scale": [ 1.16, 1.16, 0.58 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [ 0, 90, -65 ],
-            "translation": [ 1.13, 5.5, -0.63 ],
-            "scale": [ 1.16, 1.16, 0.58 ]
-        },
-        "fixed": {
-            "rotation": [ 0, 180, 17 ],
-            "scale": [ 1.2, 1.2, 1 ]
-        },
-        "gui": {
-            "rotation": [ 0, 0, 17 ],
-            "scale": [ 1.2, 1.2, 1.0 ]
-        }
-    },
-    "textures": {
+  "parent": "darkestsouls:item/basic/handheld_large",
+  "textures": {
     "layer0": "darkestsouls:item/weapon/bandit_curved_sword"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 8.0, 2 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 8.0, 2 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 65 ],
+      "translation": [ 2.13, 5.2, 0.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -65 ],
+      "translation": [ 2.13, 5.2, 0.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
+    },
+    "gui": {
+      "translation": [ 0, 0, 0 ],
+      "rotation": [ 0, 0, 15 ],
+      "scale": [ 1.1, 1.1, 1 ]
     }
+  }
 }
