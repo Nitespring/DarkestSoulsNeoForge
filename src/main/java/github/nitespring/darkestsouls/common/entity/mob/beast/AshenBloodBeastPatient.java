@@ -217,7 +217,6 @@ public class AshenBloodBeastPatient extends BeastPatientEntity implements GeoEnt
         switch (this.getAnimationState()) {
             case 1:
                 this.getNavigation().stop();
-                this.getNavigation().stop();
                 if(getAnimationTick()==1){
                     this.playSound(SoundEvents.BLAZE_HURT);
                 }

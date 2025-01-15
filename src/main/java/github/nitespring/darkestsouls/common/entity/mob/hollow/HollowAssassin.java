@@ -239,6 +239,9 @@ public class HollowAssassin extends Hollow implements GeoEntity {
         switch (this.getAnimationState()) {
             case 1:
                 this.getNavigation().stop();
+                if(getAnimationTick()==1){
+                    this.playSound(SoundEvents.BLAZE_HURT);
+                }
                 if(getAnimationTick()>=85) {
                     this.getNavigation().stop();
                     setAnimationTick(0);
