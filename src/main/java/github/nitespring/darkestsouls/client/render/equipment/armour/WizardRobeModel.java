@@ -1,6 +1,8 @@
 package github.nitespring.darkestsouls.client.render.equipment.armour;
 
 import net.minecraft.client.model.HumanoidArmorModel;
+import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -98,5 +100,6 @@ public class WizardRobeModel<T extends LivingEntity> extends HumanoidArmorModel<
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
+
 
 }
