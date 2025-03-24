@@ -169,7 +169,7 @@ public class EntityInit {
 					.build("darkwraith"));
 	public static final DeferredHolder<EntityType<?>,EntityType<CapraDemon>> CAPRA_DEMON = ENTITIES.register("capra_demon",
 			() -> EntityType.Builder.<CapraDemon>of(CapraDemon::new, MobCategory.MONSTER)
-					.sized(0.65f, 2.0f)
+					.sized(0.8f, 2.75f)
 					.build("capra_demon"));
 	public static final DeferredHolder<EntityType<?>,EntityType<Spider>> SPIDER = ENTITIES.register("spider",
 			() -> EntityType.Builder.<Spider>of(Spider::new, MobCategory.MONSTER)

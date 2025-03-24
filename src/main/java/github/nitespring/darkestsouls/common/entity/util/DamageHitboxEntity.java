@@ -184,76 +184,78 @@ public class DamageHitboxEntity extends Entity {
 		}
        }
 	 
-	 private void dealDamageTo(LivingEntity target) {
-	      LivingEntity owner = this.getOwner();
-		  if(target==null||target==this.getOwner()){
-			  return;
-		  }
-	      if (target.isAlive() && !target.isInvulnerable() && target != owner) {
-	         if (owner == null) {
-				 target.hurt(this.damageSources().generic(), damage);
-				 if(target instanceof DarkestSoulsAbstractEntity e1){
-					 e1.damagePoiseHealth(Math.round(damage));
-					 e1.damagePostureHealth(Math.round(damage));
-				 }
-	         } else {
-	            if (owner.isAlliedTo(target)||owner==target) {
-	               return;
-	            }else {
-					switch(this.hitboxType) {
-						case 1:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							target.addEffect(new MobEffectInstance(MobEffects.POISON, 100,0), this.getOwner());
-							break;
-						case 2:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							target.addEffect(new MobEffectInstance(MobEffects.POISON, 140,1), this.getOwner());
-							break;
-						case 3:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							if(target.hasEffect(EffectInit.BLEED)){
-								int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ 2;
-								target.removeEffect(EffectInit.BLEED);
-								target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, amount));
-							}else {
-								target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, 1), this.getOwner());
-							}
-							break;
-						case 4:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							if(target.hasEffect(EffectInit.BLEED)){
-								int amount= target.getEffect(EffectInit.BLEED).getAmplifier()+ 1;
-								target.removeEffect(EffectInit.BLEED);
-								target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, amount));
-							}else {
-								target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, 0), this.getOwner());
-							}
-							break;
-						case 5:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							target.addEffect(new MobEffectInstance(MobEffects.WITHER, 140,0), this.getOwner());
-							break;
-						case 6:
-							target.hurt(this.damageSources().inFire(), damage);
-							target.igniteForTicks(60);
-							break;
-						case 7:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							target.addEffect(new MobEffectInstance(EffectInit.FROST, 100,0), this.getOwner());
-							break;
-						default:
-							target.hurt(this.damageSources().mobAttack(owner), damage);
-							break;
-					}
-					/*if(target instanceof DarkestSoulsAbstractEntity e1 && (this.getOwner()==null||target!=this.getOwner()&&!target.isAlliedTo(this.getOwner()))){
+	private void dealDamageTo(LivingEntity target) {
+		if(!this.level().isClientSide) {
+			LivingEntity owner = this.getOwner();
+			if (target == null || target == this.getOwner()) {
+				return;
+			}
+			if (target.isAlive() && !target.isInvulnerable() && target != owner) {
+				if (owner != null) {
+					if (owner.isAlliedTo(target) || owner == target) {
+						return;
+					} else {
+						switch (this.hitboxType) {
+							case 1:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								target.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this.getOwner());
+								break;
+							case 2:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								target.addEffect(new MobEffectInstance(MobEffects.POISON, 140, 1), this.getOwner());
+								break;
+							case 3:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								if (target.hasEffect(EffectInit.BLEED)) {
+									int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + 2;
+									target.removeEffect(EffectInit.BLEED);
+									target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, amount));
+								} else {
+									target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, 1), this.getOwner());
+								}
+								break;
+							case 4:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								if (target.hasEffect(EffectInit.BLEED)) {
+									int amount = target.getEffect(EffectInit.BLEED).getAmplifier() + 1;
+									target.removeEffect(EffectInit.BLEED);
+									target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, amount));
+								} else {
+									target.addEffect(new MobEffectInstance(EffectInit.BLEED, 400, 0), this.getOwner());
+								}
+								break;
+							case 5:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								target.addEffect(new MobEffectInstance(MobEffects.WITHER, 140, 0), this.getOwner());
+								break;
+							case 6:
+								target.hurt(this.damageSources().inFire(), damage);
+								target.igniteForTicks(60);
+								break;
+							case 7:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								target.addEffect(new MobEffectInstance(EffectInit.FROST, 100, 0), this.getOwner());
+								break;
+							default:
+								target.hurt(this.damageSources().mobAttack(owner), damage);
+								break;
+						}
+					if(target instanceof DarkestSoulsAbstractEntity e1 && (this.getOwner()==null||target!=this.getOwner()&&!target.isAlliedTo(this.getOwner()))){
 						e1.damagePoiseHealth(Math.round(damage));
 						e1.damagePostureHealth(Math.round(damage));
-					}*/
-	            }
-	         }
+					}
+					}
+				} else {
+					target.hurt(this.damageSources().generic(), damage);
+					if (target instanceof DarkestSoulsAbstractEntity e1) {
+						e1.damagePoiseHealth(Math.round(damage));
+						e1.damagePostureHealth(Math.round(damage));
+					}
+				}
 
-	      }
-	   }
+			}
+		}
+	}
 
 	 
 }
