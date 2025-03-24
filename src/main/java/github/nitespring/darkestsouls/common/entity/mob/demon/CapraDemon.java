@@ -30,10 +30,12 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity {
 
-
+    private static final EntityDimensions CRAWLING_BB = new EntityDimensions(0.9f, 0.8f, 0.6f, EntityAttachments.createDefault(0.9f, 0.8f),false);
+    protected Vec3 aimVec;
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
     public CapraDemon(EntityType<? extends PathfinderMob> e, Level level) {
@@ -207,6 +209,16 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
     }
 
     @Override
+    public EntityDimensions getDefaultDimensions(Pose p_21047_) {
+
+        if ((this.isInWater() && this.getAnimationState() == 0) || this.getAnimationState() == 1) {
+            return CRAWLING_BB;
+        } else {
+            return this.getType().getDimensions();
+        }
+    }
+
+    @Override
     public boolean fireImmune() {
         return true;
     }
@@ -224,19 +236,19 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.WOLF_HURT;
+        return SoundEvents.RAVAGER_HURT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.WOLF_AMBIENT;
+        return SoundEvents.RAVAGER_AMBIENT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.WOLF_DEATH;
+        return SoundEvents.RAVAGER_DEATH;
     }
 
     @Override
@@ -288,17 +300,125 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 } else {
                     this.getNavigation().stop();
                 }
-                if (getAnimationTick() == 3) {
-                    this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
+
+                if(getAnimationTick()==12) {
+                    this.setDeltaMovement(0,0.75,0);
+                    if (this.getTarget() != null) {
+                        this.aimVec = this.getTarget().position().add(this.position().scale(-1.0));
+                    } else {
+                        this.aimVec = this.getLookAngle();
+                    }
                 }
-                if (getAnimationTick() == 6) {
+                if(getAnimationTick()==15){
+                    if(this.aimVec!=null) {
+                        this.setDeltaMovement(this.aimVec.normalize().add(0,0.05f,0).scale(0.5));
+                    }else {
+                        this.setDeltaMovement(this.getLookAngle().normalize().add(0,0.05f,0).scale(0.5));
+                    }
+                }
+                if (getAnimationTick() == 16) {
+                    this.playSound(SoundEvents.RAVAGER_ATTACK, 0.2f, 0.4f);
+                }
+                if(getAnimationTick()==23) {
                     doAttack(0,1.0f,1.0f);
                 }
-                if (getAnimationTick() >= 12 && flag) {
-                    setAnimationTick(0);
-                    setAnimationState(22);
+                if(getAnimationTick()>=32&&flag) {
+                    int r = new Random().nextInt(2048);
+                    if(r<=800){
+                        setAnimationTick(0);
+                        setAnimationState(22);
+                    }
                 }
-                if (getAnimationTick() >= 16) {
+                if(getAnimationTick()>=48) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 360) {
+                        setCombatState(0);
+                    }
+                }
+                break;
+            case 22:
+                if (getAnimationTick() <= 2) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+
+                if(getAnimationTick()==6) {
+                    this.setDeltaMovement(0,0.75,0);
+                    if (this.getTarget() != null) {
+                        this.aimVec = this.getTarget().position().add(this.position().scale(-1.0));
+                    } else {
+                        this.aimVec = this.getLookAngle();
+                    }
+                }
+                if(getAnimationTick()==8){
+                    if(this.aimVec!=null) {
+                        this.setDeltaMovement(this.aimVec.normalize().add(0,0.05f,0).scale(0.5));
+                    }else {
+                        this.setDeltaMovement(this.getLookAngle().normalize().add(0,0.05f,0).scale(0.5));
+                    }
+                }
+                if(getAnimationTick()==12) {
+                    doAttack(0,1.0f,1.0f);
+                }
+                if(getAnimationTick()>=20&&flag) {
+                    int r = new Random().nextInt(2048);
+                    if(r<=240){
+                        setAnimationTick(0);
+                        setAnimationState(21);
+                    }
+                }
+                if(getAnimationTick()>=28) {
+                    this.getNavigation().stop();
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                    int r = getRandom().nextInt(2048);
+                    if (r <= 720) {
+                        setCombatState(0);
+                    }
+                }
+                break;
+            case 23:
+                if (getAnimationTick() <= 6) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+                if (getAnimationTick() == 18) {
+                    this.playSound(SoundEvents.RAVAGER_ATTACK, 0.2f, 0.4f);
+                }
+                if (getAnimationTick() == 22) {
+                    doAttack(0,1.0f,1.0f);
+                }
+                if (getAnimationTick() >= 32 && flag) {
+                    setAnimationTick(0);
+                    setAnimationState(24);
+                }
+                if (getAnimationTick() >= 36) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
+            case 24:
+                if (getAnimationTick() <= 6) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+                if (getAnimationTick() == 18) {
+                    this.playSound(SoundEvents.RAVAGER_ATTACK, 0.2f, 0.4f);
+                }
+                if (getAnimationTick() == 22) {
+                    doAttack(0,1.0f,1.0f);
+                }
+                /*if (getAnimationTick() >= 28 && flag) {
+                    setAnimationTick(0);
+                    setAnimationState(24);
+                }*/
+                if (getAnimationTick() >= 36) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
@@ -316,15 +436,15 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
     }
 
     public void doAttack(float dmgFlat, float dmgMull, float range){
-        this.playSound(SoundEvents.WOLF_GROWL);
-        DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX_SMALL.get(), level(),
-                this.position().add((range*1.35f) * this.getLookAngle().x,
-                        0.25,
-                        (range*1.35f) * this.getLookAngle().z),
+        this.playSound(SoundEvents.PLAYER_ATTACK_SWEEP);
+        DamageHitboxEntity h = new DamageHitboxEntity(EntityInit.HITBOX.get(), level(),
+                this.position().add((range*2.0f) * this.getLookAngle().x,
+                        0.5,
+                        (range*2.0f) * this.getLookAngle().z),
                 (float) this.getAttributeValue(Attributes.ATTACK_DAMAGE)*dmgMull+dmgFlat, 5);
         h.setOwner(this);
-        h.setHitboxScaleWidth(0.35f);
-        h.setHitboxScaleHeight(0);
+        h.setHitboxScaleWidth(0.25f);
+        h.setHitboxScaleHeight(0.25f);
         h.setHitboxType(0);
         h.setTarget(this.getTarget());
         this.level().addFreshEntity(h);
@@ -557,8 +677,10 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         protected void checkForAttack(double distance, double reach){
             if (distance <= reach && this.ticksUntilNextAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(2048);
-                if(r<=800)      {this.mob.setAnimationState(21);}
-                else if(r<=1600) {this.mob.setAnimationState(22);}
+                if(r<=240)      {this.mob.setAnimationState(21);}
+                else if(r<=480) {this.mob.setAnimationState(22);}
+                else if(r<=1240) {this.mob.setAnimationState(23);}
+                else if(r<=1720) {this.mob.setAnimationState(24);}
             }
 
 

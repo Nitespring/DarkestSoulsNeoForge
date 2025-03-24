@@ -1662,7 +1662,7 @@
 			}
 		},
 		"animation.capra_demon.attack_jump1": {
-			"animation_length": 1.5,
+			"animation_length": 4,
 			"bones": {
 				"hips": {
 					"rotation": {
@@ -2291,7 +2291,7 @@
 			}
 		},
 		"animation.capra_demon.attack_jump2": {
-			"animation_length": 2,
+			"animation_length": 3,
 			"bones": {
 				"hips": {
 					"rotation": {
@@ -2686,7 +2686,7 @@
 			}
 		},
 		"animation.capra_demon.attack1": {
-			"animation_length": 1.5,
+			"animation_length": 3,
 			"bones": {
 				"root": {
 					"position": {
@@ -3169,7 +3169,7 @@
 			}
 		},
 		"animation.capra_demon.attack2": {
-			"animation_length": 1.5,
+			"animation_length": 3,
 			"bones": {
 				"root": {
 					"position": {

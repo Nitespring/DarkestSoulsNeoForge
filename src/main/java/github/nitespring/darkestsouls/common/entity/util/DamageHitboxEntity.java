@@ -186,6 +186,9 @@ public class DamageHitboxEntity extends Entity {
 	 
 	 private void dealDamageTo(LivingEntity target) {
 	      LivingEntity owner = this.getOwner();
+		  if(target==null||target==this.getOwner()){
+			  return;
+		  }
 	      if (target.isAlive() && !target.isInvulnerable() && target != owner) {
 	         if (owner == null) {
 				 target.hurt(this.damageSources().generic(), damage);
@@ -242,10 +245,10 @@ public class DamageHitboxEntity extends Entity {
 							target.hurt(this.damageSources().mobAttack(owner), damage);
 							break;
 					}
-					if(target instanceof DarkestSoulsAbstractEntity e1){
+					/*if(target instanceof DarkestSoulsAbstractEntity e1 && (this.getOwner()==null||target!=this.getOwner()&&!target.isAlliedTo(this.getOwner()))){
 						e1.damagePoiseHealth(Math.round(damage));
 						e1.damagePostureHealth(Math.round(damage));
-					}
+					}*/
 	            }
 	         }
 
