@@ -288,6 +288,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.HOLLOW_DOG.get());
                         output.accept(ItemInit.LARGE_HOLLOW_DOG.get());
                         output.accept(ItemInit.UNDEAD_DOG.get());
+                        output.accept(ItemInit.CAPRA_DEMON.get());
                         output.accept(ItemInit.LARGE_UNDEAD_DOG.get());
                         output.accept(ItemInit.SPAWN_GROUP_GRAVETENDER_HOLLOW_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_HOLLOW_SOLDIER_1.get());

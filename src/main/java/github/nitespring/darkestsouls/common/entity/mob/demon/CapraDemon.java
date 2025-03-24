@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -37,7 +38,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
 
     public CapraDemon(EntityType<? extends PathfinderMob> e, Level level) {
         super(e, level);
-        this.xpReward=15;
+        this.xpReward=25;
     }
 
     @Override
@@ -61,6 +62,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
         data.add(new AnimationController<>(this, "main_controller", 4, this::predicate));
+        data.add(new AnimationController<>(this, "tail_controller", 1, this::tailPredicate));
         data.add(new AnimationController<>(this, "stun_controller", 0, this::hitStunPredicate));
     }
 
@@ -70,10 +72,19 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         }*/
 
         if(hitStunTicks>0) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.dog.hit"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.hit"));
         }else {
-            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.dog.new"));
+            event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.capra_demon.new"));
         }
+        return PlayState.CONTINUE;
+    }
+
+    private <E extends GeoAnimatable> PlayState tailPredicate(AnimationState<E> event) { /*if(this.shouldResetAnimation()){
+            event.getController().forceAnimationReset();
+        }*/
+
+        event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.capra_demon.tail"));
+
         return PlayState.CONTINUE;
     }
 
@@ -83,7 +94,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         int animState = this.getAnimationState();
         int combatState = this.getCombatState();
         if(this.isDeadOrDying()) {
-            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.die"));
+            event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.death"));
         }else {
             switch(animState) {
                 case 1:
@@ -93,10 +104,67 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.hit_stun"));
                     break;
                 case 21:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.atk1"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack_jump1"));
                     break;
                 case 22:
-                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.atk2"));
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack_jump2"));
+                    break;
+                case 23:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack1"));
+                    break;
+                case 24:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack2"));
+                    break;
+                case 25:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack3"));
+                    break;
+                case 26:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack4"));
+                    break;
+                case 27:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack5"));
+                    break;
+                case 28:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack6"));
+                    break;
+                case 29:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack7"));
+                    break;
+                case 30:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack8"));
+                    break;
+                case 31:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack9"));
+                    break;
+                case 32:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack10"));
+                    break;
+                case 33:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack11"));
+                    break;
+                case 34:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack12"));
+                    break;
+                case 35:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.attack13"));
+                    break;
+                case 41:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.fireball"));
+                    break;
+                case 42:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.fire_breath_start"));
+                    break;
+                case 43:
+                    event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.capra_demon.fire_breath"));
+                    break;
+                case 44:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.fire_storm_start"));
+                    break;
+                case 45:
+                    event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.capra_demon.fire_storm"));
+                    break;
+                case 46:
+                    event.getController().setAnimation(RawAnimation.begin().thenPlay("animation.capra_demon.fire_storm_end"));
                     break;
                 default:
                     if(this.isInWater()) {
@@ -121,11 +189,9 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_21434_, DifficultyInstance p_21435_, MobSpawnType p_21436_, @Nullable SpawnGroupData p_21437_) {
-        defineDogType();
         return super.finalizeSpawn(p_21434_, p_21435_, p_21436_, p_21437_);
     }
 
-    protected void defineDogType(){}
 
     @Override
     protected void registerGoals() {
@@ -138,6 +204,16 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
     protected void defaultDogGoals(){
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,0.2f,1));
+    }
+
+    @Override
+    public boolean fireImmune() {
+        return true;
+    }
+
+    @Override
+    public boolean canSwimInFluidType(FluidType type) {
+        return true;
     }
 
     protected void dogAIGoals(){
@@ -223,28 +299,6 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     setAnimationState(22);
                 }
                 if (getAnimationTick() >= 16) {
-                    setAnimationTick(0);
-                    setAnimationState(0);
-                }
-                break;
-            case 22:
-                if (getAnimationTick() <= 6) {
-                    this.moveToTarget();
-                } else {
-                    this.getNavigation().stop();
-                }
-                if (getAnimationTick() == 10) {
-                    this.playSound(SoundEvents.WOLF_GROWL, 0.2f, 0.4f);
-                }
-                if (getAnimationTick() == 14) {
-                    doAttack(2.0f,1.2f,1.25f);
-
-                }
-                if (getAnimationTick() >= 20 && flag) {
-                    setAnimationTick(0);
-                    setAnimationState(21);
-                }
-                if (getAnimationTick() >= 24) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }

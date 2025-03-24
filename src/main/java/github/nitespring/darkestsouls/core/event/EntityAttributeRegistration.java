@@ -59,6 +59,7 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.UNDEAD_DOG.get(), EntityAttributes.setUndeadDogAttributes().build());
 		event.put(EntityInit.LARGE_HOLLOW_DOG.get(), EntityAttributes.setLargeHollowDogAttributes().build());
 		event.put(EntityInit.LARGE_UNDEAD_DOG.get(), EntityAttributes.setLargeUndeadDogAttributes().build());
+		event.put(EntityInit.CAPRA_DEMON.get(), EntityAttributes.setCapraDemonAttributes().build());
 
 
 		event.put(EntityInit.HUNTSMAN_GROUP1.get(), SpawnGroupEntity.setAttributes().build());
