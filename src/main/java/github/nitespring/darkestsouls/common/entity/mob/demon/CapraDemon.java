@@ -1,6 +1,9 @@
 package github.nitespring.darkestsouls.common.entity.mob.demon;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
+import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstEntity;
+import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstParent;
+import github.nitespring.darkestsouls.common.entity.projectile.weapon.Flame;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -224,7 +227,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         if ((this.isInFluidType() && !getBlockStateOn().isSolid() &&
                 /*(this.getFluidHeight(FluidTags.LAVA) >= this.getFluidJumpThreshold() ||
                 this.getFluidHeight(FluidTags.WATER) >= this.getFluidJumpThreshold()) && */
-                this.getAnimationState() == 0) || this.getAnimationState() == 1) {
+                this.getAnimationState() == 0)) {
             return CRAWLING_BB;
         } else {
             return this.getType().getDimensions();
@@ -305,6 +308,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         Level levelIn = this.level();
         Vec3 pos = this.position();
         boolean flag = this.getTarget() != null && this.distanceTo(this.getTarget()) <= 5.2;
+        boolean flag1 = this.getTarget() != null && this.distanceTo(this.getTarget()) <= 8;
         switch (this.getAnimationState()) {
             case 1:
                 this.getNavigation().stop();
@@ -685,10 +689,10 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 if (getAnimationTick() == 8) {
                     this.playSound(SoundEvents.RAVAGER_ATTACK, 0.2f, 0.4f);
                 }
-                if (getAnimationTick() == 9) {
+                if (getAnimationTick() == 10) {
                     doAttack(0,0.75f,1.0f);
                 }
-                if (getAnimationTick() >= 13 && flag) {
+                if (getAnimationTick() >= 16 && flag) {
                     int r = new Random().nextInt(2048);
                     if(r<=480){
                         setAnimationTick(0);
@@ -701,7 +705,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                         setAnimationState(32);
                     }
                 }
-                if (getAnimationTick() >= 18) {
+                if (getAnimationTick() >= 22) {
                     setAnimationTick(0);
                     setAnimationState(0);
                 }
@@ -763,17 +767,25 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                         this.setDeltaMovement(this.getLookAngle().normalize().add(0,0.05f,0).scale(-0.5));
                     }
                 }
-                if(getAnimationTick()>=17&&flag) {
+                if(getAnimationTick()>=17) {
                     int r = new Random().nextInt(2048);
-                    if(r<=360){
+                    if(flag) {
+                        if (r <= 360) {
+                            setAnimationTick(0);
+                            setAnimationState(25);
+                        } else if (r <= 720) {
+                            setAnimationTick(0);
+                            setAnimationState(30);
+                        } else if (r <= 960) {
+                            setAnimationTick(0);
+                            setAnimationState(33);
+                        } else if (r <= 1240) {
+                            setAnimationTick(0);
+                            setAnimationState(42);
+                        }
+                    }else if (r <= 240) {
                         setAnimationTick(0);
-                        setAnimationState(25);
-                    }else if(r<=720){
-                        setAnimationTick(0);
-                        setAnimationState(30);
-                    }else if(r<=960){
-                        setAnimationTick(0);
-                        setAnimationState(33);
+                        setAnimationState(42);
                     }
                 }
                 if(getAnimationTick()>=24) {
@@ -873,6 +885,59 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     setAnimationState(0);
                 }
                 break;
+            case 42:
+                if (getAnimationTick() <= 6) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+                if (getAnimationTick() == 12) {
+                    if (this.getTarget() == null) {
+                        aimVec = this.getLookAngle().normalize();
+                    } else {
+                        aimVec = this.getTarget().position().add(0,1.75,0).add(pos.scale(-1)).normalize();
+                    }
+                }
+                if(getAnimationTick()>=12) {
+                    if(aimVec!=null) {
+                        this.getLookControl().setLookAt(pos.add(aimVec));
+                    }
+                }
+                if (getAnimationTick() >= 15) {
+                    setAnimationTick(0);
+                    setAnimationState(43);
+                }
+                break;
+            case 43:
+                /*if (aimVec==null) {
+                    if (this.getTarget() == null) {
+                        aimVec = this.getLookAngle().normalize();
+                    } else {
+                        aimVec = this.getTarget().position().add(0,0.25,0).add(pos.scale(-1)).normalize();
+                    }
+                }*/
+                if(aimVec!=null) {
+                    this.getLookControl().setLookAt(pos.add(aimVec));
+                }
+                if ((getAnimationTick()) % 8 == 0) {
+                    doFireBreath(pos);
+                }
+                if(getAnimationTick()>=80&&!flag1) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                if(getAnimationTick()>=96&&flag) {
+                    int r = new Random().nextInt(1024);
+                    if(r<=240) {
+                        setAnimationTick(0);
+                        setAnimationState(33);
+                    }
+                }
+                if(getAnimationTick()>=144) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
         }
     }
     public void moveToTarget(){
@@ -883,6 +948,43 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             this.getNavigation().moveTo(path, 1.25f);
         }
 
+    }
+    public void doFireBreath(Vec3 pos){
+        this.playSound(SoundEvents.FIRE_EXTINGUISH);
+        Vec3 aim;
+        if(aimVec!=null){
+            aim = aimVec;
+        }else{
+            aim = this.getLookAngle();
+        }
+        double a=  Math.PI/12;
+        //for(int i = 0; i<=1; i++) {
+            Random r = new Random();
+            float rF = 2*(r.nextFloat()-0.5f);
+            float b = (float) (a*rF);
+            float f = 0.2f;
+            if(getTarget()!=null) {
+                f = 0.5f * (Math.min(20, distanceTo(getTarget())/20));
+            }
+            Vec3 aim1 = new Vec3((aim.x*Math.cos(b)-aim.z*Math.sin(b)),
+                    aim.y+f,
+                    (aim.z*Math.cos(b)+aim.x*Math.sin(b)));
+            float x = (float) (pos.x + 1.2 * aim.x+ 0.2 * aim1.x);
+            float y = (float) (pos.y + 1.6 + 0.6 * aim1.y);
+            float z = (float) (pos.z + 1.2 * aim.z+ 0.2 * aim1.z);
+            MagmaBurstParent entity = new MagmaBurstParent(EntityInit.MAGMA_BURST.get(), this.level());
+            entity.setPos(x, y, z);
+            float flyingPower = 0.17f;
+            entity.setDeltaMovement(aim1.scale(flyingPower));
+            entity.accelerationPower=flyingPower;
+                        /*entity.xPower = flyingPower * aim1.x;
+                        entity.yPower = flyingPower * aim1.y;
+                        entity.zPower = flyingPower * aim1.z;*/
+            entity.setOwner(this);
+            entity.setDamage(1+(float) (this.getAttributeValue(Attributes.ATTACK_DAMAGE)*0.6f));
+            entity.setLifeTicks(36);
+            this.level().addFreshEntity(entity);
+        //}
     }
 
     public void doAttack(float dmgFlat, float dmgMull, float range){
@@ -987,7 +1089,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             this.mob.setAggressive(true);
             this.ticksUntilNextPathRecalculation = 0;
             this.ticksUntilNextAttack = 8;
-            this.ticksUntilNextRangedAttack = 120;
+            this.ticksUntilNextRangedAttack = this.mob.getRandom().nextInt(80);;
             this.lastCanUpdateStateCheck = getStateUpdateInitialTimer();
             this.mob.setAnimationState(0);
             if(mob.getCombatState()==1){
@@ -1063,9 +1165,9 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 }
             }
             this.ticksUntilNextRangedAttack = Math.max(this.ticksUntilNextRangedAttack - 1, 0);
-            if(this.ticksUntilNextRangedAttack<=0 && this.ticksUntilNextAttack <= 0){
+            /*if(this.ticksUntilNextRangedAttack<=0 && this.ticksUntilNextAttack <= 0){
                 this.ticksUntilNextRangedAttack=10;
-            }
+            }*/
 
             this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
 
@@ -1125,6 +1227,10 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
 
 
         protected void checkForAttack(double distance, double reach){
+            if (distance <= reach*3.5f && this.ticksUntilNextRangedAttack <= 0) {
+                int r = this.mob.getRandom().nextInt(1024);
+                if(r<=240)      {this.mob.setAnimationState(42);}
+            }
             if (distance <= reach*1.5f && this.ticksUntilNextAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(1024);
                 if(r<=360)      {this.mob.setAnimationState(21);}
