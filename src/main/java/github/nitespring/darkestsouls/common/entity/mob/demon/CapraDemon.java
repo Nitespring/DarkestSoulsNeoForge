@@ -1005,9 +1005,13 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 }
                 break;
             case 45:
-
+                if(getAnimationTick()<=48){
+                    if ((getAnimationTick()) % 4 == 0) {
+                        doFireStorm(Math.min(12,getAnimationTick()/4));
+                    }
+                }
                 if ((getAnimationTick()) % 12 == 0) {
-                    doFireStorm(Math.min(12,getAnimationTick()/12));
+                    doFireStorm(12);
                 }
                 if(getAnimationTick()>=256) {
                     setAnimationTick(0);
