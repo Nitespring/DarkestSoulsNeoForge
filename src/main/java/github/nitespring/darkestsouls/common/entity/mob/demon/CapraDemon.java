@@ -1,17 +1,21 @@
 package github.nitespring.darkestsouls.common.entity.mob.demon;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
+import github.nitespring.darkestsouls.common.entity.projectile.spell.ChaosFireball;
 import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstEntity;
 import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstParent;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.Flame;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -22,10 +26,13 @@ import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.Path;
+import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
@@ -35,13 +42,18 @@ import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Random;
+
+import static com.ibm.icu.text.PluralRules.Operand.f;
 
 public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity {
 
     private static final EntityDimensions CRAWLING_BB = new EntityDimensions(1.2f, 0.8f, 0.6f, EntityAttachments.createDefault(1.2f, 0.8f),false);
     protected Vec3 aimVec;
+    //protected List<Vec2> posVecList;
     protected AnimatableInstanceCache factory = GeckoLibUtil.createInstanceCache(this);
 
     public CapraDemon(EntityType<? extends PathfinderMob> e, Level level) {
@@ -314,6 +326,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 this.getNavigation().stop();
                 if(getAnimationTick()==1){
                     this.playSound(SoundEvents.BLAZE_HURT);
+                    //posVecList=null;
                 }
                 if (getAnimationTick() >= 85) {
                     this.getNavigation().stop();
@@ -325,6 +338,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             case 2:
                 this.getNavigation().stop();
                 if (getAnimationTick() >= 6) {
+                    //posVecList=null;
                     this.getNavigation().stop();
                     setAnimationTick(0);
                     this.resetPoiseHealth();
@@ -781,11 +795,19 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                             setAnimationState(33);
                         } else if (r <= 1240) {
                             setAnimationTick(0);
+                            setAnimationState(41);
+                        }else if (r <= 1480) {
+                            setAnimationTick(0);
                             setAnimationState(42);
                         }
-                    }else if (r <= 240) {
-                        setAnimationTick(0);
-                        setAnimationState(42);
+                    }else {
+                        if (r <= 480) {
+                            setAnimationTick(0);
+                            setAnimationState(41);
+                        } else if (r <= 960) {
+                            setAnimationTick(0);
+                            setAnimationState(42);
+                        }
                     }
                 }
                 if(getAnimationTick()>=24) {
@@ -885,6 +907,32 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     setAnimationState(0);
                 }
                 break;
+            case 41:
+                if (getAnimationTick() <= 6) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+                if (getAnimationTick() == 18) {
+                    if (this.getTarget() == null) {
+                        aimVec = this.getLookAngle().normalize();
+                    } else {
+                        aimVec = this.getTarget().position().add(0,0,0).add(pos.scale(-1)).normalize();
+                    }
+                }
+                if(getAnimationTick()>=18) {
+                    if(aimVec!=null) {
+                        this.getLookControl().setLookAt(pos.add(aimVec));
+                    }
+                }
+                if (getAnimationTick() == 22) {
+                    createFireball();
+                }
+                if (getAnimationTick() >= 44) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
             case 42:
                 if (getAnimationTick() <= 6) {
                     this.moveToTarget();
@@ -938,6 +986,42 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     setAnimationState(0);
                 }
                 break;
+            case 44:
+                if (getAnimationTick() <= 2) {
+                    this.moveToTarget();
+                } else {
+                    this.getNavigation().stop();
+                }
+                /*if (posVecList==null) {
+                    Random r = new Random();
+                    posVecList= new ArrayList<Vec2>();
+                    for(int i = 0; i <= 12; i = 0) {
+                        posVecList.add(i,new Vec2(r.nextFloat(-1, 1), r.nextFloat(-1, 1)));
+                    }
+                }*/
+                if (getAnimationTick() >= 36) {
+                    setAnimationTick(0);
+                    setAnimationState(45);
+                }
+                break;
+            case 45:
+
+                if ((getAnimationTick()) % 12 == 0) {
+                    doFireStorm(Math.min(12,getAnimationTick()/12));
+                }
+                if(getAnimationTick()>=256) {
+                    setAnimationTick(0);
+                    setAnimationState(46);
+                    //posVecList=null;
+                }
+                break;
+            case 46:
+
+                if(getAnimationTick()>=27) {
+                    setAnimationTick(0);
+                    setAnimationState(0);
+                }
+                break;
         }
     }
     public void moveToTarget(){
@@ -949,6 +1033,43 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         }
 
     }
+
+    public void createFireball(){
+        this.playSound(SoundEvents.BLAZE_SHOOT);
+        Level levelIn = this.level();
+        Vec3 pos = this.position();
+        Vec3 aim;
+        if(aimVec!=null){
+            aim = aimVec;
+        }else{
+            aim = this.getLookAngle();
+        }
+        Random r = new Random();
+        float f = 0.0f;
+        if(getTarget()!=null) {
+            f = 0.25f * (Math.min(25, distanceTo(getTarget())/25));
+        }
+        ChaosFireball entity = new ChaosFireball(EntityInit.CHAOS_FIREBALL.get(), levelIn);
+
+
+        entity.setPos(pos.add(0,2.75,0).add(aim.normalize().multiply(1.0f,1.25f,1.0f)));
+        float flyingPower = 0.15f;
+
+        entity.setDamage((float) (this.getAttributeValue(Attributes.ATTACK_DAMAGE)*1.2f));
+        entity.setMaxLifeTime(100);
+        entity.setDimensionScale(1.5f);
+        entity.setOwner(this);
+        Vec3 aim2 = new Vec3(aim.x * (1 + ((r.nextFloat() - 0.5) * 0.025) * (1 + 0.1)),
+                aim.y + f,
+                aim.z * (1 + ((r.nextFloat() - 0.5) * 0.025) * (1 + 0.1)));
+        entity.setDeltaMovement(aim2.scale(flyingPower));
+        entity.accelerationPower=flyingPower;
+        /*entity.xPower = flyingPower * aim1.x;
+                        entity.yPower = flyingPower * aim1.y;
+                        entity.zPower = flyingPower * aim1.z;*/
+        this.level().addFreshEntity(entity);
+    }
+
     public void doFireBreath(Vec3 pos){
         this.playSound(SoundEvents.FIRE_EXTINGUISH);
         Vec3 aim;
@@ -985,6 +1106,97 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             entity.setLifeTicks(36);
             this.level().addFreshEntity(entity);
         //}
+    }
+    public void doFireStorm(int n){
+        this.playSound(SoundEvents.FIRE_EXTINGUISH);
+        Vec3 pos = this.position();
+
+        //double a=  Math.PI/12;
+        double a=  Math.PI/3;
+        double a1=  Math.PI/6;
+        /*if (posVecList==null) {
+            Random r = new Random();
+            posVecList= new ArrayList<Vec2>();
+            for(int i = 0; i <= 12; i = 0) {
+                posVecList.add(i,new Vec2(r.nextFloat(-1, 1), r.nextFloat(-1, 1)));
+            }
+        }*/
+        for(int j = -1; j <= 1; j++) {
+            float R = 2.5f *(2 + j);
+            for(int i = 0; i <= Math.min(n,6); i++) {
+
+            Random r = new Random();
+            //if(posVecList!=null && posVecList.size()>=i) {
+            //    Vec2 aim2d = posVecList.get(i);
+                float rX = r.nextFloat(-1, 1);
+                float rZ = r.nextFloat(-1, 1);
+                float aN = (float) (a * i + a1 * j);
+                /*Vec3 aim = new Vec3(
+                        Math.cos(aN) * aim2d.x,
+                        1,
+                        Math.sin(aN) * aim2d.y
+                );*/
+                Vec3 aim = new Vec3(
+                        Math.cos(aN),
+                        1,
+                        Math.sin(aN)
+                );
+                if(j!=0){
+                    aim = new Vec3(
+                            j*Math.cos(aN),
+                            1,
+                            j*Math.sin(aN)
+                    );
+                }
+
+                float x = (float) (pos.x + R * aim.x + 0.25 * rX);
+                float yi = (float) (pos.y + 5);
+                float z = (float) (pos.z + R * aim.z + 0.25 * rZ);
+                BlockPos blockpos = new BlockPos((int) x, (int) yi, (int) z);
+                boolean flag = false;
+                double d0 = 0.0D;
+
+                do {
+                    BlockPos blockpos1 = blockpos.below();
+                    BlockState blockstate = level().getBlockState(blockpos1);
+                    if (blockstate.isFaceSturdy(level(), blockpos1, Direction.UP)) {
+                        if (!level().isEmptyBlock(blockpos)) {
+                            BlockState blockstate1 = level().getBlockState(blockpos);
+                            VoxelShape voxelshape = blockstate1.getCollisionShape(level(), blockpos);
+                            if (!voxelshape.isEmpty()) {
+                                d0 = voxelshape.max(Direction.Axis.Y);
+                            }
+                        }
+
+                        flag = true;
+                        break;
+                    }
+
+                    blockpos = blockpos.below();
+                } while (blockpos.getY() >= Mth.floor(pos.y - 2) - 1);
+
+                if (flag) {
+                    Vec3 aim1 = new Vec3(
+                            0,
+                            1,
+                            0
+                    );
+                    MagmaBurstParent entity = new MagmaBurstParent(EntityInit.MAGMA_BURST.get(), this.level());
+                    float y = (float) (blockpos.getY());
+                    entity.setPos(x, y, z);
+                    float flyingPower = 0.25f;
+                    entity.setDeltaMovement(aim1.scale(flyingPower));
+                    entity.accelerationPower = flyingPower;
+                        /*entity.xPower = flyingPower * aim1.x;
+                        entity.yPower = flyingPower * aim1.y;
+                        entity.zPower = flyingPower * aim1.z;*/
+                    entity.setOwner(this);
+                    entity.setDamage(1 + (float) (this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.4f));
+                    entity.setLifeTicks(6);
+                    this.level().addFreshEntity(entity);
+                }
+            }
+        }
     }
 
     public void doAttack(float dmgFlat, float dmgMull, float range){
@@ -1140,8 +1352,8 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             double distance = this.mob.distanceTo(target);
             double reach = this.getAttackReach(target);
             this.doMovement(target, reachSQR);
-            this.checkForAttack(distance, reach);
-            //this.checkForPreciseAttack();
+            //this.checkForAttack(distance, reach);
+            this.checkForPreciseAttack();
             this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
@@ -1183,7 +1395,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             double reach = this.getAttackReach(target);
             if (this.ticksUntilNextAttack <= 0 && distance <= reach) {
 
-                this.mob.setAnimationState(23);
+                this.mob.setAnimationState(44);
             }
 
         }
@@ -1229,15 +1441,17 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
         protected void checkForAttack(double distance, double reach){
             if (distance <= reach*3.5f && this.ticksUntilNextRangedAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(1024);
-                if(r<=240)      {this.mob.setAnimationState(42);}
+                if(r<=480)      {this.mob.setAnimationState(41);}
+                else if(r<=720)      {this.mob.setAnimationState(42);}
             }
             if (distance <= reach*1.5f && this.ticksUntilNextAttack <= 0) {
                 int r = this.mob.getRandom().nextInt(1024);
                 if(r<=360)      {this.mob.setAnimationState(21);}
                 else if(r<=480) {this.mob.setAnimationState(33);}
+                else if(r<=560) {this.mob.setAnimationState(44);}
             }
             if (distance <= reach && this.ticksUntilNextAttack <= 0) {
-                int r = this.mob.getRandom().nextInt(5000);
+                int r = this.mob.getRandom().nextInt(5600);
                 if(r<=720)      {this.mob.setAnimationState(21);}
                 else if(r<=900) {this.mob.setAnimationState(22);}
                 else if(r<=2140) {this.mob.setAnimationState(23);}
@@ -1253,6 +1467,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 else if(r<=4400) {this.mob.setAnimationState(33);}
                 else if(r<=4700) {this.mob.setAnimationState(34);}
                 else if(r<=4800) {this.mob.setAnimationState(35);}
+                else if(r<=5200) {this.mob.setAnimationState(44);}
             }
 
 

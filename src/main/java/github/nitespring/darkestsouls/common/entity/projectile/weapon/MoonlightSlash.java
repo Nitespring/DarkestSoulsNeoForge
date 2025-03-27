@@ -143,8 +143,10 @@ public class MoonlightSlash extends AbstractHurtingProjectile {
         //e.hurt(e.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()),this.damage);
         e.hurt(e.level().damageSources().indirectMagic(this, (LivingEntity) this.getOwner()),this.damage);
         if(e instanceof DarkestSoulsAbstractEntity e1){
-            e1.damagePoiseHealth(10);
-            e1.damagePostureHealth(6);
+            if(!this.level().isClientSide()) {
+                e1.damagePoiseHealth(10);
+                e1.damagePostureHealth(6);
+            }
         }
         this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.PLAYER_SPLASH_HIGH_SPEED, this.getSoundSource(), 0.2f, 0.2f);
         for(int i=0; i<=12; i++){

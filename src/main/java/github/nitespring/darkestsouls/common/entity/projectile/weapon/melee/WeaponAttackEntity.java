@@ -336,8 +336,10 @@ public class WeaponAttackEntity extends Entity {
                 }
 
                 if (target instanceof DarkestSoulsAbstractEntity /*&& this.itemStack!=null && this.getOwner()!=null*/){
-                    ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.poiseDmg);
-                    ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.postureDmg);
+                    if(!this.level().isClientSide()) {
+                        ((DarkestSoulsAbstractEntity) target).damagePoiseHealth(this.poiseDmg);
+                        ((DarkestSoulsAbstractEntity) target).damagePostureHealth(this.postureDmg);
+                    }
                 }
                 //System.out.println("entity damage " + damage+ mobTypeBonus);
                 this.hitEntities++;

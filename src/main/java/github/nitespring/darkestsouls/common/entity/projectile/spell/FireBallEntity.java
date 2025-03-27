@@ -113,9 +113,11 @@ public class FireBallEntity extends AbstractHurtingProjectile {
             if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
                 e.hurt(e.level().damageSources().explosion(this, this.getOwner()), this.damage);
                 e.igniteForTicks(80);
-                if(e instanceof DarkestSoulsAbstractEntity e1){
-                    e1.damagePoiseHealth(12);
-                    e1.damagePostureHealth(8);
+                if(!this.level().isClientSide()) {
+                    if (e instanceof DarkestSoulsAbstractEntity e1) {
+                        e1.damagePoiseHealth(12);
+                        e1.damagePostureHealth(8);
+                    }
                 }
             }
         }

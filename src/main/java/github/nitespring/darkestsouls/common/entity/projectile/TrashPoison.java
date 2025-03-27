@@ -178,8 +178,10 @@ public class TrashPoison extends AbstractHurtingProjectile implements ItemSuppli
                 p_36945_.hurt(this.level().damageSources().generic(), 1.0F);
                 p_36945_.addEffect(new MobEffectInstance(MobEffects.POISON,120,1));
                 if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
-                    e1.damagePoiseHealth(6);
-                    e1.damagePostureHealth(4);
+                    if(!this.level().isClientSide()) {
+                        e1.damagePoiseHealth(6);
+                        e1.damagePostureHealth(4);
+                    }
                 }
             } else {
                 if (livingentity.isAlliedTo(p_36945_)) {
@@ -189,8 +191,10 @@ public class TrashPoison extends AbstractHurtingProjectile implements ItemSuppli
                 p_36945_.hurt(this.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), damage);
                 p_36945_.addEffect(new MobEffectInstance(MobEffects.POISON,120,1));
                 if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
-                    e1.damagePoiseHealth(6);
-                    e1.damagePostureHealth(4);
+                    if(!this.level().isClientSide()) {
+                        e1.damagePoiseHealth(6);
+                        e1.damagePostureHealth(4);
+                    }
                 }
             }
 

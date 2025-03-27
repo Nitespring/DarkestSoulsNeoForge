@@ -96,8 +96,10 @@ public class SoulDartEntity extends AbstractHurtingProjectile {
         Entity e = p_37259_.getEntity();
         e.hurt(e.level().damageSources().indirectMagic(this, this.getOwner()),this.damage);
         if(e instanceof DarkestSoulsAbstractEntity e1){
-            e1.damagePoiseHealth(7);
-            e1.damagePostureHealth(5);
+            if(!this.level().isClientSide()) {
+                e1.damagePoiseHealth(7);
+                e1.damagePostureHealth(5);
+            }
         }
         this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_CHARGE, this.getSoundSource(), 1.0f, 2.0f);
         for(int i=0; i<=1+26*this.getDimensionScale(); i++){

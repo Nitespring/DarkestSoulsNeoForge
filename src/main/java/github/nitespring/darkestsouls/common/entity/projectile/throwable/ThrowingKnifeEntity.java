@@ -150,8 +150,10 @@ public class ThrowingKnifeEntity extends AbstractHurtingProjectile implements Cu
                 this.rotationTick = 0;
                 target.hurt(target.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), this.attackPower);
                 if (target instanceof DarkestSoulsAbstractEntity dsMob) {
-                    dsMob.damagePostureHealth(this.poiseDamage);
-                    dsMob.damagePoiseHealth(this.postureDamage);
+                    if(!this.level().isClientSide()) {
+                        dsMob.damagePostureHealth(this.poiseDamage);
+                        dsMob.damagePoiseHealth(this.postureDamage);
+                    }
                 }
                 if (this.getPoisonDamage() >= 1) {
                     target.addEffect(new MobEffectInstance(MobEffects.POISON, 60, this.poisonDamage - 1));

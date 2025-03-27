@@ -147,8 +147,10 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
             this.doRemoval();
         }
         if(p_37259_.getEntity() instanceof DarkestSoulsAbstractEntity e1){
-            e1.damagePoiseHealth(2);
-            e1.damagePostureHealth(1);
+            if(!this.level().isClientSide()) {
+                e1.damagePoiseHealth(2);
+                e1.damagePostureHealth(1);
+            }
         }
     }
 

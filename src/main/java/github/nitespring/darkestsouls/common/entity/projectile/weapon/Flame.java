@@ -83,8 +83,10 @@ public class Flame extends AbstractHurtingProjectile implements ItemSupplier{
             if(e instanceof Mob mob) {
                 if (mob instanceof DarkestSoulsAbstractEntity dsMob) {
                     if(mob.hurtTime<=0) {
-                        dsMob.damagePoiseHealth(this.getPoiseDamage());
-                        dsMob.damagePostureHealth(this.getPostureDamage());
+                        if(!this.level().isClientSide()) {
+                            dsMob.damagePoiseHealth(this.getPoiseDamage());
+                            dsMob.damagePostureHealth(this.getPostureDamage());
+                        }
                     }
                 }
             }

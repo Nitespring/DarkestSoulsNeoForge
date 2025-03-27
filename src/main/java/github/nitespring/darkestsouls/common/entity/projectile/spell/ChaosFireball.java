@@ -1,5 +1,6 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
+import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -61,6 +62,12 @@ public class ChaosFireball extends FireBallEntity implements GeoEntity {
             if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
                 e.hurt(e.level().damageSources().explosion(this, this.getOwner()), this.damage);
                 e.igniteForTicks(80);
+                if(!this.level().isClientSide()){
+                    if(e instanceof DarkestSoulsAbstractEntity e1){
+                        e1.damagePoiseHealth(12);
+                        e1.damagePostureHealth(8);
+                    }
+                }
                 for(int i=0; i<=5; i++){
                     RandomSource r = this.random;
                     Vec3 off = new Vec3(r.nextFloat()-0.5, r.nextFloat()-0.5,r.nextFloat()-0.5).multiply(0.25f,0.25f,0.25f);

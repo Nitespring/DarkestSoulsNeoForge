@@ -106,8 +106,10 @@ public class Bullet extends AbstractHurtingProjectile {
             if(e instanceof Mob mob) {
                 if (mob instanceof DarkestSoulsAbstractEntity dsMob) {
                     if(mob.hurtTime<=0) {
-                        dsMob.damagePoiseHealth(this.getPoiseDamage());
-                        dsMob.damagePostureHealth(this.getPostureDamage());
+                        if(!this.level().isClientSide()) {
+                            dsMob.damagePoiseHealth(this.getPoiseDamage());
+                            dsMob.damagePostureHealth(this.getPostureDamage());
+                        }
                     }
                 }
                 if (this.getPoison() >= 1) {

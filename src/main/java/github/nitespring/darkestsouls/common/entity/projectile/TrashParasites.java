@@ -178,8 +178,10 @@ public class TrashParasites extends AbstractHurtingProjectile implements ItemSup
             if (livingentity == null) {
                 p_36945_.hurt(this.level().damageSources().generic(), 1.0F);
                 if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
-                    e1.damagePoiseHealth(6);
-                    e1.damagePostureHealth(4);
+                    if(!this.level().isClientSide()) {
+                        e1.damagePoiseHealth(6);
+                        e1.damagePostureHealth(4);
+                    }
                 }
                 p_36945_.addEffect(new MobEffectInstance(EffectInit.PARASITES,360));
             } else {
@@ -189,8 +191,10 @@ public class TrashParasites extends AbstractHurtingProjectile implements ItemSup
 
                 p_36945_.hurt(this.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()), damage);
                 if(p_36945_ instanceof DarkestSoulsAbstractEntity e1){
-                    e1.damagePoiseHealth(6);
-                    e1.damagePostureHealth(4);
+                    if(!this.level().isClientSide()) {
+                        e1.damagePoiseHealth(6);
+                        e1.damagePostureHealth(4);
+                    }
                 }
                 p_36945_.addEffect(new MobEffectInstance(EffectInit.PARASITES,360));
             }

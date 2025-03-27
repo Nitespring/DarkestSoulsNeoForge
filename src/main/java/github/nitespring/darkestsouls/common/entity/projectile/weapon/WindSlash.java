@@ -140,9 +140,11 @@ public class WindSlash extends AbstractHurtingProjectile {
         Entity e = p_37259_.getEntity();
         e.hurt(e.level().damageSources().mobProjectile(this, (LivingEntity) this.getOwner()),this.damage);
         //this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.WOOL_BREAK, this.getSoundSource(), 1.0f, 2.0f);
-        if(e instanceof DarkestSoulsAbstractEntity e1){
-            e1.damagePoiseHealth(6);
-            e1.damagePostureHealth(4);
+        if(e instanceof DarkestSoulsAbstractEntity e1) {
+            if(!this.level().isClientSide()) {
+                e1.damagePoiseHealth(6);
+                e1.damagePostureHealth(4);
+            }
         }
         for(int i=0; i<=12; i++){
             RandomSource r = this.random;

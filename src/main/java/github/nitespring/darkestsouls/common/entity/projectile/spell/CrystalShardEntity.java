@@ -140,8 +140,10 @@ public class CrystalShardEntity extends AbstractHurtingProjectile{
             e.hurt(e.level().damageSources().indirectMagic(this, this.getOwner()),this.damage);
             this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.RESPAWN_ANCHOR_DEPLETE.value(), this.getSoundSource(), 1.0f, 1.4f);
             if(e instanceof DarkestSoulsAbstractEntity e1){
-                e1.damagePoiseHealth(6);
-                e1.damagePostureHealth(4);
+                if(!this.level().isClientSide()) {
+                    e1.damagePoiseHealth(6);
+                    e1.damagePostureHealth(4);
+                }
             }
             for(int i=0; i<=2; i++){
                 RandomSource r = this.random;

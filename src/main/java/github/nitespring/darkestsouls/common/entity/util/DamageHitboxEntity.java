@@ -241,15 +241,19 @@ public class DamageHitboxEntity extends Entity {
 								break;
 						}
 					if(target instanceof DarkestSoulsAbstractEntity e1 && (this.getOwner()==null||target!=this.getOwner()&&!target.isAlliedTo(this.getOwner()))){
-						e1.damagePoiseHealth(Math.round(damage));
-						e1.damagePostureHealth(Math.round(damage));
+						if(!this.level().isClientSide()) {
+							e1.damagePoiseHealth(Math.round(damage));
+							e1.damagePostureHealth(Math.round(damage));
+						}
 					}
 					}
 				} else {
 					target.hurt(this.damageSources().generic(), damage);
 					if (target instanceof DarkestSoulsAbstractEntity e1) {
-						e1.damagePoiseHealth(Math.round(damage));
-						e1.damagePostureHealth(Math.round(damage));
+						if(!this.level().isClientSide()) {
+							e1.damagePoiseHealth(Math.round(damage));
+							e1.damagePostureHealth(Math.round(damage));
+						}
 					}
 				}
 
