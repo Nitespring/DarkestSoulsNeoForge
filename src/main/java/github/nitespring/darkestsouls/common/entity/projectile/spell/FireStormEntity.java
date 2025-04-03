@@ -1,12 +1,10 @@
 package github.nitespring.darkestsouls.common.entity.projectile.spell;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.util.CustomBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -16,10 +14,13 @@ import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
-import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -35,7 +36,7 @@ import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemSupplier {
+public class FireStormEntity extends AbstractHurtingProjectile implements ItemSupplier {
 
     protected int lifeTicks = 0;
     protected int maxLifeTicks = 120;
@@ -47,11 +48,11 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
     @Nullable
     private UUID ownerUUID;
 
-    public MagmaBurstEntity(EntityType<? extends AbstractHurtingProjectile> p_36833_, Level p_36834_) {
+    public FireStormEntity(EntityType<? extends AbstractHurtingProjectile> p_36833_, Level p_36834_) {
         super(p_36833_, p_36834_);
     }
 
-    public MagmaBurstEntity(EntityType<? extends AbstractHurtingProjectile> p_310629_, double p_311590_, double p_312782_, double p_309484_, Level p_311660_) {
+    public FireStormEntity(EntityType<? extends AbstractHurtingProjectile> p_310629_, double p_311590_, double p_312782_, double p_309484_, Level p_311660_) {
         super(p_310629_, p_311590_, p_312782_, p_309484_, p_311660_);
     }
 
@@ -142,8 +143,9 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
     @Override
     protected void onHitEntity(EntityHitResult p_37259_) {
 
-        if(p_37259_.getEntity() != this.getOwner() && !p_37259_.getEntity().isAlliedTo(this.getOwner())) {
-            this.spawnMagma();
+        Entity e = p_37259_.getEntity();
+        if(e != this.getOwner() && !e.isAlliedTo(getOwner())) {
+            e.hurt(this.level().damageSources().inFire(),damage);
             this.doRemoval();
             if(p_37259_.getEntity() instanceof DarkestSoulsAbstractEntity e1){
                 if(!this.level().isClientSide()) {
@@ -153,11 +155,11 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
             }
         }
 
+
     }
 
     @Override
     protected void onHitBlock(BlockHitResult p_37258_) {
-            this.spawnMagma();
             this.discard();
     }
 
@@ -181,14 +183,5 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
         this.discard();
     }
 
-    public void spawnMagma(){
-        Vec3 pos = this.position().add(0,-0.14,0);
 
-        MagmaEntity e = new MagmaEntity(this.level(), this.getDamage()/2,pos.x,pos.y,pos.z, (LivingEntity) this.getOwner());
-        e.lifeTicks=80;
-        e.setOwner((LivingEntity) this.getOwner());
-        this.level().addFreshEntity(e);
-
-
-    }
 }

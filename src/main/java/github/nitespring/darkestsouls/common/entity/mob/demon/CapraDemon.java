@@ -1356,8 +1356,8 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             double distance = this.mob.distanceTo(target);
             double reach = this.getAttackReach(target);
             this.doMovement(target, reachSQR);
-            //this.checkForAttack(distance, reach);
-            this.checkForPreciseAttack();
+            this.checkForAttack(distance, reach);
+            //this.checkForPreciseAttack();
             this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
@@ -1471,7 +1471,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                 else if(r<=4400) {this.mob.setAnimationState(33);}
                 else if(r<=4700) {this.mob.setAnimationState(34);}
                 else if(r<=4800) {this.mob.setAnimationState(35);}
-                else if(r<=5200) {this.mob.setAnimationState(44);}
+                else if(r<=5000) {this.mob.setAnimationState(44);}
             }
 
 

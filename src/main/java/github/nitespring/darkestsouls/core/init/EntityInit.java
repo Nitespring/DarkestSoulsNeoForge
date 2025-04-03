@@ -409,6 +409,15 @@ public class EntityInit {
 			() -> EntityType.Builder.<MagmaBurstEntity>of(MagmaBurstEntity::new, MobCategory.MISC)
 					.sized(0.6f, 0.6f)
 					.build("magma_burst_child"));
+	public static final DeferredHolder<EntityType<?>,EntityType<FireStormParent>> FIRE_STORM = ENTITIES.register("fire_storm",
+			() -> EntityType.Builder.<FireStormParent>of(FireStormParent::new, MobCategory.MISC)
+					.sized(0.8f, 0.8f)
+					.build("fire_storm"));
+
+	public static final DeferredHolder<EntityType<?>,EntityType<FireStormEntity>> FIRE_STORM_CHILD = ENTITIES.register("fire_storm_child",
+			() -> EntityType.Builder.<FireStormEntity>of(FireStormEntity::new, MobCategory.MISC)
+					.sized(0.6f, 0.6f)
+					.build("fire_storm_child"));
 
 	public static final DeferredHolder<EntityType<?>,EntityType<TrashParasites>> PARASITES = ENTITIES.register("vomit_parasites",
 			() -> EntityType.Builder.<TrashParasites>of(TrashParasites::new, MobCategory.MISC)
