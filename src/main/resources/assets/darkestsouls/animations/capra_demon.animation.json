@@ -8856,7 +8856,7 @@
 			}
 		},
 		"animation.capra_demon.fireball": {
-			"animation_length": 1.75,
+			"animation_length": 12,
 			"bones": {
 				"root": {
 					"position": {

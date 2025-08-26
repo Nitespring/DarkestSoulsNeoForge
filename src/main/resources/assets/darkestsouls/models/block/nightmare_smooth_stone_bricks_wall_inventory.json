@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "darkestsouls:block/nightmare_smooth_stone_bricks"
+  }
+}

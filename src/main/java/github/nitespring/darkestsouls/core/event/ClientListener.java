@@ -189,6 +189,8 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.MAGMA.get(), MagmaRenderer::new);
 		 event.registerEntityRenderer(EntityInit.MAGMA_BURST.get(), LitItemRenderer::new);
 		 event.registerEntityRenderer(EntityInit.MAGMA_BURST_CHILD.get(), LitItemRenderer::new);
+		 event.registerEntityRenderer(EntityInit.FIRE_STORM.get(), LitItemRenderer::new);
+		 event.registerEntityRenderer(EntityInit.FIRE_STORM_CHILD.get(), LitItemRenderer::new);
 		 event.registerEntityRenderer(EntityInit.LIGHTNING_SPEAR.get(), LightningBoltRenderer::new);
 		 event.registerEntityRenderer(EntityInit.PARASITES.get(), ThrownItemRenderer::new);
 		 event.registerEntityRenderer(EntityInit.VOMIT.get(), ThrownItemRenderer::new);

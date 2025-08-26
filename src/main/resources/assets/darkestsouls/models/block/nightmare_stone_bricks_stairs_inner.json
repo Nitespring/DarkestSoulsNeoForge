@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/nightmare_stone_bricks",
+    "side": "darkestsouls:block/nightmare_stone_bricks",
+    "top": "darkestsouls:block/nightmare_stone_bricks"
+  }
+}

@@ -568,4 +568,54 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.SIDERITE_BRICKS_STAIRS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> SIDERITE_BRICKS_WALL = ITEMS.register("siderite_brick_wall",
 			() -> new BlockItem(BlockInit.SIDERITE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE = ITEMS.register("nightmare_stone",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_SLAB = ITEMS.register("nightmare_stone_slab",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_STAIRS = ITEMS.register("nightmare_stone_stairs",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_WALL = ITEMS.register("nightmare_stone_wall",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_BRICKS = ITEMS.register("nightmare_stone_bricks",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_BRICKS_SLAB = ITEMS.register("nightmare_stone_bricks_slab",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_BRICKS_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_BRICKS_STAIRS = ITEMS.register("nightmare_stone_bricks_stairs",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_BRICKS_WALL = ITEMS.register("nightmare_stone_bricks_wall",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SMOOTH_STONE_BRICKS = ITEMS.register("nightmare_smooth_stone_bricks",
+			() -> new BlockItem(BlockInit.NIGHTMARE_SMOOTH_STONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB = ITEMS.register("nightmare_smooth_stone_bricks_slab",
+			() -> new BlockItem(BlockInit.NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS = ITEMS.register("nightmare_smooth_stone_bricks_stairs",
+			() -> new BlockItem(BlockInit.NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = ITEMS.register("nightmare_smooth_stone_bricks_wall",
+			() -> new BlockItem(BlockInit.NIGHTMARE_SMOOTH_STONE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_DECOR_HUNTER = ITEMS.register("nightmare_stone_decor_hunter",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_DECOR_HUNTER.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE = ITEMS.register("dark_nightmare_stone",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_SLAB = ITEMS.register("dark_nightmare_stone_slab",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_STAIRS = ITEMS.register("dark_nightmare_stone_stairs",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_WALL = ITEMS.register("dark_nightmare_stone_wall",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_BRICKS = ITEMS.register("dark_nightmare_stone_bricks",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_BRICKS_SLAB = ITEMS.register("dark_nightmare_stone_bricks_slab",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_BRICKS_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_BRICKS_STAIRS = ITEMS.register("dark_nightmare_stone_bricks_stairs",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_BRICKS_WALL = ITEMS.register("dark_nightmare_stone_bricks_wall",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS = ITEMS.register("dark_nightmare_smooth_stone_bricks",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB = ITEMS.register("dark_nightmare_smooth_stone_bricks_slab",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS = ITEMS.register("dark_nightmare_smooth_stone_bricks_stairs",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = ITEMS.register("dark_nightmare_smooth_stone_bricks_wall",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL.get(),new Item.Properties()));
 }

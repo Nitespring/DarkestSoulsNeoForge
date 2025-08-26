@@ -1,9 +1,7 @@
 package github.nitespring.darkestsouls.common.entity.mob.demon;
 
 import github.nitespring.darkestsouls.common.entity.mob.DarkestSoulsAbstractEntity;
-import github.nitespring.darkestsouls.common.entity.projectile.spell.ChaosFireball;
-import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstEntity;
-import github.nitespring.darkestsouls.common.entity.projectile.spell.MagmaBurstParent;
+import github.nitespring.darkestsouls.common.entity.projectile.spell.*;
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.Flame;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
@@ -1185,7 +1183,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                             1,
                             0
                     );
-                    MagmaBurstParent entity = new MagmaBurstParent(EntityInit.MAGMA_BURST.get(), this.level());
+                    FireStormParent entity = new FireStormParent(EntityInit.FIRE_STORM.get(), this.level());
                     float y = (float) (blockpos.getY());
                     entity.setPos(x, y, z);
                     float flyingPower = 0.25f;
@@ -1198,6 +1196,10 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
                     entity.setDamage(1 + (float) (this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.4f));
                     entity.setLifeTicks(6);
                     this.level().addFreshEntity(entity);
+                    MagmaEntity e = new MagmaEntity(this.level(), 2,x,y,z, (LivingEntity) this.getOwner());
+                    e.lifeTicks=80;
+                    e.setOwner((LivingEntity) this.getOwner());
+                    this.level().addFreshEntity(e);
                 }
             }
         }
@@ -1357,7 +1359,7 @@ public class CapraDemon extends DarkestSoulsAbstractEntity implements GeoEntity 
             double reach = this.getAttackReach(target);
             this.doMovement(target, reachSQR);
             this.checkForAttack(distance, reach);
-            //this.checkForPreciseAttack();
+            this.checkForPreciseAttack();
             this.lastCanUpdateStateCheck = Math.max(this.lastCanUpdateStateCheck-1, 0);
             if(this.lastCanUpdateStateCheck<=0){
                 if(mob.getCombatState()==1) {
