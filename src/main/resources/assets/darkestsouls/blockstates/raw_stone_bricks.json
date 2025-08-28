@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "darkestsouls:block/raw_stone_bricks1"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks2"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks3"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks4"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks5"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks6"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks7"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks8"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks9"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks10"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks11"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks12"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks13"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks14"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks15"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks16"
+      }
+    ]
+  }
+}

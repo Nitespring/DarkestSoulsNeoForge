@@ -618,4 +618,12 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = ITEMS.register("dark_nightmare_smooth_stone_bricks_wall",
 			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_STONE_BRICKS = ITEMS.register("raw_stone_bricks",
+			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_STONE_BRICKS_SLAB = ITEMS.register("raw_stone_bricks_slab",
+			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_STONE_BRICKS_STAIRS = ITEMS.register("raw_stone_bricks_stairs",
+			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_STONE_BRICKS_WALL = ITEMS.register("raw_stone_bricks_wall",
+			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS_WALL.get(),new Item.Properties()));
 }

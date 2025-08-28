@@ -126,5 +126,13 @@ public class BlockInit {
 	public static final DeferredHolder<Block,WallBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = BLOCKS.register("dark_nightmare_smooth_stone_bricks_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
+	public static final DeferredHolder<Block,Block> RAW_STONE_BRICKS = BLOCKS.register("raw_stone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> RAW_STONE_BRICKS_SLAB = BLOCKS.register("raw_stone_bricks_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> RAW_STONE_BRICKS_STAIRS = BLOCKS.register("raw_stone_bricks_stairs",
+			() -> new StairBlock(RAW_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> RAW_STONE_BRICKS_WALL = BLOCKS.register("raw_stone_bricks_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 }

@@ -1,0 +1,154 @@
+{
+  "variants": {
+    "type=bottom": [
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab1"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab2"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab3"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab4"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab5"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab6"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab7"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab8"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab9"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab10"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab11"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab12"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab13"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab14"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab15"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab16"
+      }
+    ],
+    "type=double": [
+      {
+        "model": "darkestsouls:block/raw_stone_bricks1"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks2"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks3"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks4"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks5"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks6"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks7"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks8"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks9"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks10"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks11"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks12"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks13"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks14"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks15"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks16"
+      }
+    ],
+    "type=top": [
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top1"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top2"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top3"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top4"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top5"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top6"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top7"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top8"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top9"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top10"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top11"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top12"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top13"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top14"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top15"
+      },
+      {
+        "model": "darkestsouls:block/raw_stone_bricks_slab_top16"
+      }
+    ]
+  }
+}

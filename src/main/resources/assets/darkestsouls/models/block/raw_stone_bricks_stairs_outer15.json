@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/raw_stone_bricks15",
+    "side": "darkestsouls:block/raw_stone_bricks15",
+    "top": "darkestsouls:block/raw_stone_bricks15"
+  }
+}
