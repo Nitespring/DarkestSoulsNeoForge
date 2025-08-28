@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/raw_cobblestone14",
+    "side": "darkestsouls:block/raw_cobblestone14",
+    "top": "darkestsouls:block/raw_cobblestone14"
+  }
+}

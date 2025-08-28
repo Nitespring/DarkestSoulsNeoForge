@@ -356,6 +356,10 @@ public class CreativeTabInit {
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL.get());
+                        output.accept(ItemInit.RAW_COBBLESTONE.get());
+                        output.accept(ItemInit.RAW_COBBLESTONE_SLAB.get());
+                        output.accept(ItemInit.RAW_COBBLESTONE_STAIRS.get());
+                        output.accept(ItemInit.RAW_COBBLESTONE_WALL.get());
                         output.accept(ItemInit.RAW_STONE_BRICKS.get());
                         output.accept(ItemInit.RAW_STONE_BRICKS_SLAB.get());
                         output.accept(ItemInit.RAW_STONE_BRICKS_STAIRS.get());

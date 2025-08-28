@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "darkestsouls:block/raw_cobblestone10",
+    "side": "darkestsouls:block/raw_cobblestone10",
+    "top": "darkestsouls:block/raw_cobblestone10"
+  }
+}

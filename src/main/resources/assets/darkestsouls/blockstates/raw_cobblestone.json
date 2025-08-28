@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "darkestsouls:block/raw_cobblestone1"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone2"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone3"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone4"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone5"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone6"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone7"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone8"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone9"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone10"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone11"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone12"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone13"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone14"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone15"
+      },
+      {
+        "model": "darkestsouls:block/raw_cobblestone16"
+      }
+    ]
+  }
+}

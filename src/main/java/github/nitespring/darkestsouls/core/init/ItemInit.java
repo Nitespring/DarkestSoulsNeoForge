@@ -626,4 +626,12 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS_STAIRS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> RAW_STONE_BRICKS_WALL = ITEMS.register("raw_stone_bricks_wall",
 			() -> new BlockItem(BlockInit.RAW_STONE_BRICKS_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_COBBLESTONE = ITEMS.register("raw_cobblestone",
+			() -> new BlockItem(BlockInit.RAW_COBBLESTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_COBBLESTONE_SLAB = ITEMS.register("raw_cobblestone_slab",
+			() -> new BlockItem(BlockInit.RAW_COBBLESTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_COBBLESTONE_STAIRS = ITEMS.register("raw_cobblestone_stairs",
+			() -> new BlockItem(BlockInit.RAW_COBBLESTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> RAW_COBBLESTONE_WALL = ITEMS.register("raw_cobblestone_wall",
+			() -> new BlockItem(BlockInit.RAW_COBBLESTONE_WALL.get(),new Item.Properties()));
 }

@@ -1,0 +1,3364 @@
+{
+  "variants": {
+      "facing=east,half=bottom,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "facing=east,half=bottom,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16"
+        }
+      ],
+      "facing=east,half=bottom,shape=outer_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "facing=east,half=bottom,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16"
+        }
+      ],
+      "facing=east,half=bottom,shape=straight": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16"
+        }
+      ],
+      "facing=east,half=top,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180
+        }
+      ],
+      "facing=east,half=top,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        }
+      ],
+      "facing=east,half=top,shape=outer_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180
+        }
+      ],
+      "facing=east,half=top,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        }
+      ],
+      "facing=east,half=top,shape=straight": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "x": 180
+        }
+      ],
+      "facing=north,half=bottom,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "facing=north,half=bottom,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "facing=north,half=bottom,shape=outer_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "facing=north,half=bottom,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "facing=north,half=bottom,shape=straight": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "facing=north,half=top,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        }
+      ],
+      "facing=north,half=top,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180
+        }
+      ],
+      "facing=north,half=top,shape=outer_left": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        }
+      ],
+      "facing=north,half=top,shape=outer_right": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180
+        }
+      ],
+      "facing=north,half=top,shape=straight": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        }
+      ],
+      "facing=south,half=bottom,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16"
+        }
+      ],
+      "facing=south,half=bottom,shape=inner_right": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "facing=south,half=bottom,shape=outer_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16"
+        }
+      ],
+      "facing=south,half=bottom,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "facing=south,half=bottom,shape=straight": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "facing=south,half=top,shape=inner_left": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+       },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        }
+      ],
+      "facing=south,half=top,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        }
+      ],
+      "facing=south,half=top,shape=outer_left": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        }
+      ],
+      "facing=south,half=top,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        }
+      ],
+      "facing=south,half=top,shape=straight": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "x": 180,
+          "y": 90
+        }
+      ],
+      "facing=west,half=bottom,shape=inner_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "facing=west,half=bottom,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "facing=west,half=bottom,shape=outer_left": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "facing=west,half=bottom,shape=outer_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "facing=west,half=bottom,shape=straight": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "facing=west,half=top,shape=inner_left": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        }
+      ],
+      "facing=west,half=top,shape=inner_right": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner1",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner2",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner3",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner4",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner5",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner6",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner7",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner8",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner9",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner10",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner11",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner12",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner13",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner14",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner15",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_inner16",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        }
+      ],
+      "facing=west,half=top,shape=outer_left": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        }
+      ],
+      "facing=west,half=top,shape=outer_right": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs_outer1",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer2",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer3",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer4",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer5",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer6",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer7",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer8",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer9",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer10",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer11",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer12",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer13",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer14",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer15",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs_outer16",
+          "uvlock": true,
+          "x": 180,
+          "y": 270
+        }
+      ],
+      "facing=west,half=top,shape=straight": [
+        {
+        "model": "darkestsouls:block/raw_cobblestone_stairs1",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs2",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs3",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs4",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs5",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs6",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs7",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs8",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs9",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs10",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs11",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs12",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs13",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs14",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs15",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_stairs16",
+          "uvlock": true,
+          "x": 180,
+          "y": 180
+        }
+      ]
+    }
+}

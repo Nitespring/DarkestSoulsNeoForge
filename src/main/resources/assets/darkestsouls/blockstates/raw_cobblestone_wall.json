@@ -1,0 +1,722 @@
+{
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post1"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post2"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post3"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post4"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post5"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post6"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post7"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post8"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post9"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post10"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post11"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post12"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post13"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post14"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post15"
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_post16"
+        }
+      ],
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side1",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side2",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side3",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side4",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side5",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side6",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side7",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side8",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side9",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side10",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side11",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side12",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side13",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side14",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side15",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side16",
+          "uvlock": true
+        }
+      ],
+      "when": {
+        "north": "low"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "when": {
+        "east": "low"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "when": {
+        "south": "low"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side5",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "when": {
+        "west": "low"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall1",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall2",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall3",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall4",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall5",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall6",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall7",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall8",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall9",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall10",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall11",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall12",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall13",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall14",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall15",
+          "uvlock": true
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall16",
+          "uvlock": true
+        }
+      ],
+      "when": {
+        "north": "tall"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall1",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall2",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall3",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall4",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall5",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall6",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall7",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall8",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall9",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall10",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall11",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall12",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall13",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall14",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall15",
+          "uvlock": true,
+          "y": 90
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall16",
+          "uvlock": true,
+          "y": 90
+        }
+      ],
+      "when": {
+        "east": "tall"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall1",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall2",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall3",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall4",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall5",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall6",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall7",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall8",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall9",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall10",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall11",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall12",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall13",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall14",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall15",
+          "uvlock": true,
+          "y": 180
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall16",
+          "uvlock": true,
+          "y": 180
+        }
+      ],
+      "when": {
+        "south": "tall"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall1",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall2",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall3",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall4",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall5",
+          "uvlock": true,
+          "y": 270
+        },{
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall6",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall7",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall8",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall9",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall10",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall11",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall12",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall13",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall14",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall15",
+          "uvlock": true,
+          "y": 270
+        },
+        {
+          "model": "darkestsouls:block/raw_cobblestone_wall_side_tall16",
+          "uvlock": true,
+          "y": 270
+        }
+      ],
+      "when": {
+        "west": "tall"
+      }
+    }
+  ]
+}
