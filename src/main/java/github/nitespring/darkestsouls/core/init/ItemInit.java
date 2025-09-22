@@ -634,4 +634,52 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.RAW_COBBLESTONE_STAIRS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> RAW_COBBLESTONE_WALL = ITEMS.register("raw_cobblestone_wall",
 			() -> new BlockItem(BlockInit.RAW_COBBLESTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_BRICKS = ITEMS.register("dark_glintstone_bricks",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_BRICK_SLAB = ITEMS.register("dark_glintstone_brick_slab",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_BRICK_STAIRS = ITEMS.register("dark_glintstone_brick_stairs",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_BRICK_WALL = ITEMS.register("dark_glintstone_brick_wall",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_BRICKS = ITEMS.register("light_glintstone_bricks",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_BRICK_SLAB = ITEMS.register("light_glintstone_brick_slab",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_BRICK_STAIRS = ITEMS.register("light_glintstone_brick_stairs",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_BRICK_WALL = ITEMS.register("light_glintstone_brick_wall",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_BRICKS = ITEMS.register("green_glintstone_bricks",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_BRICK_SLAB = ITEMS.register("green_glintstone_brick_slab",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_BRICK_STAIRS = ITEMS.register("green_glintstone_brick_stairs",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_BRICK_WALL = ITEMS.register("green_glintstone_brick_wall",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_TILES = ITEMS.register("dark_glintstone_tiles",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_TILES.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_TILES_SLAB = ITEMS.register("dark_glintstone_tiles_slab",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_TILES_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_TILES_STAIRS = ITEMS.register("dark_glintstone_tiles_stairs",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_TILES_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_GLINTSTONE_TILES_WALL = ITEMS.register("dark_glintstone_tiles_wall",
+			() -> new BlockItem(BlockInit.DARK_GLINTSTONE_TILES_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_TILES = ITEMS.register("light_glintstone_tiles",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_TILES.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_TILES_SLAB = ITEMS.register("light_glintstone_tiles_slab",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_TILES_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_TILES_STAIRS = ITEMS.register("light_glintstone_tiles_stairs",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_TILES_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_GLINTSTONE_TILES_WALL = ITEMS.register("light_glintstone_tiles_wall",
+			() -> new BlockItem(BlockInit.LIGHT_GLINTSTONE_TILES_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_TILES = ITEMS.register("green_glintstone_tiles",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_TILES_SLAB = ITEMS.register("green_glintstone_tiles_slab",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_TILES_STAIRS = ITEMS.register("green_glintstone_tiles_stairs",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_TILES_WALL = ITEMS.register("green_glintstone_tiles_wall",
+			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES_WALL.get(),new Item.Properties()));
 }

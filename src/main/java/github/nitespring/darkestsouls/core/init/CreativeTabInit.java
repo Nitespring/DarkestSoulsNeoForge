@@ -364,6 +364,30 @@ public class CreativeTabInit {
                         output.accept(ItemInit.RAW_STONE_BRICKS_SLAB.get());
                         output.accept(ItemInit.RAW_STONE_BRICKS_STAIRS.get());
                         output.accept(ItemInit.RAW_STONE_BRICKS_WALL.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_BRICKS.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_BRICKS.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_BRICKS.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_TILES.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.DARK_GLINTSTONE_TILES_WALL.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_TILES.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.LIGHT_GLINTSTONE_TILES_WALL.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_TILES.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.GREEN_GLINTSTONE_TILES_WALL.get());
                     })
                     .build());
 
