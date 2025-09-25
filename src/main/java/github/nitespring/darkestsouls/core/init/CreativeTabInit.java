@@ -376,6 +376,10 @@ public class CreativeTabInit {
                         output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.GREEN_GLINTSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_BRICKS.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_BRICK_SLAB.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_BRICK_STAIRS.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_BRICK_WALL.get());
                         output.accept(ItemInit.DARK_GLINTSTONE_TILES.get());
                         output.accept(ItemInit.DARK_GLINTSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.DARK_GLINTSTONE_TILES_STAIRS.get());
@@ -388,6 +392,12 @@ public class CreativeTabInit {
                         output.accept(ItemInit.GREEN_GLINTSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.GREEN_GLINTSTONE_TILES_STAIRS.get());
                         output.accept(ItemInit.GREEN_GLINTSTONE_TILES_WALL.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_TILES.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_TILES_SLAB.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_TILES_STAIRS.get());
+                        output.accept(ItemInit.PURPLE_CRYSTAL_TILES_WALL.get());
+                        output.accept(ItemInit.LORAN_SAND.get());
+                        output.accept(ItemInit.NIGHTMARE_SAND.get());
                     })
                     .build());
 

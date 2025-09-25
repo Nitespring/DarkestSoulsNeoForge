@@ -17,6 +17,7 @@ import github.nitespring.darkestsouls.common.item.throwing.MolotovCocktail;
 import github.nitespring.darkestsouls.common.item.throwing.ThrowingKnife;
 import github.nitespring.darkestsouls.core.enums.Tiers;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -197,5 +198,28 @@ public class BlockInit {
 			() -> new StairBlock(GREEN_GLINTSTONE_TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
 	public static final DeferredHolder<Block,WallBlock> GREEN_GLINTSTONE_TILES_WALL = BLOCKS.register("green_glintstone_tiles_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> PURPLE_CRYSTAL_BRICKS = BLOCKS.register("purple_crystal_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> PURPLE_CRYSTAL_BRICK_SLAB = BLOCKS.register("purple_crystal_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> PURPLE_CRYSTAL_BRICK_STAIRS = BLOCKS.register("purple_crystal_brick_stairs",
+			() -> new StairBlock(PURPLE_CRYSTAL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> PURPLE_CRYSTAL_BRICK_WALL = BLOCKS.register("purple_crystal_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> PURPLE_CRYSTAL_TILES = BLOCKS.register("purple_crystal_tiles",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> PURPLE_CRYSTAL_TILES_SLAB = BLOCKS.register("purple_crystal_tiles_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> PURPLE_CRYSTAL_TILES_STAIRS = BLOCKS.register("purple_crystal_tiles_stairs",
+			() -> new StairBlock(PURPLE_CRYSTAL_TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> PURPLE_CRYSTAL_TILES_WALL = BLOCKS.register("purple_crystal_tiles_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,ColoredFallingBlock> LORAN_SAND = BLOCKS.register("loran_sand",
+			() -> new ColoredFallingBlock(new ColorRGBA(17387411), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,ColoredFallingBlock> NIGHTMARE_SAND = BLOCKS.register("nightmare_sand",
+			() -> new ColoredFallingBlock(new ColorRGBA(1161191281), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND).pushReaction(PushReaction.BLOCK)));
 
 }

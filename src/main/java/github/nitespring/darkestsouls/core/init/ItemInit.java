@@ -682,4 +682,26 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES_STAIRS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> GREEN_GLINTSTONE_TILES_WALL = ITEMS.register("green_glintstone_tiles_wall",
 			() -> new BlockItem(BlockInit.GREEN_GLINTSTONE_TILES_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_BRICKS = ITEMS.register("purple_crystal_bricks",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_BRICK_SLAB = ITEMS.register("purple_crystal_brick_slab",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_BRICK_STAIRS = ITEMS.register("purple_crystal_brick_stairs",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_BRICK_WALL = ITEMS.register("purple_crystal_brick_wall",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_TILES = ITEMS.register("purple_crystal_tiles",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_TILES.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_TILES_SLAB = ITEMS.register("purple_crystal_tiles_slab",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_TILES_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_TILES_STAIRS = ITEMS.register("purple_crystal_tiles_stairs",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_TILES_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_TILES_WALL = ITEMS.register("purple_crystal_tiles_wall",
+			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_TILES_WALL.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> LORAN_SAND = ITEMS.register("loran_sand",
+			() -> new BlockItem(BlockInit.LORAN_SAND.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SAND = ITEMS.register("nightmare_sand",
+			() -> new BlockItem(BlockInit.NIGHTMARE_SAND.get(),new Item.Properties()));
+
 }
