@@ -222,4 +222,52 @@ public class BlockInit {
 	public static final DeferredHolder<Block,ColoredFallingBlock> NIGHTMARE_SAND = BLOCKS.register("nightmare_sand",
 			() -> new ColoredFallingBlock(new ColorRGBA(1161191281), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND).pushReaction(PushReaction.BLOCK)));
 
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE = BLOCKS.register("loran_sandstone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> LORAN_SANDSTONE_SLAB = BLOCKS.register("loran_sandstone_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> LORAN_SANDSTONE_STAIRS = BLOCKS.register("loran_sandstone_stairs",
+			() -> new StairBlock(LORAN_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> LORAN_SANDSTONE_WALL = BLOCKS.register("loran_sandstone_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_BRICKS = BLOCKS.register("loran_sandstone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> LORAN_SANDSTONE_BRICK_SLAB = BLOCKS.register("loran_sandstone_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> LORAN_SANDSTONE_BRICK_STAIRS = BLOCKS.register("loran_sandstone_brick_stairs",
+			() -> new StairBlock(LORAN_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> LORAN_SANDSTONE_BRICK_WALL = BLOCKS.register("loran_sandstone_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_COBBLESTONE = BLOCKS.register("loran_sandstone_cobblestone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> LORAN_SANDSTONE_COBBLESTONE_SLAB = BLOCKS.register("loran_sandstone_cobblestone_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> LORAN_SANDSTONE_COBBLESTONE_STAIRS = BLOCKS.register("loran_sandstone_cobblestone_stairs",
+			() -> new StairBlock(LORAN_SANDSTONE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> LORAN_SANDSTONE_COBBLESTONE_WALL = BLOCKS.register("loran_sandstone_cobblestone_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_DECOR_HUNTER = BLOCKS.register("loran_sandstone_decor_hunter",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LORAN_SMOOTH_SANDSTONE = BLOCKS.register("loran_smooth_sandstone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> LORAN_SMOOTH_SANDSTONE_SLAB = BLOCKS.register("loran_smooth_sandstone_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> LORAN_SMOOTH_SANDSTONE_STAIRS = BLOCKS.register("loran_smooth_sandstone_stairs",
+			() -> new StairBlock(LORAN_SMOOTH_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> LORAN_SMOOTH_SANDSTONE_WALL = BLOCKS.register("loran_smooth_sandstone_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> LORAN_SMOOTH_SANDSTONE_BRICKS = BLOCKS.register("loran_smooth_sandstone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> LORAN_SMOOTH_SANDSTONE_BRICK_SLAB = BLOCKS.register("loran_smooth_sandstone_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS = BLOCKS.register("loran_smooth_sandstone_brick_stairs",
+			() -> new StairBlock(LORAN_SMOOTH_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> LORAN_SMOOTH_SANDSTONE_BRICK_WALL = BLOCKS.register("loran_smooth_sandstone_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
 }

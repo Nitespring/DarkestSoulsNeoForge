@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/loran_sandstone",
+    "side": "darkestsouls:block/loran_sandstone",
+    "top": "darkestsouls:block/loran_sandstone"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "darkestsouls:block/loran_sandstone_bricks"
+  }
+}

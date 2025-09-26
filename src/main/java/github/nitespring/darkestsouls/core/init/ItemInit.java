@@ -703,5 +703,50 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.LORAN_SAND.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SAND = ITEMS.register("nightmare_sand",
 			() -> new BlockItem(BlockInit.NIGHTMARE_SAND.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE = ITEMS.register("loran_sandstone",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_DECOR_HUNTER = ITEMS.register("loran_sandstone_decor_hunter",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_DECOR_HUNTER.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE = ITEMS.register("loran_smooth_sandstone",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_COBBLESTONE = ITEMS.register("loran_sandstone_cobblestone",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_COBBLESTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_BRICKS = ITEMS.register("loran_sandstone_bricks",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_BRICKS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_BRICKS = ITEMS.register("loran_smooth_sandstone_bricks",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_BRICKS.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_STAIRS = ITEMS.register("loran_sandstone_stairs",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_STAIRS = ITEMS.register("loran_smooth_sandstone_stairs",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_COBBLESTONE_STAIRS = ITEMS.register("loran_sandstone_cobblestone_stairs",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_COBBLESTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_BRICK_STAIRS = ITEMS.register("loran_sandstone_brick_stairs",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS = ITEMS.register("loran_smooth_sandstone_brick_stairs",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_SLAB = ITEMS.register("loran_sandstone_slab",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_SLAB = ITEMS.register("loran_smooth_sandstone_slab",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_COBBLESTONE_SLAB = ITEMS.register("loran_sandstone_cobblestone_slab",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_COBBLESTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_BRICK_SLAB = ITEMS.register("loran_sandstone_brick_slab",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_BRICK_SLAB = ITEMS.register("loran_smooth_sandstone_brick_slab",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_WALL = ITEMS.register("loran_sandstone_wall",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_WALL = ITEMS.register("loran_smooth_sandstone_wall",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_COBBLESTONE_WALL = ITEMS.register("loran_sandstone_cobblestone_wall",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_COBBLESTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_BRICK_WALL = ITEMS.register("loran_sandstone_brick_wall",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE_BRICK_WALL = ITEMS.register("loran_smooth_sandstone_brick_wall",
+			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get(),new Item.Properties()));
 
 }

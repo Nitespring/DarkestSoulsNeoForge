@@ -17,6 +17,11 @@
     "darkestsouls:light_glintstone_tiles_wall",
     "darkestsouls:green_glintstone_tiles_wall",
     "darkestsouls:purple_crystal_tiles_wall",
-    "darkestsouls:purple_crystal_brick_wall"
+    "darkestsouls:purple_crystal_brick_wall",
+    "darkestsouls:loran_sandstone_wall",
+    "darkestsouls:loran_smooth_sandstone_wall",
+    "darkestsouls:loran_sandstone_cobblestone_wall",
+    "darkestsouls:loran_sandstone_brick_wall",
+    "darkestsouls:loran_smooth_sandstone_brick_wall"
   ]
 }

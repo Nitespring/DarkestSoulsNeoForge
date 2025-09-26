@@ -319,6 +319,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SIDERITE_BRICKS_SLAB.get());
                         output.accept(ItemInit.SIDERITE_BRICKS_STAIRS.get());
                         output.accept(ItemInit.SIDERITE_BRICKS_WALL.get());
+                        output.accept(ItemInit.NIGHTMARE_SAND.get());
                         output.accept(ItemInit.NIGHTMARE_STONE.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_SLAB.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_STAIRS.get());
@@ -397,7 +398,27 @@ public class CreativeTabInit {
                         output.accept(ItemInit.PURPLE_CRYSTAL_TILES_STAIRS.get());
                         output.accept(ItemInit.PURPLE_CRYSTAL_TILES_WALL.get());
                         output.accept(ItemInit.LORAN_SAND.get());
-                        output.accept(ItemInit.NIGHTMARE_SAND.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_SLAB.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_DECOR_HUNTER.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_SLAB.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_COBBLESTONE.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_COBBLESTONE_SLAB.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_COBBLESTONE_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_COBBLESTONE_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_BRICKS.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICKS.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get());
                     })
                     .build());
 

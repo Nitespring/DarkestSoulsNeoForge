@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/loran_sandstone_brick_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/loran_sandstone_bricks"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/loran_sandstone_brick_slab_top"
+    }
+  }
+}
