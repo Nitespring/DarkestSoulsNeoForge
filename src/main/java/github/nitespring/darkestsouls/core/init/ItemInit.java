@@ -705,6 +705,8 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.NIGHTMARE_SAND.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE = ITEMS.register("loran_sandstone",
 			() -> new BlockItem(BlockInit.LORAN_SANDSTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_ORNATED_BRICKS = ITEMS.register("loran_sandstone_ornated_bricks",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_ORNATED_BRICKS.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_DECOR_HUNTER = ITEMS.register("loran_sandstone_decor_hunter",
 			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_DECOR_HUNTER.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> LORAN_SMOOTH_SANDSTONE = ITEMS.register("loran_smooth_sandstone",

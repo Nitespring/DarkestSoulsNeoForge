@@ -402,6 +402,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LORAN_SANDSTONE_SLAB.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_STAIRS.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_ORNATED_BRICKS.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_DECOR_HUNTER.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_SLAB.get());

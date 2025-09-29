@@ -251,6 +251,8 @@ public class BlockInit {
 
 	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_DECOR_HUNTER = BLOCKS.register("loran_sandstone_decor_hunter",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_ORNATED_BRICKS = BLOCKS.register("loran_sandstone_ornated_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
 
 	public static final DeferredHolder<Block,Block> LORAN_SMOOTH_SANDSTONE = BLOCKS.register("loran_smooth_sandstone",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
