@@ -66,11 +66,11 @@ public class BlockInit {
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
 	public static final DeferredHolder<Block,Block> CRACKED_SIDERITE_BRICKS = BLOCKS.register("cracked_siderite_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> SIDERITE_BRICKS_SLAB = BLOCKS.register("siderite_brick_slab",
+	public static final DeferredHolder<Block,SlabBlock> SIDERITE_BRICK_SLAB = BLOCKS.register("siderite_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> SIDERITE_BRICKS_STAIRS = BLOCKS.register("siderite_brick_stairs",
+	public static final DeferredHolder<Block,StairBlock> SIDERITE_BRICK_STAIRS = BLOCKS.register("siderite_brick_stairs",
 			() -> new StairBlock(SIDERITE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> SIDERITE_BRICKS_WALL = BLOCKS.register("siderite_brick_wall",
+	public static final DeferredHolder<Block,WallBlock> SIDERITE_BRICK_WALL = BLOCKS.register("siderite_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 
@@ -84,19 +84,19 @@ public class BlockInit {
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 	public static final DeferredHolder<Block,Block> NIGHTMARE_STONE_BRICKS = BLOCKS.register("nightmare_stone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_STONE_BRICKS_SLAB = BLOCKS.register("nightmare_stone_bricks_slab",
+	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_STONE_BRICK_SLAB = BLOCKS.register("nightmare_stone_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_STONE_BRICKS_STAIRS = BLOCKS.register("nightmare_stone_bricks_stairs",
+	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_STONE_BRICK_STAIRS = BLOCKS.register("nightmare_stone_brick_stairs",
 			() -> new StairBlock(NIGHTMARE_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_STONE_BRICKS_WALL = BLOCKS.register("nightmare_stone_bricks_wall",
+	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_STONE_BRICK_WALL = BLOCKS.register("nightmare_stone_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 	public static final DeferredHolder<Block,Block> NIGHTMARE_SMOOTH_STONE_BRICKS = BLOCKS.register("nightmare_smooth_stone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB = BLOCKS.register("nightmare_smooth_stone_bricks_slab",
+	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_SMOOTH_STONE_BRICK_SLAB = BLOCKS.register("nightmare_smooth_stone_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS = BLOCKS.register("nightmare_smooth_stone_bricks_stairs",
+	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_SMOOTH_STONE_BRICK_STAIRS = BLOCKS.register("nightmare_smooth_stone_brick_stairs",
 			() -> new StairBlock(NIGHTMARE_SMOOTH_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = BLOCKS.register("nightmare_smooth_stone_bricks_wall",
+	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_SMOOTH_STONE_BRICK_WALL = BLOCKS.register("nightmare_smooth_stone_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 	public static final DeferredHolder<Block,Block> NIGHTMARE_STONE_DECOR_HUNTER = BLOCKS.register("nightmare_stone_decor_hunter",
@@ -112,19 +112,19 @@ public class BlockInit {
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 	public static final DeferredHolder<Block,Block> DARK_NIGHTMARE_STONE_BRICKS = BLOCKS.register("dark_nightmare_stone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> DARK_NIGHTMARE_STONE_BRICKS_SLAB = BLOCKS.register("dark_nightmare_stone_bricks_slab",
+	public static final DeferredHolder<Block,SlabBlock> DARK_NIGHTMARE_STONE_BRICK_SLAB = BLOCKS.register("dark_nightmare_stone_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> DARK_NIGHTMARE_STONE_BRICKS_STAIRS = BLOCKS.register("dark_nightmare_stone_bricks_stairs",
+	public static final DeferredHolder<Block,StairBlock> DARK_NIGHTMARE_STONE_BRICK_STAIRS = BLOCKS.register("dark_nightmare_stone_brick_stairs",
 			() -> new StairBlock(DARK_NIGHTMARE_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> DARK_NIGHTMARE_STONE_BRICKS_WALL = BLOCKS.register("dark_nightmare_stone_bricks_wall",
+	public static final DeferredHolder<Block,WallBlock> DARK_NIGHTMARE_STONE_BRICK_WALL = BLOCKS.register("dark_nightmare_stone_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 	public static final DeferredHolder<Block,Block> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS = BLOCKS.register("dark_nightmare_smooth_stone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_SLAB = BLOCKS.register("dark_nightmare_smooth_stone_bricks_slab",
+	public static final DeferredHolder<Block,SlabBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICK_SLAB = BLOCKS.register("dark_nightmare_smooth_stone_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_STAIRS = BLOCKS.register("dark_nightmare_smooth_stone_bricks_stairs",
+	public static final DeferredHolder<Block,StairBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICK_STAIRS = BLOCKS.register("dark_nightmare_smooth_stone_brick_stairs",
 			() -> new StairBlock(DARK_NIGHTMARE_SMOOTH_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICKS_WALL = BLOCKS.register("dark_nightmare_smooth_stone_bricks_wall",
+	public static final DeferredHolder<Block,WallBlock> DARK_NIGHTMARE_SMOOTH_STONE_BRICK_WALL = BLOCKS.register("dark_nightmare_smooth_stone_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 	public static final DeferredHolder<Block,Block> RAW_COBBLESTONE = BLOCKS.register("raw_cobblestone",
@@ -138,11 +138,11 @@ public class BlockInit {
 
 	public static final DeferredHolder<Block,Block> RAW_STONE_BRICKS = BLOCKS.register("raw_stone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,SlabBlock> RAW_STONE_BRICKS_SLAB = BLOCKS.register("raw_stone_bricks_slab",
+	public static final DeferredHolder<Block,SlabBlock> RAW_STONE_BRICK_SLAB = BLOCKS.register("raw_stone_brick_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,StairBlock> RAW_STONE_BRICKS_STAIRS = BLOCKS.register("raw_stone_bricks_stairs",
+	public static final DeferredHolder<Block,StairBlock> RAW_STONE_BRICK_STAIRS = BLOCKS.register("raw_stone_brick_stairs",
 			() -> new StairBlock(RAW_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
-	public static final DeferredHolder<Block,WallBlock> RAW_STONE_BRICKS_WALL = BLOCKS.register("raw_stone_bricks_wall",
+	public static final DeferredHolder<Block,WallBlock> RAW_STONE_BRICK_WALL = BLOCKS.register("raw_stone_brick_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 	public static final DeferredHolder<Block,Block> DARK_GLINTSTONE_BRICKS = BLOCKS.register("dark_glintstone_bricks",
@@ -270,6 +270,24 @@ public class BlockInit {
 	public static final DeferredHolder<Block,StairBlock> LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS = BLOCKS.register("loran_smooth_sandstone_brick_stairs",
 			() -> new StairBlock(LORAN_SMOOTH_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
 	public static final DeferredHolder<Block,WallBlock> LORAN_SMOOTH_SANDSTONE_BRICK_WALL = BLOCKS.register("loran_smooth_sandstone_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> NIGHTMARE_COBBLED_STONE_BRICKS = BLOCKS.register("nightmare_cobbled_stone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_COBBLED_STONE_BRICK_SLAB = BLOCKS.register("nightmare_cobbled_stone_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_COBBLED_STONE_BRICK_STAIRS = BLOCKS.register("nightmare_cobbled_stone_brick_stairs",
+			() -> new StairBlock(NIGHTMARE_COBBLED_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_COBBLED_STONE_BRICK_WALL = BLOCKS.register("nightmare_cobbled_stone_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
+
+	public static final DeferredHolder<Block,Block> NIGHTMARE_COBBLESTONE = BLOCKS.register("nightmare_cobblestone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,SlabBlock> NIGHTMARE_COBBLESTONE_SLAB = BLOCKS.register("nightmare_cobblestone_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,StairBlock> NIGHTMARE_COBBLESTONE_STAIRS = BLOCKS.register("nightmare_cobblestone_stairs",
+			() -> new StairBlock(NIGHTMARE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_COBBLESTONE_WALL = BLOCKS.register("nightmare_cobblestone_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
 }

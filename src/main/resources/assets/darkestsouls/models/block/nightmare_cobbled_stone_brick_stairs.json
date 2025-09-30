@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/nightmare_cobbled_stone_bricks",
+    "side": "darkestsouls:block/nightmare_cobbled_stone_bricks",
+    "top": "darkestsouls:block/nightmare_cobbled_stone_bricks"
+  }
+}

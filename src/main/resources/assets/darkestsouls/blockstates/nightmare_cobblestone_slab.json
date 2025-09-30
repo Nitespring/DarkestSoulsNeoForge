@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/nightmare_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/nightmare_cobblestone"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/nightmare_cobblestone_slab_top"
+    }
+  }
+}
