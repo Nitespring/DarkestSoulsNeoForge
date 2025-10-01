@@ -290,4 +290,7 @@ public class BlockInit {
 	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_COBBLESTONE_WALL = BLOCKS.register("nightmare_cobblestone_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SMOOTH_SANDSTONE_BRICKS = BLOCKS.register("light_loran_smooth_sandstone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
 }

@@ -424,6 +424,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICKS.get());
                     })
                     .build());
 
