@@ -290,7 +290,47 @@ public class BlockInit {
 	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_COBBLESTONE_WALL = BLOCKS.register("nightmare_cobblestone_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
+	public static final DeferredHolder<Block,ColoredFallingBlock> LIGHT_LORAN_SAND = BLOCKS.register("light_loran_sand",
+			() -> new ColoredFallingBlock(new ColorRGBA(17387411), BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE = BLOCKS.register("light_loran_sandstone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE_BRICKS = BLOCKS.register("light_loran_sandstone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE_COBBLESTONE = BLOCKS.register("light_loran_sandstone_cobblestone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE_DECOR_HUNTER = BLOCKS.register("light_loran_sandstone_decor_hunter",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE_ORNATED_BRICKS = BLOCKS.register("light_loran_sandstone_ornated_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SMOOTH_SANDSTONE = BLOCKS.register("light_loran_smooth_sandstone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
 	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SMOOTH_SANDSTONE_BRICKS = BLOCKS.register("light_loran_smooth_sandstone_bricks",
 			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> CHAOS_STONE = BLOCKS.register("chaos_stone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> SMOOTH_CHAOS_STONE = BLOCKS.register("smooth_chaos_stone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> CHAOS_STONE_BRICKS = BLOCKS.register("chaos_stone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> CHAOS_STONE_TILES = BLOCKS.register("chaos_stone_tiles",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> SMOOTH_CHAOS_STONE_BRICKS = BLOCKS.register("smooth_chaos_stone_bricks",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> SMOOTH_CHAOS_STONE_TILES = BLOCKS.register("smooth_chaos_stone_tiles",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+
 
 }

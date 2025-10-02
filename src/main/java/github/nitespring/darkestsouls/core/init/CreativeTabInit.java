@@ -424,7 +424,20 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SAND.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_ORNATED_BRICKS.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_DECOR_HUNTER.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_COBBLESTONE.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICKS.get());
                         output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICKS.get());
+                        output.accept(ItemInit.CHAOS_STONE.get());
+                        output.accept(ItemInit.SMOOTH_CHAOS_STONE.get());
+                        output.accept(ItemInit.CHAOS_STONE_BRICKS.get());
+                        output.accept(ItemInit.CHAOS_STONE_TILES.get());
+                        output.accept(ItemInit.SMOOTH_CHAOS_STONE_BRICKS.get());
+                        output.accept(ItemInit.SMOOTH_CHAOS_STONE_TILES.get());
                     })
                     .build());
 
