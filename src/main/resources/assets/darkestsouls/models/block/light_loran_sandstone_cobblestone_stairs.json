@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "darkestsouls:block/light_loran_sandstone_cobblestone",
+    "side": "darkestsouls:block/light_loran_sandstone_cobblestone",
+    "top": "darkestsouls:block/light_loran_sandstone_cobblestone"
+  }
+}

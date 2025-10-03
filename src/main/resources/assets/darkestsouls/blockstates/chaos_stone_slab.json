@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/chaos_stone_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/chaos_stone"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/chaos_stone_slab_top"
+    }
+  }
+}

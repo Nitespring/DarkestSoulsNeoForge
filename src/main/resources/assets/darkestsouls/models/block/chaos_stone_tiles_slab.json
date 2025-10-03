@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "darkestsouls:block/chaos_stone_tiles",
+    "side": "darkestsouls:block/chaos_stone_tiles",
+    "top": "darkestsouls:block/chaos_stone_tiles"
+  }
+}

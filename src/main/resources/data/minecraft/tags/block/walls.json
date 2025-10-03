@@ -24,6 +24,17 @@
     "darkestsouls:loran_sandstone_brick_wall",
     "darkestsouls:loran_smooth_sandstone_brick_wall",
     "darkestsouls:nightmare_cobbled_stone_brick_wall",
-    "darkestsouls:nightmare_cobblestone_wall"
+    "darkestsouls:nightmare_cobblestone_wall",
+    "darkestsouls:light_loran_sandstone_wall",
+    "darkestsouls:light_loran_smooth_sandstone_wall",
+    "darkestsouls:light_loran_sandstone_cobblestone_wall",
+    "darkestsouls:light_loran_sandstone_brick_wall",
+    "darkestsouls:light_loran_smooth_sandstone_brick_wall",
+    "darkestsouls:chaos_stone_wall",
+    "darkestsouls:smooth_chaos_stone_wall",
+    "darkestsouls:chaos_stone_brick_wall",
+    "darkestsouls:chaos_stone_tiles_wall",
+    "darkestsouls:smooth_chaos_stone_brick_wall",
+    "darkestsouls:smooth_chaos_stone_tiles_wall"
   ]
 }
