@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "darkestsouls:block/grimstone_tiles",
+    "side": "darkestsouls:block/grimstone_tiles",
+    "top": "darkestsouls:block/grimstone_tiles"
+  }
+}

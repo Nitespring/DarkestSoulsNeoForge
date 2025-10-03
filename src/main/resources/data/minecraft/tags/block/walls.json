@@ -35,6 +35,12 @@
     "darkestsouls:chaos_stone_brick_wall",
     "darkestsouls:chaos_stone_tiles_wall",
     "darkestsouls:smooth_chaos_stone_brick_wall",
-    "darkestsouls:smooth_chaos_stone_tiles_wall"
+    "darkestsouls:smooth_chaos_stone_tiles_wall",
+    "darkestsouls:deepstone_wall",
+    "darkestsouls:grimstone_wall",
+    "darkestsouls:deepstone_brick_wall",
+    "darkestsouls:grimstone_brick_wall",
+    "darkestsouls:deepstone_tiles_wall",
+    "darkestsouls:grimstone_tiles_wall"
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/deepstone_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/deepstone"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/deepstone_slab_top"
+    }
+  }
+}

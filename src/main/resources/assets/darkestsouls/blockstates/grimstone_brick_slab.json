@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/grimstone_brick_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/grimstone_bricks"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/grimstone_brick_slab_top"
+    }
+  }
+}

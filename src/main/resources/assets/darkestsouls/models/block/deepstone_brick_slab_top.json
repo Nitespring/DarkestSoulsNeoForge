@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "darkestsouls:block/deepstone_bricks",
+    "side": "darkestsouls:block/deepstone_bricks",
+    "top": "darkestsouls:block/deepstone_bricks"
+  }
+}

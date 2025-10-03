@@ -472,11 +472,29 @@ public class CreativeTabInit {
                         output.accept(ItemInit.SMOOTH_CHAOS_STONE_TILES_STAIRS.get());
                         output.accept(ItemInit.SMOOTH_CHAOS_STONE_TILES_WALL.get());
                         output.accept(ItemInit.DEEPSTONE.get());
+                        output.accept(ItemInit.DEEPSTONE_SLAB.get());
+                        output.accept(ItemInit.DEEPSTONE_STAIRS.get());
+                        output.accept(ItemInit.DEEPSTONE_WALL.get());
                         output.accept(ItemInit.DEEPSTONE_BRICKS.get());
+                        output.accept(ItemInit.DEEPSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.DEEPSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.DEEPSTONE_BRICK_WALL.get());
                         output.accept(ItemInit.DEEPSTONE_TILES.get());
+                        output.accept(ItemInit.DEEPSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.DEEPSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.DEEPSTONE_TILES_WALL.get());
                         output.accept(ItemInit.GRIMSTONE.get());
+                        output.accept(ItemInit.GRIMSTONE_SLAB.get());
+                        output.accept(ItemInit.GRIMSTONE_STAIRS.get());
+                        output.accept(ItemInit.GRIMSTONE_WALL.get());
                         output.accept(ItemInit.GRIMSTONE_BRICKS.get());
+                        output.accept(ItemInit.GRIMSTONE_BRICK_SLAB.get());
+                        output.accept(ItemInit.GRIMSTONE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.GRIMSTONE_BRICK_WALL.get());
                         output.accept(ItemInit.GRIMSTONE_TILES.get());
+                        output.accept(ItemInit.GRIMSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.GRIMSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.GRIMSTONE_TILES_WALL.get());
                     })
                     .build());
 

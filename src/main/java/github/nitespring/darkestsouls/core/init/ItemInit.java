@@ -879,4 +879,43 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.DEEPSTONE_TILES.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_TILES = ITEMS.register("grimstone_tiles",
 			() -> new BlockItem(BlockInit.GRIMSTONE_TILES.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_WALL = ITEMS.register("deepstone_wall",
+			() -> new BlockItem(BlockInit.DEEPSTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_WALL = ITEMS.register("grimstone_wall",
+			() -> new BlockItem(BlockInit.GRIMSTONE_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_BRICK_WALL = ITEMS.register("deepstone_brick_wall",
+			() -> new BlockItem(BlockInit.DEEPSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_BRICK_WALL = ITEMS.register("grimstone_brick_wall",
+			() -> new BlockItem(BlockInit.GRIMSTONE_BRICK_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_TILES_WALL = ITEMS.register("deepstone_tiles_wall",
+			() -> new BlockItem(BlockInit.DEEPSTONE_TILES_WALL.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_TILES_WALL = ITEMS.register("grimstone_tiles_wall",
+			() -> new BlockItem(BlockInit.GRIMSTONE_TILES_WALL.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_SLAB = ITEMS.register("deepstone_slab",
+			() -> new BlockItem(BlockInit.DEEPSTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_SLAB = ITEMS.register("grimstone_slab",
+			() -> new BlockItem(BlockInit.GRIMSTONE_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_BRICK_SLAB = ITEMS.register("deepstone_brick_slab",
+			() -> new BlockItem(BlockInit.DEEPSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_BRICK_SLAB = ITEMS.register("grimstone_brick_slab",
+			() -> new BlockItem(BlockInit.GRIMSTONE_BRICK_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_TILES_SLAB = ITEMS.register("deepstone_tiles_slab",
+			() -> new BlockItem(BlockInit.DEEPSTONE_TILES_SLAB.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_TILES_SLAB = ITEMS.register("grimstone_tiles_slab",
+			() -> new BlockItem(BlockInit.GRIMSTONE_TILES_SLAB.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_STAIRS = ITEMS.register("deepstone_stairs",
+			() -> new BlockItem(BlockInit.DEEPSTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_STAIRS = ITEMS.register("grimstone_stairs",
+			() -> new BlockItem(BlockInit.GRIMSTONE_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_BRICK_STAIRS = ITEMS.register("deepstone_brick_stairs",
+			() -> new BlockItem(BlockInit.DEEPSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_BRICK_STAIRS = ITEMS.register("grimstone_brick_stairs",
+			() -> new BlockItem(BlockInit.GRIMSTONE_BRICK_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_TILES_STAIRS = ITEMS.register("deepstone_tiles_stairs",
+			() -> new BlockItem(BlockInit.DEEPSTONE_TILES_STAIRS.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_TILES_STAIRS = ITEMS.register("grimstone_tiles_stairs",
+			() -> new BlockItem(BlockInit.GRIMSTONE_TILES_STAIRS.get(),new Item.Properties()));
 }
