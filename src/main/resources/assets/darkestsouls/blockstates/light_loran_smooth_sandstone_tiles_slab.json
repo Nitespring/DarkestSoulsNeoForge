@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "darkestsouls:block/light_loran_smooth_sandstone_tiles_slab"
+    },
+    "type=double": {
+      "model": "darkestsouls:block/light_loran_smooth_sandstone_tiles"
+    },
+    "type=top": {
+      "model": "darkestsouls:block/light_loran_smooth_sandstone_tiles_slab_top"
+    }
+  }
+}

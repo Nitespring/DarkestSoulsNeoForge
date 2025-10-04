@@ -41,6 +41,12 @@
     "darkestsouls:deepstone_brick_wall",
     "darkestsouls:grimstone_brick_wall",
     "darkestsouls:deepstone_tiles_wall",
-    "darkestsouls:grimstone_tiles_wall"
+    "darkestsouls:grimstone_tiles_wall",
+    "darkestsouls:loran_sandstone_tiles_wall",
+    "darkestsouls:light_loran_sandstone_tiles_wall",
+    "darkestsouls:loran_smooth_sandstone_tiles_wall",
+    "darkestsouls:light_loran_smooth_sandstone_tiles_wall",
+    "darkestsouls:nightmare_smooth_stone_wall",
+    "darkestsouls:dark_nightmare_smooth_stone_wall"
   ]
 }

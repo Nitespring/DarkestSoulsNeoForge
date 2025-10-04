@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "darkestsouls:block/dark_nightmare_smooth_stone"
+  }
+}

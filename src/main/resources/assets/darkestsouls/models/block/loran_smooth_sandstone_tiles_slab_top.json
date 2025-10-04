@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "darkestsouls:block/loran_smooth_sandstone_tiles",
+    "side": "darkestsouls:block/loran_smooth_sandstone_tiles",
+    "top": "darkestsouls:block/loran_smooth_sandstone_tiles"
+  }
+}

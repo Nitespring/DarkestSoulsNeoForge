@@ -303,27 +303,15 @@ public class CreativeTabInit {
                     .title(Component.translatable("itemGroup.darkestsouls.blocks"))
                     .icon(ItemInit.CINNABAR_ORE.get()::getDefaultInstance)
                     .withSearchBar().displayItems((displayParams,output)->{
-                        output.accept(ItemInit.CINNABAR_ORE.get());
-                        output.accept(ItemInit.DEEPSLATE_CINNABAR_ORE.get());
-                        output.accept(ItemInit.NETHER_CINNABAR_ORE.get());
-                        output.accept(ItemInit.BLACKSTONE_CINNABAR_ORE.get());
-                        output.accept(ItemInit.BASALT_CINNABAR_ORE.get());
-                        output.accept(ItemInit.ENDER_CINNABAR_ORE.get());
-                        output.accept(ItemInit.SIDERITE_ORE.get());
-                        output.accept(ItemInit.DEEPSLATE_SIDERITE_ORE.get());
-                        output.accept(ItemInit.NETHER_SIDERITE_ORE.get());
-                        output.accept(ItemInit.BLACKSTONE_SIDERITE_ORE.get());
-                        output.accept(ItemInit.ENDER_SIDERITE_ORE.get());
-                        output.accept(ItemInit.SIDERITE_BRICKS.get());
-                        output.accept(ItemInit.CRACKED_SIDERITE_BRICKS.get());
-                        output.accept(ItemInit.SIDERITE_BRICK_SLAB.get());
-                        output.accept(ItemInit.SIDERITE_BRICK_STAIRS.get());
-                        output.accept(ItemInit.SIDERITE_BRICK_WALL.get());
                         output.accept(ItemInit.NIGHTMARE_SAND.get());
                         output.accept(ItemInit.NIGHTMARE_STONE.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_SLAB.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_STAIRS.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_WALL.get());
+                        output.accept(ItemInit.NIGHTMARE_SMOOTH_STONE.get());
+                        output.accept(ItemInit.NIGHTMARE_SMOOTH_STONE_SLAB.get());
+                        output.accept(ItemInit.NIGHTMARE_SMOOTH_STONE_STAIRS.get());
+                        output.accept(ItemInit.NIGHTMARE_SMOOTH_STONE_WALL.get());
                         output.accept(ItemInit.NIGHTMARE_COBBLESTONE.get());
                         output.accept(ItemInit.NIGHTMARE_COBBLESTONE_SLAB.get());
                         output.accept(ItemInit.NIGHTMARE_COBBLESTONE_STAIRS.get());
@@ -353,6 +341,10 @@ public class CreativeTabInit {
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_SLAB.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_STAIRS.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_WALL.get());
+                        output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE.get());
+                        output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_SLAB.get());
+                        output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_STAIRS.get());
+                        output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_WALL.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_BRICKS.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_BRICK_SLAB.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_BRICK_STAIRS.get());
@@ -420,10 +412,18 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_TILES.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_TILES_WALL.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICKS.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_TILES.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.LORAN_SMOOTH_SANDSTONE_TILES_WALL.get());
                         output.accept(ItemInit.LIGHT_LORAN_SAND.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_SLAB.get());
@@ -443,10 +443,18 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES_WALL.get());
                         output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICKS.get());
                         output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_TILES.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_TILES_SLAB.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_TILES_STAIRS.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SMOOTH_SANDSTONE_TILES_WALL.get());
                         output.accept(ItemInit.CHAOS_STONE.get());
                         output.accept(ItemInit.CHAOS_STONE_SLAB.get());
                         output.accept(ItemInit.CHAOS_STONE_STAIRS.get());
@@ -495,6 +503,22 @@ public class CreativeTabInit {
                         output.accept(ItemInit.GRIMSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.GRIMSTONE_TILES_STAIRS.get());
                         output.accept(ItemInit.GRIMSTONE_TILES_WALL.get());
+                        output.accept(ItemInit.SIDERITE_BRICKS.get());
+                        output.accept(ItemInit.CRACKED_SIDERITE_BRICKS.get());
+                        output.accept(ItemInit.SIDERITE_BRICK_SLAB.get());
+                        output.accept(ItemInit.SIDERITE_BRICK_STAIRS.get());
+                        output.accept(ItemInit.SIDERITE_BRICK_WALL.get());
+                        output.accept(ItemInit.CINNABAR_ORE.get());
+                        output.accept(ItemInit.DEEPSLATE_CINNABAR_ORE.get());
+                        output.accept(ItemInit.NETHER_CINNABAR_ORE.get());
+                        output.accept(ItemInit.BLACKSTONE_CINNABAR_ORE.get());
+                        output.accept(ItemInit.BASALT_CINNABAR_ORE.get());
+                        output.accept(ItemInit.ENDER_CINNABAR_ORE.get());
+                        output.accept(ItemInit.SIDERITE_ORE.get());
+                        output.accept(ItemInit.DEEPSLATE_SIDERITE_ORE.get());
+                        output.accept(ItemInit.NETHER_SIDERITE_ORE.get());
+                        output.accept(ItemInit.BLACKSTONE_SIDERITE_ORE.get());
+                        output.accept(ItemInit.ENDER_SIDERITE_ORE.get());
                     })
                     .build());
 
