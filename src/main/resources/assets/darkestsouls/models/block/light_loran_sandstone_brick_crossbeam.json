@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darkestsouls:block/light_loran_sandstone_brick_crossbeam_top",
+    "side": "darkestsouls:block/light_loran_sandstone_brick_crossbeam"
+  }
+}

@@ -508,5 +508,45 @@ public class BlockInit {
 	public static final DeferredHolder<Block,WallBlock> NIGHTMARE_SMOOTH_STONE_WALL = BLOCKS.register("nightmare_smooth_stone_wall",
 			() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK).forceSolidOn()));
 
+	public static final DeferredHolder<Block,RotatedPillarBlock> CHAOS_STONE_PILLAR = BLOCKS.register("chaos_stone_pillar",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> CHAOS_STONE_BRICK_KEYSTONE = BLOCKS.register("chaos_stone_brick_keystone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> CHAOS_STONE_BRICK_CROSSBEAM = BLOCKS.register("chaos_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_CHAOS_STONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_chaos_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM = BLOCKS.register("dark_nightmare_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_dark_nightmare_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> NIGHTMARE_STONE_BRICK_CROSSBEAM = BLOCKS.register("nightmare_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_NIGHTMARE_STONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_nightmare_stone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> DEEPSTONE_BRICK_KEYSTONE = BLOCKS.register("deepstone_brick_keystone",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DEEPSTONE_BRICK_CROSSBEAM = BLOCKS.register("deepstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_DEEPSTONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_deepstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> GRIMSTONE_BRICK_CROSSBEAM = BLOCKS.register("grimstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_GRIMSTONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_grimstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LORAN_SANDSTONE_BRICK_CROSSBEAM = BLOCKS.register("loran_sandstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_LORAN_SANDSTONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_loran_sandstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+
+	public static final DeferredHolder<Block,Block> LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM = BLOCKS.register("light_loran_sandstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
+	public static final DeferredHolder<Block,Block> DECORATED_LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM = BLOCKS.register("decorated_light_loran_sandstone_brick_crossbeam",
+			() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.CHIME).sound(SoundType.STONE).requiresCorrectToolForDrops().strength(1.75f,6.5f).pushReaction(PushReaction.BLOCK)));
 
 }

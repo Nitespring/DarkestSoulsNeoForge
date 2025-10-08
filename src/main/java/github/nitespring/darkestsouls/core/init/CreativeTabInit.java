@@ -167,6 +167,7 @@ public class CreativeTabInit {
                         output.accept(ItemInit.BLOOD_CRYSTAL.get());
                         output.accept(ItemInit.CINNABAR.get());
                         output.accept(ItemInit.QUICKSILVER.get());
+                        output.accept(ItemInit.DEMONITE_ORE.get());
                         output.accept(ItemInit.TORN_CLOTH_PIECE.get());
                         output.accept(ItemInit.ENCHANTED_TORN_CLOTH_PIECE.get());
                         output.accept(ItemInit.CLOTH_PIECE.get());
@@ -329,6 +330,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.NIGHTMARE_COBBLED_STONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.NIGHTMARE_COBBLED_STONE_BRICK_WALL.get());
                         output.accept(ItemInit.NIGHTMARE_STONE_DECOR_HUNTER.get());
+                        output.accept(ItemInit.NIGHTMARE_STONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_NIGHTMARE_STONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_SLAB.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_STONE_STAIRS.get());
@@ -353,6 +356,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICK_SLAB.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.DARK_NIGHTMARE_SMOOTH_STONE_BRICK_WALL.get());
+                        output.accept(ItemInit.DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.RAW_COBBLESTONE.get());
                         output.accept(ItemInit.RAW_COBBLESTONE_SLAB.get());
                         output.accept(ItemInit.RAW_COBBLESTONE_STAIRS.get());
@@ -412,6 +417,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LORAN_SANDSTONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_LORAN_SANDSTONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_TILES.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.LORAN_SANDSTONE_TILES_STAIRS.get());
@@ -443,6 +450,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.LIGHT_LORAN_SANDSTONE_TILES_STAIRS.get());
@@ -467,6 +476,10 @@ public class CreativeTabInit {
                         output.accept(ItemInit.CHAOS_STONE_BRICK_SLAB.get());
                         output.accept(ItemInit.CHAOS_STONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.CHAOS_STONE_BRICK_WALL.get());
+                        output.accept(ItemInit.CHAOS_STONE_PILLAR.get());
+                        output.accept(ItemInit.CHAOS_STONE_BRICK_KEYSTONE.get());
+                        output.accept(ItemInit.CHAOS_STONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_CHAOS_STONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.CHAOS_STONE_TILES.get());
                         output.accept(ItemInit.CHAOS_STONE_TILES_SLAB.get());
                         output.accept(ItemInit.CHAOS_STONE_TILES_STAIRS.get());
@@ -487,6 +500,9 @@ public class CreativeTabInit {
                         output.accept(ItemInit.DEEPSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.DEEPSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.DEEPSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.DEEPSTONE_BRICK_KEYSTONE.get());
+                        output.accept(ItemInit.DEEPSTONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_DEEPSTONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.DEEPSTONE_TILES.get());
                         output.accept(ItemInit.DEEPSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.DEEPSTONE_TILES_STAIRS.get());
@@ -499,6 +515,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.GRIMSTONE_BRICK_SLAB.get());
                         output.accept(ItemInit.GRIMSTONE_BRICK_STAIRS.get());
                         output.accept(ItemInit.GRIMSTONE_BRICK_WALL.get());
+                        output.accept(ItemInit.GRIMSTONE_BRICK_CROSSBEAM.get());
+                        output.accept(ItemInit.DECORATED_GRIMSTONE_BRICK_CROSSBEAM.get());
                         output.accept(ItemInit.GRIMSTONE_TILES.get());
                         output.accept(ItemInit.GRIMSTONE_TILES_SLAB.get());
                         output.accept(ItemInit.GRIMSTONE_TILES_STAIRS.get());

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darkestsouls:block/deepstone_bricks",
+    "side": "darkestsouls:block/deepstone_brick_keystone"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darkestsouls:block/dark_nightmare_stone_brick_crossbeam_top",
+    "side": "darkestsouls:block/decorated_dark_nightmare_stone_brick_crossbeam"
+  }
+}

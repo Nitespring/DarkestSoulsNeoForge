@@ -350,6 +350,8 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 	public static final DeferredHolder<Item,Item> SIDERITE_FRAGMENT = ITEMS.register("siderite_fragment",
 			() -> new Item(new Item.Properties()));
+	public static final DeferredHolder<Item,Item> DEMONITE_ORE = ITEMS.register("demonite_ore",
+			() -> new Item(new Item.Properties()));
 	public static final DeferredHolder<Item,Item> CHAOS_FRAGMENT = ITEMS.register("chaos_fragment",
 			() -> new Item(new Item.Properties()));
 	public static final DeferredHolder<Item,Item> BLOOD_STONE_FRAGMENT = ITEMS.register("blood_stone_fragment",
@@ -699,6 +701,16 @@ public class ItemInit {
 	public static final DeferredHolder<Item,BlockItem> PURPLE_CRYSTAL_TILES_WALL = ITEMS.register("purple_crystal_tiles_wall",
 			() -> new BlockItem(BlockInit.PURPLE_CRYSTAL_TILES_WALL.get(),new Item.Properties()));
 
+	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_STONE_BRICK_CROSSBEAM = ITEMS.register("nightmare_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.NIGHTMARE_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_NIGHTMARE_STONE_BRICK_CROSSBEAM = ITEMS.register("decorated_nightmare_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_NIGHTMARE_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM = ITEMS.register("dark_nightmare_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM = ITEMS.register("decorated_dark_nightmare_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_DARK_NIGHTMARE_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+
+
 	public static final DeferredHolder<Item,BlockItem> LORAN_SAND = ITEMS.register("loran_sand",
 			() -> new BlockItem(BlockInit.LORAN_SAND.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> NIGHTMARE_SAND = ITEMS.register("nightmare_sand",
@@ -741,6 +753,16 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.LORAN_SMOOTH_SANDSTONE_TILES.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> LIGHT_LORAN_SMOOTH_SANDSTONE_TILES = ITEMS.register("light_loran_smooth_sandstone_tiles",
 			() -> new BlockItem(BlockInit.LIGHT_LORAN_SMOOTH_SANDSTONE_TILES.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_BRICK_CROSSBEAM = ITEMS.register("loran_sandstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_LORAN_SANDSTONE_BRICK_CROSSBEAM = ITEMS.register("decorated_loran_sandstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_LORAN_SANDSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM = ITEMS.register("light_loran_sandstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM = ITEMS.register("decorated_light_loran_sandstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_LIGHT_LORAN_SANDSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+
 
 	public static final DeferredHolder<Item,BlockItem> LORAN_SANDSTONE_STAIRS = ITEMS.register("loran_sandstone_stairs",
 			() -> new BlockItem(BlockInit.LORAN_SANDSTONE_STAIRS.get(),new Item.Properties()));
@@ -862,6 +884,16 @@ public class ItemInit {
 	public static final DeferredHolder<Item,BlockItem> SMOOTH_CHAOS_STONE_TILES = ITEMS.register("smooth_chaos_stone_tiles",
 			() -> new BlockItem(BlockInit.SMOOTH_CHAOS_STONE_TILES.get(),new Item.Properties()));
 
+	public static final DeferredHolder<Item,BlockItem> CHAOS_STONE_BRICK_CROSSBEAM = ITEMS.register("chaos_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.CHAOS_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_CHAOS_STONE_BRICK_CROSSBEAM = ITEMS.register("decorated_chaos_stone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_CHAOS_STONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> CHAOS_STONE_PILLAR = ITEMS.register("chaos_stone_pillar",
+			() -> new BlockItem(BlockInit.CHAOS_STONE_PILLAR.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> CHAOS_STONE_BRICK_KEYSTONE = ITEMS.register("chaos_stone_brick_keystone",
+			() -> new BlockItem(BlockInit.CHAOS_STONE_BRICK_KEYSTONE.get(),new Item.Properties()));
+
+
 	public static final DeferredHolder<Item,BlockItem> CHAOS_STONE_SLAB = ITEMS.register("chaos_stone_slab",
 			() -> new BlockItem(BlockInit.CHAOS_STONE_SLAB.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> SMOOTH_CHAOS_STONE_SLAB = ITEMS.register("smooth_chaos_stone_slab",
@@ -913,6 +945,18 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.DEEPSTONE_TILES.get(),new Item.Properties()));
 	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_TILES = ITEMS.register("grimstone_tiles",
 			() -> new BlockItem(BlockInit.GRIMSTONE_TILES.get(),new Item.Properties()));
+
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_BRICK_KEYSTONE = ITEMS.register("deepstone_brick_keystone",
+			() -> new BlockItem(BlockInit.DEEPSTONE_BRICK_KEYSTONE.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_BRICK_CROSSBEAM = ITEMS.register("deepstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DEEPSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> GRIMSTONE_BRICK_CROSSBEAM = ITEMS.register("grimstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.GRIMSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_DEEPSTONE_BRICK_CROSSBEAM = ITEMS.register("decorated_deepstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_DEEPSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+	public static final DeferredHolder<Item,BlockItem> DECORATED_GRIMSTONE_BRICK_CROSSBEAM = ITEMS.register("decorated_grimstone_brick_crossbeam",
+			() -> new BlockItem(BlockInit.DECORATED_GRIMSTONE_BRICK_CROSSBEAM.get(),new Item.Properties()));
+
 
 	public static final DeferredHolder<Item,BlockItem> DEEPSTONE_WALL = ITEMS.register("deepstone_wall",
 			() -> new BlockItem(BlockInit.DEEPSTONE_WALL.get(),new Item.Properties()));
