@@ -1,0 +1,6 @@
+{
+  "parent": "darkestsouls:item/basic/handheld_xl",
+  "textures": {
+    "layer0": "darkestsouls:item/weapon/burial_blade_extended"
+  }
+}

@@ -3,7 +3,6 @@ package github.nitespring.darkestsouls.client.render.entity.mob.abyss;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import github.nitespring.darkestsouls.common.entity.mob.abyss.Darkwraith;
-import github.nitespring.darkestsouls.common.entity.mob.church.ChurchDoctor;
 import github.nitespring.darkestsouls.core.init.ItemInit;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.ItemDisplayContext;

@@ -67,6 +67,8 @@ public class CreativeTabInit {
                         output.accept(ItemInit.HUNTER_AXE.get());
                         output.accept(ItemInit.CHIKAGE_EXTENDED.get());
                         output.accept(ItemInit.HOLY_MOONLIGHT_LIT.get());
+                        output.accept(ItemInit.BLOODLETTER_EXTENDED.get());
+                        output.accept(ItemInit.BURIAL_BLADE_EXTENDED.get());
                         output.accept(ItemInit.STORM_CURVED_SWORD.get());
                         output.accept(ItemInit.DRAGONSLAYER_SPEAR.get());
                         output.accept(ItemInit.DRAGONSLAYER_SWORDSPEAR.get());
