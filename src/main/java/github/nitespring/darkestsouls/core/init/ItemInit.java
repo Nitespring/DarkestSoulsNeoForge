@@ -328,6 +328,24 @@ public class ItemInit {
 	public static final DeferredHolder<Item,Item> CAPRA_DEMON = ITEMS.register("capra_demon_spawn_egg",
 			() -> new SpawnEggItem(EntityInit.CAPRA_DEMON.get(), 987415, 6750208, new Item.Properties()));
 
+	public static final DeferredHolder<Item,Item> CHURCH_DOCTOR_RANDOMIZED_SPAWN_EGG = ITEMS.register("church_doctor_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.CHURCH_DOCTOR_RANDOMIZED.get(), 4475990, 11588863, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> RARE_CHURCH_DOCTOR_RANDOMIZED_SPAWN_EGG = ITEMS.register("rare_church_doctor_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.RARE_CHURCH_DOCTOR_RANDOMIZED.get(), 4475990, 11588863, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> BEAST_PATIENT_RANDOMIZED_SPAWN_EGG = ITEMS.register("beast_patient_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.BEAST_PATIENT_RANDOMIZED.get(), 2962739, 11432504, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> LIMITED_BEAST_PATIENT_RANDOMIZED_SPAWN_EGG = ITEMS.register("limited_beast_patient_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.LIMITED_BEAST_PATIENT_RANDOMIZED.get(), 2962739, 11432504, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> HOLLOW_SOLDIER_RANDOMIZED_SPAWN_EGG = ITEMS.register("hollow_soldier_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HOLLOW_SOLDIER_RANDOMIZED.get(), 13945528, 5202790, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> GRAVETENDER_HOLLOW_RANDOMIZED_SPAWN_EGG = ITEMS.register("gravetender_hollow_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_RANDOMIZED.get(), 13945528, 2962739, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> HUNTSMAN_RANDOMIZED_SPAWN_EGG = ITEMS.register("huntsman_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.HUNTSMAN_RANDOMIZED.get(), 2237490, 6633254, new Item.Properties()));
+	public static final DeferredHolder<Item,Item> SKELETON_RANDOMIZED_SPAWN_EGG = ITEMS.register("skeleton_randomized_spawn_egg",
+			() -> new SpawnEggItem(EntityInit.SKELETON_RANDOMIZED.get(), 13684684, 14079971, new Item.Properties()));
+
+
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_GRAVETENDER_HOLLOW_1 = ITEMS.register("gravetender_hollow_spawn_group_1",
 			() -> new SpawnEggItem(EntityInit.GRAVETENDER_HOLLOW_GROUP1.get(), 13945528, 2962739, new Item.Properties()));
 	public static final DeferredHolder<Item,Item> SPAWN_GROUP_HOLLOW_SOLDIER_1 = ITEMS.register("hollow_soldier_spawn_group_1",

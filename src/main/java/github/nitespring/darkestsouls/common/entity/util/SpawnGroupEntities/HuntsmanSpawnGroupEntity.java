@@ -7,17 +7,13 @@ import github.nitespring.darkestsouls.common.entity.mob.church.HuntsmanRifle;
 import github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntity;
 import github.nitespring.darkestsouls.config.CommonConfig;
 import github.nitespring.darkestsouls.core.init.EntityInit;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;

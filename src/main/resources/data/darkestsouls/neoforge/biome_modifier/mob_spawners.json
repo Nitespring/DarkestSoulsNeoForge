@@ -1,0 +1,128 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:and",
+    "values":
+    [
+      "#minecraft:is_overworld",
+      {
+        "type": "neoforge:not",
+        "value":
+        [
+          "minecraft:deep_dark",
+          "minecraft:mushroom_fields"
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "darkestsouls:limited_beast_patient_randomized",
+      "weight": 15,
+      "minCount": 2,
+      "maxCount": 5
+    },
+    {
+      "type": "darkestsouls:beast_patient_randomized",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 5
+    },
+    {
+      "type": "darkestsouls:ashen_blood_beast_patient",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+      },
+    {
+      "type": "darkestsouls:church_doctor_randomized",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 5
+    },
+    {
+      "type": "darkestsouls:rare_church_doctor_randomized",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:skeleton_randomized",
+      "weight": 50,
+      "minCount": 1,
+      "maxCount": 6
+    },
+    {
+      "type": "darkestsouls:huntsman_randomized",
+      "weight": 4,
+      "minCount": 1,
+      "maxCount": 8
+    },
+    {
+      "type": "darkestsouls:hollow_assassin",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:hollow_soldier_randomized",
+      "weight": 20,
+      "minCount": 1,
+      "maxCount": 8
+    },
+    {
+      "type": "darkestsouls:bonewheel",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:skeleton_swordsman_twin_shotels",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:monstruosity_of_sin",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:sewer_centipede",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 5
+    },
+    {
+      "type": "darkestsouls:nightmare_apostle",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 3
+    },
+    {
+      "type": "darkestsouls:large_nightmare_apostle",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "darkestsouls:spider",
+      "weight": 12,
+      "minCount": 1,
+      "maxCount": 5
+    },
+    {
+      "type": "darkestsouls:large_spider",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "darkestsouls:darkwraith",
+      "weight": 5,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

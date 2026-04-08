@@ -35,6 +35,7 @@ import github.nitespring.darkestsouls.common.entity.projectile.weapon.melee.Heav
 import github.nitespring.darkestsouls.common.entity.projectile.weapon.melee.WeaponAttackEntity;
 import github.nitespring.darkestsouls.common.entity.util.DamageHitboxEntity;
 import github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntities.*;
+import github.nitespring.darkestsouls.common.entity.util.spawnRandomizers.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -220,6 +221,40 @@ public class EntityInit {
 			() -> EntityType.Builder.<LargeUndeadDog>of(LargeUndeadDog::new, MobCategory.MONSTER)
 					.sized(1.0f, 1.5f)
 					.build("large_undead_dog"));
+
+	//Randomized Mob
+	public static final DeferredHolder<EntityType<?>,EntityType<ChurchDoctorSpawnRandomizer>> CHURCH_DOCTOR_RANDOMIZED = ENTITIES.register("church_doctor_randomized",
+			() -> EntityType.Builder.<ChurchDoctorSpawnRandomizer>of(ChurchDoctorSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("church_doctor_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<RareChurchDoctorSpawnRandomizer>> RARE_CHURCH_DOCTOR_RANDOMIZED = ENTITIES.register("rare_church_doctor_randomized",
+			() -> EntityType.Builder.<RareChurchDoctorSpawnRandomizer>of(RareChurchDoctorSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("rare_church_doctor_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<BeastPatientSpawnRandomizer>> BEAST_PATIENT_RANDOMIZED = ENTITIES.register("beast_patient_randomized",
+			() -> EntityType.Builder.<BeastPatientSpawnRandomizer>of(BeastPatientSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("beast_patient_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<LimitedBeastPatientSpawnRandomizer>> LIMITED_BEAST_PATIENT_RANDOMIZED = ENTITIES.register("limited_beast_patient_randomized",
+			() -> EntityType.Builder.<LimitedBeastPatientSpawnRandomizer>of(LimitedBeastPatientSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("limited_beast_patient_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<SkeletonSpawnRandomizer>> SKELETON_RANDOMIZED = ENTITIES.register("skeleton_randomized",
+			() -> EntityType.Builder.<SkeletonSpawnRandomizer>of(SkeletonSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("skeleton_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<HollowSoldierSpawnRandomizer>> HOLLOW_SOLDIER_RANDOMIZED = ENTITIES.register("hollow_soldier_randomized",
+			() -> EntityType.Builder.<HollowSoldierSpawnRandomizer>of(HollowSoldierSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("hollow_soldier_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<GravetenderHollowSpawnRandomizer>> GRAVETENDER_HOLLOW_RANDOMIZED = ENTITIES.register("gravetender_hollow_randomized",
+			() -> EntityType.Builder.<GravetenderHollowSpawnRandomizer>of(GravetenderHollowSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("gravetender_hollow_randomized"));
+	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnRandomizer>> HUNTSMAN_RANDOMIZED = ENTITIES.register("huntsman_randomized",
+			() -> EntityType.Builder.<HuntsmanSpawnRandomizer>of(HuntsmanSpawnRandomizer::new, MobCategory.MONSTER)
+					.sized(0.65f, 2.0f)
+					.build("huntsman_randomized"));
 
 	//SpawnGroups
 	public static final DeferredHolder<EntityType<?>,EntityType<HuntsmanSpawnGroupEntity>> HUNTSMAN_GROUP1 = ENTITIES.register("huntsman_group_1",

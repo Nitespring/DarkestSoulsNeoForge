@@ -1,9 +1,5 @@
 package github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntities;
 
-import github.nitespring.darkestsouls.common.entity.mob.hollow.HollowAssassin;
-import github.nitespring.darkestsouls.common.entity.mob.hollow.HollowSoldierAxe;
-import github.nitespring.darkestsouls.common.entity.mob.hollow.HollowSoldierCrossbow;
-import github.nitespring.darkestsouls.common.entity.mob.hollow.HollowSoldierLongsword;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.SkeletonCurvedSwords;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.SkeletonFalchion;
 import github.nitespring.darkestsouls.common.entity.mob.skeleton.SkeletonSpear;

@@ -293,6 +293,14 @@ public class CreativeTabInit {
                         output.accept(ItemInit.UNDEAD_DOG.get());
                         output.accept(ItemInit.CAPRA_DEMON.get());
                         output.accept(ItemInit.LARGE_UNDEAD_DOG.get());
+                        output.accept(ItemInit.GRAVETENDER_HOLLOW_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.HOLLOW_SOLDIER_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.SKELETON_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.LIMITED_BEAST_PATIENT_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.BEAST_PATIENT_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.HUNTSMAN_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.CHURCH_DOCTOR_RANDOMIZED_SPAWN_EGG.get());
+                        output.accept(ItemInit.RARE_CHURCH_DOCTOR_RANDOMIZED_SPAWN_EGG.get());
                         output.accept(ItemInit.SPAWN_GROUP_GRAVETENDER_HOLLOW_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_HOLLOW_SOLDIER_1.get());
                         output.accept(ItemInit.SPAWN_GROUP_HUNTSMAN_1.get());

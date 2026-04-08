@@ -3,7 +3,6 @@ package github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntities;
 import github.nitespring.darkestsouls.common.entity.mob.beast.AshenBloodBeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.beast.BeastPatient;
 import github.nitespring.darkestsouls.common.entity.mob.beast.CloakedBeastPatient;
-import github.nitespring.darkestsouls.common.entity.mob.church.HuntsmanAxe;
 import github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntity;
 import github.nitespring.darkestsouls.config.CommonConfig;
 import github.nitespring.darkestsouls.core.init.EntityInit;

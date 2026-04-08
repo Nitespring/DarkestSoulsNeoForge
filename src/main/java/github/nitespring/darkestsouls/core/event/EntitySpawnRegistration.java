@@ -220,6 +220,46 @@ public class EntitySpawnRegistration {
                 Types.MOTION_BLOCKING_NO_LEAVES,
                 SpawnRules::checkSkeletonGroupSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HUNTSMAN_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHuntsmanSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.CHURCH_DOCTOR_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGeneralChurchDoctorSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.RARE_CHURCH_DOCTOR_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGeneralChurchDoctorSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.BEAST_PATIENT_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGeneralBeastPatientSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.LIMITED_BEAST_PATIENT_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGeneralBeastPatientSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.SKELETON_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkSkeletonSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.GRAVETENDER_HOLLOW_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkGravetenderHollowSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        event.register(EntityInit.HOLLOW_SOLDIER_RANDOMIZED.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Types.MOTION_BLOCKING_NO_LEAVES,
+                SpawnRules::checkHollowDarkSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
 }

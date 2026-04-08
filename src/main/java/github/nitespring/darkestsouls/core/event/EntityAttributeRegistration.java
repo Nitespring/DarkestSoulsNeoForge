@@ -2,6 +2,7 @@ package github.nitespring.darkestsouls.core.event;
 
 
 import github.nitespring.darkestsouls.DarkestSouls;
+import github.nitespring.darkestsouls.common.entity.util.EntitySpawnRandomizer;
 import github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntity;
 import github.nitespring.darkestsouls.core.init.EntityInit;
 import github.nitespring.darkestsouls.core.util.EntityAttributes;
@@ -68,6 +69,15 @@ public class EntityAttributeRegistration {
 		event.put(EntityInit.HOLLOW_SOLDIER_GROUP1.get(), SpawnGroupEntity.setAttributes().build());
 		event.put(EntityInit.BEAST_PATIENT_GROUP1.get(), SpawnGroupEntity.setAttributes().build());
 		event.put(EntityInit.CHURCH_DOCTOR_GROUP1.get(), SpawnGroupEntity.setAttributes().build());
+
+		event.put(EntityInit.CHURCH_DOCTOR_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.RARE_CHURCH_DOCTOR_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.BEAST_PATIENT_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.LIMITED_BEAST_PATIENT_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.HUNTSMAN_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.GRAVETENDER_HOLLOW_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.HOLLOW_SOLDIER_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
+		event.put(EntityInit.SKELETON_RANDOMIZED.get(), EntitySpawnRandomizer.setAttributes().build());
 
 	}
 

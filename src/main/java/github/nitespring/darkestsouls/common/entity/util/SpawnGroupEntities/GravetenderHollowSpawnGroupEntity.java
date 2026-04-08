@@ -1,6 +1,5 @@
 package github.nitespring.darkestsouls.common.entity.util.SpawnGroupEntities;
 
-import github.nitespring.darkestsouls.common.entity.mob.church.HuntsmanAxe;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.GravetenderHollowBrokenStraightsword;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.GravetenderHollowCrossbow;
 import github.nitespring.darkestsouls.common.entity.mob.hollow.GravetenderHollowLongsword;

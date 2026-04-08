@@ -212,6 +212,15 @@ public class ClientListener {
 		 event.registerEntityRenderer(EntityInit.CHURCH_DOCTOR_GROUP1.get(), InvisibleProjectileRenderer::new);
 		 event.registerEntityRenderer(EntityInit.BEAST_PATIENT_GROUP1.get(), InvisibleProjectileRenderer::new);
 
+		 event.registerEntityRenderer(EntityInit.CHURCH_DOCTOR_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.RARE_CHURCH_DOCTOR_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HUNTSMAN_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.SKELETON_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.HOLLOW_SOLDIER_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.GRAVETENDER_HOLLOW_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.BEAST_PATIENT_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+		 event.registerEntityRenderer(EntityInit.LIMITED_BEAST_PATIENT_RANDOMIZED.get(), InvisibleProjectileRenderer::new);
+
 	 }
 
 
