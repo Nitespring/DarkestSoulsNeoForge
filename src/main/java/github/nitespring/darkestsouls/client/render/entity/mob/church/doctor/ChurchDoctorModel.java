@@ -61,16 +61,20 @@ public class ChurchDoctorModel<T extends ChurchDoctor & GeoEntity> extends GeoMo
         head.setRotX(extraData.headPitch() * ((float) Math.PI / 180F));
         head.setRotY(extraData.netHeadYaw() *0.5f* ((float) Math.PI / 180F));
         GeoBone hat = this.getAnimationProcessor().getBone("hat");
-        GeoBone overhang = this.getAnimationProcessor().getBone("hatPart");
+        GeoBone overhang1 = this.getAnimationProcessor().getBone("hatPart1");
+        GeoBone overhang2 = this.getAnimationProcessor().getBone("hatPart2");
         if(entity.getHatType()==0){
             hat.setHidden(false);
-            overhang.setHidden(true);
+            overhang1.setHidden(true);
+            overhang2.setHidden(false);
         }else if(entity.getHatType()==1){
             hat.setHidden(false);
-            overhang.setHidden(false);
+            overhang2.setHidden(true);
+            overhang1.setHidden(false);
         }else{
             hat.setHidden(true);
-            hat.setHidden(true);
+            overhang1.setHidden(true);
+            overhang2.setHidden(true);
         }
 
 

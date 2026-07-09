@@ -68,10 +68,17 @@ public class SkeletonItemLayerOld<T extends Skeleton & GeoEntity> extends BlockA
 protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack stack, T animatable,
 		MultiBufferSource bufferSource, float partialTick, int packedLight, int packedOverlay) {
 	if (bone.getName().equals("item_right")) {
-		poseStack.translate(0.0, -0.1, -0.1);
-		poseStack.mulPose(Axis.XP.rotationDegrees(-90));
-		poseStack.mulPose(Axis.YP.rotationDegrees(0));
-		poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+		if(animatable instanceof SkeletonSpear) {
+			poseStack.translate(0.0, -0.1, -0.1);
+			poseStack.mulPose(Axis.XP.rotationDegrees(-80));
+			poseStack.mulPose(Axis.YP.rotationDegrees(0));
+			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+		}else{
+			poseStack.translate(0.0, -0.1, -0.1);
+			poseStack.mulPose(Axis.XP.rotationDegrees(-90));
+			poseStack.mulPose(Axis.YP.rotationDegrees(0));
+			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
+		}
 	  }
 	if (bone.getName().equals("item_left")) {
 		poseStack.translate(0.00, 0.75, -0.65);
