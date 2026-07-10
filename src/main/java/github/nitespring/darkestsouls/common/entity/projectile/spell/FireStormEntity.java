@@ -141,13 +141,13 @@ public class FireStormEntity extends AbstractHurtingProjectile implements ItemSu
 
     }
     @Override
-    protected void onHitEntity(EntityHitResult p_37259_) {
+    protected void onHitEntity(EntityHitResult hitResult) {
 
-        Entity e = p_37259_.getEntity();
-        if(e != this.getOwner() && !e.isAlliedTo(getOwner())) {
+        Entity e = hitResult.getEntity();
+        if(getOwner() == null ||(e != this.getOwner() && !e.isAlliedTo(getOwner()))) {
             e.hurt(this.level().damageSources().inFire(),damage);
             this.doRemoval();
-            if(p_37259_.getEntity() instanceof DarkestSoulsAbstractEntity e1){
+            if(e instanceof DarkestSoulsAbstractEntity e1){
                 if(!this.level().isClientSide()) {
                     e1.damagePoiseHealth(2);
                     e1.damagePostureHealth(1);

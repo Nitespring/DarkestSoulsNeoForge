@@ -89,7 +89,7 @@ public class CrystalBallEntity extends AbstractHurtingProjectile {
         super.onHitEntity(p_37259_);
         Entity e = p_37259_.getEntity();
        //e.hurt(e.level().damageSources().explosion(this, this.getOwner()),this.damage);
-        if(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner()))) {
+        if(getOwner() == null ||(e!=this.getOwner()&&!(this.getOwner()!=null&&e.isAlliedTo(this.getOwner())))) {
             this.level().playSound((Player) null, this, SoundEvents.GLASS_BREAK, SoundSource.PLAYERS, 2.0F, 1.0f);
         }
     }

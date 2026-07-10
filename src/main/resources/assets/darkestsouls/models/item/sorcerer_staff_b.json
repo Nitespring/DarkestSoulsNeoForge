@@ -1,39 +1,39 @@
 {
-    "parent": "neoforge:item/default",
-    "neoforge_data": {
-        "layers": {
-            "1": {
-                "block_light": 15,
-                "sky_light": 15
-            }
-        }
-    },
-    "loader": "neoforge:item_layers",
-    "render_types": {},
-    "display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 0, 6.0, -1.0 ],
-            "scale": [ 1.70, 1.70, 0.85 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [ 0, 6.0, -1.0 ],
-            "scale": [ 1.70, 1.70, 0.85 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-            "translation": [ 1.13, 3.5, -0.63 ],
-            "scale": [ 1.16, 1.16, 0.58 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [ 0, 90, -55 ],
-            "translation": [ 1.13, 3.5, -0.63 ],
-            "scale": [ 1.16, 1.16, 0.58 ]
-        }
-    },
-    "textures": {
+  "parent": "neoforge:item/default",
+  "neoforge_data": {
+    "layers": {
+      "1": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  },
+  "loader": "neoforge:item_layers",
+  "render_types": {},
+  "textures": {
     "layer0": "darkestsouls:item/weapon/advanced_sorcerer_staff",
     "layer1": "darkestsouls:item/weapon/advanced_sorcerer_staff_emissive"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, -3.0, 1.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, -3.0, 1.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 1.4, 1.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 1.4, 1.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
     }
+  }
 }

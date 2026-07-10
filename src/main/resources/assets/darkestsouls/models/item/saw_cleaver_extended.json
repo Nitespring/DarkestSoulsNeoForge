@@ -1,32 +1,32 @@
 {
-"parent": "minecraft:item/handheld",
-"textures": {
-    "layer0": "darkestsouls:item/weapon/saw_cleaver_extended"
+	"parent": "darkestsouls:item/basic/handheld_xl",
+	"textures": {
+		"layer0": "darkestsouls:item/weapon/saw_cleaver_extended"
     },
-"display": {
-    "thirdperson_righthand": {
-            "rotation": [ 0, -90, 55 ],
-    		"translation": [0, 12, -2.75],
-            "scale": [ 1.95, 1.95, 0.65 ]
-      		},
-    "firstperson_righthand": {
-    		"rotation": [ 0, -90, 95 ],
-      		"translation": [ 1.13, 2.8, -1.5 ],
-            "scale": [ 1.44, 1.44, 0.48 ]
-    		},
-   "thirdperson_lefthand": {
-    		"rotation": [ 0, 90, -55 ],
-    		"translation": [0, 12, -2.75],
-            "scale": [ 1.95, 1.95, 0.65 ]
-			},
-    "firstperson_lefthand": {
-    		"rotation": [ 0, 90, -95 ],
-      		"translation": [ 1.13, 2.8, -1.5 ],
-      		"scale": [ 1.44, 1.44, 0.48 ]
-    		},
-     "gui": {
-      		"scale": [ 1.1, 1.1, 1],
-      		"translation": [ 0.5, 2.5,0]
-    		}
-}
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, -90, 55 ],
+			"translation": [ 0, 25.0, -1 ],
+			"scale": [ 3.2, 3.2, 0.85 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 90, -55 ],
+			"translation": [ 0, 25.0, -1 ],
+			"scale": [ 3.2, 3.2, 0.85 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 0, -90, 65 ],
+			"translation": [ 1.13, 12, -4.13 ],
+			"scale": [ 1.7, 1.7, 0.68 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 0, 90, -65 ],
+			"translation": [ 1.13, 12, -4.13 ],
+			"scale": [ 1.7, 1.7, 0.68 ]
+		},
+		"gui": {
+			"translation": [ 5, 5.5, 0 ],
+			"scale": [ 1.5, 1.5, 1 ]
+		}
+	}
 }

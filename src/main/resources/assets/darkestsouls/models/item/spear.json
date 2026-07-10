@@ -1,28 +1,32 @@
 {
-"parent": "minecraft:item/handheld",
+"parent": "darkestsouls:item/basic/handheld_xl",
 "textures": {
     "layer0": "darkestsouls:item/weapon/spear"
     },
-"display": {
-    "thirdperson_righthand": {
-            "rotation": [ 0, -90, 45 ],
-    		"translation": [0, 5, 1.5],
-            "scale": [ 1.95, 1.95, 0.65 ]
-      		},
-    "firstperson_righthand": {
-    		"rotation": [ 0, -90, 60],
-      		"translation": [ 0.95, 0.0, 0.85 ],
-            "scale": [ 1.36, 1.36, 0.44 ]
-    		},
-   "thirdperson_lefthand": {
-    		"rotation": [ 0, 90, -45 ],
-    		"translation": [0, 5, 1.5],
-            "scale": [ 1.95, 1.95, 0.65 ]
-			},
-    "firstperson_lefthand": {
-    		"rotation": [ 0, 90, -60 ],
-      		"translation": [ 0.95, 0.0, 0.85 ],
-      		"scale": [ 1.36, 1.36, 0.44 ]
-    		}
-}
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [ 0, -90, 55 ],
+			"translation": [ 0, 15.0, -1.5 ],
+			"scale": [ 3.0, 3.0, 0.85 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 90, -55 ],
+			"translation": [ 0, 15.0, -1.5 ],
+			"scale": [ 3.0, 3.0, 0.85 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 0, -90, 65 ],
+			"translation": [ 1.13, 7, -1.13 ],
+			"scale": [ 1.5, 1.5, 0.68 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 0, 90, -65 ],
+			"translation": [ 1.13, 7, -1.13 ],
+			"scale": [ 1.5, 1.5, 0.68 ]
+		},
+		"gui": {
+			"translation": [ 4, 4, 0 ],
+			"scale": [ 1.4, 1.4, 1 ]
+		}
+	}
 }

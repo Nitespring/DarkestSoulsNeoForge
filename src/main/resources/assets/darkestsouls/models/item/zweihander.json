@@ -4,6 +4,16 @@
     "layer0": "darkestsouls:item/weapon/zweihander"
   },
   "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 20.5, -2.5 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 20.5, -2.5 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
     "gui": {
       "translation": [ 2.0, 2.0, 0 ],
       "scale": [ 1.25, 1.25, 1 ]

@@ -2,5 +2,31 @@
   "parent": "darkestsouls:item/basic/handheld_xl",
   "textures": {
     "layer0": "darkestsouls:item/weapon/burial_blade_extended"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 16.0, 0.5 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 16.0, 0.5 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 7, 0.13 ],
+      "scale": [ 1.5, 1.5, 0.68 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 7, 0.13 ],
+      "scale": [ 1.5, 1.5, 0.68 ]
+    },
+    "gui": {
+      "translation": [ 2, 1, 0 ],
+      "scale": [ 1.05, 1.05, 1 ]
+    }
   }
 }

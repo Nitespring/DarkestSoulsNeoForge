@@ -2,5 +2,27 @@
   "parent": "darkestsouls:item/basic/handheld_large",
   "textures": {
     "layer0": "darkestsouls:item/weapon/carthus_shotel"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 11.0, -0.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 11.0, -0.5 ],
+      "scale": [ 1.60, 1.60, 0.85 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 7.4, -1.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 7.4, -1.13 ],
+      "scale": [ 1.0, 1.0, 0.5 ]
+    }
   }
 }

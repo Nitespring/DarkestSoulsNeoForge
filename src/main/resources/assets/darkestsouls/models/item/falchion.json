@@ -6,12 +6,12 @@
   "display": {
     "thirdperson_righthand": {
       "rotation": [ 0, -90, 55 ],
-      "translation": [ 0, 13.0, -0.5 ],
+      "translation": [ 0, 12.5, -0.5 ],
       "scale": [ 1.60, 1.60, 0.85 ]
     },
     "thirdperson_lefthand": {
       "rotation": [ 0, 90, -55 ],
-      "translation": [ 0, 13.0, -0.5 ],
+      "translation": [ 0, 12.5, -0.5 ],
       "scale": [ 1.60, 1.60, 0.85 ]
     },
     "firstperson_righthand": {
@@ -25,9 +25,9 @@
       "scale": [ 1.1, 1.1, 0.5 ]
     },
     "gui": {
-      "translation": [ 4, 4, 0 ],
+      "translation": [ 3.5, 3.5, 0 ],
       "rotation": [ 0, 0, 0 ],
-      "scale": [ 1.5, 1.5, 1.0 ]
+      "scale": [ 1.4, 1.4, 1.0 ]
     }
   }
 }

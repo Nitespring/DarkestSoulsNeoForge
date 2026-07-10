@@ -1,17 +1,17 @@
 {
   "parent": "darkestsouls:item/basic/handheld_large",
   "textures": {
-    "layer0": "darkestsouls:item/weapon/huntsman_cutlass"
+    "layer0": "darkestsouls:item/weapon/huntsman_cutlass1"
   },
   "display": {
     "thirdperson_righthand": {
       "rotation": [ 0, -90, 55 ],
-      "translation": [ 0, 13, -1.5 ],
+      "translation": [ 0, 11, -1.5 ],
       "scale": [ 1.60, 1.60, 0.85 ]
     },
     "thirdperson_lefthand": {
       "rotation": [ 0, 90, -55 ],
-      "translation": [ 0, 13, -1.5 ],
+      "translation": [ 0, 11, -1.5 ],
       "scale": [ 1.60, 1.60, 0.85 ]
     },
     "firstperson_righthand": {
@@ -25,8 +25,8 @@
       "scale": [ 1.0, 1.0, 0.5 ]
     },
     "gui": {
-      "translation": [ 5, 5, 0 ],
-      "scale": [ 1.6, 1.6, 1 ]
+      "translation": [ 1, 2, 0 ],
+      "scale": [ 1.2, 1.2, 1 ]
     }
   }
 }

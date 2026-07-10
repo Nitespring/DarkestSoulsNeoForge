@@ -344,6 +344,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 
 	@Override
 	public boolean isAlliedTo(Entity e) {
+		if(e!=null){return false;}
 		if (this.getOwner() != null) {
 			return this.getOwner().isAlliedTo(e);
 		} else {
@@ -356,19 +357,13 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 							return true;
 						}if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==1){
 							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==1){
-							return true;
 						}else{return super.isAlliedTo(e);}
 					case 2://Hollow
 						if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==2){
 							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==2){
-							return true;
 						}else{return super.isAlliedTo(e);}
 					case 3://Huntsman
 						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==3||mob.getDSTeam()==5)){
-							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
 						}else if(e instanceof Villager||e instanceof WanderingTrader){
 							return true;
@@ -376,13 +371,9 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					case 4://Beast
 						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==4 || mob.getDSTeam()==1)){
 							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&(e.getPersistentData().getInt("DSTeam")==4||e.getPersistentData().getInt("DSTeam")==1)){
-							return true;
 						}else{return super.isAlliedTo(e);}
 					case 5://Church
 						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==3||mob.getDSTeam()==5)){
-							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==3){
 							return true;
 						}else if(e instanceof Villager||e instanceof WanderingTrader){
 							return true;
@@ -390,15 +381,11 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					case 6://Skeleton
 						if(e instanceof DarkestSoulsAbstractEntity mob && (mob.getDSTeam()==1||mob.getDSTeam()==6)){
 							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==6){
-							return true;
 						}else if(e instanceof AbstractSkeleton){
 							return true;
 						}else{return super.isAlliedTo(e);}
 					case 7://Player
 						if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()==7){
-							return true;
-						}else if(e.getPersistentData().contains("DSTeam")&&e.getPersistentData().getInt("DSTeam")==7){
 							return true;
 						}else if(e instanceof Player){
 							return true;
@@ -406,9 +393,7 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					default:
 						if(e instanceof DarkestSoulsAbstractEntity mob && mob.getDSTeam()== this.getDSTeam()){
 							return true;
-						}else if (e.getPersistentData().contains("DSTeam")&&teamOwner == e.getPersistentData().getInt("DSTeam")) {
-							return true;
-						} else {
+						}else {
 							return super.isAlliedTo(e);
 						}
 				}
@@ -697,7 +682,6 @@ public abstract class DarkestSoulsAbstractEntity extends PathfinderMob {
 					if(playerTarget==null) {
 						this.target = this.findTargetByPredicate(
 								(t) -> {
-									CompoundTag nbt = t.getPersistentData();
 									return t instanceof Player || t instanceof IronGolem ||t instanceof SnowGolem;
 								}
 						);

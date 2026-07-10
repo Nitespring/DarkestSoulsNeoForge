@@ -1,38 +1,32 @@
 {
-	"parent": "neoforge:item/default",
-	"neoforge_data": {
-		"layers": {
-			"0": {
-				"block_light": 15,
-				"sky_light": 15
-			}
-		}
-	},
-	"loader": "neoforge:item_layers",
-	"render_types": {},
-"textures": {
+  "parent": "darkestsouls:item/basic/handheld_xl",
+  "textures": {
     "layer0": "darkestsouls:item/weapon/dragonslayer_spear"
-    },
-"display": {
+  },
+  "display": {
     "thirdperson_righthand": {
-            "rotation": [ 0, -90, 45 ],
-    		"translation": [0, 5, 1.5],
-            "scale": [ 1.95, 1.95, 0.65 ]
-      		},
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 12.0, -1.0 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 12.0, -1.0 ],
+      "scale": [ 3.0, 3.0, 0.85 ]
+    },
     "firstperson_righthand": {
-    		"rotation": [ 0, -90, 45],
-      		"translation": [ 0.5, 2.0, 0.5 ],
-            "scale": [ 1.16, 1.16, 0.44 ]
-    		},
-   "thirdperson_lefthand": {
-    		"rotation": [ 0, 90, -45 ],
-    		"translation": [0, 5, 1.5],
-            "scale": [ 1.95, 1.95, 0.65 ]
-			},
+      "rotation": [ 0, -90, 45 ],
+      "translation": [ 1.13, 6, 0.13 ],
+      "scale": [ 1.5, 1.5, 0.68 ]
+    },
     "firstperson_lefthand": {
-    		"rotation": [ 0, 90, -45 ],
-      		"translation": [ 0.5, 2.0, 0.5 ],
-      		"scale": [ 1.16, 1.16, 0.44 ]
-    		}
-}
+      "rotation": [ 0, 90, -45 ],
+      "translation": [ 1.13, 6, 0.13 ],
+      "scale": [ 1.5, 1.5, 0.68 ]
+    },
+    "gui": {
+      "translation": [ 2, 2, 0 ],
+      "scale": [ 1.2, 1.2, 1 ]
+    }
+  }
 }

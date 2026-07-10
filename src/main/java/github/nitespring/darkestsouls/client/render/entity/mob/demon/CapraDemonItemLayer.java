@@ -62,7 +62,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 
 	}else if (bone.getName().equals("item_left")) {
 
-		poseStack.translate(0, 0.28, -0.56);
+		poseStack.translate(0, 0.5, -1.0);
 		poseStack.mulPose(Axis.XP.rotationDegrees(-20));
 		poseStack.mulPose(Axis.YP.rotationDegrees(0));
 		poseStack.mulPose(Axis.ZP.rotationDegrees(180));
