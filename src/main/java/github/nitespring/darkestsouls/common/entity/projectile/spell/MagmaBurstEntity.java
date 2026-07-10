@@ -142,7 +142,7 @@ public class MagmaBurstEntity extends AbstractHurtingProjectile implements ItemS
     @Override
     protected void onHitEntity(EntityHitResult p_37259_) {
 
-        if(p_37259_.getEntity() != this.getOwner() && !p_37259_.getEntity().isAlliedTo(this.getOwner())) {
+        if(this.getOwner() == null || (p_37259_.getEntity() != this.getOwner() && !p_37259_.getEntity().isAlliedTo(this.getOwner()))) {
             this.spawnMagma();
             this.doRemoval();
             if(p_37259_.getEntity() instanceof DarkestSoulsAbstractEntity e1){

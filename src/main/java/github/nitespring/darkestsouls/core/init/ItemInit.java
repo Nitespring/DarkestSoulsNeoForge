@@ -46,6 +46,18 @@ public class ItemInit {
 			() -> new StormCurvedSword(Tiers.TITANITE, 6.0f, 2.1f, 2.75f,0.1f, 3,5, 0,0,0,0,0,0,0, 0,1350,10,0.14f, 2,new Item.Properties().rarity(Rarity.EPIC)));
 	public static final DeferredHolder<Item,DragonslayerGreataxe> DRAGONSLAYER_GREATAXE = ITEMS.register("dragonslayer_greataxe",
 			() -> new DragonslayerGreataxe(Tiers.TITANITE, 10.0f, 1.0f, 3.5f,0.4f, 6,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
+	public static final DeferredHolder<Item,Claymore> BLACK_KNIGHT_SWORD = ITEMS.register("black_knight_sword",
+			() -> new Claymore(Tiers.TITANITE, 9.0f, 1.2f, 3.6f, 0.4f, 7,12,0,0,0,0,0,0,0, 0,500,7,0.09f, 3,new Item.Properties()));
+	public static final DeferredHolder<Item,Zweihander> BLACK_KNIGHT_GREATSWORD = ITEMS.register("black_knight_greatsword",
+			() -> new Zweihander(Tiers.TITANITE, 10.5f, 1.0f, 4.0f,0.8f, 9,14, 0,0,0,0,0,0,0,0,1024,15,0.07f, 5,new Item.Properties()));
+	public static final DeferredHolder<Item,Greataxe> BLACK_KNIGHT_GREATAXE = ITEMS.register("black_knight_greataxe",
+			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 4.0f,0.4f, 11,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
+	public static final DeferredHolder<Item,GraveScythe> BLACK_KNIGHT_HALBERD= ITEMS.register("black_knight_halberd",
+			() -> new GraveScythe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 5,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
+	public static final DeferredHolder<Item,Claymore> FIRELINK_GREATSWORD = ITEMS.register("firelink_greatsword",
+			() -> new Claymore(Tiers.TITANITE, 9.0f, 1.2f, 3.6f, 0.4f, 7,12,0,0,0,0,0,0,0, 0,500,7,0.09f, 3,new Item.Properties()));
+
+
 
 	//Trick Weapons
 	public static final DeferredHolder<Item,SawCleaver> SAW_CLEAVER = ITEMS.register("saw_cleaver",
@@ -120,6 +132,9 @@ public class ItemInit {
 			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 3.25f,0.5f, 12,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 2,new Item.Properties()));
 	public static final DeferredHolder<Item,Weapon> CRYSTALIAN_CHAKRAM = ITEMS.register("crystalian_chakram",
 			() -> new Weapon(Tiers.TITANITE, 6.0f, 1.9f,4.5f, -0.1f, 4,4, 0,0,0,0,0,0,0,0,1350,16,0.12f, 2,new Item.Properties()));
+	public static final DeferredHolder<Item,Longsword> CRYSTAL_SWORD = ITEMS.register("crystal_sword",
+			() -> new Longsword(Tiers.TITANITE, 7.0f, 1.6f, 3.25f,0.0f, 4,6, 0,0,0,0,0,0,0,0,225,8,0.1f, 2,new Item.Properties()));
+
 
 	public static final DeferredHolder<Item,Weapon> HUNTSMAN_AXE = ITEMS.register("hunting_axe",
 			() -> new Axe(Tiers.TITANITE, 6.0f, 1.4f,3.0f, 0.1f, 5,6, 0,0,0,0,0,0,0,0,225,8,0.09f, 2,new Item.Properties()));
