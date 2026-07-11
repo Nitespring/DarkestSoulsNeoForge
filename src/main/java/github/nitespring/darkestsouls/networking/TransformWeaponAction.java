@@ -3,15 +3,14 @@ package github.nitespring.darkestsouls.networking;
 
 
 import github.nitespring.darkestsouls.DarkestSouls;
-import github.nitespring.darkestsouls.common.item.ILeftClickItem;
-import github.nitespring.darkestsouls.common.item.ITransformableItem;
-import github.nitespring.darkestsouls.common.item.TrickWeapon;
+import github.nitespring.darkestsouls.common.item.*;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
@@ -41,6 +40,13 @@ public record TransformWeaponAction() implements CustomPacketPayload{
 
 						if(mainHand.getItem() instanceof ITransformableItem) {
 							((ITransformableItem)mainHand.getItem()).transform(player, player.level());
+						}
+						if(mainHand.getItem() instanceof ITransformableItemDual
+								&& !player.hasItemInSlot(EquipmentSlot.OFFHAND)) {
+							((ITransformableItemDual)mainHand.getItem()).transform(player, player.level());
+						}
+						if(mainHand.getItem() instanceof ITransformableItemDualChild) {
+							((ITransformableItemDualChild)mainHand.getItem()).transform(player, player.level());
 						}
 					})
 					.exceptionally(e -> {

@@ -52,8 +52,8 @@ public class ItemInit {
 			() -> new Zweihander(Tiers.TITANITE, 10.5f, 1.0f, 4.0f,0.8f, 9,14, 0,0,0,0,0,0,0,0,1024,15,0.07f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Greataxe> BLACK_KNIGHT_GREATAXE = ITEMS.register("black_knight_greataxe",
 			() -> new Greataxe(Tiers.TITANITE, 10.0f, 1.0f, 4.0f,0.4f, 11,10, 0,0,0,0,0,0,0,0,225,8,0.07f, 3,new Item.Properties()));
-	public static final DeferredHolder<Item,GraveScythe> BLACK_KNIGHT_HALBERD= ITEMS.register("black_knight_halberd",
-			() -> new GraveScythe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 5,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
+	public static final DeferredHolder<Item,Axe> BLACK_KNIGHT_HALBERD= ITEMS.register("black_knight_halberd",
+			() -> new Axe(Tiers.TITANITE, 7.0f, 1.6f,4.6f, 0.2f, 5,7, 2,0,0,0,0,0,0,0,225,8,0.105f, 5,new Item.Properties()));
 	public static final DeferredHolder<Item,Claymore> FIRELINK_GREATSWORD = ITEMS.register("firelink_greatsword",
 			() -> new Claymore(Tiers.TITANITE, 9.0f, 1.2f, 3.6f, 0.4f, 7,12,0,0,0,0,0,0,0, 0,500,7,0.09f, 3,new Item.Properties()));
 
@@ -83,7 +83,13 @@ public class ItemInit {
 	public static final DeferredHolder<Item,BurialBlade> BURIAL_BLADE = ITEMS.register("burial_blade",
 			() -> new BurialBlade(Tiers.TITANITE, 6.0f, 1.75f,3.25f, 0.1f, 4,6, 0,0,0,0,0,0,0,0,1350,17,0.11f, 1,new Item.Properties().rarity(Rarity.RARE)));
 	public static final DeferredHolder<Item,BurialBladeExtended> BURIAL_BLADE_EXTENDED = ITEMS.register("burial_blade_extended",
-			() -> new BurialBladeExtended(Tiers.TITANITE, 8.0f, 1.3f, 4.25f,0.25f, 4,6, 0,0,0,0,0,0,0,0,1350,17,0.1f, 3,new Item.Properties().rarity(Rarity.RARE)));
+			() -> new BurialBladeExtended(Tiers.TITANITE, 8.0f, 1.3f, 4.25f,0.25f, 6,8, 0,0,0,0,0,0,0,0,1350,17,0.1f, 3,new Item.Properties().rarity(Rarity.RARE)));
+	public static final DeferredHolder<Item,Rakuyo> RAKUYO = ITEMS.register("rakuyo",
+			() -> new Rakuyo(Tiers.TITANITE, 7.5f, 1.6f,3.75f, 0.2f, 5,5,0,0,0,0,0,0,0, 0,200,15,0.11f, 2,new Item.Properties()));
+	public static final DeferredHolder<Item,RakuyoRight> RAKUYO_RIGHT = ITEMS.register("rakuyo_right",
+			() -> new RakuyoRight(Tiers.TITANITE, 6.0f, 1.8f,3.75f, 0.1f, 3,5,0,0,0,0,0,0,0, 0,200,15,0.18f, 2,new Item.Properties()));
+	public static final DeferredHolder<Item,RakuyoLeft> RAKUYO_LEFT = ITEMS.register("rakuyo_left",
+			() -> new RakuyoLeft(Tiers.TITANITE, 3.5f, 2.4f, 2.25f,0.0f, 2, 3,0,0,0,0,0,0,0,0,200,15,0.18f, 1,new Item.Properties()));
 
 
 	public static final DeferredHolder<Item,BrokenStraightsword> BROKEN_STRAIGHTSWORD = ITEMS.register("broken_straightsword",
