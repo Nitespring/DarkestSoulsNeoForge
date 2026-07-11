@@ -426,4 +426,5 @@ public class Weapon extends Item implements ILeftClickItem, ICustomSweepAttackIt
     public void performSweepAttack(Player playerIn, ItemStack stackIn) {
 
     }
+
 }

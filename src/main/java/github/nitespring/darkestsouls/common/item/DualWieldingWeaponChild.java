@@ -33,7 +33,12 @@ public abstract class DualWieldingWeaponChild extends Weapon implements ITransfo
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(hand==InteractionHand.OFF_HAND){
-            player.swing(hand, true);
+
+            if(player.getAttackStrengthScale(0.5f)>0.9f) {
+                player.resetAttackStrengthTicker();
+                player.swing(hand, true);
+                performSweepAttack(player, player.getItemInHand(hand));
+            }
         }
         return super.use(level, player, hand);
     }

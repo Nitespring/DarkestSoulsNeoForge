@@ -31,12 +31,15 @@ public abstract class DualWieldingWeaponSecondary extends DualWieldingWeaponChil
 
             if(player.getItemInHand(InteractionHand.MAIN_HAND)==stack){
                 if(!player.getItemInHand(InteractionHand.OFF_HAND).is(getTwinWeapon())) {
-                    stack.setCount(0);
+                    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
                 }
             }else if(player.getItemInHand(InteractionHand.OFF_HAND)==stack){
                 if(!player.getItemInHand(InteractionHand.MAIN_HAND).is(getTwinWeapon())) {
-                    stack.setCount(0);
+                    player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
                 }
+            }else{
+                stack.setCount(0);
+
             }
             }
     }

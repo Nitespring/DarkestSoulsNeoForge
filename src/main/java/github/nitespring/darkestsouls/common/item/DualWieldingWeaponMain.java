@@ -35,9 +35,14 @@ public abstract class DualWieldingWeaponMain extends DualWieldingWeaponChild{
                 }
             }else if(player.getItemInHand(InteractionHand.OFF_HAND)==stack){
                 if(!player.getItemInHand(InteractionHand.MAIN_HAND).is(getTwinWeapon())) {
-                    transform(player,level);
+                    if(player.getItemInHand(InteractionHand.MAIN_HAND)==ItemStack.EMPTY){
+                        transform(player,level);
+                    }
+
                 }
-            }
+            }/*else{
+                transform(player,level);
+            }*/
         }
     }
 
