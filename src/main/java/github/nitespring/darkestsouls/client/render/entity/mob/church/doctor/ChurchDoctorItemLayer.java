@@ -76,7 +76,7 @@ protected void renderStackForBone(PoseStack poseStack, GeoBone bone, ItemStack s
 
 	}else if (bone.getName().equals("itemLeft")) {
 		if(animatable.getLeftHandItem().getItem()==ItemInit.REPEATING_PISTOL.get()) {
-			poseStack.translate(0, -0.22, -0.40);
+			poseStack.translate(0, -0.32, -0.55);
 			poseStack.mulPose(Axis.XP.rotationDegrees(-45));
 			poseStack.mulPose(Axis.YP.rotationDegrees(180));
 			poseStack.mulPose(Axis.ZP.rotationDegrees(0));
